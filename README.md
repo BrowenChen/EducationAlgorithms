@@ -1,7 +1,10 @@
 Overview
+
+
 Here at Zzish, we strive to fundamentally change the process of traditional learning. We attempt to maximize one’s learning potential in the most efficient way possible. We approach learning with a comprehensive holistic strategy that integrates principles of psychological and cognitive approaches to human memory, and we integrate that knowledge with the current advancing state of technology that is available to us in the hopes of creating a platform that can truly change the way people learn.
 
 One of the three primary algorithms that we implement in our Adaptive Learning Module is Spaced Reptition:
+
 
 Here’s Ebbinghaus’s famous Forgetting Curve lays out the exact rate at which the human mind forgets newly acquired facts. Thankfully, he painstakingly went through literally thousands of “nonsense syllables”, (combinations of random letters that have no meaning such as DAX), to step around the abstraction that ties a word to a visual meaning, and test the rate at which human memory retains and forgets information. 
 
@@ -11,6 +14,8 @@ What this means is that instead of trying to cram a ton of information with equa
 
 
 Mechanisms of the Algorithm
+
+
 In brief, I will describe the breakdown of the SuperMemo SM-2 spaced repetition algorithm. (We plan to develop ours to the current SM-10+ algorithm)
 
 We take a body of knowledge, and split it into individual pieces to be studied. Be it concepts in math, science, philosophy, etc, any topic can be broken down into it’s fundamental “atoms” that contribute to the holistic web of knowledge that constitutes a subject.
@@ -24,6 +29,8 @@ After each exposure to the student, the Q-Factor is the quality of the response,
 The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner. 
 
 Computerized Adaptive Testing
+
+
 Alright, now we have a method of determining the optimal sequencing of knowledge ordering. The new question is what is the optimal point for a student start learning?
 
 
@@ -40,6 +47,8 @@ We include item difficulty units, and child ability units to begin testing. The 
 
 
 Item Response Theory
+
+
 The next algorithm in this sequence of educational learning algorithms is the IRT. The idea here is to aggregate a continuous model for estimating the probabilistic outcome of each response based on a student user. We can utilize IRT to extract data to be used for recommendation systems in a interconnected graph of separated topics and subjects, providing key insight for where the student should go from here given the details that we extract. The key here is that it tests proficiency/ability, and is used for a deeper personalized learning experience. 
 
 How the Algorithm Works
@@ -51,6 +60,8 @@ Item Discrimination is the concept of how the difficulty of a problem is relativ
 
 
 Experiences with Math Safari at Queens Manor Primary School
+
+
 There’s absolutely no question that iPad games engage a student’s interests far greater than the traditional method of teacher-blackboard lectures. There is also no question that the brain absorbs information at a much faster rate when studying a topic you truly enjoy versus a dull topic a learner has no interest in. The simple engagement and classroom social aspect of Math Safari really shown through here as an effective way to change fundamental classroom learning. The sheer authentic looks of giddy excitement in the children’s eyes reaffirms the belief that Zzish is heading in the right direction.
 
 Aside from the social competition aspect of Math Safari (which made the students excited to the point where they would yell across the room if they beat a fellow classmate of theirs), the adaptive learning aspect of Math Safari can lead to very promising advances in the way children learn. Not only is it personalized for each student, it takes much of the tedious administration aspects out of a teachers job and refocuses it on their primary objective: to inspire and pass on knowledge to kids through the joys of teaching. 
@@ -61,6 +72,8 @@ This was one of the biggest ideas that math safari and Zzish’s potential reall
 
 
 Why holistic learning? 
+
+
 The human mind is a complex structure. The neural network system is equivalent to how gigantic cities are built. We attach meaning to abstract symbols such as letters (cell bodies/buildings), and correlate each symbol to other pieces of knowledge (axons/roads). The more roads that are available to access a certain building, the easier it is to get to that destination. To reinforce our constructs (cities), we must continue building these neural highways to connect these information with each other, which reinforces the students ability to recall highly connected pieces of information with greater ease than if one were to simply attempt rote memorization on an item. 
 
 Think of what you had for lunch 28 days ago, and think back to your first breakup with a girl you loved. Which experience do you typically have better recollection of?
