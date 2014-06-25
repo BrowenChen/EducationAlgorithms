@@ -1,0 +1,77 @@
+// Functions
+// --------------------------------------------------
+
+replace(expr, str, val)
+	expr = clone(expr)
+	for e, i in expr
+		if str == e
+			expr[i] = val
+	expr
+
+// Convert typographic units
+// 100% = 1em ~= 16px ~= 14pt
+// ----------------------------
+px(amount, ignore-base = false)
+	if unit(amount) == "%"
+		amount = percent(base-font-size, ignore-base) / percent(base-font-size, true) * (amount / 100) * 16
+	else if unit(amount) == "em" or unit(amount) == "rem"
+		amount = em(base-font-size, ignore-base) / em(base-font-size, true) * amount * 16
+	else if unit(amount) == "pt"
+		amount = pt(base-font-size, ignore-base) / pt(base-font-size, true) * (amount / 14) * 16
+	else if unit(amount) == "px" or unit(amount) == ""
+		if (unit(base-font-size) != "px") && !ignore-base
+			amount = px(base-font-size, true) / 16 * amount
+		else if !ignore-base
+			amount = base-font-size / 16 * amount
+
+	unit(amount, "px")
+
+pt(amount, ignore-base = false)
+	if unit(amount) == "%"
+		amount = percent(base-font-size, ignore-base) / percent(base-font-size, true) * (amount / 100) * 14
+	else if unit(amount) == "em" or unit(amount) == "rem"
+		amount = em(base-font-size, ignore-base) / em(base-font-size, true) * amount * 14
+	else if unit(amount) == "px"
+		amount = px(base-font-size, ignore-base) / px(base-font-size, true) * (amount / 16) * 14
+	else if unit(amount) == "pt" or unit(amount) == ""
+		if (unit(base-font-size) != "pt") && !ignore-base
+			amount = pt(base-font-size, true) / 14 * amount
+		else if !ignore-base
+			amount = base-font-size / 14 * amount
+
+	unit(amount, "pt")
+
+em(amount, ignore-base = false)
+	if unit(amount) == "%"
+		amount = percent(base-font-size, ignore-base) / percent(base-font-size, true) * (amount / 100)
+	else if unit(amount) == "px"
+		amount = px(base-font-size, ignore-base) / px(base-font-size, true) * (amount / 16)
+	else if unit(amount) == "pt"
+		amount = pt(base-font-size, ignore-base) / pt(base-font-size, true) * (amount / 14)
+	else if unit(amount) == "em" or unit(amount) == "rem" or unit(amount) == ""
+		if (unit(base-font-size) != "em") && !ignore-base
+			amount = em(base-font-size, true) * amount
+		else if !ignore-base
+			amount = base-font-size * amount
+
+	unit(amount, "em")
+
+rem(amount, ignore-base = false)
+	if support-for-ie
+		add-property(current-property[0], replace(current-property[1], "__CALL__", px(em(amount, true), ignore-base)))
+	unit(em(amount, ignore-base), "rem")
+
+percent(amount, ignore-base = false)
+	if unit(amount) == "px"
+		amount = px(base-font-size, ignore-base) / px(base-font-size, true) * (amount / 16) * 100
+	else if unit(amount) == "em" or unit(amount) == "rem"
+		amount = em(base-font-size, ignore-base) / em(base-font-size, true) * amount * 100
+	else if unit(amount) == "pt"
+		amount = pt(base-font-size, ignore-base) / pt(base-font-size, true) * (amount / 14) * 100
+	else if unit(amount) == "%" or unit(amount) == ""
+		if (unit(base-font-size) != "%") && !ignore-base
+			amount = percent(base-font-size, true) / 100 * amount
+		else if !ignore-base
+			amount = base-font-size / 100 * amount
+
+	unit(amount, "%")

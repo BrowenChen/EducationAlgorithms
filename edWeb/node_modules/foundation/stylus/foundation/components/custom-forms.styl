@@ -1,0 +1,293 @@
+//
+// Custom Form Variables
+//
+$include-html-custom-form-classes ?= $include-html-classes;
+
+// We use these to control the basic form styles input styles
+$custom-form-border-size ?= 1px;
+$custom-form-border-color ?= #ccc;
+$custom-form-border-focus-color ?= $primary-color;
+$custom-form-border-disabled-color ?= $custom-form-border-color;
+$custom-form-bg ?= #fff;
+$custom-form-bg-focus ?= $custom-form-bg;
+$custom-form-bg-disabled ?= #ddd;
+$custom-form-input-size ?= 16px;
+$custom-form-input-gap ?= 4px;
+$custom-form-check-color ?= #222;
+$custom-form-check-size ?= 32px;
+$custom-form-radio-size ?= 8px;
+$custom-form-checkbox-radius ?= $global-radius;
+$custom-form-checkbox-glyph-font ?= $body-font-family;
+$custom-form-checkbox-glyph-symbol ?= "\000D7";
+$custom-form-checkbox-x-offset ?= 0px;
+$custom-form-checkbox-y-offset ?= 0px;
+
+// We use these to style the custom select form element.
+$custom-select-bg ?= #fff;
+$custom-select-fade-to-color ?= #f3f3f3;
+$custom-select-border-color ?= #ddd;
+$custom-select-triangle-color ?= #aaa;
+$custom-select-triangle-color-open ?= #222;
+$custom-select-height ?= emCalc(13px) + ($form-spacing * 1.5);
+$custom-select-margin-bottom ?= emCalc(20px);
+$custom-select-font-color-selected ?= #141414;
+$custom-select-disabled-color ?= #888;
+
+// We use these to control the style of the custom select dropdown element.
+$custom-dropdown-height ?= 200px;
+$custom-dropdown-bg ?= #fff;
+$custom-dropdown-border-color ?= darken(#fff, 20%);
+$custom-dropdown-border-width ?= 1px;
+$custom-dropdown-border-style ?= solid;
+$custom-dropdown-font-color ?= #555;
+$custom-dropdown-font-size ?= emCalc(14px);
+$custom-dropdown-color-selected ?= #eeeeee;
+$custom-dropdown-font-color-selected ?= #000;
+$custom-dropdown-shadow ?= 0 2px 2px 0px rgba(0,0,0,0.1);
+$custom-dropdown-offset-top ?= auto;
+$custom-dropdown-list-padding ?= emCalc(4px);
+$custom-dropdown-default-float-padding ?= emCalc(6px);
+$custom-dropdown-opposite-padding ?= emCalc(38px);
+$custom-dropdown-list-item-min-height ?= emCalc(24px);
+$custom-dropdown-width-small ?= 134px;
+$custom-dropdown-width-medium ?= 254px;
+$custom-dropdown-width-large ?= 434px;
+
+// We decided not to make a mixin for the custom forms because
+// they rely on a very specific class naming structure.
+// We may look at updating this in the future.
+
+// Only include these classes if the variable is true, otherwise they'll be left out.
+if $include-html-button-classes != false {
+  
+  /* Custom Checkbox and Radio Inputs */
+  form.custom {
+
+    input[type="checkbox"], input[type="radio"] {
+      opacity: 0.01;
+      position: absolute;
+      cursor: pointer;
+      width: $custom-form-input-size;
+      height: $custom-form-input-size;
+
+      & + label {
+        position: relative;
+        line-height: $custom-form-input-size;
+        padding-{$default-float}: $custom-form-input-size + $custom-form-input-gap;
+        &:before {
+          content: '';
+          display:inline-block;
+          box-sizing: border-box;
+          width: $custom-form-input-size;
+          height: $custom-form-input-size;
+          background: $custom-form-bg;
+          border: $custom-form-border-size solid $custom-form-border-color;
+          cursor: pointer;
+          position: absolute;
+          {$default-float}: 0;
+        }
+      }
+    }
+
+    input[type="checkbox"] + label:before {
+      radius($custom-form-checkbox-radius);
+    }
+
+    input[type="radio"] + label:before {
+      radius($global-rounded);
+    }
+
+    input[type="checkbox"]:focus, input[type="radio"]:focus {
+      & + label:before {
+        background: $custom-form-bg-focus;
+        border-color: $custom-form-border-focus-color;
+      }
+    }
+
+    input[type="checkbox"]:disabled, input[type="radio"]:disabled {
+      cursor: default;
+      & + label {
+        cursor: default;
+        &:before {
+          background: $custom-form-bg-disabled;
+          border-color: $custom-form-border-disabled-color;
+        }
+      }
+    }
+
+    input[type="checkbox"]:checked + label:after {
+      font-family: $custom-form-checkbox-glyph-font;
+      content: $custom-form-checkbox-glyph-symbol;
+      font-size: $custom-form-check-size;
+      color: $custom-form-check-color;
+      position: absolute;
+      top: $custom-form-checkbox-y-offset;
+      {$default-float}: (($custom-form-input-size - $custom-form-check-size) / 2) + $custom-form-checkbox-x-offset;
+    }
+
+    input[type="radio"]:checked + label:after {
+      content: "";
+      display: block;
+      width: $custom-form-radio-size;
+      height: $custom-form-radio-size;
+      radius($global-rounded);
+      background: $custom-form-check-color;
+      position: absolute;
+      top: 0;
+      {$default-float}: 0;
+      margin: (($custom-form-input-size - $custom-form-radio-size) / 2);
+    }
+  }
+  
+  /* Custom Select Options and Dropdowns */
+  form.custom {
+    .hidden-field {
+      margin-{$default-float}: -99999px;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .custom.dropdown {
+      display: block;
+      position: relative;
+      top: 0;
+      height: $custom-select-height;
+      margin-bottom: $custom-select-margin-bottom;
+      margin-top: 0px;
+      padding: 0px;
+      width: 100%;
+      border: $custom-form-border-size solid $custom-form-border-color;
+      background: $custom-dropdown-bg;
+      if $experimental {
+        background: -moz-linear-gradient(top, $custom-dropdown-bg 0%, $custom-select-fade-to-color 100%);
+        background: -webkit-linear-gradient(top, $custom-dropdown-bg 0%,$custom-select-fade-to-color 100%);
+        background: linear-gradient(to bottom, $custom-dropdown-bg 0%,$custom-select-fade-to-color 100%);
+        -webkit-box-shadow: none;
+      }
+      box-shadow: none;
+      font-size: $custom-dropdown-font-size;
+      vertical-align: top;
+  
+      ul {
+        overflow-y: auto;
+        max-height: $custom-dropdown-height;
+      }
+  
+      .current {
+        cursor:default;
+        white-space: nowrap;
+        line-height: $custom-select-height - emCalc(1px);
+        color: $input-font-color;
+        text-decoration: none;
+        overflow: hidden;
+        display: block;
+        margin-{$default-float}: ($form-spacing / 2);
+        margin-{$opposite-direction}: $custom-select-height;
+      }
+  
+      .selector {
+        cursor:default;
+        position: absolute;
+        width: $form-spacing * 2.5;
+        height: $custom-select-height;
+        display: block;
+        {$opposite-direction}: 0;
+        top: 0;
+        &:after {
+          content: "";
+          display: block;
+          css-triangle(5px, $custom-select-triangle-color, top);
+          position: absolute;
+          {$default-float}: ($form-spacing * 2.5 / 2) - emCalc(5px);
+          top: 50%;
+          margin-top: -3px;
+        }
+      }
+  
+      &:hover, &.open {
+        a.selector {
+          &:after {
+            css-triangle(5px, $custom-select-triangle-color-open, top);
+          }
+        }
+      }
+  
+      .disabled {
+        color: $custom-select-disabled-color;
+        &:hover {
+          background: transparent;
+          color: $custom-select-disabled-color;
+          &:after { display: none; }
+        }
+      }
+  
+      &.open ul {
+        display: block;
+        z-index: 10;
+        min-width:100%;
+        box-sizing(content-box);
+      }
+  
+      &.small { max-width: $custom-dropdown-width-small; }
+      &.medium { max-width: $custom-dropdown-width-medium; }
+      &.large { max-width: $custom-dropdown-width-large; }
+      &.expand { width: 100% !important; }
+  
+      &.open.small ul { min-width: $custom-dropdown-width-small; box-sizing(border-box); }
+      &.open.medium ul { min-width: $custom-dropdown-width-medium; box-sizing(border-box); }
+      &.open.large ul { min-width: $custom-dropdown-width-large; box-sizing(border-box); }
+    }
+  
+    .custom.dropdown ul {
+      position: absolute;
+      width: auto;
+      display: none;
+      margin: 0;
+      {$default-float}: -($input-border-width);
+      top: $custom-dropdown-offset-top;
+      if $experimental {
+        -webkit-box-shadow: $custom-dropdown-shadow;
+      }
+      box-shadow: $custom-dropdown-shadow;
+      margin: 0;
+      padding: 0;
+      background: $custom-dropdown-bg;
+      border: $custom-dropdown-border-style $custom-dropdown-border-width $custom-dropdown-border-color;
+      font-size: $em-base;
+  
+      li {
+        color: $custom-dropdown-font-color;
+        font-size: $custom-dropdown-font-size;
+        cursor: default;
+        padding-top: $custom-dropdown-list-padding;
+        padding-bottom: $custom-dropdown-list-padding;
+        padding-{$default-float}: $custom-dropdown-default-float-padding;
+        padding-{$opposite-direction}: $custom-dropdown-opposite-padding;
+        min-height: $custom-dropdown-list-item-min-height;
+        line-height: $custom-dropdown-list-item-min-height;
+        margin: 0;
+        white-space: nowrap;
+        list-style: none;
+  
+        &.selected {
+          background: $custom-dropdown-color-selected;
+          color: $custom-dropdown-font-color-selected;
+        }
+        &:hover {
+          background-color: darken($custom-dropdown-color-selected, 4%);
+          color: $custom-dropdown-font-color-selected;
+        }
+        &.selected:hover {
+          background: $custom-dropdown-color-selected;
+          cursor: default;
+          color: $custom-dropdown-font-color-selected;
+        }
+      }
+  
+      &.show { display: block; }
+    }
+  
+    /* Custom input, disabled */
+    .custom.disabled { background-color: $custom-form-bg-disabled; }
+  }
+}

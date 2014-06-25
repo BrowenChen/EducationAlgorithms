@@ -1,0 +1,56 @@
+[
+  {
+    "name": "http://deadspin.com",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 1.64,
+    "thisDate": 3
+  },
+  {
+    "name": "http://espn.go.com/",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 1.3,
+    "thisDate": 3
+  },
+  {
+    "name": "http://bleacherreport.com/",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 1.7000000000000002,
+    "thisDate": 3
+  },
+  {
+    "name": "http://news.yahoo.com/sports/",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 2.6,
+    "thisDate": 3
+  },
+  {
+    "name": "http://grantland.com",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 2.6,
+    "thisDate": 3
+  },
+  {
+    "name": "http://sportsillustrated.cnn.com/",
+    "nextDate": 9,
+    "prevDate": 0,
+    "interval": 6,
+    "reps": 2,
+    "EF": 2.6,
+    "thisDate": 3
+  }
+]

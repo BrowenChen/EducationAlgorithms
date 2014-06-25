@@ -1,0 +1,40 @@
+.test-rem {
+  default: 16px;
+  default: 1rem;
+  em-to-rem: 16px;
+  em-to-rem: 1rem;
+  px-to-rem: 16px;
+  px-to-rem: 1rem;
+  pt-to-rem: 16px;
+  pt-to-rem: 1rem;
+  percent-to-rem: 16px;
+  percent-to-rem: 1rem;
+}
+.test-em {
+  default: 1em;
+  rem-to-em: 1em;
+  px-to-em: 1em;
+  pt-to-em: 1em;
+  percent-to-em: 1em;
+}
+.test-px {
+  default: 16px;
+  rem-to-px: 16px;
+  em-to-px: 16px;
+  pt-to-px: 16px;
+  percent-to-px: 16px;
+}
+.test-pt {
+  default: 14pt;
+  rem-to-pt: 14pt;
+  em-to-pt: 14pt;
+  px-to-pt: 14pt;
+  percent-to-pt: 14pt;
+}
+.test-percent {
+  default: 100%;
+  rem-to-percent: 100%;
+  em-to-percent: 100%;
+  px-to-percent: 100%;
+  pt-to-percent: 100%;
+}

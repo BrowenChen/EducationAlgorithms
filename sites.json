@@ -1,0 +1,104 @@
+{
+  "programming": [
+    "http://blog.codinghorror.com/",
+    "http://thedailywtf.com/",
+    "http://www.hanselman.com/blog/",
+    "http://code.tutsplus.com",
+    "https://news.ycombinator.com/",
+    "http://www.reddit.com/r/programming/",
+    "http://codebetter.com",
+    "http://android-developers.blogspot.com/",
+    "http://blog.udacity.com/"
+  ],
+  "gaming": [
+    "http://www.polygon.com/",
+    "http://kotaku.com",
+    "http://pipes.yahoo.com/pipes/pipe.info?_id=3c853897b3e044f5abd763d061015c37",
+    "http://www.joystiq.com",
+    "http://www.dungeonsanddragons.com"
+  ],
+  "architecture": [
+    "http://www.archdaily.com",
+    "http://www.contemporist.com",
+    "http://nonconcept.net/",
+    "http://onsomething.tumblr.com/",
+    "http://theformover.com/",
+    "http://elblogdefarina.blogspot.com/",
+    "http://www.morfae.com"
+  ],
+  "design": [
+    "http://www.swiss-miss.com",
+    "http://www.fubiz.net",
+    "http://www.fastcodesign.com//www.fastcodesign.com",
+    "http://creive.me",
+    "http://ana-white.com/feed",
+    "http://www.pixeden.com",
+    "http://stocker.jp/diary",
+    "http://koikoikoi.com",
+    "http://georgewalkerdesign.wordpress.com"
+  ],
+  "politics": [
+    "http://fivethirtyeight.com",
+    "http://www.theatlantic.com/politics/",
+    "http://www.theatlantic.com/",
+    "http://chedet.cc",
+    "http://www.roozonline.com/",
+    "http://www.chaunceydevega.com/"
+  ],
+  "art": [
+    "http://www.thisiscolossal.com",
+    "http://www.woostercollective.com/",
+    "http://arrestedmotion.com",
+    "http://www.theartblog.org",
+    "http://ipodart.net/",
+    "http://www.voicer.me",
+    "http://artdevanyonline.com/arts-blog.html",
+    "http://johnkenn.blogspot.com/",
+    "http://www.weheart.co.uk",
+    "http://debeecampos.blogspot.com/",
+    "http://www.ctrlpaint.com/blog/",
+    "http://bferry.wordpress.com",
+    "http://programmingzen.com",
+    "http://variationsonnormal.com",
+    "http://bentobjects.blogspot.com/",
+    "http://www.itsartmag.com/features",
+    "http://www.amusingplanet.com/",
+    "http://www.mydesy.com"
+  ],
+  "painting": [
+    "http://gurneyjourney.blogspot.com/",
+    "http://underpaintings.blogspot.com/",
+    "http://nathanfowkes.blogspot.com/",
+    "http://thepaintedhive.net",
+    "http://karinjurick.blogspot.com/",
+    "http://nathanfowkes-sketch.blogspot.com/",
+    "http://virtualgouacheland.blogspot.com/",
+    "http://duanekeiser.blogspot.com/",
+    "http://carolmarine.blogspot.com/",
+    "http://www.artandinfluence.com/",
+    "http://dreamatolleperry.blogspot.com/",
+    "http://mikerooneystudios.blogspot.com/",
+    "http://badrabbitvintage.blogspot.com/",
+    "http://ilove2paint.blogspot.com/"
+  ],
+  "technology": [
+    "http://lifehacker.com",
+    "http://www.engadget.com",
+    "http://techcrunch.com",
+    "http://gizmodo.com",
+    "http://www.wired.com",
+    "http://www.theverge.com/",
+    "http://www.macg.co/news/feed",
+    "http://www.kurzweilai.net",
+    "http://www.petri.co.il",
+    "http://boingboing.net"
+  ],
+  "sports": [
+    "http://deadspin.com",
+    "http://espn.go.com/",
+    "http://bleacherreport.com/",
+    "http://news.yahoo.com/sports/",
+    "http://grantland.com",
+    "http://sportsillustrated.cnn.com/"
+  ]
+}

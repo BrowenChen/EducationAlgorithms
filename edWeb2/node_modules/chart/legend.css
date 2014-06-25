@@ -1,0 +1,6 @@
+.legend {
+    padding:10px;
+}
+.legend div.axisname:hover {
+    text-decoration:underline;
+}

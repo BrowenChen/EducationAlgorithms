@@ -1,0 +1,19 @@
+.legend {
+    padding:10px;
+    background-color:"#F3F300";
+}
+.legend div.axisname {
+    padding:0;
+    line-height:10px;
+    font-size:10px;
+    width:50px;
+    display:inline-block;
+}
+.legend div.axisname:hover {
+    text-decoration:underline;
+}
+.legendline {
+    vertical-align:middle;
+    display:inline-block;
+    width:20px;
+}
