@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 //Uses the js file
-var progress = require('./routes/progress');
+// var progress = require('./routes/progress');
 
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/progress', progress); //Use this for the express.Router()
+// app.use('/progress', progress); //Use this for the express.Router()
 
 
 /// catch 404 and forward to error handler
