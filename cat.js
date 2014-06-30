@@ -16,7 +16,7 @@ inputs: Test bank, json file with card data
 
 Algorithm
 
-1.  Request next candidate. Set D=0, L=0, H=0, and R=0.
+1. Request next candidate. Set D=0, L=0, H=0, and R=0.
 2. Find next item near difficulty, D.
 3. Set D at the actual calibration of that item.
 
@@ -46,4 +46,38 @@ A Methodology Whose Time Has Come.
 
 var fs = require('fs');
 var readline = require('fs');
+
+
+//JSON card bank
+
+//Variables
+// D = difficulty
+// L = items taken
+// H = Difficulties used
+// R = Right answers 
+
+var D = 0,
+	L = 0,
+	H - 0,
+	R = 0;
+
+
+/**
+Request next candidate
+-----
+Initialize variables of that user to 0
+From test bank, find next item closest to the difficulty D.
+
+Set user's D to the actually D value of that item.
+@param User
+**/
+
+
+
+/**
+
+
+**/
+
+
 
