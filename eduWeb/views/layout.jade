@@ -1,0 +1,163 @@
+!!!
+html(ng-app="myApp")
+	head
+		meta(charset='utf8')
+		
+		title Seed App
+		link(href='/css/bootstrap.css', rel='stylesheet')	
+		link(rel='stylesheet', href='/css/app.css')
+		link(rel='stylesheet', href='/css/style.css')		
+		link(href='/css/font-awesome.min.css', rel='stylesheet')
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic', rel='stylesheet', type='text/css')
+
+
+
+	body
+
+		.navbar.navbar-default.navbar-fixed-top(role='navigation')
+			.container
+				.navbar-header
+					a.navbar-brand(href='index.html') EDUCATIONAL ALGORITHMS
+						
+						
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+
+
+
+				.navbar-collapse.collapse.navbar-right
+						ul.nav.navbar-nav
+							
+							
+								li.active
+									a(href='index.html') HOME
+								li
+									a(href='about.html') ABOUT
+								li
+									a(href='contact.html') CONTACT
+								li.dropdown
+
+									a.dropdown-toggle(href='#', data-toggle='dropdown')
+										| PAGES
+										b.caret
+										ul.dropdown-menu
+											li
+												a(href='blog.html') BLOG
+											li
+												a(href='single-post.html') SINGLE POST
+											li
+												a(href='portfolio.html') PORTFOLIO
+											li
+												a(href='single-project.html') SINGLE PROJECT
+
+
+		html.
+			<script>
+			// Portfolio
+			(function($) {
+				"use strict";
+				var $container = $('.portfolio'),
+					$items = $container.find('.portfolio-item'),
+					portfolioLayout = 'fitRows';
+					
+					if( $container.hasClass('portfolio-centered') ) {
+						portfolioLayout = 'masonry';
+					}
+							
+					$container.isotope({
+						filter: '*',
+						animationEngine: 'best-available',
+						layoutMode: portfolioLayout,
+						animationOptions: {
+						duration: 750,
+						easing: 'linear',
+						queue: false
+					},
+					masonry: {
+					}
+					}, refreshWaypoints());
+					
+					function refreshWaypoints() {
+						setTimeout(function() {
+						}, 1000);   
+					}
+							
+					$('nav.portfolio-filter ul a').on('click', function() {
+							var selector = $(this).attr('data-filter');
+							$container.isotope({ filter: selector }, refreshWaypoints());
+							$('nav.portfolio-filter ul a').removeClass('active');
+							$(this).addClass('active');
+							return false;
+					});
+					
+					function getColumnNumber() { 
+						var winWidth = $(window).width(), 
+						columnNumber = 1;
+					
+						if (winWidth > 1200) {
+							columnNumber = 5;
+						} else if (winWidth > 950) {
+							columnNumber = 4;
+						} else if (winWidth > 600) {
+							columnNumber = 3;
+						} else if (winWidth > 400) {
+							columnNumber = 2;
+						} else if (winWidth > 250) {
+							columnNumber = 1;
+						}
+							return columnNumber;
+						}       
+						
+						function setColumns() {
+							var winWidth = $(window).width(), 
+							columnNumber = getColumnNumber(), 
+							itemWidth = Math.floor(winWidth / columnNumber);
+							
+							$container.find('.portfolio-item').each(function() { 
+								$(this).css( { 
+								width : itemWidth + 'px' 
+							});
+						});
+					}
+					
+					function setPortfolio() { 
+						setColumns();
+						$container.isotope('reLayout');
+					}
+						
+					$container.imagesLoaded(function () { 
+						setPortfolio();
+					});
+					
+					$(window).on('resize', function () { 
+					setPortfolio();          
+				});
+			})(jQuery);
+			</script>
+
+		script(src='/js/lib/angular/angular.js')
+		script(src='/js/app.js')
+		script(src='/js/services.js')
+		script(src='/js/controllers.js')
+		script(src='/js/filters.js')
+		script(src='/js/directives.js')
+
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='/js/bootstrap.min.js')
+		script(src='/js/retina-1.1.0.js')
+		script(src='/js/jquery.hoverdir.js')
+		script(src='/js/jquery.hoverex.min.js')
+		script(src='/js/jquery.prettyPhoto.js')
+		script(src='/js/jquery.isotope.min.js')
+		script(src='/js/custom.js')
+
+
+
+		block body
+			
+
+
+
