@@ -26,6 +26,10 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
 
   }).
+  controller('AlgCtrl', function ($scope) {
+    // write Ctrl here
+
+  }).  
   controller('LandCtrl', function ($scope) {
     // write Ctrl here    
     $scope.name = "Owen";
