@@ -1,26 +1,48 @@
 
-p.
-	<div id="service">
-		<div class="container" style='background-color: #ecf0f1;'>
-			<div class="row centered">
-				<div class="col-md-4">
-					<i class="fa fa-keyboard-o"></i>
-					<h4>Spaced Repitition</h4>
-					<p>Spaced Repititon is based off the human Forgetting Curve</p>
-					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-flask"></i>
-					<h4>Computerized Adaptive Testing</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-				</div>
-				<div class="col-md-4">
-				<i class="fa fa-trophy"></i>
-					<h4>Item Response Theory</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
-					</div>						
-			</div>
-		</div>
-	</div>
+
+#twrap
+	.container.centered
+		.row
+			.col-lg-8.col-md-8.col-lg-offset-2
+				i.glyphicon.glyphicon-book
+				p
+					| Adaptive Learning will revolutionize learning efficiency as EdTech continues to grow. Here, you will find three common adaptive learning algorithms
+					| and sample apps that I have created to learn more about these algorithms. Feel free to contact me for any questions!
+					| Here I will describe and showcase the mechanisms of action
+				h4
+					br
+					| Educational Algorithms
+				a(href='http://github.com/browenchen').btn.btn-info GITHUB
+
+
+
+
+
+
+#service
+	.container(style='background-color: #ecf0f1;')
+		.row.centered
+			.col-md-4
+				i.fa.fa-keyboard-o
+				h4 Spaced Repitition
+				p Spaced Repititon is based off the human Forgetting Curve
+				p
+					br
+					a.btn.btn-theme(href='/spacedRep') More Info
+			.col-md-4
+				i.fa.fa-flask
+				h4 Computerized Adaptive Testing
+				p
+					| Pre-testing algorithm for assessing a student's initial ability level. This is used in many large-scale industries to determine where a learner should begin
+				p
+					br
+					a.btn.btn-theme(href='/view1') More Info
+			.col-md-4
+				i.fa.fa-trophy
+				h4 Item Response Theory
+				p
+					| Designed to measure the probability of answering a question correctly based on continuous multi-variable parameter models
+				p
+					br
+					a.btn.btn-theme(href='/itemRes') More Info
+
