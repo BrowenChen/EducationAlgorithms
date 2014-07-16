@@ -13,32 +13,27 @@
 			.spacing
 			h4 Item Response Theory
 			p
-				em Spaced Repitition is based on this fact to reinforce the knowledge in an optimal way to increase long term potentiation of facts. 
 				br
-				br
-				| What this means is that instead of trying to cram a ton of information with equal exposure and weight into your head, 
-				em you focus on your weak links at the right time to optimize the learning process. 
-				| Think of the process of trying to learn 150 different concepts for an exam. In order to cover all 150 concepts with an equal level of mastery, we would need a strategic way to target the weak links and de-emphasize the ones we already know well. The adage “failure is the best teacher” rings loud and clear here. In order to see true progress and rapid growth, you must struggle and step out of a comfort zone. The SR algorithm applies this concept as a generalized template for one method of making the most out of your limited time. This is just one of the few algorithms that goes into the Adaptive Module, with the hopes of providing this platform and knowledge to all edTech developers to rid the inefficiencies of traditional learning. 
-				br
-				br
+				| The next algorithm in this sequence of educational learning algorithms is the IRT. 
+				em The idea here is to aggregate a continuous model for estimating the probabilistic outcome of each response based on a student user. 
+				|  We can utilize IRT to extract data to be used for recommendation systems in a interconnected graph of separated topics and subjects, providing key insight for where the student should go from here given the details that we extract. The key here is that it tests proficiency/ability, and is used for a deeper personalized learning experience. 
+
 			h4 The Algorithm
 			p
-				| We take a body of knowledge, and split it into individual pieces to be studied. Be it concepts in math, science, philosophy, etc, any topic can be broken down into it’s fundamental “atoms” that contribute to the holistic web of knowledge that constitutes a subject.
+				| Basically, there is an item characteristic curve graph. Given the student ability, it will predict the probability for whether a student will understand or fail that question. There can be multiple item characteristics to be represented in the graph, but we will stick to the one parameter model for simplicity. 
 				br
 				br
-				| All of the items are now assigned an “E-Factor”, which represents the “easiness” of a certain piece of data according to you. This will be updated over time.
+				em Item Discrimination
+				|  is the concept of how the difficulty of a problem is relative to ability level. If there is no discrimination, the value of the item difficulty is a constant flat line across all ability levels. If there is a discrimination, this type of problem can be more useful in distinguishing the high-ability students from the low-ability students (think of an exam with an average percentage of 90% versus an exam with an average of 50%. The latter exam will allow smart students a greater room to demonstrate their intellect and differentiate themselves more than the average)
 				br
-				br
-				| Now we assign intervals at which each piece of information should be shown to you according to this forgetting curve, and continuously update these intervals for each item with  a function that models the forgetting curve.
-				| After each exposure to the student, the Q-Factor is the quality of the response, usually a measure of 1-5 that determines the student’s level of understanding on that item. We can take in metrics such as duration spent on problem, incorrect guesses, or even in the future advanced neurotracking software to determine the physiological signs of frustration in a students face.
-				| The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner. 
+
 		.col-lg-4.col-lg-offset-1
 			.spacing
 			h4 Project Details
 			.hline
 			p
 				b Name:
-				| WebRec.me
+				| Assess.me
 			p
 				b Author:
 				| Owen Chen
