@@ -28,17 +28,23 @@
 								| CAT
 								span.label.label-info  {{title}}.me 
 						#todo-list.row
-							.col-sm-8.text-center
+							.col-sm-3.text-center
 								form
 									.form-group
-										input.form-control.input-lg.text-center(type='text', placeholder='Add a site here', ng-model='formData.text')
-									button.btn.btn-primary.btn-lg(type='submit', ng-click='createSite()') Add
-						#todo-list.row
-							.col-sm-4.col-sm-offset-1
-								.checkbox(ng-repeat='site in sites')
+										input.form-control.input-lg.text-center(type='text', placeholder='Add an item here', ng-model='formData.text')
+									button.btn.btn-primary.btn-lg(type='submit', ng-click='createTodo()') Add
+						
+							.col-sm-3
+								.checkbox(ng-repeat='todo in todos')
 									label 
-										input(type='checkbox', ng-click='deleteSite(site._id)')
-										| {{site.text}}
+										input(type='checkbox', ng-click='deleteTodo(todo._id)')
+										| {{todo.text}}
+						
+							.col-sm-6
+								button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
+								form
+									| Test Length : 
+									span.badge {{testLength}}
 									
 
 
