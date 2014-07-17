@@ -1,0 +1,108 @@
+
+
+
+//- #twrap
+//-	.container.centered
+//-		.row
+//-			.col-lg-8.col-md-8.col-lg-offset-2
+//-				i.glyphicon.glyphicon-book
+//-				p
+//-					| Computerized Adaptive Testing is a pre-assessment algorithm to effectively measure a student's initial ability level.
+//-					| CAT is used in many large-scale testing services all around the world, such as the GMAT.
+//-					| Here I will describe and showcase the mechanisms of action
+//-				h4
+//-					br
+//-					| Computerized Adaptive Testing
+//-				a(href='http://github.com/browenchen').btn.btn-info GITHUB
+
+
+
+.container.mt
+	.row
+		.col-lg-10.col-lg-offset-1.centered
+			.carousel-inner
+				.item.active
+					.container.jumbotron
+						.jumbotron.text-left
+							h1 
+								| CAT
+								span.label.label-info  {{title}}.me 
+						#todo-list.row
+							.col-sm-8.text-center
+								form
+									.form-group
+										input.form-control.input-lg.text-center(type='text', placeholder='Add a site here', ng-model='formData.text')
+									button.btn.btn-primary.btn-lg(type='submit', ng-click='createSite()') Add
+						#todo-list.row
+							.col-sm-4.col-sm-offset-1
+								.checkbox(ng-repeat='site in sites')
+									label 
+										input(type='checkbox', ng-click='deleteSite(site._id)')
+										| {{site.text}}
+									
+
+
+	
+.container.mt
+	.row
+		//- .col-lg-10.col-lg-offset-1.centered
+		//-	#carousel-example-generic.carousel.slide(data-ride='carousel')
+
+		//-		ol.carousel-indicators
+		//-			li.active(data-target='#carousel-example-generic', data-slide-to='0')
+		//-			li(data-target='#carousel-example-generic', data-slide-to='1')
+		//-			li(data-target='#carousel-example-generic', data-slide-to='2')
+		//-		//- //
+		//-		//-    Wrapper for slides 
+		//-		.carousel-inner
+		//-			.item.active
+		//-				img(src='assets/img/portfolio/single01.jpg', alt='')
+		//-			.item
+		//-				img(src='assets/img/portfolio/single02.jpg', alt='')
+		//-			.item
+		//-				img(src='assets/img/portfolio/single03.jpg', alt='')
+		.col-lg-5.col-lg-offset-1
+			.spacing
+			h4 Comuterized Adaptive Testing
+			p
+				| Alright, now we have a method of determining the optimal sequencing of knowledge ordering. The new question is what is the optimal point for a student start learning?
+				br
+				br
+				| This can be accomplished through the CAT (Computerized Adaptive Testing) algorithm, used by many large-scale testing organizations such as the GMAT. 
+				br
+				br
+				| Adaptive testing focuses on minimizing the time for diagnostic pre-testing, and attempts to accurately predict a unknown student’s level of ability given no prior knowledge on the student. From that starting point, we are able to then utilized Spaced Repitition to gather more details on the user and improve our personalized learning model over time.
+			h4 The Algorithm
+			p
+				| Say that the developer of a math educational app creates a test bank of 100 multiple choices questions for the game. Each question is then assigned a difficulty level, predesignated by the developer, and we choose a small subset of questions to pre-test the user. 
+				br
+				br
+				| We include item difficulty units, and child ability units to begin testing. The algorithm then adjusts the estimated child ability and slightly adjusts the item difficulty units based on the response of the test and finds the optimal ability level for a student when his pass/rate deviance falls below a target threshold. Here is an image of CAT in action:
+		.col-lg-4.col-lg-offset-1
+			.spacing
+			h4 Project Details
+			.hline
+			p
+				b Name:
+				| PreTest.me
+			p
+				b Author:
+				| Owen Chen
+			p
+				b Categories:
+				| Learning Algorithms, 
+			p
+				b Tagged:
+				| Flat, UI, Education
+			p
+				b Website:
+				a(href='https://github.com/BrowenChen/EducationAlgorithms/blob/master/cat.js')  Github Repo of Algorithm
+
+
+.container.mt
+	.row
+		.col-lg-5.col-lg-offset-1
+			p Testing
+		.col-lg-4.col-lg-offset-1
+			p testing two
+
