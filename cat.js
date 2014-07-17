@@ -131,7 +131,7 @@ var itemBank = [
 var candidateBank = [
 	{
 		name: "Owen",
-		ability: 25
+		ability: 18
 	},
 
 	{
@@ -270,14 +270,14 @@ var begin = function(nextCandidate){
 		// St 16) Compare (measure) with pass/fail standard standardError. Assess
 
 		if ((measure - standardError) > testStandard){
-			console.log("Pass");
+			console.log("Passed the testStandard");
 		}
 
 		else if ((measure + standardError) < testStandard){
-		 	console.log("Fail");
+		 	console.log("Failed the testStandard");
 		}	
 
-		console.log("Final difficulty of the child is " + D);
+		console.log("Final ability level of the child is " + measure);
 		//Check for standard Error.
 
 		// else if ((testStandard - standardError) < measure < (testStandard + standardError)){
@@ -302,8 +302,11 @@ Returns the item with the closest difficulty as the passed in parameter D.
 var findItemInBank = function(D){
 	minVal = 999;
 	minItem = "";
+	console.log(" the D value is " + D);
+
 	for (item in itemBank){
 		var difference = Math.abs(D - itemBank[item].difficulty)
+		console.log("The difference is " + difference);
 		if (difference < minVal){
 			minVal = difference;
 			minItem = itemBank[item];
