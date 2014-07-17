@@ -10,9 +10,9 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
+    when('/compAdapt', {
+      templateUrl: 'partials/compAdapt',
+      controller: 'CatCtrl'
     }).
     when('/view2', {
       templateUrl: 'partials/partial2',
@@ -22,8 +22,16 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/land',
       controller: 'LandCtrl'
     }).    
+    when('/spacedRep', {
+      templateUrl: 'partials/spacedRep',
+      controller: 'AlgCtrl'
+    }).        
+    when('/itemRes', {
+      templateUrl: 'partials/itemResponse',
+      controller: 'AlgCtrl'
+    }).    
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/view2'
     });
 
   $locationProvider.html5Mode(true);
