@@ -11,6 +11,10 @@ inputs: Test bank, json file with card data
 		- difficulty
 		- subject/section
 
+Example: 10 Items, 1 Parameter
+		2 Examinees
+		Test Length: 5		
+
 	
 Algorithm
 
@@ -68,7 +72,10 @@ var readlineSync = require('readline-sync');
 var D = 0,
 	L = 0,
 	H = 0,
-	R = 0;
+	R = 0,
+	testStandard = 0, //Pass/Fail Standard
+	tLength = 0;
+
 
 var student = {
 	name: "Owen",
@@ -76,6 +83,7 @@ var student = {
 }; //Student Object
 var item = "";
 
+var testLength = 5; //Test length
 // var itemBank = []; // Item Bank to choose from
 // var candidateBank = []; //student Test bank
 
@@ -144,17 +152,31 @@ Set user's D to the actual D value of that item.
 @param User
 **/
 
-var begin = function(){
-	// St 1) Prompt for next candidate 
-	var nextCandidate = candidateBank[0];
+var newCandidate = function(){
 
-	D = 0;
+	//Resetting
+
+    D = 0;
 	L = 0;
 	H = 0;
-	R = 0;
+	R = 0;	
+
+	var nextCandidate = candidateBank[0];
+	
+	D = nextCandidate.ability
+	testStandard = 5; // Initializing testStandard
+	tLength = testLength;
+
+	// console.log("Test length " + tLength);
+
+	begin(nextCandidate);
+}
+
+var begin = function(nextCandidate){
+	// St 1) Prompt for next candidate 
 
 	// St 2) Find closest difficulty
-	var closestItem = findItemInBank(nextCandidate.ability);
+	var closestItem = findItemInBank(D);
 	// St 3) Set D at the actual calibration of that item
 	D = closestItem.difficulty;
 	console.log(D);
@@ -182,14 +204,51 @@ var begin = function(){
 		console.log(D);
 	}
 
-	// St 10) If response is correct, D = D + 2/L
+	// St 10-11) If response is correct, D = D + 2/L
 	if (score == 1){
 		console.log("Correct ");
 		D = D + 2/L;
 		R += 1; // Update right count
 	}
-	
 
+	// St 12) If not ready to decide to pass fail, repeat
+	if (tLength > 0){
+		console.log("Haven't finished testing yet");
+		tLength -= 1;
+		console.log(tLength + " more questions to go");
+
+		begin(nextCandidate);
+	}
+
+	// St 13) If ready, calcualte wrong answers 
+	if (tLength <= 0){
+		console.log("Ready to score pass or fail");
+
+		var W = L - R; //Caculate wrong answers
+
+		// St 14) Estimate measure
+		// Compare measure variable to standard. Measure = H/L + log(R/W)
+		var measure = H/L + Math.log(R/W);
+
+		// St 15) Estimate standard error of the mesaure
+		var standardError = (L/(R*W));
+
+
+		// St 16) Compare (measure) with pass/fail standard standardError. Assess
+
+		if ((testStandard - standardError) < measure < (testStandard + standardError)){
+			console.log("Repeat Step 2");
+		}
+		else if ((measure - standardError) > testStandard){
+			console.log("Pass");
+		}
+
+		else if ((measure + standardError) < testStandard){
+		 	console.log("Fail");
+		}		
+		
+	}
+	
 
 
 };
@@ -225,7 +284,7 @@ Gives the user the question, recieves a response.
 
 var administerItem = function(item){
 	var question = item.question;
-	return getUserPrompt(question, item); //Asynchronous call
+	return getUserPrompt(question); //Asynchronous call
 
 }
 
@@ -236,15 +295,10 @@ var administerItem = function(item){
 Prompts the user with the question. Synchronous version with readlineSync
 **/
 
-var getUserPrompt = function(question, item){
-
+var getUserPrompt = function(question){
 	var answer = readlineSync.question(question + '\n' );
-
 	console.log("Your answer is: \n");
-
 	return answer;
-
-	 
 }
 
 
@@ -289,7 +343,7 @@ var IRTAlgorithm = function(){
 
 // ======================TEST CASES========================= //
 
-begin();
+newCandidate();
 
 
 
