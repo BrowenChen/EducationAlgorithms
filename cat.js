@@ -79,7 +79,7 @@ var D = 0,
 
 var student = {
 	name: "Owen",
-	ability: 25,
+	ability: 18,
 }; //Student Object
 var item = "";
 
@@ -92,22 +92,39 @@ var itemBank = [
 	{
 		question: "test1",
 		answer: "1",
-		difficulty: 9
+		difficulty: 22
 	},
 	{
 		question: "test3",
 		answer: "1",		
-		difficulty: 92
+		difficulty: 21
 	},
 	{
 	  	question: "test4: This is a question",
 	  	answer: "1",		
-	  	difficulty: 19
+	  	difficulty: 20
 	},		
+	{
+	  	question: "test5: This is a question",
+	  	answer: "1",		
+	  	difficulty: 19
+	},	
+
+	{
+	  	question: "test7: This is a question",
+	  	answer: "1",		
+	  	difficulty: 18
+	},	
+	{
+	  	question: "test8: This is a question",
+	  	answer: "1",		
+	  	difficulty: 17
+	},	
+
 	{
 		question: "test2",
 		answer: "1",	
-		difficulty: 14
+		difficulty: 16
 	}
 ]; // Item Bank to choose from
 
@@ -223,29 +240,50 @@ var begin = function(nextCandidate){
 	// St 13) If ready, calcualte wrong answers 
 	if (tLength <= 0){
 		console.log("Ready to score pass or fail");
+		console.log(L);
+		console.log(R);
 
+		console.log("L and R");
 		var W = L - R; //Caculate wrong answers
+		
+		
 
 		// St 14) Estimate measure
 		// Compare measure variable to standard. Measure = H/L + log(R/W)
-		var measure = H/L + Math.log(R/W);
+
+
+		//Check if a variable is zero and set Measure. Cant log(0)
+		if (L == 0 || R == 0){
+			var measure = H/L;
+		}
+		else {
+			var measure = H/L + Math.log(R/W);
+		}
+
 
 		// St 15) Estimate standard error of the mesaure
 		var standardError = (L/(R*W));
 
+		console.log(measure + " Measure is ");
+		console.log(standardError + " StandardError is ");
 
 		// St 16) Compare (measure) with pass/fail standard standardError. Assess
 
-		if ((testStandard - standardError) < measure < (testStandard + standardError)){
-			console.log("Repeat Step 2");
-		}
-		else if ((measure - standardError) > testStandard){
+		if ((measure - standardError) > testStandard){
 			console.log("Pass");
 		}
 
 		else if ((measure + standardError) < testStandard){
 		 	console.log("Fail");
-		}		
+		}	
+
+		console.log("Final difficulty of the child is " + D);
+		//Check for standard Error.
+
+		// else if ((testStandard - standardError) < measure < (testStandard + standardError)){
+		//	console.log("Repeat Step 2");
+		// }
+	
 		
 	}
 	
