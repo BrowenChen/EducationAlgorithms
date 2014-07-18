@@ -45,6 +45,14 @@
 								form
 									| Test Length : 
 									span.badge {{testLength}}
+
+								alert.alert-success(role="alert") {{question}}
+
+								form
+									.form-group
+										input.form-control(type='text', placeholder='Response here..', ng-model='ansData.text')
+									button.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Ans 
+
 									
 
 
