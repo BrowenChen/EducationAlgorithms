@@ -85,8 +85,10 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
     $scope.title = "PreTest";
 
+    $scope.promptWait = true;
 
     $scope.formData = {};
+    $scope.ansData = {};
 
     // when landing on the page, get all todos and show them
     $http.get('/api/todo')
@@ -135,6 +137,11 @@ angular.module('myApp.controllers', []).
 
     $scope.testLength = 5; //Amount of questions to ask
 
+    $scope.question = "No Question Yet";
+    $scope.response = "";
+    $scope.closestItem = null;
+    $scope.nextCandidate = null;
+
 // DUMMY DATA *************************************************
     $scope.itemBank = [ 
       {
@@ -170,7 +177,7 @@ angular.module('myApp.controllers', []).
       },  
 
       {
-        question: "test2",
+        question: "test2: What is the square root of pie",
         answer: "1",  
         difficulty: 16
       }
@@ -198,26 +205,28 @@ angular.module('myApp.controllers', []).
       this.H = 0;
       this.R = 0;
 
-      var nextCandidate = this.candidateBank[0];
-      this.D = nextCandidate.ability;
+      this.nextCandidate = this.candidateBank[0];
+      this.D = this.nextCandidate.ability;
       this.testStandard = 5; // Initializing testStandard
-      this.testLength = this.testLength;
+      // this.testLength = this.testLength;
       alert(this.D);
-      this.begin(nextCandidate);
+      this.begin(this.nextCandidate);
     };
 
     $scope.begin = function(nextCandidate){
       alert(nextCandidate.name);
-      var closestItem = this.findItemInBank(this.D);
+      this.closestItem = this.findItemInBank(this.D);
       // this.D = closestItem.difficulty;
       // alert("asdasdasd");
       // alert(this.D);
       // alert(closestItem.difficulty);
 
-      this.D = closestItem.difficulty;
+      this.D = this.closestItem.difficulty;
 
-      // var response = this.administerItem(closestItem);
+      this.response = this.administerItem(this.closestItem);
 
+      //Dont continue until we get a response 
+      // CONTINUE STEPS IN GETUSERPROMPT==================================
 
     }
 
@@ -242,18 +251,96 @@ angular.module('myApp.controllers', []).
       return minItem;
     }
 
-    // $scope.administerItem = function(item){
-    //   var question = item.question;
-    //   alert(question);
-    //   return getUserPrompt(question);
-    // }
+    $scope.administerItem = function(item){
+      
+      
+      this.question = item.question;
+      alert(this.question);
+      alert("Waiting for response");
+      // return null
+      // var answer = this.getUserPrompt();
+      
+    }
 
-    // $scope.getUserPrompt = function(question){
-    //   var answer = 
+    $scope.getUserPrompt = function(){
+      if (this.closestItem == null){
+        alert("Start testing first");
+        //Disable this button
+      }
+
+      else {
+        this.response = $scope.ansData.text;
+        alert(this.response);
+
+
+        // CONTINUE HERE ============================
+
+        //1 or 0
+
+        var score = this.scoreResponse(this.response, this.closestItem) 
+        alert(score);
+
+        this.L += 1;
+
+        this.H = this.H + this.D;
+
+        if (score == 0){
+          this.D = this.D - 2/(this.L);
+          // alert("score incorrect  and " + this.D);
+        }
+
+        if (score == 1){
+          this.D = this.D + 2/(this.L);
+          this.R += 1;
+        }
+
+        if (this.testLength > 0){
+          this.testLength -= 1;
+
+          //Test again
+          this.begin(this.nextCandidate);
+
+
+        }
+
+        if (this.testLength <= 0){
+          alert("ready to give final ability level");
+          var W = this.L - this.R;
+
+        //Check if a variable is zero and set Measure. Cant log(0)
+        if (this.L == 0 || this.R == 0){
+          var measure = this.H/this.L;
+        }
+        else {
+          var measure = this.H/this.L + Math.log(this.R/W);
+        }
+
+        // var standardError 
+
+        alert("Final ability level of the child is " + measure);
+
+        //Maybe change the child ability level
+
+
+        }
+
+        return null;
+      }
 
     //   return answer;
-    // }
+    }
 
+    $scope.scoreResponse = function(res, cItem){
+      alert(cItem.answer);
+      if (res == cItem.answer){
+        alert("Correct");
+        return 1
+      }
+      else {
+        return 0
+      }
+      
+    }
 
 
 //Algorithm from CAT ending here ======================================================================
