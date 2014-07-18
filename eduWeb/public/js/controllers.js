@@ -141,6 +141,8 @@ angular.module('myApp.controllers', []).
     $scope.response = "";
     $scope.closestItem = null;
     $scope.nextCandidate = null;
+    $scope.childAbility = 1;
+    $scope.ability = false;
 
 // DUMMY DATA *************************************************
     $scope.itemBank = [ 
@@ -317,9 +319,12 @@ angular.module('myApp.controllers', []).
 
         // var standardError 
 
-        alert("Final ability level of the child is " + measure);
+        alert("Final ability level of the child is " + measure + " and D is " + this.D);
+
 
         //Maybe change the child ability level
+        this.ability = true; 
+        this.childAbility = measure;
 
 
         }
