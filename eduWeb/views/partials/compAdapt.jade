@@ -15,70 +15,18 @@
 //-					| Computerized Adaptive Testing
 //-				a(href='http://github.com/browenchen').btn.btn-info GITHUB
 
+br
+br
 
-
-.container.mt
-	.row
-		.col-lg-10.col-lg-offset-1.centered
-			.container.jumbotron
-				.jumbotron.text-left
+#catWrap
+	#cat-wrapper.container.centered(style="opacity:.90;")
+		.row
+			.container.col-md-10.col-md-offset-1.jumbotron.centered(style="background-color:#2b434f;")
+				#containerHeader.text-left
 					h1 
-						| CAT
-						span.label.label-info  {{title}}.me 
-				#todo-list.row
-					.col-sm-3.text-center
-						form
-							.form-group
-								input.form-control.input-lg.text-center(type='text', placeholder='Add an item here', ng-model='formData.text')
-							button.btn.btn-primary.btn-lg(type='submit', ng-click='createTodo()') Add
-				
-					.col-sm-3
-						.checkbox(ng-repeat='todo in todos')
-							label 
-								input(type='checkbox', ng-click='deleteTodo(todo._id)')
-								| {{todo.text}}
-				
-					//- .col-sm-6
-					//-	button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
-					//-	form
-					//-		| Test Length : 
-					//-		span.badge {{testLength}}
-
-					//-	alert.alert-success(role="alert") {{question}}
-
-					//-	form
-					//-		.form-group
-					//-			input.form-control(type='text', placeholder='Response here..', ng-model='ansData.text')
-					//-		button.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Ans 
-
-				.row
-					.col-sm-4
-						button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
-						br
-						br
-						form
-							| Test Length Remaining: 
-							span.badge {{testLength}}							
-						form(role='form')
-								.form-group.input-group
-										span.input-group-addon Question
-										input.alert.alert-success.form-control(type='text', placeholder='{{question}}')
-									.form-group.input-group
-										input.form-control(type='text', placeholder='Your response here..', ng-model='ansData.text')
-										span.input-group-addon.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Submit 
-						.nav.nav-pills
-							.active
-								.span.badge.pull-right Final Ability : {{childAbility}}
-
-									
-
-
-
-
-
-									
-
-
+						span(style="color: white;") CAT
+						span.label.label-info  {{title}}.me		
+						hr                                 			
 	
 .container.mt
 	.row
@@ -142,4 +90,71 @@
 			p Testing
 		.col-lg-4.col-lg-offset-1
 			p testing two
+
+
+
+
+#catWrap
+	#cat-wrapper.container.centered(style="opacity:.90;")
+		.row
+			.col-lg-10.col-lg-offset-1.centered
+				.carousel-inner
+					.container.jumbotron(style="background-color:#2b434f;")
+						.jumbotron.text-left
+							h1 
+								| CAT
+								span.label.label-info  {{title}}.me 
+						#todo-list.row
+							.col-sm-4.well
+								button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
+								br
+								br
+								form
+									| Test Length Remaining: 
+									span.badge {{testLength}}							
+								form(role='form')
+										.form-group.input-group
+												span.input-group-addon.btn.btn-primary Question
+												input.form-control(type='text', placeholder='{{question}}')
+											.form-group.input-group
+												input.form-control(type='text', placeholder='Your response here..', ng-model='ansData.text')
+												span.input-group-addon.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Submit 
+								.nav.nav-pills
+									.active
+										.span.badge.pull-right Final Ability : {{childAbility}}
+
+							.col-sm-3.text-center.well
+								form
+									.form-group
+										input.form-control.input-lg.text-center(type='text', placeholder='Add an item here', ng-model='formData.text')
+									button.btn.btn-primary.btn-lg(type='submit', ng-click='createTodo()') Add
+						
+							.col-sm-5.text-center.well
+								.checkbox(ng-repeat='todo in todos')
+									label 
+										input(type='checkbox', ng-click='deleteTodo(todo._id)')
+										| {{todo.text}}
+					
+						//- .col-sm-6
+						//-	button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
+						//-	form
+						//-		| Test Length : 
+						//-		span.badge {{testLength}}
+
+						//-	alert.alert-success(role="alert") {{question}}
+
+						//-	form
+						//-		.form-group
+						//-			input.form-control(type='text', placeholder='Response here..', ng-model='ansData.text')
+						//-		button.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Ans 
+
+					.row
+
+										
+
+
+
+
+
+									
 
