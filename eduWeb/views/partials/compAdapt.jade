@@ -26,8 +26,32 @@ br
 					h1 
 						span(style="color: white;") CAT
 						span.label.label-info  {{title}}.me		
-						hr                                 			
-	
+						hr    
+
+				#containerBody.text-left
+
+						.row 
+							.col-md-4
+								button.btn.btn-primary(ng-click='newCandidate()') Start Testing 
+
+							.col-md-8
+								form
+									span(style="color:white;") Test Length Remaining: 
+									span.badge {{testLength}}	
+						.row
+							br
+							br
+							form(role='form')
+									.form-group.input-group
+											span.input-group-addon.btn.btn-primary Question
+											input.form-control(type='text', placeholder='{{question}}')
+										.form-group.input-group
+											input.form-control(type='text', placeholder='Your response here..', ng-model='ansData.text')
+											span.input-group-addon.btn.btn-primary(type='submit', ng-click='getUserPrompt()') Submit 
+							.nav.nav-pills
+								.active
+									.span.badge.pull-right Final Ability : {{childAbility}}
+		
 .container.mt
 	.row
 		//- .col-lg-10.col-lg-offset-1.centered
