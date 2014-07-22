@@ -10,6 +10,7 @@ inputs: Test bank, json file with card data
 	Card attributes:
 		- difficulty
 		- subject/section
+		- Answer
 
 Example: 10 Items, 1 Parameter
 		2 Examinees
@@ -59,6 +60,7 @@ A Methodology Whose Time Has Come.
 var fs = require('fs');
 var readline = require('readline');
 var readlineSync = require('readline-sync');
+var itemResponse = require('/itemResponse');
 
 
 //JSON card bank
@@ -184,8 +186,6 @@ var newCandidate = function(){
 	testStandard = 5; // Initializing testStandard
 	tLength = testLength;
 
-	// console.log("Test length " + tLength);
-
 	begin(nextCandidate);
 }
 
@@ -240,10 +240,7 @@ var begin = function(nextCandidate){
 	// St 13) If ready, calcualte wrong answers 
 	if (tLength <= 0){
 		console.log("Ready to score pass or fail");
-		console.log(L);
-		console.log(R);
 
-		console.log("L and R");
 		var W = L - R; //Caculate wrong answers
 		
 		
@@ -264,8 +261,8 @@ var begin = function(nextCandidate){
 		// St 15) Estimate standard error of the mesaure
 		var standardError = (L/(R*W));
 
-		console.log(measure + " Measure is ");
-		console.log(standardError + " StandardError is ");
+		console.log(" Measure is " + measure  );
+		console.log(" StandardError is " + standardError );
 
 		// St 16) Compare (measure) with pass/fail standard standardError. Assess
 
@@ -302,11 +299,11 @@ Returns the item with the closest difficulty as the passed in parameter D.
 var findItemInBank = function(D){
 	minVal = 999;
 	minItem = "";
-	console.log(" the D value is " + D);
+	// console.log(" the D value is " + D);
 
 	for (item in itemBank){
 		var difference = Math.abs(D - itemBank[item].difficulty)
-		console.log("The difference is " + difference);
+		// console.log("The difference is " + difference);
 		if (difference < minVal){
 			minVal = difference;
 			minItem = itemBank[item];
@@ -366,19 +363,30 @@ var scoreResponse = function(response, item){
 };
 
 
-/**
-@IRTAlgorithm
-Function is Pi(Theta) = P(Xi = 1 | Theta) = ((Theta - Di) / (1 + (Theta - Di))).
+/*
+@raschModel
+@params itemDifficulty latentAbility
 
-Theta = probability of getting question i correct
-Xi = Question i
-Di = difficulty of question i
+Person parameter is latentAbility
 
-**/
+Item Response Theory Model for each item. One Parameter Model, Rasch. P(theta) is assessment of a learners probability of attaining a correct
+answer to this specific problem given an ability level. 
 
+Rasch Model IMplementation
+Equation => exp(theta - Bi) / 1 + exp(theta - Bi)
 
-var IRTAlgorithm = function(){
+References:
+Book Rasch Models
 
+===========================TEST EXAMPLES===========================
+
+itemDif = 
+
+*/
+	
+var raschModel = function(itemDifficulty, latentAbility){
+	result = ( Math.exp(latentAbility - itemDifficulty) / (1 + Math.exp(latentAbility - itemDifficulty)) ) 
+	return result;
 }
 
 
