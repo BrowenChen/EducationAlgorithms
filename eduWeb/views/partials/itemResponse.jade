@@ -1,14 +1,34 @@
+br
+br
+br
+#IRTWrap
+	#irt-wrapper.container.centered(style="opacity:.80;")
+		.row
+			#srJumbo.container.col-md-10.col-md-offset-1.jumbotron.centered(style="background-color:#2b434f;")
+				#containerHeader.text-left
+					h1 
+						span(style="color: white;") IRT
+						span.label.label-info  {{title}}.me		
+						hr    
+
+				#containerBody.text-left
+
+						.row 
+							.col-md-4
+								button.btn.btn-primary(ng-click='') Calculate Proficiency
+
+							.col-md-8
+								form
+									span(style="color:white;") Percentage
+									span.badge 89{{}}%
+						.row
+		
+									
+
+
 .container.mt
 	.row
-		.col-lg-10.col-lg-offset-1.centered
-			.carousel-inner
-				.item.active
-					.container.jumbotron
-						.btn.btn-info Click here
-				.item
-					img(src='assets/img/portfolio/single02.jpg', alt='')
-				.item
-					img(src='assets/img/portfolio/single03.jpg', alt='')
+
 		.col-lg-5.col-lg-offset-1
 			.spacing
 			h4 Item Response Theory
@@ -33,7 +53,7 @@
 			.hline
 			p
 				b Name:
-				| Assess.me
+				| Predict.me
 			p
 				b Author:
 				| Owen Chen
@@ -45,4 +65,4 @@
 				| Flat, UI, Education
 			p
 				b Website:
-				a(href='http://github.com/browenchen')  http://github.com/browenchen/webRecGenerator
+				a(href='https://github.com/BrowenChen/EducationAlgorithms/blob/master/itemResponse.js')  https://github.com/BrowenChen/EducationAlgorithms/blob/master/itemResponse.js
