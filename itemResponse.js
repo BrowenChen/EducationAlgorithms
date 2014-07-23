@@ -71,15 +71,13 @@ var threeParamModel = function(itemDifficulty, latentAbility, discrimination, ps
 	denominator = 1 + (Math.exp(-1.7 * (discrimination) * (latentAbility - itemDifficulty)));
 
 	result = psuedoChance + (numerator / denominator);
-
 	return result;
-
 }
 
 
 
 
-
+// ================ ITEM BANK CALIBRATION UPDATE ========================
 
 /*
 @maximumLikelihood
@@ -98,6 +96,7 @@ Maximum Likelihood Estimator, MLE of theta.
 console.log("1 Parameter IRT");
 console.log(raschModel(3, 2));
 
-console.log("2 parameter IRT with no discrimination");
+console.log("2 parameter IRT with variable discrimination");
 console.log(brinbaumModel(3,2, 1));
 
+console.log("3 parameter IRT ");

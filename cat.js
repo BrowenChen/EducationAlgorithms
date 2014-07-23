@@ -19,6 +19,9 @@ Example: 10 Items, 1 Parameter
 	
 Algorithm
 
+On startup:
+Take two random items and set initial child ability to be the average of the two. 
+
 1. Request next candidate. Set D=0, L=0, H=0, and R=0. 
 	D = Item difficulty. L = items taken. H = difficultiesTotal R= response score
 2. Find next item near difficulty, D.
@@ -36,12 +39,9 @@ Algorithm
 5. Add the difficulties used: H = H + D
 	Global variable totalDifficulties
 6. If response incorrect, update item difficulty: D = D - 2/L
-
 7. If response correct, update item difficulty: D = D + 2/L
-
 8. If response correct, count right answers: R = R + 1
 9. If not ready to decide to pass/fail, Go to step 2.
-
 10. If ready to decide pass/fail, calculate wrong answers: W = L - R
 11. Estimate measure: B = H/L + log(R/W)
 12. Estimate standard error of the measure: S = [L/(R*W)]
@@ -51,6 +51,16 @@ Algorithm
 16. If(B+S)<T,thenfail.
 
 
+
+Scale item difficulties from 1-100 down to -3 to 3 logits in float for the Rasch model. Use Logits for unit measurements. 
+Logits = log( Probability of success / probability of failure) =  ability - difficulty
+
+When child ability and item difficulty are the same, then the learner has a 50% probability of getting the correct answer. 
+Log-odds model = RaschModel / (1 - raschModel). 
+
+
+
+ 
 References:
 - Computer-Adaptive Testing:
 A Methodology Whose Time Has Come.
@@ -60,7 +70,7 @@ A Methodology Whose Time Has Come.
 var fs = require('fs');
 var readline = require('readline');
 var readlineSync = require('readline-sync');
-var itemResponse = require('/itemResponse');
+// var itemResponse = require('/itemResponse');
 
 
 //JSON card bank
@@ -204,6 +214,14 @@ var begin = function(nextCandidate){
 
 	// St 6) Score this response. 1 = right, 0 - wrong.
 	
+	//======== ADDING IN IRT PROBABILITY
+
+	var IRTProbability = raschModel(D, nextCandidate.ability);
+	console.log("item difficulty" + D + "candidate ability " + nextCandidate.ability);
+	console.log("Probability " + IRTProbability);
+
+	//======== ADDING IN IRT PROBABILITY
+	
 	var score = scoreResponse(response, closestItem);
 	console.log(score);
 
@@ -265,6 +283,8 @@ var begin = function(nextCandidate){
 		console.log(" StandardError is " + standardError );
 
 		// St 16) Compare (measure) with pass/fail standard standardError. Assess
+
+		//Is the estimate standard error small enough to stop the test?
 
 		if ((measure - standardError) > testStandard){
 			console.log("Passed the testStandard");
@@ -378,9 +398,6 @@ Equation => exp(theta - Bi) / 1 + exp(theta - Bi)
 References:
 Book Rasch Models
 
-===========================TEST EXAMPLES===========================
-
-itemDif = 
 
 */
 	
@@ -390,10 +407,23 @@ var raschModel = function(itemDifficulty, latentAbility){
 }
 
 
+
+/*
+@logOddsModel
+@param raschModel
+
+Returns logit units to estimate learner probability
+Equation: e ^ ( probability of success / probability of failure) => e ^ (raschModel) / (1 - raschModel)
+
+*/
+
+
 // ======================TEST CASES========================= //
 
-newCandidate();
-
+// newCandidate();
+console.log(raschModel(-2, 0));
+console.log(raschModel(0,-1));
+console.log(raschModel(0,3));
 
 
 
