@@ -22,7 +22,7 @@ br
 						.row
 							br
 							br
-							button.btn.btn-primary Recommend Me
+							button.btn.btn-primary(style="border-radius: 15px;") Recommend Me
 							br
 							br
 							//- span(style="color: white;") {{showSite}}								
@@ -33,7 +33,7 @@ br
 								slider.span2(model='teste', ng-model='sliderVal', type='text', value='', data-slider-min='0', data-slider-max='5', data-slider-step='1', data-slider-orientation='horizontal', data-slider-selection='after', data-slider-tooltip='hide')
 								br
 								br
-								input.btn.btn-sm.btn-primary(type='text', placeholder='Click to submit', value="{{teste}}", ng-click="response(teste)") {{teste}}
+								input.btn.btn-sm.btn-primary(type='text', placeholder='Click to submit', value="{{teste}}", ng-click="response(teste)", style="border-radius:15px;") {{teste}}
 
 
 							
@@ -42,7 +42,7 @@ br
 					.col-sm-6.col-sm-offset-1
 		
 											
-						section#todoapp
+						section.well(style="background-color: black; border:none; border-radius: 15px; opacity: .9;")
 							header#header
 								section#todo-list.nav.nav-pills.nav-stacked
 									li.toggle(ng-repeat='site in sites | limitTo:4', ng-animate='\'animate\'')
@@ -51,9 +51,9 @@ br
 											.col-xs-1.label
 												input.toggle(type='checkbox', ng-model='todo.completed')
 											.col-xs-11
-												.div(ng-dblclick='deleteSite(site._id)') {{site.text}}
-									hr
-								footer#footer
+												.div(ng-dblclick='deleteSite(site._id)', style="color:silver;") {{site.text}}
+									
+								footer.well(style="border-radius: 15px; opacity: .6;")
 									span#todo-count
 										strong {{sitesRemaining}} sites
 								
@@ -111,26 +111,6 @@ br
 			p
 				b Website:
 				a(href='https://github.com/BrowenChen/WebRecGenerator')  http://github.com/browenchen/webRecGenerator
-
-.div(ng-init='names=[\'Igor Minar\', \'Brad Green\', \'Dave Geddes\', \'Naomi Black\', \'Greg Weber\', \'Dean Sofer\', \'Wes Alvaro\', \'John Scott\', \'Daniel Nadasi\'];')
-	.well(style='margin-top: 30px; width: 200px; overflow: hidden;')
-		form.form-search
-			.input-append
-				input.search-query(type='text', ng-model='search', style='width: 80px;')
-				button.btn(type='submit') Search
-			ul.nav.nav-pills.nav-stacked
-				li(ng-animate='\'animate\'', ng-repeat='name in names | filter:search')
-					a(href='#')  {{name}} 
-
-
-
-script.
-	$('#foo').slider()
-		.on('slide', function(ev){
-			$('#bar').val(ev.value);
-		});
-
-
 
 
 
