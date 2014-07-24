@@ -18,12 +18,45 @@ angular.module('myApp.controllers', []).
     });
 
   }).
+
+
+  controller('IRTCtrl', function ($scope, $http) {
+    // $scope.name = "Owen";
+
+    $scope.title = "Predict";
+
+  }).
+
   controller('AlgCtrl', function ($scope, $http) {
     // write Ctrl here
+
+
+    //Slider Controls
+    $scope.value = 10;
+    $scope.value2 = 10;
+
+    $scope.sliderVal = 2;
+
+    $scope.change = function() {
+
+        console.log("change", this.value);
+        
+    };
+    $scope.response = function(interest){
+      this.sliderVal = interest;
+      alert("interest level submitted");
+    }
+    //Slider Controls
+
+
+
+
+
     $scope.title = "WebRec";
     $scope.sites = [];
     $scope.formData = {};
 
+    $scope.showSite = "www.google.com";
 
     $scope.testSite = {
     "name": "http://deadspin.com",
@@ -72,6 +105,12 @@ angular.module('myApp.controllers', []).
         });
     };    
 // ============== SITES MODEL MONGO ====================
+
+
+// ======= SPACED REPITITON ALOGIRHTM HERE  ======= 
+
+
+
 
 
 
@@ -141,7 +180,7 @@ angular.module('myApp.controllers', []).
     $scope.response = "";
     $scope.closestItem = null;
     $scope.nextCandidate = null;
-    $scope.childAbility = 1;
+    $scope.childAbility = "Not Tested";
     $scope.ability = false;
 
 // DUMMY DATA *************************************************
@@ -179,7 +218,7 @@ angular.module('myApp.controllers', []).
       },  
 
       {
-        question: "test2: What is the square root of pie",
+        question: "test2: What is the sqrt of pie",
         answer: "1",  
         difficulty: 16
       }
@@ -189,7 +228,7 @@ angular.module('myApp.controllers', []).
     $scope.candidateBank = [
       {
         name: "Owen",
-        ability: 18
+        ability: 19
       },
 
       {
@@ -239,10 +278,15 @@ angular.module('myApp.controllers', []).
         var minItem = "";
 
         var difference = Math.abs(D - this.itemBank[item].difficulty)
+        console.log(difference);
+        console.log("The difference");
 
         if (difference < minVal){
+          console.log("This is smaller");
           minVal = difference;
           minItem = this.itemBank[item];
+          console.log("The min val is " + minVal);
+          console.log(minItem.question);
         }
 
       }
@@ -272,15 +316,16 @@ angular.module('myApp.controllers', []).
 
       else {
         this.response = $scope.ansData.text;
-        alert(this.response);
+        // alert(this.response);
 
+        this.ansData = {};
 
         // CONTINUE HERE ============================
 
         //1 or 0
 
         var score = this.scoreResponse(this.response, this.closestItem) 
-        alert(score);
+        // alert(score);
 
         this.L += 1;
 
@@ -307,24 +352,37 @@ angular.module('myApp.controllers', []).
 
         if (this.testLength <= 0){
           alert("ready to give final ability level");
+          console.log(this.R);
           var W = this.L - this.R;
+          console.log(" W, H and L, values. ")
+          console.log(W);
+          console.log(this.H);
+          console.log(this.L);
 
-        //Check if a variable is zero and set Measure. Cant log(0)
-        if (this.L == 0 || this.R == 0){
-          var measure = this.H/this.L;
-        }
-        else {
-          var measure = this.H/this.L + Math.log(this.R/W);
-        }
+          //Check if a variable is zero and set Measure. Cant log(0)
+          if (this.L == 0 || this.R == 0){
+            alert("Child ability will be infinity")
+            var measure = this.H/this.L;
+          }
+          else {
+            var measure = this.H/this.L + Math.log(this.R/W);
+          }
 
-        // var standardError 
+          // var standardError 
+          if (W == 0){
+            alert("You need to retest");
+            this.childAbility = "Re-test, you either got 100% or 0%"
+          }
+          else if (W != 0){
+            this.ability = true; 
+            this.childAbility = measure;
+          }
 
-        alert("Final ability level of the child is " + measure + " and D is " + this.D);
+          alert("Final ability level of the child is " + measure + " and D is " + this.D);
 
 
-        //Maybe change the child ability level
-        this.ability = true; 
-        this.childAbility = measure;
+          //Maybe change the child ability level
+
 
 
         }
@@ -336,7 +394,7 @@ angular.module('myApp.controllers', []).
     }
 
     $scope.scoreResponse = function(res, cItem){
-      alert(cItem.answer);
+      console.log(cItem.answer);
       if (res == cItem.answer){
         alert("Correct");
         return 1
