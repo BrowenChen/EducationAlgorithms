@@ -1,4 +1,6 @@
+
 br
+
 br
 #srWrap
 	#sr-wrapper.container.centered(style="opacity:.90;")
@@ -12,47 +14,53 @@ br
 				.row
 					.col-sm-5.text-center
 						#leftTodo
+						
 							form#todo-form(ng-submit='createSite()')
 								input#new-todo(placeholder='Add Site Here', ng-model='formData.text', autofocus='')
 
-						form
-
-
-							br
-							br
-							//- button.btn.btn-primary.btn-lg(type='submit', ng-click='createSite()') Add
+								//- button.btn.btn-primary.btn-lg(type='submit', ng-click='createSite()') Add
 						.row
-							button.btn.btn-primary Recommend
+							button.btn.btn-primary Recommend Me
 							br
 							br
-							span(style="color: white;") {{showSite}} 
+							span(style="color: white;") {{showSite}}								
+							div
+								span(style="color: white;") Interest Level: {{price}}
+								
+								br
+								slider.span2(model='teste', ng-model='sliderVal', type='text', value='', data-slider-min='0', data-slider-max='5', data-slider-step='1', data-slider-orientation='horizontal', data-slider-selection='after', data-slider-tooltip='hide')
+								input.btn.btn-sm.btn-primary(type='text', placeholder='Click to submit', value="{{teste}}", ng-click="response(teste)") {{teste}}
+
+
+							
 
 							//- span(style="color: white;") test
 					.col-sm-6.col-sm-offset-1
 		
 											
 						section#todoapp
-							section#todo-list
-								li.toggle(ng-repeat='site in sites')
+							header#header
+								section#todo-list
+									li.toggle(ng-repeat='site in sites | limitTo:4')
 
-									.row
-										.col-xs-1.label
-											input.toggle(type='checkbox', ng-model='todo.completed')
-										.col-xs-11
-											.div(ng-dblclick='deleteSite(site._id)') {{site.text}}
-								hr
-							footer#footer
-								span#todo-count
-									strong 5 remaining
-							
-								ul#filters
-									li
-										a(ng-class="{selected: location.path() == '/'} ", href='#/') Top
-									li
-										a(ng-class="{selected: location.path() == '/active'}", href='#/active') Recent
-									li
-										a(ng-class="{selected: location.path() == '/completed'}", href='#/completed') Worst																
-					
+										.row
+											.col-xs-1.label
+												input.toggle(type='checkbox', ng-model='todo.completed')
+											.col-xs-11
+												.div(ng-dblclick='deleteSite(site._id)') {{site.text}}
+									hr
+								footer#footer
+									span#todo-count
+										strong 5 remaining
+								
+									ul#filters
+										li
+											a(ng-class="{selected: location.path() == '/'} ", href='#/') Top
+										li
+											a(ng-class="{selected: location.path() == '/active'}", href='#/active') Recent
+										li
+											a(ng-class="{selected: location.path() == '/completed'}", href='#/completed') Worst																
+						
 
 .container.mt
 	.row
@@ -99,3 +107,17 @@ br
 			p
 				b Website:
 				a(href='https://github.com/BrowenChen/WebRecGenerator')  http://github.com/browenchen/webRecGenerator
+
+
+
+
+script.
+	$('#foo').slider()
+		.on('slide', function(ev){
+			$('#bar').val(ev.value);
+		});
+
+
+
+
+
