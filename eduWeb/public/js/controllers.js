@@ -54,6 +54,7 @@ angular.module('myApp.controllers', []).
 
     $scope.title = "WebRec";
     $scope.sites = [];
+    $scope.sitesRemaining = 0;
     $scope.formData = {};
 
     $scope.showSite = "www.google.com";
@@ -74,6 +75,7 @@ angular.module('myApp.controllers', []).
     $http.get('/api/site')
       .success(function(data) {
         $scope.sites = data; //Adding the todos here
+        $scope.sitesRemaining = data.length;
         console.log(data);
       })
       .error(function(data) {
@@ -86,6 +88,7 @@ angular.module('myApp.controllers', []).
         .success(function(data) {
           $scope.formData = {}; // clear the form so our user is ready to enter another
           $scope.sites = data;
+          $scope.sitesRemaining = data.length;
           console.log(data);
         })
         .error(function(data) {
@@ -98,6 +101,7 @@ angular.module('myApp.controllers', []).
       $http.delete('/api/site/' + id)
         .success(function(data) {
           $scope.sites = data;
+          $scope.sitesRemaining = data.length;
           console.log(data);
         })
         .error(function(data) {
