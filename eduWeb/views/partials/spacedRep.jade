@@ -7,22 +7,22 @@ br
 		.row
 			#srJumbo.container.col-md-10.col-md-offset-1.jumbotron.centered(style="background-color:#2b434f;")
 				#containerHeader.text-left
-					h1 
+					h1.animated.fadeIn._1 
 						span(style="color: white;") SR
 						span.label.label-info  {{title}}.me		
 						hr    
 				.row
-					.col-sm-5.text-center
+					.col-sm-5.text-center.animated.fadeIn._2
 						
-					
 						form#todo-form(ng-submit='createSite()')
 							input#new-todo(placeholder='Add A Site Here..', ng-model='formData.text', autofocus='')
-
+							
+							
 								//- button.btn.btn-primary.btn-lg(type='submit', ng-click='createSite()') Add
-						.row
+						.row.animated.fadeIn._3
 							br
 							br
-							button.btn.btn-primary(style="border-radius: 15px;") Recommend Me
+							button.btn.btn-primary(style="border-radius: 15px;", ng-click='remover()') Recommend Me
 							br
 							br
 							//- span(style="color: white;") {{showSite}}								
@@ -39,14 +39,17 @@ br
 							
 
 							//- span(style="color: white;") test
-					.col-sm-6.col-sm-offset-1
+					br
+					
+					.col-sm-6.col-sm-offset-1.animated.fadeIn._4
 		
 											
 						section.well(style="background-color: black; border:none; border-radius: 15px; opacity: .9;")
-							header#header
-								section#todo-list.nav.nav-pills.nav-stacked
-									li.toggle(ng-repeat='site in sites | limitTo:4', ng-animate='\'animate\'')
 
+							header#header
+								section#todo-list.nav.nav-pills.nav-stacked(style="min-height: 200px;")
+									li.toggle(ng-repeat='site in sites | limitTo:3', ng-animate='\'animate\'')
+										
 										.row
 											.col-xs-1.label
 												input.toggle(type='checkbox', ng-model='todo.completed')
@@ -114,3 +117,6 @@ br
 
 
 
+
+
+.div.animated.slideIn._4 Testing 
