@@ -1,18 +1,6 @@
-
-script.
-
-	$('a[href^="#"]').on('click', function(event) {
-
-	var target = $( $(this).attr('href') );
-
-	if( target.length ) {
-	event.preventDefault();
-	$('html, body').animate({
-	scrollTop: target.offset().top
-	}, 1000);
-	}
-
-	});
+script(src="/js/chartData.js")
+script(src="/js/algorithms.js")
+script(src="/js/jQueryFunctions.js")
 
 .row
 	.col-lg-10
@@ -110,16 +98,34 @@ script.
 
 
 
-							#overview.h4 Rasch Model - One parameter IRT
-								bars(data='40')
+							#overview
+								h2.strong Rasch Model - One parameter 
+								br
 								br
 
 
+								#chart
 
 								br
+								br
+
+								#loadButton.button.btn.btn-primary(style="border-radius: 15px;") Load
+								
+								input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;")  
+									| Enter an item difficulty
+
+								br
+								br
+
 								a(href="#top") Back to top &uarr;							
 								br
-							#theAlg.h4 The Algorithm
+
+
+
+
+							#brinbaum.h2 Brinbaum Models
+							p Test									
+							#theAlg.h3 The Algorithm
 							p
 								| We take a body of knowledge, and split it into individual pieces to be studied. Be it concepts in math, science, philosophy, etc, any topic can be broken down into it’s fundamental “atoms” that contribute to the holistic web of knowledge that constitutes a subject.
 								br
@@ -132,7 +138,7 @@ script.
 								| The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner. 
 								br 
 								a(href="#top") Back to top &uarr;
-							#theory.h4 Theory and Mechanics
+							#theory.h3 Theory and Mechanics
 							p
 								| Text here 
 								br
