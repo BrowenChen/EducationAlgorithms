@@ -1,0 +1,19 @@
+h1= title
+#articles
+  - each article in articles
+    div.article
+      div.created_at= article.created_at
+      div.title
+        form( method="post", action="/blog/:id/delete")
+          input(name="_id", type="hidden", value=article._id.toHexString())
+          input(id="delete", value="x", type="submit")
+        form( method="get", action="/blog/:id/edit")
+          input(name ="_id", type="hidden", value=article._id.toHexString())
+          input(id="edit", value="edit", type="submit")
+        a(href="/blog/"+article._id)!= article.title
+        div.body
+          - for (var i = 0; i <= article.body.length; i++) {
+            p= article.body[i] 
+          - }
+#newpost
+  a(href="/blog/new")!= 'new post'

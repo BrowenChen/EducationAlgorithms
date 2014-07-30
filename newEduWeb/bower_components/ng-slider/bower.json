@@ -1,0 +1,44 @@
+{
+  "name": "ng-slider",
+  "version": "0.1.4",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "homepage": "https://github.com/darul75/ng-slider",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darul75/ng-slider.git"
+  },
+  "keywords": [
+    "angular",
+    "slider",
+    "control",
+    "ui"
+  ],
+  "main": [
+    "./dist/ng-slider.min.js",
+    "./dist/css/ng-slider.min.css"
+  ],
+  "main": "",
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-sanitize": "1.2.x",
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  },
+  "authors": [
+    "darul <darul75@gmail.com>"
+  ],
+  "description": "AngularJS directive slider control.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

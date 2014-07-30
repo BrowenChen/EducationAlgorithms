@@ -1,0 +1,9 @@
+h1= title
+form( method="post", action="/blog/:id/save")
+  div#content
+    span title
+    input(type="text", name="title", id="editArticleTitle", value=[title])
+    span body
+    textarea(name="body", id="editArticleBody")= article.body
+    input(type="hidden", name="_id", value=article._id.toHexString())
+    input(type="submit", value="Save")

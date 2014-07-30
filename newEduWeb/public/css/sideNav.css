@@ -1,0 +1,236 @@
+/*	
+  	Side Navigation Menu V2, RWD
+  	===================
+  	License:
+  	http://goo.gl/805sas
+  	===================
+  	Author: @PableraShow
+
+ */
+
+@import url(http://pablogarciafernandez.com/css/reset.css);
+
+/* Typography
+------------------------------------- */
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+
+a:hover { text-decoration: none; }
+
+
+
+/* Structure MOBILE FIRST
+------------------------------------- */
+
+body {
+  background: #f1f1f1;
+  padding: 1em 8% 10em;
+}
+
+	/* Navigation
+	----------------- */
+	
+	.navigation {
+	  height: auto;
+		 width: 100%;
+		 display: block;
+    box-shadow: #D4D4D4 -1px 1px, #D4D4D4 -2px 2px, #D4D4D4 -3px 3px, #D4D4D4 -4px 4px, #D4D4D4 -5px 5px, #D4D4D4 -6px 6px;
+    transform: translate3d(4px, 0px, 0);
+    background-color: #D4D4D4;
+ 
+	}
+
+	.navigation li { width: 100%; }
+
+	.navigation a {
+		  display: block;
+		  padding: 0.5em 0 0.5em 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+		  color: #333;
+		  text-transform: uppercase;
+	}
+	.navigation a:hover {
+		  background-color: #666;
+		  color: #333;
+     box-shadow: -1px 1px, -2px 2px, -3px 3px, -4px 4px;
+      transform: translate3d(4px, -4px, 0);
+      transition: .15s;
+	}
+
+.navigation a > span:after {
+  content: " /";
+  padding-left: 0.2em;
+}
+
+	.navigation li:nth-child(1) a { background-color: #00FF96 ; }
+	.navigation li:nth-child(2) a { background-color: #FF6524 ; }
+	.navigation li:nth-child(3) a { background-color: #FFA300 ; }
+	.navigation li:nth-child(4) a { background-color: #FFCD00 ; }
+	.navigation li:nth-child(5) a { background-color: #F2F600 ; }
+
+	.navigation li:nth-child(1) a:hover,
+	.navigation li:nth-child(2) a:hover,
+	.navigation li:nth-child(3) a:hover,
+	.navigation li:nth-child(4) a:hover,
+	.navigation li:nth-child(5) a:hover { background-color: #666; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 1.5em;
+		  vertical-align: text-top;
+	}
+	svg {
+		  opacity:1;
+		  fill-opacity:1;
+		  fill-rule:nonzero;
+		  vertical-align: top;
+		  fill: #333;
+	}
+
+	.navigation a:hover svg { fill: #333; }
+
+	.navigation span{
+		  display: inline-block;
+		  padding-left: 0.5em;
+	}
+
+	/* END Navigation 
+	----------------- */
+
+
+/* Structure DESKTOP
+------------------------------------- */
+@media only screen and (min-width: 1024px) {
+
+	body { padding: 2em 0 0 4em; }
+
+	header, article, section, footer {
+	  margin: 0 auto;
+	  max-width: 670px;
+	  width: auto;
+	  display: block;
+	}
+
+	header { padding-top: 0; }
+
+	/* Navigation
+	----------------- */
+
+	.navigation {
+	    transition-delay: 0s;
+	    transition-duration: 0.4s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: 0 0;
+    transform: translate3d(0px, 0px, 0);
+	}
+
+	.navigation a:hover {
+	    transition-delay: 0s;
+	    transition-duration: 0.2s;
+	    transition-property: all;
+	    transition-timing-function: line;
+    
+    box-shadow: #303030 -1px 1px, #333 -2px 2px, #2E2E2E -3px 3px, #2B2B2B -4px 4px, #292929 -5px 5px, #262626 -6px 6px;
+    transform: translate3d(6px, 0px, 0);
+	}
+
+	.navigation {
+		  position: fixed;
+	  	left: 0;
+		  top: 0;
+		  bottom: 0;
+		  height: 100%;
+		  width: 4em;
+		  background-color: #333;
+	}
+	.navigation:hover {
+		  position: fixed;
+	  width: 10em;
+	}
+
+	.navigation ul { display: block; }
+
+	.navigation li { display: block; }
+
+	.navigation a {
+		  padding: 0.8em 0.6em 0.8em 1em;
+		  color: #F1F1F1;
+		  border-bottom: 1px solid transparent;
+		  border-top: 1px solid transparent;
+	}
+
+	.navigation li:nth-child(1) a,
+	.navigation li:nth-child(2) a,
+	.navigation li:nth-child(3) a,
+	.navigation li:nth-child(4) a,
+	.navigation li:nth-child(5) a { background-color: transparent; }
+	.navigation a:hover {
+		  display: inline-block;
+		  padding: 0 0 0 1em;
+		  margin: 0;
+		  line-height: 2em;
+		  font-weight: 400;
+	  	width: 6em; 
+	}
+
+	.navigation:hover a {
+		  display: inline-block;
+		  width: 9em;
+		  padding: 0.8em 0 0.8em 1em;
+	}
+	.navigation span { text-indent: -200px; }
+
+  .navigation:hover span {
+		  display: inline-block;
+		  text-indent: 0;
+	}
+	.active { background-color: #F1F1F1; }
+  
+.navigation a > span:after { color: #666; }
+.navigation a:hover > span:after { color: #333; }
+
+	.navigation svg {
+		  width: 30px;
+		  height: 2em;
+		  vertical-align: top;
+	}
+
+	.navigation svg:hover { fill: #333; }
+
+	.home { fill: #00FF96; }
+	.about { fill: #FF6524; }
+	.work { fill: #FFA300; }
+	.lab { fill: #FFCD00; }
+	.contact { fill: #F2F600; }
+
+	/* Menu position on the navigation bar */
+	.menu {
+		  left: 0;
+		  position: fixed;
+		  height: auto;
+		  width: auto;
+	}
+	.menu { top: 0; }
+	/* END Menu position on the navigation bar */
+	
+
+	/* ----------------- 
+		End Navigation */
+
+}
+
+ /* Structure DESKTOP when is 1920px height or more
+------------------------------------- */
+@media only screen and (min-height: 1920px){
+	.navigation:hover { width: 8.592em; }
+	.navigation a {
+		  font-size: 0.9em;
+		  padding: 0.8em 0.8259em 0.8em 1em;
+	}
+
+}

@@ -1,0 +1,98 @@
+body
+  font-family "Helvetica Neue", "Lucida Grande", "Arial"
+  font-size 13px
+  text-align center
+  text-stroke 1px rgba(255, 255, 255, 0.1)
+  color #555
+  width 320px
+  margin 0 auto
+h1, h2
+  margin 30px 0 0 0
+  font-size 22px
+  color #343434
+h1
+  text-shadow 1px 2px 2px #ddd
+  font-size 40px
+a
+	color #1ca1a3
+	text-decoration none
+#articles
+  text-align left
+  margin 0 auto
+  width 320px
+  .article
+    margin 20px
+    .created_at
+        display none
+    .title
+      input#edit
+        border none
+        background transparent
+        float right
+        margin-top 14px
+        font-size 10px
+        color #555
+        cursor pointer
+      input#delete
+        float right
+        margin-top 13px
+        margin-right 10px
+        color #D55B5B
+        border none
+        background transparent
+        cursor pointer
+      a
+        line-height 40px
+      font-weight bold
+      padding-left 20px
+      background-color #d2eced
+      .body
+        background-color #fff3bf
+        padding 20px
+#content
+  margin-top 30px
+#newpost
+  width 320px
+  margin 20px auto
+input#editArticleTitle
+  background-color #D2ECED
+  margin-bottom 10px
+  margin-top 5px
+#editArticleBody
+  margin-top 5px
+  background-color #FFF3BF
+  height 300px
+input#editArticleTitle
+#editArticleBody
+  border 1px solid #f1f1f1
+  min-width 320px
+  text-align left
+#edit
+  cursor pointer
+.article
+  .created_at
+    display none
+  input[type =text]
+    width 300px
+    margin-left 16px
+    border 1px solid #f1f1f1
+  input[type =button], input[type =submit]
+	  text-align left
+    float right
+  textarea
+	  width 300px
+	  height 90px
+	.body
+	  padding 20px
+	.comment
+	  padding 20px
+	  .comment
+	    padding 0
+  #comment-form
+    margin-top 20px
+    form
+	    #comment-container
+	      margin-top 10px
+	      textarea#addCommentComment
+          border 1px solid #f1f1f1
+          margin-left 16px

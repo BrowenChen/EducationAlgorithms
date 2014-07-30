@@ -1,0 +1,39 @@
+{
+  "name": "angularD3",
+  "version": "0.0.12",
+  "main": "angularD3.js",
+  "ignore": [
+    ".*",
+    "app",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests",
+    "dist"
+  ],
+  "dependencies": {
+    "d3": "~3.4.0",
+    "angular": "~1.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.0",
+    "angular-scenario": "~1.2.0",
+    "es5-shim": "~2.0.0",
+    "bootstrap": "~3.1.1",
+    "jquery": "2.1.0"
+  },
+  "homepage": "http://wealthbar.github.io/angular-d3",
+  "authors": [
+    "Chris Nicola <chnicola@gmail.com>"
+  ],
+  "description": "AngularJS chart directives and other integrations for D3.js",
+  "keywords": [
+    "AngularJS",
+    "D3",
+    "D3.js",
+    "charts"
+  ],
+  "license": "MIT"
+}

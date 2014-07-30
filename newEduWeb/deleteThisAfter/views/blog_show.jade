@@ -1,0 +1,20 @@
+h1= title
+div.article
+  div.created_at= article.created_at
+  div.body= article.body
+  h2 Comments
+  - each comment in article.comments
+    div.comment
+      div.comment= comment.person + ": " + comment.comment
+  h2 Leave a Comment
+  div#comment-form
+    form( method="post", action="/blog/addComment")
+      input( type="hidden", name="_id", value=article._id.toHexString())
+      div#name
+        span your name
+        input( type="text", name="person", id="addCommentPerson")
+      div#comment-container
+        span thoughts
+        textarea( name="comment", rows=5, id="addCommentComment")
+      div#editArticleSubmit
+        input(type="submit", value="boom.")

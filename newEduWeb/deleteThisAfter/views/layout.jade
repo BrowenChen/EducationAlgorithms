@@ -1,0 +1,291 @@
+doctype
+html
+	head
+		//- title= title
+		//- link(rel='stylesheet', href='/stylesheets/style.css')
+		meta(http-equiv='Content-type', content='text/html;charset=UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		link(rel='shortcut icon', href='http://jchui.me/img/favicon.ico')
+		link(rel='stylesheet', href='/stylesheets/custom.css')
+
+
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500', rel='stylesheet', type='text/css')
+		title Owen Chen| Personal Blog
+		link(rel='alternate', type='application/rss+xml', title='Jeremy Chui » Feed', href='http://blog.jchui.me/feed/')
+		link(rel='alternate', type='application/rss+xml', title='Jeremy Chui » Comments Feed', href='http://blog.jchui.me/comments/feed/')
+		link#jetpack-subscriptions-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/plugins/jetpack/modules/subscriptions/subscriptions.css?ver=3.9.1', type='text/css', media='all')
+		link#jetpack-widgets-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003', type='text/css', media='all')
+		link#lingonberry_googleFonts-css(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C400italic%2C700italic%7CRaleway%3A600%2C500%2C400&ver=3.9.1', type='text/css', media='all')
+		link#lingonberry_style-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/themes/lingonberry/style.css?ver=3.9.1', type='text/css', media='all')
+		script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery.js?ver=1.11.0')
+		script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1')
+		link(rel='EditURI', type='application/rsd+xml', title='RSD', href='http://blog.jchui.me/xmlrpc.php?rsd')
+		link(rel='wlwmanifest', type='application/wlwmanifest+xml', href='http://blog.jchui.me/wp-includes/wlwmanifest.xml')
+		meta(name='generator', content='WordPress 3.9.1')
+		link(rel='shortlink', href='http://wp.me/4yZVh')
+		style(type='text/css').
+			.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
+		meta(property='og:type', content='website')
+		meta(property='og:title', content='Jeremy Chui')
+		meta(property='og:description', content='Personal Blog')
+		meta(property='og:url', content='http://blog.jchui.me/')
+		meta(property='og:site_name', content='Jeremy Chui')
+		meta(property='og:image', content='http://wordpress.com/i/blank.jpg')
+		meta(name='twitter:site', content='@jetpack')
+
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/chosen.css')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/css/img/fancybox/jquery.easing-1.3.pack.js')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/css/img/fancybox/jquery.fancybox-1.3.4.js')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/css/img/fancybox/jquery.fancybox-1.3.4.pack.js')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/css/img/fancybox/jquery.mousewheel-3.0.4.pack.js')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/jquery.fancybox-1.3.4.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart-buttons.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart-forms.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart-grid.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart-icons.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart-menus.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/kickstart.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/prettify.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/css/tiptip.css')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/js/kickstart.js')
+		script(src='//cdn.jsdelivr.net/99lime/0.94/js/prettify.js')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/99lime/0.94/style.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/animatecss/2.4/animate.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/animatecss/2.4/animate.min.css')
+
+
+
+	body.home.blog
+		.navigation
+			.navigation-inner.section-inner
+				ul.blog-menu
+				form.search-form(method='get', action='http://blog.jchui.me/')
+					input#s(type='search', value='Type and press enter', onfocus="if(this.value=='Type and press enter')this.value='';", onblur="if(this.value=='')this.value='Type and press enter';", name='s')
+					input#searchsubmit.button.hidden(type='submit', value='Search')
+				.clear
+			
+		
+		.header.section(style="background-image:url('/imgs/16-blurr_bg.png');")
+			.header-inner.section-inner
+				a.logo(href='/', title='Owen Chen  — Personal Blog', rel='home').animated.fadeIn._1
+					img(src='/imgs/tr11crop.jpg', alt='Owen Chen')
+				h1.blog-title
+					a(href='/', title='Owen Chen ', rel='home').animated.fadeIn._1 Adaptive Algorithms
+				.nav-toggle
+					.bar
+					.bar
+					.bar
+					.clear
+				.clear
+
+
+		block body 
+			
+		.content.section-inner
+			.posts
+				#post-136.post-136.post.type-post.status-publish.format-standard.hentry.category-design.category-design-thinking.category-hacks.category-startups.animated.fadeIn._2
+					.post-bubbles
+						a.format-bubble(href='http://blog.jchui.me/2014/07/digital-natives-a-need-for-clarity/')
+					.content-inner
+						.post-header
+							h2.post-title
+								a(href='http://blog.jchui.me/2014/07/digital-natives-a-need-for-clarity/', rel='bookmark', title='Digital Natives: A need for clarity?') Adaptive Algorithms: The Future of Learning?
+							.post-meta
+								span.post-date
+									a(href='http://blog.jchui.me/2014/07/digital-natives-a-need-for-clarity/', title='Digital Natives: A need for clarity?') July 29, 2014
+								span.date-sep  / 
+								span.post-author
+									a(href='http://blog.jchui.me/author/jchui/', title='Posts by jchui', rel='author') browenchen
+								span.date-sep  / 
+								a(href='http://blog.jchui.me/2014/07/digital-natives-a-need-for-clarity/#respond', title='Comment on Digital Natives: A need for clarity?')
+									span.dsq-postid(rel='136 http://blog.jchui.me/?p=136')
+										span.comment 0 Comments
+						.post-content
+							p Here at Zzish, we strive to fundamentally change the process of traditional learning. 
+							p We attempt to maximize one’s learning potential in the most efficient way possible. 
+							p We approach learning with a comprehensive holistic strategy that integrates principles of psychological and cognitive approaches to human memory, and we integrate that knowledge with the current advancing state of technology that is available to us in the hopes of creating a platform that can truly change the way people learn.
+
+
+							a.more-link(href='/spacedRep') Continue reading
+						.clear
+					.clear
+					.clear
+				#post-100.post-100.post.type-post.status-publish.format-standard.hentry.category-design.category-design-resources.animated.fadeIn._3
+					.post-bubbles
+						a.format-bubble(href='http://blog.jchui.me/2014/07/design-resources-part-one/')
+					.content-inner
+						.post-header
+							h2.post-title
+								a(href='http://blog.jchui.me/2014/07/design-resources-part-one/', rel='bookmark', title='Design Resources (Part One)') Item Response Theory
+							.post-meta
+								span.post-date
+									a(href='http://blog.jchui.me/2014/07/design-resources-part-one/', title='Design Resources (Part One)') July 8, 2014
+								span.date-sep  / 
+								span.post-author
+									a(href='http://blog.jchui.me/author/jchui/', title='Posts by jchui', rel='author') BrowenChen
+								span.date-sep  / 
+								a(href='http://blog.jchui.me/2014/07/design-resources-part-one/#respond', title='Comment on Design Resources (Part One)')
+									span.dsq-postid(rel='100 http://blog.jchui.me/?p=100')
+										span.comment 0 Comments
+						.post-content
+							#newpost
+								h1 Post a blog
+								form( method="post")
+									div#content
+									span Title
+									input(type="text", name="title", id="editArticleTitle")
+									div
+										span Body
+										textarea( name="body", rows=20, id="editArticleBody")
+										div#editArticleSubmit
+										input(type="submit", value="Send")
+								a.more-link(href='http://blog.jchui.me/2014/07/design-resources-part-one/#more-100') Continue reading
+						.clear
+					.clear
+					.clear
+				#post-12.post-12.post.type-post.status-publish.format-standard.hentry.category-business.category-personal.category-startups.category-university.animated.fadeIn._3
+					.post-bubbles
+						a.format-bubble(href='http://blog.jchui.me/2014/04/a-year-in-startups/')
+					.content-inner
+						.post-header
+							h2.post-title
+								a(href='http://blog.jchui.me/2014/04/a-year-in-startups/', rel='bookmark', title='A Year in Startups') Computerized Adaptive Testing
+							.post-meta
+								span.post-date
+									a(href='http://blog.jchui.me/2014/04/a-year-in-startups/', title='A Year in Startups') April 24, 2014
+								span.date-sep  / 
+								span.post-author
+									a(href='http://blog.jchui.me/author/jchui/', title='Posts by jchui', rel='author') browenchen
+								span.date-sep  / 
+								a(href='http://blog.jchui.me/2014/04/a-year-in-startups/#comments', title='Comment on A Year in Startups')
+									span.dsq-postid(rel='12 http://blog.jchui.me/?p=12') 1 Comment
+						.post-content
+							h1 Test Blogs
+							#articles
+								- each article in articles
+									div.article
+										div.created_at= article.created_at
+										div.title
+											form( method="post", action="/blog/:id/delete")
+												input(name="_id", type="hidden", value=article._id.toHexString())
+												input(id="delete", value="x", type="submit")
+											form( method="get", action="/blog/:id/edit")
+												input(name ="_id", type="hidden", value=article._id.toHexString())
+												input(id="edit", value="edit", type="submit")
+											a(href="/blog/"+article._id)!= article.title
+											div.body
+												- for (var i = 0; i <= article.body.length; i++) {
+													p= article.body[i] 
+												- }
+							#newpost
+								a(href="/blog/new")!= 'new post'
+							a.more-link(href='http://blog.jchui.me/2014/04/a-year-in-startups/#more-12') Continue reading
+						.clear
+					.clear
+					.clear
+				script(type='text/javascript').
+					// <![CDATA[
+					var disqus_shortname = 'jchui';
+					(function () {
+					var nodes = document.getElementsByTagName('span');
+					for (var i = 0, url; i < nodes.length; i++) {
+					if (nodes[i].className.indexOf('dsq-postid') != -1) {
+					nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+					url = nodes[i].parentNode.href.split('#', 1);
+					if (url.length == 1) { url = url[0]; }
+					else { url = url[1]; }
+					nodes[i].parentNode.href = url + '#disqus_thread';
+					}
+					}
+					var s = document.createElement('script'); s.async = true;
+					s.type = 'text/javascript';
+					s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					}());
+					//]]>
+		.footer.section
+			.footer-inner.section-inner
+				.footer-a.widgets
+					.widget.widget_categories
+						.widget-content
+							h3.widget-title Categories
+							ul
+								li.cat-item.cat-item-4
+									a(href='http://blog.jchui.me/category/business/', title='View all posts filed under Business') Business
+									|  (1)
+								li.cat-item.cat-item-12
+									a(href='http://blog.jchui.me/category/design/', title='View all posts filed under Design') Design
+									|  (2)
+								li.cat-item.cat-item-13
+									a(href='http://blog.jchui.me/category/design/design-resources/', title='View all posts filed under Design Resources') Design Resources
+									|  (1)
+								li.cat-item.cat-item-14
+									a(href='http://blog.jchui.me/category/design/design-thinking/', title='View all posts filed under Design Thinking') Design Thinking
+									|  (1)
+								li.cat-item.cat-item-11
+									a(href='http://blog.jchui.me/category/hacks/', title='View all posts filed under Hacks') Hacks
+									|  (1)
+								li.cat-item.cat-item-3
+									a(href='http://blog.jchui.me/category/personal/', title='View all posts filed under Personal') Personal
+									|  (1)
+								li.cat-item.cat-item-2
+									a(href='http://blog.jchui.me/category/startups/', title='View all posts filed under Startups') Startups
+									|  (2)
+								li.cat-item.cat-item-6
+									a(href='http://blog.jchui.me/category/university/', title='View all posts filed under University') University
+									|  (1)
+						.clear
+					.clear
+				.footer-b.widgets
+					.widget.widget_archive
+						.widget-content
+							h3.widget-title Archives
+							ul
+								li
+									a(href='http://blog.jchui.me/2014/07/') July 2014
+								li
+									a(href='http://blog.jchui.me/2014/04/') April 2014
+						.clear
+					.clear
+				.footer-c.widgets
+					.widget.widget_text
+						.widget-content
+							h3.widget-title About Me
+							.textwidget
+								| Full-Stack Developer &amp; Music Producer. Student of the Cognitive Sciences at Berkeley. Triathlete. Startups, AI, and design. Massive book-worm. Traveler.
+						.clear
+					.clear
+				.clear
+		.credits.section
+			.credits-inner.section-inner
+				p.credits-left
+					span Copyright
+					|  &copy; 2014 
+					a(href='', title='Owen Chen') Owen Chen
+				p.credits-right
+					a.tothetop(title='To the top') Back to top &uarr;
+				.clear
+		div(style='display:none')
+		script(type='text/javascript', src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201431')
+		script(type='text/javascript', src='http://s.gravatar.com/js/gprofiles.js?ver=2014Julaa')
+		script(type='text/javascript').
+			/* <![CDATA[ */
+			var WPGroHo = {"my_hash":""};
+			/* ]]> */
+		script(type='text/javascript', src='http://blog.jchui.me/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.9.1')
+		script(type='text/javascript', src='http://blog.jchui.me/wp-content/themes/lingonberry/js/flexslider.min.js?ver=3.9.1')
+		script(type='text/javascript', src='http://blog.jchui.me/wp-content/themes/lingonberry/js/global.js?ver=3.9.1')
+		script(src='http://stats.wordpress.com/e-201431.js', type='text/javascript')
+		script(type='text/javascript').
+			st_go({v:'ext',j:'1:3.0.2',blog:'67446531',post:'0',tz:'0'});
+			var load_cmc = function(){linktracker_init(67446531,0,2);};
+			if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+			else load_cmc();
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-24142610-6', 'jchui.me');
+			ga('send', 'pageview');

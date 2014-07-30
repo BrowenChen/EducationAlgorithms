@@ -1,0 +1,43 @@
+
+
+next steps:
+
+	- save a blog post
+	- delete a blog post
+	
+	- add a comment
+	- save a comment
+	- delete a comment
+	
+	- session management done with usernames, or twitter authentication
+	
+	- use web sockets to...... ?
+
+	- nlp on what you type?
+
+tweet your blog post
+
+upload an image
+
+add a location from foursquare
+
+add 'do' dates
+
+instead of pushing information one way (you to the world), the blog post can act like a program that automatically does stuff. check a box to make a reminder for you. check a box to send it as an email, check a box to send as text message, tweet or facebook post
+
+categories:
+
+- photos
+- to-do
+- blog
+
+what are some useful ways to manage content online or from a mobile device?
+
+	store notes to yourself (like ohlife or evernote?)
+	
+	look at clear app to see how they manage the data
+	
+	
+	genetic sequencing - foods that you are genetically predisposed to enjoy :) 23andme for data
+	
+	amazon api

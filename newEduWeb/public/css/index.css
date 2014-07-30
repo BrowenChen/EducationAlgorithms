@@ -1,0 +1,314 @@
+@font-face {
+font-family: AppleSDGoth;
+src: url("http://54.84.186.173/Tier5/fonts/AppleSDGothicNeo-Thin.otf") format("opentype");
+}
+
+@font-face {
+font-family: AppleSDGoth;
+src: url("http://54.84.186.173/Tier5/fonts/AppleSDGothicNeo-Thin.otf") format("opentype");
+font-weight: normal;
+}
+
+@font-face {
+font-family: AppleSDGoth_bold;
+src: url("http://54.84.186.173/Tier5/fonts/AppleSDGothicNeo-Heavy.otf") format("opentype");
+font-weight: normal;
+}
+
+body {
+    height: 100%;
+    font: normal 1em/1.38 AppleSDGoth;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    background: transparent;
+}
+
+a{
+    color:white;
+    font-size: 0.750em;
+}
+#containerHeader{
+  width: 100%;
+  min-width: 485px;
+  height: 10%;
+}
+
+ /* DESKTOP VERSION - large */
+@media only screen and (min-width: 980px){
+    .container {
+        float: center;
+        width: 65%;
+        min-width: 485px;
+        position: absolute;
+        height:85%;
+        min-height: 509px;
+        margin: 72px 4.166666666% 0 18.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 979px){
+    .container {
+        float: center;
+        width: 65%;
+        min-width: 485px;
+        position: absolute;
+        height:80%;
+        min-height: 509px;
+        margin: 72px 4.166666666% 0 20.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    .container {
+        float: center;
+        width: 70%;
+        min-width: 485px;
+        position: absolute;
+        height:80%;
+        min-height: 509px;
+        margin: 72px 4.166666666% 0 10.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width:570px){
+    .container {
+        float: center;
+        width: 70%;
+        min-width: 485px;
+        position: absolute;
+        height:80%;
+        min-height: 509px;
+        margin: 72px 4.166666666% 0 6.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+    .container {
+        float: center;
+        width: 65%;
+         min-width: 485px;
+        position: absolute;
+        height:85%;
+        margin: 72px 4.166666666% 0 20.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+        .container {
+        float: center;
+        width: 65%;
+         min-width: 485px;
+        position: absolute;
+        height:85%;
+        margin: 72px 4.166666666% 0 20.1666666666%;
+        background-color: rgba(0, 0, 0, 0.43);
+        overflow: hidden;
+    }
+}
+
+.login {
+    float: left;
+    width: 16.4102564102%;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+    position: fixed;
+}
+.logo {
+    display: block;
+    float: left;
+    width: 128px;
+    height: auto;
+    margin-top: 0px;
+    overflow: hidden;
+    opacity: .5;
+    
+}
+.logo_container {
+    display: block;
+    float: left;
+    padding-top: 10px;
+    padding-left: 0px;
+}
+.people {
+    position: relative;
+    float: left;
+    clear: both;
+    width: 96.6725043782%;
+    height: 92px;
+    margin: -8px 0 0 2.9772329246%;
+    padding-top: 6px;
+    z-index: 15;
+}
+.person {
+    float: left;
+    width: 46.1956521739%;
+    height: 84px;
+    margin-top: 8px;
+}
+.people .person:first-child {
+    margin-left: -1.5%;
+}
+.personinfo {
+    float: left;
+    width: 50%;
+    margin-left: 120px;
+    margin-top: -70px;
+    line-height: 1.38;
+    display: inline;
+    color: rgb(255, 255, 255);
+}
+
+.personpicture {
+    display: block;
+    float: left;
+    width: 69px;
+    height: auto;
+    margin: -8px 0 0 6.6666666666%;
+    overflow: hidden;
+}
+.task {
+    position: relative;
+    float: left;
+    width: 98.4238178633%;
+    margin-left: 1.5761821366%;
+    font-size: 2.875em;
+    line-height: 1.38;
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
+}
+.loginActions {
+    float: left;
+    margin-left: 10%;
+    font-size: 1em;
+    display: block;
+    line-height: 1.38;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+a.loginActions:hover {
+    text-decoration: underline;
+}
+.lighter {
+    clear:both;
+    color: rgb(182, 182, 182);
+}
+.input {
+    display: block;
+    float: left;
+    clear: both;
+    width: 73.2051282051%;
+    height: 82px;
+    margin: 13px 0 0 16.282051282%;
+    padding: 0 10px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 4.75em;
+    line-height: 1.38;
+    color: rgb(194, 194, 194);
+    z-index: 1;
+}
+.tasksContainer {
+    clear: both;
+    width: 72.0512820512%;
+    height: auto;
+    margin: 250px 0 0 17.5641025641%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+}
+.taskUnit {
+    clear: both;
+    width: 100%;
+    height: 150px;
+    margin-left: -1.5%;
+}
+.todo_task_container {
+    overflow:scroll;
+    padding-bottom: 50px;
+    height: 79.113924%;
+    
+}
+.complete {
+    margin-left: -30px;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 40px;
+    cursor:default;
+    color: rgba();
+}
+.complete:hover {
+    opacity: 0.5;
+}
+.todoHeader {
+    float: right;
+    width: 18.4615384615%;
+    min-width: 138px;
+    min-height: 40px;
+    margin-left: 47.0282051282%;
+    position: relative;
+    font-family: AppleSDGoth;
+    font: normal 2.375em/1.38 AppleSDGoth_bold;
+    text-align: right;
+    color: rgba(255, 255, 255,.53);
+    overflow: hidden;
+    padding-right: 5px;
+}
+
+.todo-checkbox {
+    display:;
+    
+}
+.hexagon {
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg);
+    cursor: pointer;
+}
+.hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+.hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url(../images/tim.jpg);
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+.hexagon1 {
+    width: 150px;
+    height: 75px;
+    margin: 0 0 0 -25px;
+}
