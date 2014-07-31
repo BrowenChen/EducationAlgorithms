@@ -21,6 +21,18 @@ var app = angular.module('myApp.controllers', []).
 
 
   controller('IRTCtrl', function ($scope, $http) {
+
+
+
+//AVATARS
+		$scope.avatarName = "Avatar";
+
+    $scope.avatarSelect = function(name){
+    	this.avatarName = name;	
+    }
+
+//AVATARS
+
     // $scope.name = "Owen";
     $scope.test = function(){
       alert("testing");
