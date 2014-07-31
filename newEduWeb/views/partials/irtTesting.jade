@@ -39,9 +39,31 @@ script(src="/js/jQueryFunctions.js")
 										a(href='#theory') Theory and Mechanics
 						.post-content
 
+								
 
 
-							#overview.h4 Overview
+
+
+
+
+							
+
+							#overview.h2 Overview
+							
+
+							h5 Rasch Model - One Parameter
+							#chart	
+
+
+
+							#loadChart.button.btn.btn-primary(ng-click="loadChart({{difVal}})", style="border-radius: 15px;") Load								
+							input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;", ng-model="difVal")  
+							
+
+
+
+
+
 							p
 								br
 								| The next algorithm in this sequence of educational learning algorithms is the IRT. 
@@ -101,19 +123,12 @@ script(src="/js/jQueryFunctions.js")
 							#overview
 								h2.strong Rasch Model - One parameter 
 								br
-								br
-
-
-								#chart
-
+								p This is a description of the Rasch Model
 								br
 								br
 
-								#loadButton.button.btn.btn-primary(style="border-radius: 15px;") Load
+								br
 								
-								input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;")  
-									| Enter an item difficulty
-
 								br
 								br
 
@@ -180,5 +195,6 @@ script(src="/js/jQueryFunctions.js")
 
 
 			.clear
+
 
 
