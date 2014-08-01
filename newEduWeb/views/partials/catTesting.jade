@@ -30,13 +30,14 @@ script(src="/js/jQueryFunctions.js")
 										a(href='#theory') Theory and Mechanics
 						.post-content
 							#catApp.div.animated.fadeIn._3
-								button.btn.btn-primary(style="border-radius: 15px; position:absolute; left:40%;", ng-click='newCandidate()') Start Testing
+								button.btn.btn-primary(style="border-radius: 15px; position:absolute; left:42%;", ng-click='newCandidate()') Start Testing
 								br							
 								br
 								.row
 									.col-sm-6.col-sm-offset-3
 										section.well(style="border-radius:15px;")
-											p Question
+											i Question: {{question}}
+											br
 											form#todo-form(ng-submit='getUserPrompt()')
 												input#new-todo(placeholder='Your Answer Here..', ng-model='ansData.text', autofocus='')
 											br
@@ -44,22 +45,20 @@ script(src="/js/jQueryFunctions.js")
 												span#todo-count.badge(style="padding:5px; opacity: .7;") 25 Items Remaining
 
 								.row
-									.col-sm-6
+									.col-sm-6(style="max-height:200px;")
 										#chartGauge
-									.col-sm-6
+									.col-sm-6(style="max-height:200px;")
 										#difGauge
-											
-
+								.row
+									.col-sm-6
+										p Ability
+									.col-sm-6
+										p Difficulty
+										
 							#overview.h2 Overview
 							
 
 							h5 Rasch Model - One Parameter
-							#chart	
-
-							#loadChart.button.btn.btn-primary(ng-click="loadChart({{difVal}})", style="border-radius: 15px;") Load								
-							input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;", ng-model="difVal")  
-							
-
 
 
 

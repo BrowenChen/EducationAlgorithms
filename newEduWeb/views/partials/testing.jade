@@ -52,33 +52,40 @@ script.
 										a(href='#theory') Theory and Mechanics
 						.post-content
 
-							h3 Flashcard reordering	
+							h3 Avatar reordering	
 							br
 							.row
 								.col-sm-3.animated.fadeInUp._1
-									#avatar.div(onclick="style.opacity = 1", ng-click="avatarSelect('dog')").animated.fadeIn_4
+									#avatar.div(onclick="style.opacity = 1", ng-click="avatarSelect('Dog')").animated.fadeIn_4
 										a(href="")
 											img.input.img-circle(src="/imgs/dog.png", type="checkbox", name="firstCheck").animated.fadeIn_5
 								
 								.col-sm-3.animated.fadeInUp._2
-									#avatar.div(onclick="style.opacity = 1;",ng-click="avatarSelect('hippo')")
+									#avatar.div(onclick="style.opacity = 1;",ng-click="avatarSelect('Hippo')")
 										a(href="")
 											img.img-circle(src="/imgs/hippo.png")
 								
 								.col-sm-3.animated.fadeInUp._3
-									#avatar(onclick="style.opacity = 1;", ng-click="avatarSelect('monkey')")
+									#avatar(onclick="style.opacity = 1;", ng-click="avatarSelect('Monkey')")
 										a(href="")
 											img.img-circle(src="/imgs/monkey.png")
 
 								
 								.col-sm-3.animated.fadeInUp._4
-									#avatar(onclick="style.opacity = 1;", ng-click="avatarSelect('macaw')")
+									#avatar(onclick="style.opacity = 1;", ng-click="avatarSelect('Macaw')")
 										a(href="")
 											img.img-circle(src="/imgs/macaw.png")
 							br
 							
-							br
-							button.btn.btn-info(style="position:relative; left:40%;").animated.fadeIn._5 Order Me
+							.div(style="position:relative; left:30%;").animated.fadeIn._5
+								p Interest Level for {{avatarName}}
+								p 
+								slider.span2(model='teste', ng-model='sliderVal', type='text', value='', data-slider-min='0', data-slider-max='5', data-slider-step='1', data-slider-orientation='horizontal', data-slider-selection='after', data-slider-tooltip='hide')
+								span.badge(style="margin-left:25px;") {{teste}}
+								br
+								br
+								
+								button.btn.btn-info( type='text', placeholder='Click to Order Cards', value="{{teste}}", ng-click="response(avatarName, teste)", style="border-radius:15px;") Order Me
 
 
 							br
