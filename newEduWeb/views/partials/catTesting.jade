@@ -1,0 +1,199 @@
+script(src="/js/chartData.js")
+script(src="/js/algorithms.js")
+script(src="/js/jQueryFunctions.js")
+
+.row
+	.col-lg-10
+
+		#veryTop.content.section-inner
+
+
+			header#top.clearfix.animated.fadeIn._1
+
+			.posts
+				#post-136.post-136.post.type-post.status-publish.format-standard.hentry.animated.fadeIn._1
+					.post-bubbles
+						a.format-bubble(href='/')
+					.content-inner
+						.post-header(style="padding-bottom:1px;")
+							h2.post-title
+								a(href='', rel='bookmark', title='Home') Computerized Adaptive Testing
+							br
+							br
+							nav#nav.menu-nav-menu-container(style="padding-top:10px; position:absolute;")
+								ul#menu-nav-menu.menu
+									li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
+										a(href='#overview') Overview
+									li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
+										a(href='#theAlg') The Algorithm
+									li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
+										a(href='#theory') Theory and Mechanics
+						.post-content
+							#catApp.div.animated.fadeIn._3
+								button.btn.btn-primary(style="border-radius: 15px; position:absolute; left:40%;", ng-click='newCandidate()') Start Testing
+								br							
+								br
+								.row
+									.col-sm-6.col-sm-offset-3
+										section.well(style="border-radius:15px;")
+											p Question
+											form#todo-form(ng-submit='getUserPrompt()')
+												input#new-todo(placeholder='Your Answer Here..', ng-model='ansData.text', autofocus='')
+											br
+											footer
+												span#todo-count.badge(style="padding:5px; opacity: .7;") 25 Items Remaining
+
+								.row
+									.col-sm-6
+										#chartGauge
+									.col-sm-6
+										#difGauge
+											
+
+							#overview.h2 Overview
+							
+
+							h5 Rasch Model - One Parameter
+							#chart	
+
+							#loadChart.button.btn.btn-primary(ng-click="loadChart({{difVal}})", style="border-radius: 15px;") Load								
+							input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;", ng-model="difVal")  
+							
+
+
+
+
+							p
+								br
+								| The next algorithm in this sequence of educational learning algorithms is the IRT. 
+								em The idea here is to aggregate a continuous model for estimating the probabilistic outcome of each response based on a student user. 
+								|  We can utilize IRT to extract data to be used for recommendation systems in a interconnected graph of separated topics and subjects, providing key insight for where the student should go from here given the details that we extract. The key here is that it tests proficiency/ability, and is used for a deeper personalized learning experience. 
+
+								a(href="#top") Back to top &uarr;							
+								br
+							#theAlg.h4 The Algorithm
+								p
+									| Basically, there is an item characteristic curve graph. Given the student ability, it will predict the probability for whether a student will understand or fail that question. There can be multiple item characteristics to be represented in the graph, but we will stick to the one parameter model for simplicity. 
+									br
+									br
+									em Item Discrimination
+									|  is the concept of how the difficulty of a problem is relative to ability level. If there is no discrimination, the value of the item difficulty is a constant flat line across all ability levels. If there is a discrimination, this type of problem can be more useful in distinguishing the high-ability students from the low-ability students (think of an exam with an average percentage of 90% versus an exam with an average of 50%. The latter exam will allow smart students a greater room to demonstrate their intellect and differentiate themselves more than the average)
+									br
+								br 
+								a(href="#top") Back to top &uarr;
+							#theory.h4 Theory and Mechanics
+							p
+								| Text here 
+								br
+								br
+								| All of the items are now assigned an “E-Factor”, which represents the “easiness” of a certain piece of data according to you. This will be updated over time.
+								br
+								br
+								| Now we assign intervals at which each piece of information should be shown to you according to this forgetting curve, and continuously update these intervals for each item with  a function that models the forgetting curve.
+								| After each exposure to the student, the Q-Factor is the quality of the response, usually a measure of 1-5 that determines the student’s level of understanding on that item. We can take in metrics such as duration spent on problem, incorrect guesses, or even in the future advanced neurotracking software to determine the physiological signs of frustration in a students face.
+								| The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner.						
+								br
+								a(href="#top") Back to top &uarr;	
+						.col-lg-4.col-lg-offset-1
+							
+						.clear
+					.clear
+					.clear
+
+				#post-137.post-137.post.type-post.status-publish.format-standard.hentry.animated.fadeIn._1
+					.post-bubbles
+						a.format-bubble(href='/')
+					.content-inner
+						.post-header
+							h2.post-title
+								a(href='', rel='bookmark', title='Home') IRT Models
+							.post-meta
+								span.post-date
+									a(href='', title='') July 29, 2014
+								span.date-sep  / 
+								span.post-author
+									a(href='http://blog.jchui.me/author/jchui/', title='', rel='author') browenchen
+								span.date-sep  / 
+
+						.post-content
+
+
+
+							#overview
+								h2.strong Rasch Model - One parameter 
+								br
+								p This is a description of the Rasch Model
+								br
+								br
+
+								br
+								
+								br
+								br
+
+								a(href="#top") Back to top &uarr;							
+								br
+
+
+
+
+							#brinbaum.h2 Brinbaum Models
+							p Test									
+							#theAlg.h3 The Algorithm
+							p
+								| We take a body of knowledge, and split it into individual pieces to be studied. Be it concepts in math, science, philosophy, etc, any topic can be broken down into it’s fundamental “atoms” that contribute to the holistic web of knowledge that constitutes a subject.
+								br
+								br
+								| All of the items are now assigned an “E-Factor”, which represents the “easiness” of a certain piece of data according to you. This will be updated over time.
+								br
+								br
+								| Now we assign intervals at which each piece of information should be shown to you according to this forgetting curve, and continuously update these intervals for each item with  a function that models the forgetting curve.
+								| After each exposure to the student, the Q-Factor is the quality of the response, usually a measure of 1-5 that determines the student’s level of understanding on that item. We can take in metrics such as duration spent on problem, incorrect guesses, or even in the future advanced neurotracking software to determine the physiological signs of frustration in a students face.
+								| The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner. 
+								br 
+								a(href="#top") Back to top &uarr;
+							#theory.h3 Theory and Mechanics
+							p
+								| Text here 
+								br
+								br
+								| All of the items are now assigned an “E-Factor”, which represents the “easiness” of a certain piece of data according to you. This will be updated over time.
+								br
+								br
+								| Now we assign intervals at which each piece of information should be shown to you according to this forgetting curve, and continuously update these intervals for each item with  a function that models the forgetting curve.
+								| After each exposure to the student, the Q-Factor is the quality of the response, usually a measure of 1-5 that determines the student’s level of understanding on that item. We can take in metrics such as duration spent on problem, incorrect guesses, or even in the future advanced neurotracking software to determine the physiological signs of frustration in a students face.
+								| The E-Factor is then assessed and recalculated, and the algorithm repeats to truly adapt to the learner.						
+								br
+								a(href="#top") Back to top &uarr;	
+						.col-lg-4.col-lg-offset-1
+							
+						.clear
+					.clear
+					.clear			
+
+	.col-lg-2.animated.fadeIn._2
+		
+		br
+		br
+		
+		
+		
+		.widget.widget_recent_entries
+			#nav.widget-content
+				h3.widget-title(style="color:silver; font-size:1.5em; margin-left:15px;") Contents 
+				hr
+				#menu.ul
+					#menu-item-39.li
+						a(href='#post-136') Computerized Adaptive Testing
+					br
+					#menu-item-30.li
+						a(href='#post-137') Models and Equations
+					br
+					#menu-item-39.li
+						a(href='') 
+
+
+			.clear
+
+
+

@@ -16,16 +16,21 @@ html(ng-app="myApp")
 		script(src='http://x3dom.org/x3dom/example/x3dom.js')
 		script(src='https://code.angularjs.org/1.1.5/angular.js')	
 
+		script(src='/js/c3.js')
 		script(src='/js/angularD3.js')
 		script(src='/js/dangle.min.js')
 		script(src='/js/nvd3.js')
 		script(src='/js/angularjs-nvd3-directives.js')	
+		link(rel='stylesheet', href='/css/nvd3.css') 
+
+		link(rel='stylesheet', href="/css/slick.css")	
+		script(src='/js/slick.js')
 
 
 		//- Side Nav
 
 
-		link(rel='stylesheet', href='/css/nvd3.css')
+
 		
 
 		link(href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')	
@@ -41,18 +46,18 @@ html(ng-app="myApp")
 
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500', rel='stylesheet', type='text/css')
 		
-		link(rel='alternate', type='application/rss+xml', title='Jeremy Chui » Feed', href='http://blog.jchui.me/feed/')
-		link(rel='alternate', type='application/rss+xml', title='Jeremy Chui » Comments Feed', href='http://blog.jchui.me/comments/feed/')
-		link#jetpack-subscriptions-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/plugins/jetpack/modules/subscriptions/subscriptions.css?ver=3.9.1', type='text/css', media='all')
-		link#jetpack-widgets-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003', type='text/css', media='all')
+		
+		
+		
+		
 		link#lingonberry_googleFonts-css(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C400italic%2C700italic%7CRaleway%3A600%2C500%2C400&ver=3.9.1', type='text/css', media='all')
 		link#lingonberry_style-css(rel='stylesheet', href='http://blog.jchui.me/wp-content/themes/lingonberry/style.css?ver=3.9.1', type='text/css', media='all')
-		script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery.js?ver=1.11.0')
-		script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1')
-		link(rel='EditURI', type='application/rsd+xml', title='RSD', href='http://blog.jchui.me/xmlrpc.php?rsd')
-		link(rel='wlwmanifest', type='application/wlwmanifest+xml', href='http://blog.jchui.me/wp-includes/wlwmanifest.xml')
-		meta(name='generator', content='WordPress 3.9.1')
-		link(rel='shortlink', href='http://wp.me/4yZVh')
+		//- script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery.js?ver=1.11.0')
+		//- script(type='text/javascript', src='http://blog.jchui.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1')
+		//- link(rel='EditURI', type='application/rsd+xml', title='RSD', href='http://blog.jchui.me/xmlrpc.php?rsd')
+		//- link(rel='wlwmanifest', type='application/wlwmanifest+xml', href='http://blog.jchui.me/wp-includes/wlwmanifest.xml')
+		//- meta(name='generator', content='WordPress 3.9.1')
+		//- link(rel='shortlink', href='http://wp.me/4yZVh')
 		style(type='text/css').
 			.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
 		link(rel='stylesheet', href='/css/blog.css')
@@ -74,13 +79,13 @@ html(ng-app="myApp")
 				br
 				#nav.ul.blog-menu(style="padding-top:10px;")
 					li#menu-item-40.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-40
-						a(href='/') Home
+						a(href='/') Zzish Home
 					li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
-						a(href='http://blog.bettyreddesign.com/about/') Spaced Rep
+						a(href='') API/SDK Docs
 					li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
-						a(href='mailto:info@bettyreddesign.com?subject=Hi') Computerized Adaptive Testing
+						a(href='') Pricing
 					li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
-						a(href='http://www.bettyreddesign.com/') Item Response Theory
+						a(href='') About Us
 
 
 
@@ -88,13 +93,24 @@ html(ng-app="myApp")
 
 
 		
-		.header.section(style="background-image:url('/imgs/13-blurr_bg.png');")
+		.header.section(style="background-image:url('/imgs/13-blurr_bg.png'); padding:0px;")
 
-			.header-inner.section-inner(style="padding:15px;")
+			.header-inner.section-inner(style="padding:0px;")
 				.col-lg-offset-1
 					br
 					br
 					header#top.clearfix.animated.fadeIn._1
+						#nav.ul.blog-menu
+							li#menu-item-40.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-40
+								a(href='/') Home
+							li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
+								a(href='/testing') Spaced Rep
+							li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
+								a(href='/irttesting') Item Response Theory
+							li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
+								a(href='') Computerized Adaptive Testing
+
+
 
 
 				a.logo(href='/', title='Owen Chen  — Personal Blog', rel='home').animated.fadeInDown._1
@@ -279,29 +295,18 @@ html(ng-app="myApp")
 							h3.widget-title Categories
 							ul
 								li.cat-item.cat-item-4
-									a(href='http://blog.jchui.me/category/business/', title='View all posts filed under Business') Business
+									a(href='http://blog.jchui.me/category/business/', title='View all posts filed under Business') Spaced Repitition
 									|  (1)
 								li.cat-item.cat-item-12
-									a(href='http://blog.jchui.me/category/design/', title='View all posts filed under Design') Design
+									a(href='http://blog.jchui.me/category/design/', title='View all posts filed under Design') Computerized Adaptive Testing
 									|  (2)
 								li.cat-item.cat-item-13
-									a(href='http://blog.jchui.me/category/design/design-resources/', title='View all posts filed under Design Resources') Design Resources
+									a(href='http://blog.jchui.me/category/design/design-resources/', title='View all posts filed under Design Resources') Item Response Theory
 									|  (1)
 								li.cat-item.cat-item-14
 									a(href='http://blog.jchui.me/category/design/design-thinking/', title='View all posts filed under Design Thinking') Design Thinking
 									|  (1)
-								li.cat-item.cat-item-11
-									a(href='http://blog.jchui.me/category/hacks/', title='View all posts filed under Hacks') Hacks
-									|  (1)
-								li.cat-item.cat-item-3
-									a(href='http://blog.jchui.me/category/personal/', title='View all posts filed under Personal') Personal
-									|  (1)
-								li.cat-item.cat-item-2
-									a(href='http://blog.jchui.me/category/startups/', title='View all posts filed under Startups') Startups
-									|  (2)
-								li.cat-item.cat-item-6
-									a(href='http://blog.jchui.me/category/university/', title='View all posts filed under University') University
-									|  (1)
+
 						.clear
 					.clear
 				.footer-b.widgets
