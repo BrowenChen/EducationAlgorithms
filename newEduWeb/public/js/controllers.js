@@ -528,6 +528,68 @@ var app = angular.module('myApp.controllers', []).
   }).
 
   controller('AlgCtrl', function ($scope, $http) {
+
+		$scope.avatarName = "Avatar";
+
+		$scope.avatarList = [
+						{name: "Dog",
+							order: 1,
+							img: "/imgs/dog.png"
+						},
+						{name: "Hippo",
+							order: 2,
+							img: "/imgs/hippo.png"
+						},
+						{name: "Monkey",
+							order: 3,
+							img: "/imgs/monkey.png"
+						},
+						{name: "Macaw",
+							order: 4,
+							img: "/imgs/macaw.png"
+						}						
+		];
+
+
+
+    $scope.avatarSelect = function(name){
+    	this.avatarName = name;	
+    }
+
+
+    $scope.sort = function(avatarName, interestLevel){
+
+
+
+     	alert(avatarName)
+     	alert(interestLevel)
+
+      //if interest level is 0-2, position 4
+      //if interest level is 3 position 3
+      //if interest level is 4 position 2
+      //ifinterest is 5, position 1
+      switch(interestLevel){
+        case 0 || 1:
+          alert("4th interst");
+          break;
+        case 2 || 3:
+        	alert("3rd position");
+        	break;
+        case 4:
+        	alert("2nd position");
+        	break
+        case 5: 
+        	alert("highest position");
+        	break
+      }    
+
+
+
+
+    }	
+
+
+
     // write Ctrl here
     $scope.start = true;
 
@@ -542,9 +604,12 @@ var app = angular.module('myApp.controllers', []).
         console.log("change", this.value);
         
     };
-    $scope.response = function(interest){
+    $scope.response = function(avatarName, interest){
       this.sliderVal = interest;
-      alert("interest level submitted");
+      this.sort(avatarName, this.sliderVal)
+      
+      
+
     }
     //Slider Controls
 
@@ -648,6 +713,12 @@ var app = angular.module('myApp.controllers', []).
   controller('CatCtrl', function ($scope, $http) {
     // write Ctrl here
 
+    $scope.test = function(){
+    	alert("Testing");
+    }
+
+
+
     // CHART CONTROLLER
 
     var resultsA = {
@@ -744,7 +815,7 @@ var app = angular.module('myApp.controllers', []).
     $scope.response = "";
     $scope.closestItem = null;
     $scope.nextCandidate = null;
-    $scope.childAbility = "Not Tested";
+    $scope.childAbility = 50;
     $scope.ability = false;
 
 // DUMMY DATA *************************************************
@@ -804,18 +875,38 @@ var app = angular.module('myApp.controllers', []).
 
 // DUMMY DATA *************************************************
 
+
+    $scope.loadChartGauge = function(){ 
+            var colData = ['ability', this.childAbility];
+            chartGauge.load({
+				columns: [colData]
+            });
+}
+
+    $scope.loadDifGauge = function(){ 
+            var colData = ['difficulty', this.D];
+            difGauge.load({
+				columns: [colData]
+            });
+}
+
+
+
     $scope.newCandidate = function(){
+
       this.D = 0;
       this.L = 0;
       this.H = 0;
       this.R = 0;
 
       this.nextCandidate = this.candidateBank[0];
-      this.D = this.nextCandidate.ability;
+      this.childAbility = this.nextCandidate.ability;
       this.testStandard = 5; // Initializing testStandard
       // this.testLength = this.testLength;
-      alert(this.D);
       this.begin(this.nextCandidate);
+      
+      this.loadChartGauge();
+      this.loadDifGauge();
     };
 
     $scope.begin = function(nextCandidate){
