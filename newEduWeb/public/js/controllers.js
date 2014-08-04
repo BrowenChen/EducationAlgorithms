@@ -532,53 +532,155 @@ var app = angular.module('myApp.controllers', []).
 		$scope.avatarName = "Avatar";
 
 		$scope.avatarList = [
-						{name: "Dog",
+						{name: "'Dog'",
 							order: 1,
 							img: "/imgs/dog.png"
 						},
-						{name: "Hippo",
+						{name: "'Hippo'",
 							order: 2,
 							img: "/imgs/hippo.png"
 						},
-						{name: "Monkey",
+						{name: "'Monkey'",
 							order: 3,
 							img: "/imgs/monkey.png"
 						},
-						{name: "Macaw",
+						{name: "'Macaw'",
 							order: 4,
 							img: "/imgs/macaw.png"
 						}						
 		];
-
+//def getValueOf(k, L):
+  //  for d in L:
+    //    if k in d:
+      //      return d[k]
 
 
     $scope.avatarSelect = function(name){
+    	
     	this.avatarName = name;	
+
     }
 
+    //Change the order of the avatar
+    $scope.changeValOf = function(avatarName, order){
+
+    	alert("changing val of");
+     		for (var d in this.avatarList){
+     			alert(this.avatarList[d]['name']);
+
+     			if (("'" + avatarName + "'") == this.avatarList[d]['name']){
+
+
+
+     				alert("we have a winner");
+     				alert(this.avatarList[d]['order'])
+
+     				var goUp = false;
+     				var curOrder = this.avatarList[d]['order'];
+
+     				if (this.avatarList[d]['order'] > order){
+     					goUp = true;
+     				}
+
+
+     				console.log(this.avatarList[d]['order']);
+     				//$scope.avatarList[d]['order'] = order;
+     				//console.log($scope.avatarList[d]['order']);
+     				alert("channging update orders");
+     				this.updateOrders(order, curOrder, goUp, d);
+     				//Change order number,
+     				// Update all the rest of the order numbers after 
+
+     			}
+     		}
+     	}
+    
+    $scope.updateOrders = function(targetOrder, curOrder, goUp, curIndex){
+    	//if true, 
+    	
+    	alert("go up?" + goUp)
+    	if (goUp == true){
+
+	    	for (var d in this.avatarList){
+	    		if ((this.avatarList[d]['order'] >= targetOrder) && (this.avatarList[d]['order'] < curOrder) ){
+	    			alert("hgiher order");
+	    			this.avatarList[d]['order'] += 1;
+	    		}
+
+	    		else if (this.avatarList[d]['order'] == curOrder){
+	    			console.log("changing current Oder");
+	    			while (this.avatarList[d]['order'] > targetOrder){
+	    				this.avatarList[d]['order'] -= 1;
+	    			}
+
+	    		}
+	    	}
+	    }
+
+
+    	else if (goUp == false){
+		
+	    	for (var d in this.avatarList){
+	    		if ((this.avatarList[d]['order'] <= targetOrder) && (this.avatarList[d]['order'] > curOrder) ){
+	    			alert("lower order");
+	    			this.avatarList[d]['order'] -= 1;
+	    		}
+
+	    		else if (this.avatarList[d]['order'] == curOrder){
+	    			console.log("changing current Oder");
+	    			while (this.avatarList[d]['order'] < targetOrder){
+	    				this.avatarList[d]['order'] += 1;
+	    			}
+
+	    		}	    		
+	    	}	    	
+
+    	}
+
+
+    	for (var i in this.avatarList){
+    		console.log(this.avatarList[i]['order']);
+    	}
+
+
+
+
+    }
 
     $scope.sort = function(avatarName, interestLevel){
-
+    	for (var i in this.avatarList){
+    		console.log(this.avatarList[i]['order']);
+    	}
 
 
      	alert(avatarName)
      	alert(interestLevel)
 
+     	
+     	
       //if interest level is 0-2, position 4
       //if interest level is 3 position 3
       //if interest level is 4 position 2
       //ifinterest is 5, position 1
       switch(interestLevel){
         case 0 || 1:
+          this.changeValOf(avatarName, 4);
           alert("4th interst");
+          //Pass in new order number 
           break;
         case 2 || 3:
+        	this.changeValOf(avatarName, 3);
         	alert("3rd position");
+
         	break;
         case 4:
+        	this.changeValOf(avatarName, 2);
         	alert("2nd position");
+        	//this.avatarList["'" + avatarName + "'"]['order'] = 2;
+        	
         	break
         case 5: 
+        	this.changeValOf(avatarName, 1);
         	alert("highest position");
         	break
       }    
