@@ -564,16 +564,16 @@ var app = angular.module('myApp.controllers', []).
     //Change the order of the avatar
     $scope.changeValOf = function(avatarName, order){
 
-    	alert("changing val of");
+    	
      		for (var d in this.avatarList){
-     			alert(this.avatarList[d]['name']);
+     			
 
      			if (("'" + avatarName + "'") == this.avatarList[d]['name']){
 
 
 
-     				alert("we have a winner");
-     				alert(this.avatarList[d]['order'])
+     				
+     				
 
      				var goUp = false;
      				var curOrder = this.avatarList[d]['order'];
@@ -586,7 +586,7 @@ var app = angular.module('myApp.controllers', []).
      				console.log(this.avatarList[d]['order']);
      				//$scope.avatarList[d]['order'] = order;
      				//console.log($scope.avatarList[d]['order']);
-     				alert("channging update orders");
+     				
      				this.updateOrders(order, curOrder, goUp, d);
      				//Change order number,
      				// Update all the rest of the order numbers after 
@@ -598,12 +598,12 @@ var app = angular.module('myApp.controllers', []).
     $scope.updateOrders = function(targetOrder, curOrder, goUp, curIndex){
     	//if true, 
     	
-    	alert("go up?" + goUp)
+    	
     	if (goUp == true){
 
 	    	for (var d in this.avatarList){
 	    		if ((this.avatarList[d]['order'] >= targetOrder) && (this.avatarList[d]['order'] < curOrder) ){
-	    			alert("hgiher order");
+	    			
 	    			this.avatarList[d]['order'] += 1;
 	    		}
 
@@ -622,7 +622,7 @@ var app = angular.module('myApp.controllers', []).
 		
 	    	for (var d in this.avatarList){
 	    		if ((this.avatarList[d]['order'] <= targetOrder) && (this.avatarList[d]['order'] > curOrder) ){
-	    			alert("lower order");
+	    			
 	    			this.avatarList[d]['order'] -= 1;
 	    		}
 
@@ -653,11 +653,10 @@ var app = angular.module('myApp.controllers', []).
     	}
 
 
-     	alert(avatarName)
-     	alert(interestLevel)
 
-     	
-     	
+
+	
+	
       //if interest level is 0-2, position 4
       //if interest level is 3 position 3
       //if interest level is 4 position 2
@@ -665,23 +664,23 @@ var app = angular.module('myApp.controllers', []).
       switch(interestLevel){
         case 0 || 1:
           this.changeValOf(avatarName, 4);
-          alert("4th interst");
+          
           //Pass in new order number 
           break;
         case 2 || 3:
         	this.changeValOf(avatarName, 3);
-        	alert("3rd position");
+        	
 
         	break;
         case 4:
         	this.changeValOf(avatarName, 2);
-        	alert("2nd position");
+        	
         	//this.avatarList["'" + avatarName + "'"]['order'] = 2;
         	
         	break
         case 5: 
         	this.changeValOf(avatarName, 1);
-        	alert("highest position");
+        	
         	break
       }    
 
@@ -923,39 +922,39 @@ var app = angular.module('myApp.controllers', []).
 // DUMMY DATA *************************************************
     $scope.itemBank = [ 
       {
-        question: "test1",
+        question: "Dubstep",
         answer: "1",
-        difficulty: 22
+        difficulty: 82
       },
       {
-        question: "test3",
+        question: "MC^2",
         answer: "1",    
-        difficulty: 21
+        difficulty: 71
       },
       {
-          question: "test4: This is a question",
+          question: "There is no answer",
           answer: "1",    
-          difficulty: 20
+          difficulty: 57
       },    
       {
-          question: "test5: This is a question",
+          question: "Pop quiz",
           answer: "1",    
-          difficulty: 19
+          difficulty: 49
       },  
 
       {
-          question: "test7: This is a question",
+          question: "The meaning of life?",
           answer: "1",    
-          difficulty: 18
+          difficulty: 38
       },  
       {
-          question: "test8: This is a question",
+          question: "The answer is No",
           answer: "1",    
-          difficulty: 17
+          difficulty: 27
       },  
 
       {
-        question: "test2: What is the sqrt of pie",
+        question: "Is the sky blue",
         answer: "1",  
         difficulty: 16
       }
@@ -965,12 +964,12 @@ var app = angular.module('myApp.controllers', []).
     $scope.candidateBank = [
       {
         name: "Owen",
-        ability: 19
+        ability: 41
       },
 
       {
         name: "Chris",
-        ability: 15
+        ability: 70
       } 
 
     ]; //student Test bank
@@ -1013,7 +1012,7 @@ var app = angular.module('myApp.controllers', []).
 
     $scope.begin = function(nextCandidate){
       alert(nextCandidate.name);
-      this.closestItem = this.findItemInBank(this.D);
+      this.closestItem = this.findItemInBank(nextCandidate.ability);
       // this.D = closestItem.difficulty;
       // alert("asdasdasd");
       // alert(this.D);
@@ -1028,30 +1027,31 @@ var app = angular.module('myApp.controllers', []).
 
     }
 
+    $scope.minVal = 999;
+    $scope.minItem = "";
     $scope.findItemInBank = function(D){
       // alert(this.itemBank[0].difficulty);
       for (var item in this.itemBank){
-        var minVal = 999;
-        var minItem = "";
+
 
         var difference = Math.abs(D - this.itemBank[item].difficulty)
         console.log(difference);
         console.log("The difference");
 
-        if (difference < minVal){
+        if (difference < this.minVal){
           console.log("This is smaller");
-          minVal = difference;
-          minItem = this.itemBank[item];
-          console.log("The min val is " + minVal);
-          console.log(minItem.question);
+          this.minVal = difference;
+          this.minItem = this.itemBank[item];
+          console.log("The min val is " + this.minVal);
+          console.log(this.minItem.question);
         }
 
       }
 
-      console.log(minVal);
-      console.log(minItem);
+      console.log(this.minVal);
+      console.log(this.minItem);
 
-      return minItem;
+      return this.minItem;
     }
 
     $scope.administerItem = function(item){
