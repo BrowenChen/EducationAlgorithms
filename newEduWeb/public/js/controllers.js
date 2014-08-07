@@ -1011,12 +1011,12 @@ var app = angular.module('myApp.controllers', []).
     };
 
     $scope.begin = function(nextCandidate){
-      alert(nextCandidate.name);
+      console.log(nextCandidate.name);
       this.closestItem = this.findItemInBank(nextCandidate.ability);
       // this.D = closestItem.difficulty;
-      // alert("asdasdasd");
-      // alert(this.D);
-      // alert(closestItem.difficulty);
+      // console.log("asdasdasd");
+      // console.log(this.D);
+      // console.log(closestItem.difficulty);
 
       this.D = this.closestItem.difficulty;
 
@@ -1030,7 +1030,7 @@ var app = angular.module('myApp.controllers', []).
     $scope.minVal = 999;
     $scope.minItem = "";
     $scope.findItemInBank = function(D){
-      // alert(this.itemBank[0].difficulty);
+      // console.log(this.itemBank[0].difficulty);
       for (var item in this.itemBank){
 
 
@@ -1058,31 +1058,32 @@ var app = angular.module('myApp.controllers', []).
       
       
       this.question = item.question;
-      alert(this.question);
-      alert("Waiting for response");
+      console.log(this.question);
+      console.log("Waiting for response");
       // return null
       // var answer = this.getUserPrompt();
       
     }
 
     $scope.getUserPrompt = function(){
+      
       if (this.closestItem == null){
-        alert("Start testing first");
+        console.log("Start testing first");
         //Disable this button
       }
 
       else {
         this.response = $scope.ansData.text;
-        // alert(this.response);
+        // console.log(this.response);
 
         this.ansData = {};
 
         // CONTINUE HERE ============================
 
         //1 or 0
-
+        console.log("starting get User Prompt and score Response");
         var score = this.scoreResponse(this.response, this.closestItem) 
-        // alert(score);
+        // console.log(score);
 
         this.L += 1;
 
@@ -1090,13 +1091,18 @@ var app = angular.module('myApp.controllers', []).
 
         if (score == 0){
           this.D = this.D - 2/(this.L);
-          // alert("score incorrect  and " + this.D);
+          console.log("score incorrect  and " + this.D);
         }
 
         if (score == 1){
           this.D = this.D + 2/(this.L);
           this.R += 1;
         }
+
+
+        //Update the Charts
+        this.loadChartGauge();
+        this.loadDifGauge();        
 
         if (this.testLength > 0){
           this.testLength -= 1;
@@ -1108,7 +1114,7 @@ var app = angular.module('myApp.controllers', []).
         }
 
         if (this.testLength <= 0){
-          alert("ready to give final ability level");
+          console.log("ready to give final ability level");
           console.log(this.R);
           var W = this.L - this.R;
           console.log(" W, H and L, values. ")
@@ -1118,7 +1124,7 @@ var app = angular.module('myApp.controllers', []).
 
           //Check if a variable is zero and set Measure. Cant log(0)
           if (this.L == 0 || this.R == 0){
-            alert("Child ability will be infinity")
+            console.log("Child ability will be infinity")
             var measure = this.H/this.L;
           }
           else {
@@ -1127,7 +1133,7 @@ var app = angular.module('myApp.controllers', []).
 
           // var standardError 
           if (W == 0){
-            alert("You need to retest");
+            console.log("You need to retest");
             this.childAbility = "Re-test, you either got 100% or 0%"
           }
           else if (W != 0){
@@ -1137,7 +1143,9 @@ var app = angular.module('myApp.controllers', []).
 
           alert("Final ability level of the child is " + measure + " and D is " + this.D);
 
-
+          //Update the Charts
+          this.loadChartGauge();
+          this.loadDifGauge();        
           //Maybe change the child ability level
 
 

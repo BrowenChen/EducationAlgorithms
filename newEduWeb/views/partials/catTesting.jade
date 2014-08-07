@@ -37,12 +37,12 @@ script(src="/js/jQueryFunctions.js")
 									.col-sm-6.col-sm-offset-3
 										section.well(style="border-radius:15px;")
 											i Question: {{question}}
-											br
+											brAng
 											form#todo-form(ng-submit='getUserPrompt()')
-												input#new-todo(placeholder='Your Answer Here..', ng-model='ansData.text', autofocus='')
+												input#new-todo(placeholder='1 = True, 0 = False', ng-model='ansData.text', autofocus='')
 											br
 											footer
-												span#todo-count.badge(style="padding:5px; opacity: .7;") 25 Items Remaining
+												span#todo-count.badge(style="padding:5px; opacity: .7;") {{testLength}} Items Remaining
 
 								.row
 									.col-sm-6(style="max-height:200px;")
