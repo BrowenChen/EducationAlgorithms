@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgClosestDiff</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates">
+<link rel="next" href="OscatsAlgEstimate.html" title="OscatsAlgEstimate">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgClassRates.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgEstimate.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgClosestDiff.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgClosestDiff.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgClosestDiff.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgClosestDiff.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgClosestDiff"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgClosestDiff.top_of_page"></a>OscatsAlgClosestDiff</span></h2>
+<p>OscatsAlgClosestDiff</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgClosestDiff.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff-struct" title="struct OscatsAlgClosestDiff">OscatsAlgClosestDiff</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClosestDiff.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgClosestDiff
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClosestDiff.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--modelKey" title='The "modelKey" property'>modelKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--num" title='The "num" property'>num</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--thetaKey" title='The "thetaKey" property'>thetaKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClosestDiff.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClosestDiff.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgClosestDiff-struct"></a><h3>struct OscatsAlgClosestDiff</h3>
+<pre class="programlisting">struct OscatsAlgClosestDiff;</pre>
+<p>
+Item selection algorithm (<a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a>).
+Picks the item whose difficulty parameter is closest to the current
+estimate of theta.  Note: This algorithm won't work correctly if there
+are multiple items with exactly the same location metric.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClosestDiff.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgClosestDiff--modelKey"></a><h3>The <code class="literal">"modelKey"</code> property</h3>
+<pre class="programlisting">  "modelKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which model to use for selection.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value or
+empty string indicates the item's default model.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgClosestDiff--num"></a><h3>The <code class="literal">"num"</code> property</h3>
+<pre class="programlisting">  "num"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+Number of items from which to choose.  If one, then the exact closest
+item is selected.  If greater than one, then a random item is chosen
+from among the <a class="link" href="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--num" title='The "num" property'><span class="type">"num"</span></a> closest items.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgClosestDiff--thetaKey"></a><h3>The <code class="literal">"thetaKey"</code> property</h3>
+<pre class="programlisting">  "thetaKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which latent variable to use for selection.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+value or empty string indicates the examinee's default estimation theta.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

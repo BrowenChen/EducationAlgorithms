@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsTest</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsItemBank.html" title="OscatsItemBank">
+<link rel="next" href="OscatsExaminee.html" title="OscatsExaminee">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsItemBank.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsExaminee.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsTest.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsTest.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsTest.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsTest.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#OscatsTest.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsTest"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsTest.top_of_page"></a>OscatsTest</span></h2>
+<p>OscatsTest — Computerized Adaptive Test Administration</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsTest.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsTest.html#OscatsTest-struct" title="struct OscatsTest">OscatsTest</a>;
+struct              <a class="link" href="OscatsTest.html#OscatsTestClass" title="struct OscatsTestClass">OscatsTestClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsTest.html#oscats-test-administer" title="oscats_test_administer ()">oscats_test_administer</a>              (<em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsTest.html#oscats-test-set-hint" title="oscats_test_set_hint ()">oscats_test_set_hint</a>                (<em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *hint</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsTest
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsTest.html#OscatsTest--id" title='The "id" property'>id</a>"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="OscatsTest.html#OscatsTest--itembank" title='The "itembank" property'>itembank</a>"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write / Construct Only
+  "<a class="link" href="OscatsTest.html#OscatsTest--itermax-items" title='The "itermax-items" property'>itermax-items</a>"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsTest.html#OscatsTest--itermax-select" title='The "itermax-select" property'>itermax-select</a>"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsTest.html#OscatsTest--length-hint" title='The "length-hint" property'>length-hint</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'>administer</a>"                                     : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'>administered</a>"                                   : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-approve" title='The "approve" signal'>approve</a>"                                        : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-filter" title='The "filter" signal'>filter</a>"                                         : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'>finalize</a>"                                       : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-initialize" title='The "initialize" signal'>initialize</a>"                                     : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'>select</a>"                                         : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="OscatsTest.html#OscatsTest-stopcrit" title='The "stopcrit" signal'>stopcrit</a>"                                       : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsTest-struct"></a><h3>struct OscatsTest</h3>
+<pre class="programlisting">struct OscatsTest;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTestClass"></a><h3>struct OscatsTestClass</h3>
+<pre class="programlisting">struct OscatsTestClass {
+  GObjectClass parent_class;
+  // Signals
+  guint initialize;
+  guint filter;
+  guint select;
+  guint approve;
+  guint administer;
+  guint administered;
+  guint stopcrit;
+  guint finalize;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-test-administer"></a><h3>oscats_test_administer ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_test_administer              (<em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<p>
+Core CAT administration loop.  The particular algorithms used to 
+select and administer items as well as update ability/classification
+estimates and tabulate statistics are specified by means of signals
+connected to <em class="parameter"><code>test</code></em>.
+</p>
+<p>
+The test proceeds in the following order:
+</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>The examinee's item/response vectors are reset.</p></li>
+<li class="listitem"><p>The <a class="link" href="OscatsTest.html#OscatsTest-initialize" title='The "initialize" signal'><span class="type">"initialize"</span></a> signal is emitted.</p></li>
+<li class="listitem"><p>The item eligibility vector is initialized with the current hinted value (default: all items).</p></li>
+<li class="listitem"><p>The <a class="link" href="OscatsTest.html#OscatsTest-filter" title='The "filter" signal'><span class="type">"filter"</span></a>, <a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a>, and <a class="link" href="OscatsTest.html#OscatsTest-approve" title='The "approve" signal'><span class="type">"approve"</span></a> signals are emitted.</p></li>
+<li class="listitem"><p>If the approval handler returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, goto 3 (not more than <a class="link" href="OscatsTest.html#OscatsTest--itermax-select" title='The "itermax-select" property'><span class="type">"itermax_select"</span></a> times).</p></li>
+<li class="listitem"><p>The <a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'><span class="type">"administer"</span></a> signal is emitted (which should add the item/response pair to <em class="parameter"><code>e</code></em> as necessary).</p></li>
+<li class="listitem"><p>The <a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a> and <a class="link" href="OscatsTest.html#OscatsTest-stopcrit" title='The "stopcrit" signal'><span class="type">"stopcrit"</span></a> signals are emitted.</p></li>
+<li class="listitem"><p>If the stopping criterion has not been met, goto 3 (not more than <a class="link" href="OscatsTest.html#OscatsTest--itermax-items" title='The "itermax-items" property'><span class="type">"itermax_items"</span></a> times).</p></li>
+<li class="listitem"><p>The <a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a> signal is emitted.</p></li>
+</ol></div>
+<p>
+</p>
+<p>
+Algorithms must be connected to at minimum <a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a>, 
+<a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'><span class="type">"administer"</span></a>, and <a class="link" href="OscatsTest.html#OscatsTest-stopcrit" title='The "stopcrit" signal'><span class="type">"stopcrit"</span></a>.  An initial guess for
+the examinee's latent IRT ability or classification must be supplied.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> to administer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> taking the test</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-test-set-hint"></a><h3>oscats_test_set_hint ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_test_set_hint                (<em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *hint</code></em>);</pre>
+<p>
+Sets the item eligibility hint.  The length of <em class="parameter"><code>hint</code></em> must be the same as
+the number of items in <a class="link" href="OscatsTest.html#OscatsTest--itembank" title='The "itembank" property'><span class="type">"itembank"</span></a>.  This is generally called in
+handlers connected to <a class="link" href="OscatsTest.html#OscatsTest-initialize" title='The "initialize" signal'><span class="type">"initialize"</span></a> or
+<a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hint</code></em> :</span></p></td>
+<td>the initially eligible items</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsTest--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+A string identifier for the test.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest--itembank"></a><h3>The <code class="literal">"itembank"</code> property</h3>
+<pre class="programlisting">  "itembank"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write / Construct Only</pre>
+<p>
+The item bank used for the test.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest--itermax-items"></a><h3>The <code class="literal">"itermax-items"</code> property</h3>
+<pre class="programlisting">  "itermax-items"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The maximum number of items.  If this value is reached (or the item bank
+is exhausted) before the stoping criterion is triggered, a warning is
+logged, the <a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a> signal is emitted, and the test is
+concluded.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 200</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest--itermax-select"></a><h3>The <code class="literal">"itermax-select"</code> property</h3>
+<pre class="programlisting">  "itermax-select"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The maximum number of iterations in the item-selection loop.
+If this value is reached without selecting an item, a warning is logged,
+the <a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a> signal is emitted, and the test is aborted.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest--length-hint"></a><h3>The <code class="literal">"length-hint"</code> property</h3>
+<pre class="programlisting">  "length-hint"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p>
+Guess for how long the test will be.
+</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsTest.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="OscatsTest-administer"></a><h3>The <code class="literal">"administer"</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="returnvalue">guchar</span></a>              user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>     *item,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Item administration.  Only one administrator should connect to the
+<a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'><span class="type">"administer"</span></a> signal.  If multiple algorithms attach to
+<a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'><span class="type">"administer"</span></a>, only the response returned from the last
+administrator will be reported to algorithms connected to
+<a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a>.  Note: An algorithm connected to this signal
+should call <a class="link" href="OscatsExaminee.html#oscats-examinee-add-item" title="oscats_examinee_add_item ()"><code class="function">oscats_examinee_add_item()</code></a>, as appropriate, to record the
+response for the examinee so that it can be used in subsequent
+ability/classification estimation.  Whether or not the response is
+recorded (tests with online calibration, for example, may not record
+every response), items are still not administered more than once.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>the proposed <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> response of examinee <em class="parameter"><code>e</code></em> to <em class="parameter"><code>item</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-administered"></a><h3>The <code class="literal">"administered"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>     *item,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a>          resp,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+The <a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a> signal allows algorithms to record
+statistics concerning items administered and the examinee's responses.
+In particular, an algorithm to update the examinee's estimated
+ability/class should be connected to <a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>the proposed <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>resp</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> response</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-approve"></a><h3>The <code class="literal">"approve"</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>     *item,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Item approval.  Algorithms (e.g. Sympson-Hetter) connecting to
+<a class="link" href="OscatsTest.html#OscatsTest-approve" title='The "approve" signal'><span class="type">"approve"</span></a> should indicate whether the proposed <em class="parameter"><code>item</code></em> is
+acceptable.  If multiple algorithms attach to <a class="link" href="OscatsTest.html#OscatsTest-approve" title='The "approve" signal'><span class="type">"approve"</span></a>, each
+one must approve an item before it will be administered to examinee <em class="parameter"><code>e</code></em>. 
+The <em class="parameter"><code>item</code></em> may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, in which case handlers must silently return
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>the proposed <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to accept the proposed item, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to reject</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-filter"></a><h3>The <code class="literal">"filter"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>      *eligible,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Item filtration.  The list of <em class="parameter"><code>eligible</code></em> items is initialized to the
+test's eligibility hint (default: all items), minus items examinee <em class="parameter"><code>e</code></em> has
+already been administered.  Algorithms connecting to <a class="link" href="OscatsTest.html#OscatsTest-filter" title='The "filter" signal'><span class="type">"filter"</span></a>
+should clear bits in <em class="parameter"><code>eligible</code></em> for undesired items.  If an algorithm sets
+bits in <em class="parameter"><code>eligible</code></em>, it is the algorithm's responsibility to ensure that
+examinee <em class="parameter"><code>e</code></em> has not already seen the given item.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>eligible</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> indicating eligible items in the itembank</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-finalize"></a><h3>The <code class="literal">"finalize"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Test finalization.  Algorithms may compute final statistics and clean up
+internal data structures by connecting to <a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a>.  It is
+guaranteed that the test will emit <a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a>, even if the
+test is aborted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-initialize"></a><h3>The <code class="literal">"initialize"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Test initializiation.  All algorithms that need to initialize their
+internal data structures should connect to the <a class="link" href="OscatsTest.html#OscatsTest-initialize" title='The "initialize" signal'><span class="type">"initialize"</span></a>
+signal.  If the examinee's initial ability/class estimate is not set
+before <a class="link" href="OscatsTest.html#oscats-test-administer" title="oscats_test_administer ()"><code class="function">oscats_test_administer()</code></a> is called, it should be set by a handler
+attached to <a class="link" href="OscatsTest.html#OscatsTest-initialize" title='The "initialize" signal'><span class="type">"initialize"</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-select"></a><h3>The <code class="literal">"select"</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>      *eligible,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Item selection.  The algorithm connecting to <a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a> must
+select a single item from those in the item bank that are <em class="parameter"><code>eligible</code></em>, or
+return -1 on failure.  Only one algorithm should connect to
+<a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a>.  If multiple algorithms connect, only the results
+from the last connected algorithm will be used.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>eligible</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> indicating eligible items in the itembank</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the index of the selected <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>, or -1 on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsTest-stopcrit"></a><h3>The <code class="literal">"stopcrit"</code> signal</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            user_function                      (<a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>     *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>        user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+Stoping criterion.  If multiple algorithms attach to <a class="link" href="OscatsTest.html#OscatsTest-stopcrit" title='The "stopcrit" signal'><span class="type">"stopcrit"</span></a>,
+only one is required to end the test.  Note, the test will never have
+more than <a class="link" href="OscatsTest.html#OscatsTest--itermax-items" title='The "itermax-items" property'><span class="type">"itermax_items"</span></a> items.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to end the test, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to continue with another item</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

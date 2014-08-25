@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgChooser</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat">
+<link rel="next" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgAstrat.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgClassRates.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgChooser.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgChooser.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgChooser.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgChooser.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgChooser"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgChooser.top_of_page"></a>OscatsAlgChooser</span></h2>
+<p>OscatsAlgChooser</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgChooser.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (<a class="link" href="OscatsAlgChooser.html#OscatsAlgChooserCriterion" title="OscatsAlgChooserCriterion ()">*OscatsAlgChooserCriterion</a>)        (<em class="parameter"><code>const <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+struct              <a class="link" href="OscatsAlgChooser.html#OscatsAlgChooser-struct" title="struct OscatsAlgChooser">OscatsAlgChooser</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgChooser.html#oscats-alg-chooser-set-c-criterion" title="oscats_alg_chooser_set_c_criterion ()">oscats_alg_chooser_set_c_criterion</a>  (<em class="parameter"><code><a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> *chooser</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgChooser.html#OscatsAlgChooserCriterion" title="OscatsAlgChooserCriterion ()"><span class="type">OscatsAlgChooserCriterion</span></a> f</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="OscatsAlgChooser.html#oscats-alg-chooser-choose" title="oscats_alg_chooser_choose ()">oscats_alg_chooser_choose</a>           (<em class="parameter"><code><a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> *chooser</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *eligible</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgChooser.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsAlgChooser
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgChooser.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgChooser.html#OscatsAlgChooser--itembank" title='The "itembank" property'>itembank</a>"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write
+  "<a class="link" href="OscatsAlgChooser.html#OscatsAlgChooser--num" title='The "num" property'>num</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgChooser.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgChooser.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgChooserCriterion"></a><h3>OscatsAlgChooserCriterion ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (*OscatsAlgChooserCriterion)        (<em class="parameter"><code>const <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgChooser-struct"></a><h3>struct OscatsAlgChooser</h3>
+<pre class="programlisting">struct OscatsAlgChooser;</pre>
+<p>
+Support algorithm (for item selection):
+Picks an optimal item based on a supplied criterion function.
+Note: This algorithm won't work correctly if there are
+multiple items with exactly the optimality metric.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-chooser-set-c-criterion"></a><h3>oscats_alg_chooser_set_c_criterion ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_chooser_set_c_criterion  (<em class="parameter"><code><a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> *chooser</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgChooser.html#OscatsAlgChooserCriterion" title="OscatsAlgChooserCriterion ()"><span class="type">OscatsAlgChooserCriterion</span></a> f</code></em>);</pre>
+<p>
+Sets the criterion function <em class="parameter"><code>f</code></em>, which takes an <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>, an
+<a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>, and optional user data and returns the item's value
+on the criterion.  The <em class="parameter"><code>chooser</code></em> will <span class="emphasis"><em>minimize</em></span> this
+criterion.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f</code></em> :</span></p></td>
+<td>the criterion function to be minimized</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-chooser-choose"></a><h3>oscats_alg_chooser_choose ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                oscats_alg_chooser_choose           (<em class="parameter"><code><a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> *chooser</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *eligible</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+Chooses an item that minimizes the given criterion for examinee <em class="parameter"><code>e</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>chooser</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser"><span class="type">OscatsAlgChooser</span></a> with criterion set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> for which to choose the item</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>eligible</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> indicating which items in the bank are eligible</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>optional user data for the criterion function</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the index of the selected item, or -1 if no item is available</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgChooser.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgChooser--itembank"></a><h3>The <code class="literal">"itembank"</code> property</h3>
+<pre class="programlisting">  "itembank"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write</pre>
+<p>
+The item bank from which to choose items.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgChooser--num"></a><h3>The <code class="literal">"num"</code> property</h3>
+<pre class="programlisting">  "num"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+Number of items from which to choose.  If one, then the exact closest
+item is selected.  If greater than one, then a random item is chosen
+from among the <a class="link" href="OscatsAlgChooser.html#OscatsAlgChooser--num" title='The "num" property'><span class="type">"num"</span></a> closest items.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

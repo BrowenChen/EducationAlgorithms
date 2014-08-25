@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsModelNominal</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch07.html" title="Models">
+<link rel="prev" href="OscatsModelL3p.html" title="OscatsModelL3p">
+<link rel="next" href="OscatsModelPc.html" title="OscatsModelPc">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsModelL3p.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsModelPc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsModelNominal.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsModelNominal.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsModelNominal.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsModelNominal.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsModelNominal"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsModelNominal.top_of_page"></a>OscatsModelNominal</span></h2>
+<p>OscatsModelNominal — Nominal Response Model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsModelNominal.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsModelNominal.html#OscatsModelNominal-struct" title="struct OscatsModelNominal">OscatsModelNominal</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelNominal.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsModel.html" title="OscatsModel">OscatsModel</a>
+         +----OscatsModelNominal
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelNominal.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsModelNominal.html#OscatsModelNominal--Ncat" title='The "Ncat" property'>Ncat</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelNominal.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsModelNominal.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsModelNominal-struct"></a><h3>struct OscatsModelNominal</h3>
+<pre class="programlisting">struct OscatsModelNominal;</pre>
+<p>
+The Nominal Response IRT model:
+P(X=k|theta) = f_k(theta)/[1+sum_j f_j(theta)],
+where f_j(theta) = sum_i a_ij theta_i - b_j + sum_l d_l covariate_l,
+a_ij are the option discriminations for each dimension,
+b_j is the scaled option difficulty,
+and a_i0 = b_0 = 0.
+Responses are numbered 0, 1, ..., Ncat-1.
+Note that all options share the same parameters for the covariates.
+Distance is defined as: min_j abs(f_j(theta)).
+</p>
+<p>
+Parameter names: Diff.j, Discr.j.DimName
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36189731"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">R. J.</span> <span class="surname">de Ayala</span></span></span>
+   (<span class="pubdate">2009</span>).
+   <span class="title">The Theory and Practice of Item Response Theory</span>.
+   p <span class="pagenums">240</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36174735"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">R. J.</span> <span class="surname">de Ayala</span></span></span>
+   (<span class="pubdate">1992</span>).
+   "<span class="title">The Nominal Response Model in Computerized Adaptive Testing</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">16</span>,</span>
+   <span class="artpagenums">327-343</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36206366"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">R. D.</span> <span class="surname">Bock</span></span></span>
+   (<span class="pubdate">1972</span>).
+   "<span class="title">Estimating item parameters and latent ability when responses are scored in two or more nominal categories</span>."
+   <span class="biblioset"><span class="title">Psychometrika</span>,
+              <span class="volumenum">37</span>,</span>
+   <span class="artpagenums">29-51</span>.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsModelNominal.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsModelNominal--Ncat"></a><h3>The <code class="literal">"Ncat"</code> property</h3>
+<pre class="programlisting">  "Ncat"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of response categories in the IRT model,
+numered 0, 1, ..., Ncat-1.  The default number of categories is 3,
+which is also the minimum.
+</p>
+<p>Allowed values: &gt;= 3</p>
+<p>Default value: 3</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

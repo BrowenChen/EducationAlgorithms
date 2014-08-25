@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgSimulate</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgPickRand.html" title="OscatsAlgPickRand">
+<link rel="next" href="OscatsAlgStratify.html" title="OscatsAlgStratify">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgPickRand.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgStratify.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgSimulate.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgSimulate.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgSimulate.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgSimulate.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgSimulate"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgSimulate.top_of_page"></a>OscatsAlgSimulate</span></h2>
+<p>OscatsAlgSimulate</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgSimulate.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgSimulate.html#OscatsAlgSimulate-struct" title="struct OscatsAlgSimulate">OscatsAlgSimulate</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgSimulate.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgSimulate
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgSimulate.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgSimulate.html#OscatsAlgSimulate--auto-record" title='The "auto-record" property'>auto-record</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct
+  "<a class="link" href="OscatsAlgSimulate.html#OscatsAlgSimulate--modelKey" title='The "modelKey" property'>modelKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgSimulate.html#OscatsAlgSimulate--thetaKey" title='The "thetaKey" property'>thetaKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgSimulate.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgSimulate.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgSimulate-struct"></a><h3>struct OscatsAlgSimulate</h3>
+<pre class="programlisting">struct OscatsAlgSimulate;</pre>
+<p>
+Item administration algorithm (<a class="link" href="OscatsTest.html#OscatsTest-administer" title='The "administer" signal'><span class="type">"administer"</span></a>).
+Generates a simulated response for the given item based on an
+underlying IRT model.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgSimulate.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgSimulate--auto-record"></a><h3>The <code class="literal">"auto-record"</code> property</h3>
+<pre class="programlisting">  "auto-record"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct</pre>
+<p>
+Whether to record all simulated responses.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgSimulate--modelKey"></a><h3>The <code class="literal">"modelKey"</code> property</h3>
+<pre class="programlisting">  "modelKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which model to use for simulation.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value or
+empty string indicates the item's default model.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgSimulate--thetaKey"></a><h3>The <code class="literal">"thetaKey"</code> property</h3>
+<pre class="programlisting">  "thetaKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which latent variable to use for simulation.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+value or empty string indicates the examinee's default simulation theta.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

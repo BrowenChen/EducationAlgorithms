@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsItem</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsAdministrand.html" title="OscatsAdministrand">
+<link rel="next" href="OscatsItemBank.html" title="OscatsItemBank">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAdministrand.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsItemBank.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsItem.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsItem.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsItem.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsItem"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsItem.top_of_page"></a>OscatsItem</span></h2>
+<p>OscatsItem — Item Container Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsItem.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsItem.html#OscatsItem-struct" title="struct OscatsItem">OscatsItem</a>;
+<a class="link" href="OscatsItem.html" title="OscatsItem"><span class="returnvalue">OscatsItem</span></a> *        <a class="link" href="OscatsItem.html#oscats-item-new" title="oscats_item_new ()">oscats_item_new</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsItem.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand">OscatsAdministrand</a>
+         +----OscatsItem
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsItem.description"></a><h2>Description</h2>
+<p>
+Implements all <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> methods.
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsItem.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsItem-struct"></a><h3>struct OscatsItem</h3>
+<pre class="programlisting">struct OscatsItem;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-item-new"></a><h3>oscats_item_new ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsItem.html" title="OscatsItem"><span class="returnvalue">OscatsItem</span></a> *        oscats_item_new                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> using the supplied <em class="parameter"><code>model</code></em> as the default model. 
+The default model key is set to <em class="parameter"><code>name</code></em>, or if <em class="parameter"><code>name</code></em> == 0, "default" is
+used.  Note: the new <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> takes ownership of <em class="parameter"><code>model</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name for default model (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> to set as the default model. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgEstimate</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgClosestDiff.html" title="OscatsAlgClosestDiff">
+<link rel="next" href="OscatsAlgExposureCounter.html" title="OscatsAlgExposureCounter">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgClosestDiff.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgExposureCounter.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgEstimate.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgEstimate.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgEstimate.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgEstimate.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgEstimate"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgEstimate.top_of_page"></a>OscatsAlgEstimate</span></h2>
+<p>OscatsAlgEstimate</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgEstimate.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate-struct" title="struct OscatsAlgEstimate">OscatsAlgEstimate</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgEstimate.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgEstimate
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgEstimate.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--Dprior" title='The "Dprior" property'>Dprior</a>"                   <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--Nposterior" title='The "Nposterior" property'>Nposterior</a>"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--Sigma" title='The "Sigma" property'>Sigma</a>"                    <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a>*           : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--independent" title='The "independent" property'>independent</a>"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--modelKey" title='The "modelKey" property'>modelKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--mu" title='The "mu" property'>mu</a>"                       <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--posterior" title='The "posterior" property'>posterior</a>"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--thetaKey" title='The "thetaKey" property'>thetaKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--tol" title='The "tol" property'>tol</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a>               : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgEstimate.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgEstimate.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgEstimate-struct"></a><h3>struct OscatsAlgEstimate</h3>
+<pre class="programlisting">struct OscatsAlgEstimate;</pre>
+<p>
+Statistics algorithm (<a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a>).
+Update the examinee's latent IRT ability estimate.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgEstimate.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--Dprior"></a><h3>The <code class="literal">"Dprior"</code> property</h3>
+<pre class="programlisting">  "Dprior"                   <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write</pre>
+<p>
+Prior distribution for discrete dimensions as a vector of probabilities
+for all Prod_i n_i patterns, where n_i is the number of categories for
+discrete dimension i.  The values should be ordered so that the lowest
+numbered binary dimension increases fasted, and the ordinal dimensions
+follow binary dimensions.  The probabilities should sum to 1.  Default:
+uniform. Note, this is used only when <a class="link" href="OscatsAlgEstimate.html#OscatsAlgEstimate--posterior" title='The "posterior" property'><span class="type">"posterior"</span></a> is
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--Nposterior"></a><h3>The <code class="literal">"Nposterior"</code> property</h3>
+<pre class="programlisting">  "Nposterior"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct</pre>
+<p>
+For the first N items, use Expected A Posteriori (EAP) estimation for
+continuous dimensions and Maximum A Posteriori (MAP) estimation for
+discrete dimensions.  Switch to Maximum Likelihood (MLE) estimation after
+N items have been recorded.  Note, EAP/MAP is always used as a fallback
+if the MLE fails to converge, e.g. for perfect response patterns.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--Sigma"></a><h3>The <code class="literal">"Sigma"</code> property</h3>
+<pre class="programlisting">  "Sigma"                    <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a>*           : Read / Write</pre>
+<p>
+Population covariance matrix for the normal prior under EAP.  (Note: The
+value is copied.) Default: identity.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--independent"></a><h3>The <code class="literal">"independent"</code> property</h3>
+<pre class="programlisting">  "independent"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>
+Continuous and discrete dimensions are independent.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--modelKey"></a><h3>The <code class="literal">"modelKey"</code> property</h3>
+<pre class="programlisting">  "modelKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which model to use for estimation.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value or
+empty string indicates the item's default model.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--mu"></a><h3>The <code class="literal">"mu"</code> property</h3>
+<pre class="programlisting">  "mu"                       <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write</pre>
+<p>
+Population mean for the normal prior under EAP.  (Note: The value is
+copied.) Default: 0.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--posterior"></a><h3>The <code class="literal">"posterior"</code> property</h3>
+<pre class="programlisting">  "posterior"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>
+Always use Expected A Posteriori (EAP) estimation for continuous
+dimensions and Maximum A Posteriori (MAP) estimation for discrete
+dimensions, instead of Maximum Likelihood (MLE).  Note, EAP/MAP is always
+used as a fallback if the MLE fails to converge, e.g. for perfect
+response patterns.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--thetaKey"></a><h3>The <code class="literal">"thetaKey"</code> property</h3>
+<pre class="programlisting">  "thetaKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which latent variable to use for estimation.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+value or empty string indicates the examinee's default estimation theta.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgEstimate--tol"></a><h3>The <code class="literal">"tol"</code> property</h3>
+<pre class="programlisting">  "tol"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a>               : Read / Write / Construct</pre>
+<p>
+Tolerance for Newton-Raphson maximization (algorithm iterates until
+largest change in any dimension is less than tolerance).
+</p>
+<p>Allowed values: &gt;= G_MINDOUBLE</p>
+<p>Default value: 1e-06</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

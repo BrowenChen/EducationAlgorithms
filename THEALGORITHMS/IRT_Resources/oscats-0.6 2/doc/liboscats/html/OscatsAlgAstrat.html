@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgAstrat</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgorithm.html" title="OscatsAlgorithm">
+<link rel="next" href="OscatsAlgChooser.html" title="OscatsAlgChooser">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgorithm.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgChooser.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgAstrat.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgAstrat.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgAstrat.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgAstrat.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#OscatsAlgAstrat.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgAstrat"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgAstrat.top_of_page"></a>OscatsAlgAstrat</span></h2>
+<p>OscatsAlgAstrat</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgAstrat.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat-struct" title="struct OscatsAlgAstrat">OscatsAlgAstrat</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratCriterion" title="OscatsAlgAstratCriterion ()">*OscatsAlgAstratCriterion</a>)         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);
+<span class="returnvalue">void</span>                (<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratNotify" title="OscatsAlgAstratNotify ()">*OscatsAlgAstratNotify</a>)            (<em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> *Param1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *Param2</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *Param3</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> Param4</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgAstrat.html#oscats-alg-astrat-register-model" title="oscats_alg_astrat_register_model ()">oscats_alg_astrat_register_model</a>    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratCriterion" title="OscatsAlgAstratCriterion ()"><span class="type">OscatsAlgAstratCriterion</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratCriterion" title="OscatsAlgAstratCriterion ()"><span class="type">OscatsAlgAstratCriterion</span></a> b</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgAstrat.html#oscats-alg-astrat-restratify" title="oscats_alg_astrat_restratify ()">oscats_alg_astrat_restratify</a>        (<em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> *alg_data</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgAstrat
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nblocks" title='The "Nblocks" property'>Nblocks</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Ncur" title='The "Ncur" property'>Ncur</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nequal" title='The "Nequal" property'>Nequal</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems" title='The "Nitems" property'>Nitems</a>"                   <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nstrata" title='The "Nstrata" property'>Nstrata</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--equal" title='The "equal" property'>equal</a>"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--modelKey" title='The "modelKey" property'>modelKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--stratum" title='The "stratum" property'>stratum</a>"                  <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>*            : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat-stratum" title='The "stratum" signal'>stratum</a>"                                        : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgAstrat-struct"></a><h3>struct OscatsAlgAstrat</h3>
+<pre class="programlisting">struct OscatsAlgAstrat;</pre>
+<p>
+Item selection support algorithm.  This algorithm implements (part of)
+the a-Stratified item selection method.  On registration, the algorithm
+will stratify the item bank into the given number of strata.  Then, the
+algorithm uses the test hint to indicate the current stratum [see
+<a class="link" href="OscatsTest.html#oscats-test-set-hint" title="oscats_test_set_hint ()"><code class="function">oscats_test_set_hint()</code></a>].  The test hint is updated on the
+<a class="link" href="OscatsTest.html#OscatsTest-administered" title='The "administered" signal'><span class="type">"administered"</span></a> signal, after the given number of items for
+each stratum has been <span class="emphasis"><em>recorded</em></span> for the examinee.
+</p>
+<p>
+Note: This algorithm only implements item stratification.  It must be
+used in conjunction with an algorithm to pick an item from within the
+current stratum (e.g. <a class="link" href="OscatsAlgClosestDiff.html" title="OscatsAlgClosestDiff"><span class="type">OscatsAlgClosestDiff</span></a> or <a class="link" href="OscatsAlgMaxFisher.html" title="OscatsAlgMaxFisher"><span class="type">OscatsAlgMaxFisher</span></a>).
+</p>
+<p>
+Note: This algorithm does not terminate the test.  It must be used in
+conjunction with an algorithm that signals completion of the CAT
+(e.g. <a class="link" href="OscatsAlgFixedLength.html" title="OscatsAlgFixedLength"><span class="type">OscatsAlgFixedLength</span></a>).  If the CAT proceeds beyond that last
+stratum, a warning will be issued.
+</p>
+<p>
+<a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> needs some way of knowing how to find the a-parameter
+for each model type.  This is accomplished by registering a callback
+using <a class="link" href="OscatsAlgAstrat.html#oscats-alg-astrat-register-model" title="oscats_alg_astrat_register_model ()"><code class="function">oscats_alg_astrat_register_model()</code></a>.  Default callbacks are
+automatically registered for <a class="link" href="OscatsModelL1p.html" title="OscatsModelL1p"><span class="type">OscatsModelL1p</span></a>, <a class="link" href="OscatsModelL2p.html" title="OscatsModelL2p"><span class="type">OscatsModelL2p</span></a>, and
+<a class="link" href="OscatsModelL3p.html" title="OscatsModelL3p"><span class="type">OscatsModelL3p</span></a>.  These define discrimination as:
+  [sum_i a_k^2]^{1/2}
+for each dimension i.
+</p>
+<p>
+<a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> emits the <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat-stratum" title='The "stratum" signal'><span class="type">"stratum"</span></a> signal when the
+test moves into a new stratum (including at the start of the test), for
+coordination with other algorithms that may need this information.
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36223704"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Hua-Hua</span> <span class="surname">Chang</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">Zhiliang</span> <span class="surname">Ying</span></span></span></span>
+   (<span class="pubdate">1999</span>).
+   "<span class="title">a-Stratified Multistage Computerized Adaptive Testing</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">23</span>,</span>
+   <span class="artpagenums">211-222</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36253309"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Hua-Hua</span> <span class="surname">Chang</span></span></span>,
+   <span class="author"><span class="personname"><span class="firstname">Jiahe</span> <span class="surname">Qian</span></span></span>, and
+   <span class="author"><span class="personname"><span class="firstname">Zhiliang</span> <span class="surname">Ying</span></span></span></span>
+   (<span class="pubdate">2001</span>).
+   "<span class="title">a-Stratified Multistage Computerized Adaptive Testing Adaptive Testing With b Blocking</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">25</span>,</span>
+   <span class="artpagenums">333-341</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36179382"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Mark</span> <span class="surname">Reckase</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">Robert</span> <span class="surname">McKinley</span></span></span></span>
+   (<span class="pubdate">1991</span>).
+   "<span class="title">The Discriminating Power of Items That Measure More Than One Dimension</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">15</span>,</span>
+   <span class="artpagenums">361-373</span>.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstratCriterion"></a><h3>OscatsAlgAstratCriterion ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (*OscatsAlgAstratCriterion)         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstratNotify"></a><h3>OscatsAlgAstratNotify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*OscatsAlgAstratNotify)            (<em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> *Param1</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *Param2</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *Param3</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> Param4</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-astrat-register-model"></a><h3>oscats_alg_astrat_register_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_astrat_register_model    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratCriterion" title="OscatsAlgAstratCriterion ()"><span class="type">OscatsAlgAstratCriterion</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstratCriterion" title="OscatsAlgAstratCriterion ()"><span class="type">OscatsAlgAstratCriterion</span></a> b</code></em>);</pre>
+<p>
+Registers functions to identify the discrimination and difficulty
+parameters for <em class="parameter"><code>model</code></em>.  Note that this happens automatically for
+<a class="link" href="OscatsModelL1p.html" title="OscatsModelL1p"><span class="type">OscatsModelL1p</span></a>, <a class="link" href="OscatsModelL2p.html" title="OscatsModelL2p"><span class="type">OscatsModelL2p</span></a>, and <a class="link" href="OscatsModelL3p.html" title="OscatsModelL3p"><span class="type">OscatsModelL3p</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>function that returns the discrimination</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>function that returns the difficulty</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-astrat-restratify"></a><h3>oscats_alg_astrat_restratify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_astrat_restratify        (<em class="parameter"><code><a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> *alg_data</code></em>);</pre>
+<p>
+Performs the stratification again.  This function only needs to be called
+in complex simulations for which the stratification parameters (such as
+the number of strata, number of items per statum, the model key, etc.)
+change after the test has been constructed, which is
+<span class="emphasis"><em>not</em></span> usual.
+</p>
+<p>
+Note: This will reset the internal iterator to the first stratum, but
+does not emit <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat-stratum" title='The "stratum" signal'><span class="type">"stratum"</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> agorithm data</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--Nblocks"></a><h3>The <code class="literal">"Nblocks"</code> property</h3>
+<pre class="programlisting">  "Nblocks"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct</pre>
+<p>
+The number of b blocks.  If 0, then b blocking is not used.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--Ncur"></a><h3>The <code class="literal">"Ncur"</code> property</h3>
+<pre class="programlisting">  "Ncur"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+The number (0-based) of the current stratum.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--Nequal"></a><h3>The <code class="literal">"Nequal"</code> property</h3>
+<pre class="programlisting">  "Nequal"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct</pre>
+<p>
+The number of items to select from each stratum if <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--equal" title='The "equal" property'><span class="type">"equal"</span></a>
+is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.  Otherwise, see <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems" title='The "Nitems" property'><span class="type">"Nitems"</span></a>.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--Nitems"></a><h3>The <code class="literal">"Nitems"</code> property</h3>
+<pre class="programlisting">  "Nitems"                   <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write</pre>
+<p>
+An array indicating how many items to select from each stratum. May only
+be set if <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--equal" title='The "equal" property'><span class="type">"equal"</span></a> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.  The number of strata is
+inferred from the length of the array.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--Nstrata"></a><h3>The <code class="literal">"Nstrata"</code> property</h3>
+<pre class="programlisting">  "Nstrata"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct</pre>
+<p>
+The number of strata.  Note: If <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--equal" title='The "equal" property'><span class="type">"equal"</span></a> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, this
+value may not be set.  Instead, the number of strata is taken from
+<a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems" title='The "Nitems" property'><span class="type">"Nitems"</span></a>.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--equal"></a><h3>The <code class="literal">"equal"</code> property</h3>
+<pre class="programlisting">  "equal"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>
+If <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the number of items selected from each stratum is the same,
+namely <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nequal" title='The "Nequal" property'><span class="type">"Nequal"</span></a>, and <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems" title='The "Nitems" property'><span class="type">"Nitems"</span></a> is ignored.
+If <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, the number of items selected from each stratum must be
+specified by <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems" title='The "Nitems" property'><span class="type">"Nitems"</span></a>, and both <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nequal" title='The "Nequal" property'><span class="type">"Nequal"</span></a>
+and <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat--Nstrata" title='The "Nstrata" property'><span class="type">"Nstrata"</span></a> are ignored.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--modelKey"></a><h3>The <code class="literal">"modelKey"</code> property</h3>
+<pre class="programlisting">  "modelKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which model to use for stratification.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value
+or empty string indicates the item's default model.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgAstrat--stratum"></a><h3>The <code class="literal">"stratum"</code> property</h3>
+<pre class="programlisting">  "stratum"                  <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>*            : Read</pre>
+<p>
+The bit array indicating which items are in the current stratum.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgAstrat.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgAstrat-stratum"></a><h3>The <code class="literal">"stratum"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat"><span class="type">OscatsAlgAstrat</span></a> *test,
+                                                        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>  *e,
+                                                        <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>       *stratum,
+                                                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+The <a class="link" href="OscatsAlgAstrat.html#OscatsAlgAstrat-stratum" title='The "stratum" signal'><span class="type">"stratum"</span></a> signal is emitted when the examinee moves
+to a new stratum (including at the beginning of the test).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stratum</code></em> :</span></p></td>
+<td>the proposed <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Random</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch05.html" title="Utilities">
+<link rel="prev" href="liboscats-GSL.html" title="GSL">
+<link rel="next" href="OscatsIntegrate.html" title="OscatsIntegrate">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="liboscats-GSL.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsIntegrate.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#liboscats-Random.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#liboscats-Random.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="liboscats-Random"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="liboscats-Random.top_of_page"></a>Random</span></h2>
+<p>Random — Wrapper for GSL random number generators and
+distribution functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="liboscats-Random.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-uniform-int" title="oscats_rnd_uniform_int ()">oscats_rnd_uniform_int</a>              ();
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="liboscats-Random.html#oscats-rnd-uniform-int-range" title="oscats_rnd_uniform_int_range ()">oscats_rnd_uniform_int_range</a>        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> min</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> max</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-uniform" title="oscats_rnd_uniform ()">oscats_rnd_uniform</a>                  ();
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-uniform-range" title="oscats_rnd_uniform_range ()">oscats_rnd_uniform_range</a>            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> min</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> max</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-normal" title="oscats_rnd_normal ()">oscats_rnd_normal</a>                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sd</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-binorm" title="oscats_rnd_binorm ()">oscats_rnd_binorm</a>                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sdx</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sdy</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> rho</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> *Y</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-multinorm-prep" title="oscats_rnd_multinorm_prep ()">oscats_rnd_multinorm_prep</a>           (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma_half</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-multinorm" title="oscats_rnd_multinorm ()">oscats_rnd_multinorm</a>                (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma_half</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-exp" title="oscats_rnd_exp ()">oscats_rnd_exp</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> mu</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-gamma" title="oscats_rnd_gamma ()">oscats_rnd_gamma</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> b</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-beta" title="oscats_rnd_beta ()">oscats_rnd_beta</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> b</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-dirichlet" title="oscats_rnd_dirichlet ()">oscats_rnd_dirichlet</a>                (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *alpha</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-Random.html#oscats-rnd-poisson" title="oscats_rnd_poisson ()">oscats_rnd_poisson</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> mu</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-Random.html#oscats-rnd-binomial" title="oscats_rnd_binomial ()">oscats_rnd_binomial</a>                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> p</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-multinomial" title="oscats_rnd_multinomial ()">oscats_rnd_multinomial</a>              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *p</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *x</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-Random.html#oscats-rnd-hypergeometric" title="oscats_rnd_hypergeometric ()">oscats_rnd_hypergeometric</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n2</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-normal-p" title="oscats_rnd_normal_p ()">oscats_rnd_normal_p</a>                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sd</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-chisq-p" title="oscats_rnd_chisq_p ()">oscats_rnd_chisq_p</a>                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-F-p" title="oscats_rnd_F_p ()">oscats_rnd_F_p</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu2</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-Random.html#oscats-rnd-t-p" title="oscats_rnd_t_p ()">oscats_rnd_t_p</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-Random.html#oscats-rnd-sample" title="oscats_rnd_sample ()">oscats_rnd_sample</a>                   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *population</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *sample</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> replace</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="liboscats-Random.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="liboscats-Random.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="oscats-rnd-uniform-int"></a><h3>oscats_rnd_uniform_int ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             oscats_rnd_uniform_int              ();</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a uniformly random integer on [0, 2^32)</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-uniform-int-range"></a><h3>oscats_rnd_uniform_int_range ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                oscats_rnd_uniform_int_range        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> min</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> max</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>the minimum</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>the maximum</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a uniformly random integer on [<em class="parameter"><code>min</code></em>, <em class="parameter"><code>max</code></em>]</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-uniform"></a><h3>oscats_rnd_uniform ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_uniform                  ();</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a uniformly random number on [0,1).</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-uniform-range"></a><h3>oscats_rnd_uniform_range ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_uniform_range            (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> min</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> max</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>minimum</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>maximum</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a uniformly random number on [<em class="parameter"><code>min</code></em>,<em class="parameter"><code>max</code></em>).</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-normal"></a><h3>oscats_rnd_normal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_normal                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sd</code></em>);</pre>
+<p>
+The mean-zero normal distribution has pdf
+f_norm(x|sd) = exp(-x^2 / (2 sd^2)) / (sqrt(2 pi) sd).
+</p>
+<p>
+Must have: <em class="parameter"><code>sd</code></em> &gt; 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sd</code></em> :</span></p></td>
+<td>standard deviation</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a Normally distributed random number</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-binorm"></a><h3>oscats_rnd_binorm ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_binorm                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sdx</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sdy</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> rho</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> *Y</code></em>);</pre>
+<p>
+The mean-zero bivariate normal distribution has pdf
+f_binorm(x,y|sdx,sdy) = exp(-(x^2/sdx^2 + y^2/sdy^2 
+- 2 rho x y / (sdx sdy)) / 2(1-rho^2)) / (2 pi sdx sdy).
+Note that cov(X,Y) = rho * sdx * sdy.
+</p>
+<p>
+Must have: <em class="parameter"><code>sdx</code></em> &gt; 0, <em class="parameter"><code>sdy</code></em> &gt; 0, -1 &lt;= <em class="parameter"><code>rho</code></em> &lt;= 1.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sdx</code></em> :</span></p></td>
+<td>standard deviation for first variable</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sdy</code></em> :</span></p></td>
+<td>standard deviation for second variable</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rho</code></em> :</span></p></td>
+<td>correlation coefficient</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>X</code></em> :</span></p></td>
+<td>pointer to return first variable</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Y</code></em> :</span></p></td>
+<td>pointer to return second variable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-multinorm-prep"></a><h3>oscats_rnd_multinorm_prep ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_multinorm_prep           (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma_half</code></em>);</pre>
+<p>
+Prepares a lower-triangular matrix A such that AA'=Sigma for
+multivariate-normal random-number generation.  This is achieved by
+Cholesky decomposition.
+</p>
+<p>
+Must have: <em class="parameter"><code>sigma</code></em> symmetric and positive definite,
+<em class="parameter"><code>sigma</code></em> and <em class="parameter"><code>sigma_half</code></em> with same size &gt; 2.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sigma</code></em> :</span></p></td>
+<td>covariance matrix for multivariate normal distribution</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sigma_half</code></em> :</span></p></td>
+<td>return matrix</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-multinorm"></a><h3>oscats_rnd_multinorm ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_multinorm                (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *sigma_half</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>);</pre>
+<p>
+A random vector <em class="parameter"><code>x</code></em> of length <em class="parameter"><code>n</code></em> is multivariate normal if
+<em class="parameter"><code>x</code></em> = <em class="parameter"><code>mu</code></em> + <em class="parameter"><code>A</code></em> <em class="parameter"><code>z</code></em>, where AA' = Sigma is the covariance matrix of the
+random vector, and <em class="parameter"><code>z</code></em> is a vector of indepenedent standard normal 
+random variables.
+</p>
+<p>
+Must have: <em class="parameter"><code>sigma_half</code></em> lower-triangular with same size as <em class="parameter"><code>mu</code></em> and <em class="parameter"><code>x</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mu</code></em> :</span></p></td>
+<td>mean</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sigma_half</code></em> :</span></p></td>
+<td>half of covariance matrix</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>return for random vector</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-exp"></a><h3>oscats_rnd_exp ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_exp                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> mu</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-gamma"></a><h3>oscats_rnd_gamma ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_gamma                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> b</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-beta"></a><h3>oscats_rnd_beta ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_beta                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> a</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> b</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-dirichlet"></a><h3>oscats_rnd_dirichlet ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_dirichlet                (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *alpha</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-poisson"></a><h3>oscats_rnd_poisson ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_rnd_poisson                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> mu</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-binomial"></a><h3>oscats_rnd_binomial ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_rnd_binomial                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> p</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-multinomial"></a><h3>oscats_rnd_multinomial ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_multinomial              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *p</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> *x</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-hypergeometric"></a><h3>oscats_rnd_hypergeometric ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_rnd_hypergeometric           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n2</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-normal-p"></a><h3>oscats_rnd_normal_p ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_normal_p                 (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> sd</code></em>);</pre>
+<p>
+Computes the upper tail of the Normal cdf: 
+p_norm(x|sd) = int_{-\infty}^x f_norm(t|sd) dt.
+</p>
+<p>
+Must have: <em class="parameter"><code>sd</code></em> &gt; 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>sampled value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sd</code></em> :</span></p></td>
+<td>standard deviation</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the upper-tail p-value</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-chisq-p"></a><h3>oscats_rnd_chisq_p ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_chisq_p                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu</code></em>);</pre>
+<p>
+If y_1, ..., y_nu are standard normally distributed random numbers,
+then sum_1^nu y_i^2 is distributed Chi^2 with nu degrees of freedom.
+Computes the upper tail of the Chi^2 cdf with <em class="parameter"><code>nu</code></em> degrees of freedom:
+p_chisq(x|nu) = int_{-\infty}^x (t/2)^(nu^2-1) exp(-t/2) / 2 Gamma(nu/2) dt.
+</p>
+<p>
+Must have: <em class="parameter"><code>x</code></em> &gt;= 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>sampled value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nu</code></em> :</span></p></td>
+<td>degrees of freedom</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the upper-tail p-value</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-F-p"></a><h3>oscats_rnd_F_p ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_F_p                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu1</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu2</code></em>);</pre>
+<p>
+If y_1 is distributed Chi^2 with nu_1 degrees of freedom, and
+y_2 is distributed Chi^2 with nu_2 degrees of freedom,
+w = (y_1/nu_1) / (y_2/nu_2) is distributed F(nu_1, nu_2).
+Computes the upper tail of the F cdf with <em class="parameter"><code>nu1</code></em> and <em class="parameter"><code>nu2</code></em> degrees of freedom.
+</p>
+<p>
+Must have: <em class="parameter"><code>x</code></em> &gt;= 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>sampled value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nu1</code></em> :</span></p></td>
+<td>degrees of freedom for numerator</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nu2</code></em> :</span></p></td>
+<td>degrees of freedom for denominator</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the upper-tail p-value</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-t-p"></a><h3>oscats_rnd_t_p ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_rnd_t_p                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> nu</code></em>);</pre>
+<p>
+If y_1 is distributed standard normal, and
+y_2 is distributed Chi^2 with nu degrees of freedom,
+w = y_1 / (y_2/nu) is distributed t(nu).
+Computes the upper tail of the t cdf with <em class="parameter"><code>nu</code></em> degrees of freedom.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>sampled value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nu</code></em> :</span></p></td>
+<td>degrees of freedom</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the upper-tail p-value</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-rnd-sample"></a><h3>oscats_rnd_sample ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_rnd_sample                   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *population</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> *sample</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> replace</code></em>);</pre>
+<p>
+Pointers are <span class="emphasis"><em>not</em></span> ref'd when added to <em class="parameter"><code>sample</code></em>.
+Moreover, <em class="parameter"><code>sample</code></em> should <span class="emphasis"><em>not</em></span> have a <a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>population</code></em> :</span></p></td>
+<td>objects from which to sample</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>num</code></em> :</span></p></td>
+<td>number of objects to sample</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sample</code></em> :</span></p></td>
+<td>return vector of sampled objects</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>replace</code></em> :</span></p></td>
+<td>sample with replacement?</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

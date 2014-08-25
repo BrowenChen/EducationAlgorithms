@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<chapter>
+  <chapterinfo><releaseinfo>$Id$</releaseinfo></chapterinfo>
+  <title>Hacking OSCATS</title>
+
+<para>[FIXME:] Miscellaneous notes about maintaining the OSCATS core.</para>
+
+</chapter>

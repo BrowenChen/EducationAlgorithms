@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsPoint</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsSpace.html" title="OscatsSpace">
+<link rel="next" href="OscatsAdministrand.html" title="OscatsAdministrand">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsSpace.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAdministrand.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsPoint.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsPoint.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsPoint.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsPoint.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsPoint"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsPoint.top_of_page"></a>OscatsPoint</span></h2>
+<p>OscatsPoint — Point in Latent Space</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsPoint.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="OscatsPoint.html#OSCATS-EPS:CAPS" title="OSCATS_EPS">OSCATS_EPS</a>
+struct              <a class="link" href="OscatsPoint.html#OscatsPoint-struct" title="struct OscatsPoint">OscatsPoint</a>;
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsPoint.html#oscats-point-new-from-space" title="oscats_point_new_from_space ()">oscats_point_new_from_space</a>         (<em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsPoint.html#oscats-point-same-space" title="oscats_point_same_space ()">oscats_point_same_space</a>             (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsPoint.html#oscats-point-space-compatible" title="oscats_point_space_compatible ()">oscats_point_space_compatible</a>       (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsPoint.html#oscats-point-equal" title="oscats_point_equal ()">oscats_point_equal</a>                  (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> tol</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsPoint.html#oscats-point-copy" title="oscats_point_copy ()">oscats_point_copy</a>                   (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsPoint.html#oscats-point-get-double" title="oscats_point_get_double ()">oscats_point_get_double</a>             (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsPoint.html#oscats-point-get-cont" title="oscats_point_get_cont ()">oscats_point_get_cont</a>               (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsPoint.html#oscats-point-get-bin" title="oscats_point_get_bin ()">oscats_point_get_bin</a>                (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="returnvalue">OscatsNatural</span></a>       <a class="link" href="OscatsPoint.html#oscats-point-get-nat" title="oscats_point_get_nat ()">oscats_point_get_nat</a>                (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsPoint.html#oscats-point-set-cont" title="oscats_point_set_cont ()">oscats_point_set_cont</a>               (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsPoint.html#oscats-point-set-bin" title="oscats_point_set_bin ()">oscats_point_set_bin</a>                (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsPoint.html#oscats-point-set-nat" title="oscats_point_set_nat ()">oscats_point_set_nat</a>                (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="type">OscatsNatural</span></a> value</code></em>);
+<a class="link" href="liboscats-GSL.html#GGslVector"><span class="returnvalue">GGslVector</span></a> *        <a class="link" href="OscatsPoint.html#oscats-point-cont-as-vector" title="oscats_point_cont_as_vector ()">oscats_point_cont_as_vector</a>         (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsPoint.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsPoint
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsPoint.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsPoint.html#OscatsPoint--space" title='The "space" property'>space</a>"                    <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>*          : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsPoint.description"></a><h2>Description</h2>
+<p>
+A point in a multidimensional latent space as defined by <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>.
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsPoint.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OSCATS-EPS:CAPS"></a><h3>OSCATS_EPS</h3>
+<pre class="programlisting">#define OSCATS_EPS 2.220446e-16
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsPoint-struct"></a><h3>struct OscatsPoint</h3>
+<pre class="programlisting">struct OscatsPoint;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-new-from-space"></a><h3>oscats_point_new_from_space ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_point_new_from_space         (<em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<p>
+This is simply a convenience function for <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a> with the
+<em class="parameter"><code>space</code></em> construction property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> defining the latent space for the new point</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> in <em class="parameter"><code>space</code></em>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-same-space"></a><h3>oscats_point_same_space ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_point_same_space             (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>another <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> are in the same <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-space-compatible"></a><h3>oscats_point_space_compatible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_point_space_compatible       (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);</pre>
+<p>
+This ignores dimension names.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>another <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> come from geometrically compatible spaces</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-equal"></a><h3>oscats_point_equal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_point_equal                  (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> tol</code></em>);</pre>
+<p>
+Compares two points in latent space withing the tolerance <em class="parameter"><code>tol</code></em>.  That is,
+returns all(abs(<em class="parameter"><code>rhs</code></em>-<em class="parameter"><code>lhs</code></em>) &lt;= <em class="parameter"><code>tol</code></em>).  If <em class="parameter"><code>tol</code></em> == 0, the points must be
+exactly the same.  For continuos latent spaces, to avoid problems with
+floating point round-off errors, it's recommended to use a small positive
+<em class="parameter"><code>tol</code></em>, such as <a class="link" href="OscatsPoint.html#OSCATS-EPS:CAPS" title="OSCATS_EPS"><code class="literal">OSCATS_EPS</code></a>.
+</p>
+<p>
+The points must come from geometrically compatible spaces.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>another <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tol</code></em> :</span></p></td>
+<td>comparison tolerance (must be non-negative, may be 0)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> have the same coordinates</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-copy"></a><h3>oscats_point_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_point_copy                   (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *rhs</code></em>);</pre>
+<p>
+Copies replaces <em class="parameter"><code>lhs</code></em> with <em class="parameter"><code>rhs</code></em>.  Points must be from compatible spaces.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to be replaced</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to copy</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-get-double"></a><h3>oscats_point_get_double ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_point_get_double             (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be valid for <em class="parameter"><code>point</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the coordinate to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the coordinate <em class="parameter"><code>dim</code></em> of <em class="parameter"><code>point</code></em> as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-get-cont"></a><h3>oscats_point_get_cont ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_point_get_cont               (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be <a class="link" href="OscatsSpace.html#OSCATS-DIM-CONT:CAPS"><code class="literal">OSCATS_DIM_CONT</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the coordinate to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the continuous coordinate <em class="parameter"><code>dim</code></em> for <em class="parameter"><code>point</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-get-bin"></a><h3>oscats_point_get_bin ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_point_get_bin                (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be <a class="link" href="OscatsSpace.html#OSCATS-DIM-BIN:CAPS"><code class="literal">OSCATS_DIM_BIN</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the coordinate to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the binary coordinate <em class="parameter"><code>dim</code></em> for <em class="parameter"><code>point</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-get-nat"></a><h3>oscats_point_get_nat ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="returnvalue">OscatsNatural</span></a>       oscats_point_get_nat                (<em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be <a class="link" href="OscatsSpace.html#OSCATS-DIM-NAT:CAPS"><code class="literal">OSCATS_DIM_NAT</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the coordinate to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the natural coordinate <em class="parameter"><code>dim</code></em> for <em class="parameter"><code>point</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-set-cont"></a><h3>oscats_point_set_cont ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_point_set_cont               (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be <a class="link" href="OscatsSpace.html#OSCATS-DIM-NAT:CAPS"><code class="literal">OSCATS_DIM_NAT</code></a> and <em class="parameter"><code>value</code></em> must be valid for <em class="parameter"><code>point</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the coordinate to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the value to set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-set-bin"></a><h3>oscats_point_set_bin ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_point_set_bin                (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> value</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-set-nat"></a><h3>oscats_point_set_nat ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_point_set_nat                (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="type">OscatsNatural</span></a> value</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-point-cont-as-vector"></a><h3>oscats_point_cont_as_vector ()</h3>
+<pre class="programlisting"><a class="link" href="liboscats-GSL.html#GGslVector"><span class="returnvalue">GGslVector</span></a> *        oscats_point_cont_as_vector         (<em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>);</pre>
+<p>
+Create a link between the continuous dimensions of  <em class="parameter"><code>point</code></em> and a
+<a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> so that when either is changed, the other is updated
+(they share the same memory segment).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> with at least one continuous dimension</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> linked with the continuous
+dimensions of <em class="parameter"><code>point</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsPoint.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsPoint--space"></a><h3>The <code class="literal">"space"</code> property</h3>
+<pre class="programlisting">  "space"                    <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>*          : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> in which this <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> resides.
+The <a class="link" href="OscatsPoint.html#OscatsPoint--space" title='The "space" property'><span class="type">"space"</span></a> <span class="emphasis"><em>must</em></span> be specified at
+construction, otherwise the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> will not be usable.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

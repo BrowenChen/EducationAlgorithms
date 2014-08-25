@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsIntegrate</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch05.html" title="Utilities">
+<link rel="prev" href="liboscats-Random.html" title="Random">
+<link rel="next" href="ch06.html" title="Core Objects">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="liboscats-Random.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="ch06.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsIntegrate.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsIntegrate.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsIntegrate.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsIntegrate"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsIntegrate.top_of_page"></a>OscatsIntegrate</span></h2>
+<p>OscatsIntegrate — Multivariate Integration</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsIntegrate.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (<a class="link" href="OscatsIntegrate.html#OscatsIntegrateFunction" title="OscatsIntegrateFunction ()">*OscatsIntegrateFunction</a>)          (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+struct              <a class="link" href="OscatsIntegrate.html#OscatsIntegrate-struct" title="struct OscatsIntegrate">OscatsIntegrate</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsIntegrate.html#oscats-integrate-set-tol" title="oscats_integrate_set_tol ()">oscats_integrate_set_tol</a>            (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> tol</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsIntegrate.html#oscats-integrate-set-c-function" title="oscats_integrate_set_c_function ()">oscats_integrate_set_c_function</a>     (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> dims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsIntegrate.html#OscatsIntegrateFunction" title="OscatsIntegrateFunction ()"><span class="type">OscatsIntegrateFunction</span></a> f</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsIntegrate.html#oscats-integrate-cube" title="oscats_integrate_cube ()">oscats_integrate_cube</a>               (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> delta</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsIntegrate.html#oscats-integrate-box" title="oscats_integrate_box ()">oscats_integrate_box</a>                (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *min</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *max</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsIntegrate.html#oscats-integrate-ellipse" title="oscats_integrate_ellipse ()">oscats_integrate_ellipse</a>            (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *Sigma</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> c</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsIntegrate.html#oscats-integrate-space" title="oscats_integrate_space ()">oscats_integrate_space</a>              (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsIntegrate.html#oscats-integrate-link-point" title="oscats_integrate_link_point ()">oscats_integrate_link_point</a>         (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsIntegrate.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsIntegrate
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsIntegrate.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsIntegrate.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsIntegrateFunction"></a><h3>OscatsIntegrateFunction ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (*OscatsIntegrateFunction)          (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsIntegrate-struct"></a><h3>struct OscatsIntegrate</h3>
+<pre class="programlisting">struct OscatsIntegrate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-set-tol"></a><h3>oscats_integrate_set_tol ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_integrate_set_tol            (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> tol</code></em>);</pre>
+<p>
+Sets the integration tolerance.  The default is 1e-6.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tol</code></em> :</span></p></td>
+<td>a tolerance level</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-set-c-function"></a><h3>oscats_integrate_set_c_function ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_integrate_set_c_function     (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> dims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsIntegrate.html#OscatsIntegrateFunction" title="OscatsIntegrateFunction ()"><span class="type">OscatsIntegrateFunction</span></a> f</code></em>);</pre>
+<p>
+Sets the function to integrate.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dims</code></em> :</span></p></td>
+<td>the dimension of the function</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f</code></em> :</span></p></td>
+<td>the function to integrate</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-cube"></a><h3>oscats_integrate_cube ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_integrate_cube               (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> delta</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+Integrates the set function over [mu-delta, mu+delta].
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> object with function set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mu</code></em> :</span></p></td>
+<td>a vector indicating the center of the cube (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the origin)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>delta</code></em> :</span></p></td>
+<td>the half-width of the cube</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>parameters for the function (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the integral</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-box"></a><h3>oscats_integrate_box ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_integrate_box                (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *min</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *max</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+Integrates the set function over [min, max]
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> object with function set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>min</code></em> :</span></p></td>
+<td>the lower bounds</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max</code></em> :</span></p></td>
+<td>the upper bounds</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>parameters for the function (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the integral</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-ellipse"></a><h3>oscats_integrate_ellipse ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_integrate_ellipse            (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *mu</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *Sigma</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> c</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+Integrates the set function over the ellipse defined by:
+(x-mu)' Sigma^-1 (x-mu) &lt;= c.
+</p>
+<p>
+This is accomplished by transformation of variables:
+x = Bz + mu,
+where B is the Cholesky decomposition of Sigma: c Sigma = BB'.
+The integration is then performed over the sphere ||z||^2 &lt;= 1.
+Note that <em class="parameter"><code>Sigma</code></em> must be symmetric and positive definite.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> object with function set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mu</code></em> :</span></p></td>
+<td>the center of the ellipse (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the origin)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Sigma</code></em> :</span></p></td>
+<td>the orientation and shape of the ellipse (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for a sphere)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>c</code></em> :</span></p></td>
+<td>the dilation size of the ellipse (&gt; 0)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>parameters for the function (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the integral</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-space"></a><h3>oscats_integrate_space ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_integrate_space              (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+Integrates the set function over the whole space R^n.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> object with function set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>parameters for the function (or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the value of the integral</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-integrate-link-point"></a><h3>oscats_integrate_link_point ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_integrate_link_point         (<em class="parameter"><code><a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> *integrator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *point</code></em>);</pre>
+<p>
+Links the internal integration variable used by <em class="parameter"><code>integrator</code></em> with the
+continuous dimensions of <em class="parameter"><code>point</code></em> so that when the integration variable is
+changed, <em class="parameter"><code>point</code></em> is moved as well.  The continuous dimension of <em class="parameter"><code>point</code></em> must
+be the same as the integration dimensions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>integrator</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate"><span class="type">OscatsIntegrate</span></a> object with function already set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>point</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to link</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

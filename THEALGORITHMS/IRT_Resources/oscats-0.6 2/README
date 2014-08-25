@@ -1,0 +1,58 @@
+OSCATS: Open-Source Computerized Adaptive Testing System
+--------------------------------------------------------
+
+OSCATS facilitates the development of computerized adaptive tests and
+simulations of computerized adaptive tests.  It consists of a library
+written in object-oriented C using the GObject framework, along with
+bindings to Python, Perl, PHP, and Java.
+
+
+Author
+------
+
+OSCATS was developed by Michael J. Culbertson <culbert1@illinois.edu>.
+
+
+Copyright
+---------
+
+OSCATS is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+OSCATS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License in the COPYING file for more details.
+
+
+Dependencies
+------------
+
+OSCATS depends on the following packages:
+
+- GNU Scientific Library (http://www.gnu.org/software/gsl)
+- Glib 2, including GObject (http://www.gtk.org)
+- pkg-config, optional (http://pkg-config.freedesktop.org/wiki/)
+- PyGObject module, for Python bindings (http://www.pygtk.org)
+- Perl Glib module, for Perl bindings (http://gtk2-perl.sourceforge.net)
+- PHP-GTK extension, for PHP bindings (http://gtk.php.net)
+
+
+Building
+--------
+
+The base C library can be built with:
+
+  $ ./configure
+  $ make
+  $ make install
+
+The default installation location is /usr/local.  Alternate locations can be
+specified with the --prefix option to configure.  If you will be linking
+against the OSCATS C library in a non-standard location, you may need to set
+the PKG_CONFIG_PATH environment variable for pkg-config. By default, none of
+the language bindings are included; to build these, use the
+--enable-*-bindings options.
+

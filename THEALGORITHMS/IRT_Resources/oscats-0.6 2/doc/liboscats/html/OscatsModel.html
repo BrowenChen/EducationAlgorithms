@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsModel</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch07.html" title="Models">
+<link rel="prev" href="ch07.html" title="Models">
+<link rel="next" href="OscatsModelL1p.html" title="OscatsModelL1p">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch07.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsModelL1p.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsModel.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsModel.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsModel.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsModel.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsModel"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsModel.top_of_page"></a>OscatsModel</span></h2>
+<p>OscatsModel — Abstract Measurement Model Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsModel.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="OscatsModel.html#OSCATS-DEFAULT-KEY:CAPS" title="OSCATS_DEFAULT_KEY">OSCATS_DEFAULT_KEY</a>
+typedef             <a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse">OscatsResponse</a>;
+#define             <a class="link" href="OscatsModel.html#OSCATS-MAX-RESPONSE:CAPS" title="OSCATS_MAX_RESPONSE">OSCATS_MAX_RESPONSE</a>
+struct              <a class="link" href="OscatsModel.html#OscatsModel-struct" title="struct OscatsModel">OscatsModel</a>;
+struct              <a class="link" href="OscatsModel.html#OscatsModelClass" title="struct OscatsModelClass">OscatsModelClass</a>;
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       <a class="link" href="OscatsModel.html#oscats-model-new" title="oscats_model_new ()">oscats_model_new</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> *dims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> ndims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);
+<a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="returnvalue">OscatsResponse</span></a>      <a class="link" href="OscatsModel.html#oscats-model-get-max" title="oscats_model_get_max ()">oscats_model_get_max</a>                (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsModel.html#oscats-model-P" title="oscats_model_P ()">oscats_model_P</a>                      (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsModel.html#oscats-model-distance" title="oscats_model_distance ()">oscats_model_distance</a>               (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-logLik-dtheta" title="oscats_model_logLik_dtheta ()">oscats_model_logLik_dtheta</a>          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *grad</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *hes</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-logLik-dparam" title="oscats_model_logLik_dparam ()">oscats_model_logLik_dparam</a>          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *grad</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *hes</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-fisher-inf" title="oscats_model_fisher_inf ()">oscats_model_fisher_inf</a>             (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *I</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="OscatsModel.html#oscats-model-get-param-name" title="oscats_model_get_param_name ()">oscats_model_get_param_name</a>         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsModel.html#oscats-model-has-param-name" title="oscats_model_has_param_name ()">oscats_model_has_param_name</a>         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsModel.html#oscats-model-has-param" title="oscats_model_has_param ()">oscats_model_has_param</a>              (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsModel.html#oscats-model-get-param" title="oscats_model_get_param ()">oscats_model_get_param</a>              (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsModel.html#oscats-model-get-param-by-index" title="oscats_model_get_param_by_index ()">oscats_model_get_param_by_index</a>     (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsModel.html#oscats-model-get-param-by-name" title="oscats_model_get_param_by_name ()">oscats_model_get_param_by_name</a>      (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-set-param" title="oscats_model_set_param ()">oscats_model_set_param</a>              (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-set-param-by-index" title="oscats_model_set_param_by_index ()">oscats_model_set_param_by_index</a>     (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsModel.html#oscats-model-set-param-by-name" title="oscats_model_set_param_by_name ()">oscats_model_set_param_by_name</a>      (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsModel.html#oscats-model-has-covariate" title="oscats_model_has_covariate ()">oscats_model_has_covariate</a>          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsModel.html#oscats-model-has-covariate-name" title="oscats_model_has_covariate_name ()">oscats_model_has_covariate_name</a>     (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModel.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsModel
+         +----<a class="link" href="OscatsModelDina.html" title="OscatsModelDina">OscatsModelDina</a>
+         +----<a class="link" href="OscatsModelGpc.html" title="OscatsModelGpc">OscatsModelGpc</a>
+         +----<a class="link" href="OscatsModelGr.html" title="OscatsModelGr">OscatsModelGr</a>
+         +----<a class="link" href="OscatsModelHetlgr.html" title="OscatsModelHetlgr">OscatsModelHetlgr</a>
+         +----<a class="link" href="OscatsModelL1p.html" title="OscatsModelL1p">OscatsModelL1p</a>
+         +----<a class="link" href="OscatsModelL2p.html" title="OscatsModelL2p">OscatsModelL2p</a>
+         +----<a class="link" href="OscatsModelL3p.html" title="OscatsModelL3p">OscatsModelL3p</a>
+         +----<a class="link" href="OscatsModelNida.html" title="OscatsModelNida">OscatsModelNida</a>
+         +----<a class="link" href="OscatsModelNominal.html" title="OscatsModelNominal">OscatsModelNominal</a>
+         +----<a class="link" href="OscatsModelPc.html" title="OscatsModelPc">OscatsModelPc</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModel.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsModel.html#OscatsModel--Ncov" title='The "Ncov" property'>Ncov</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="OscatsModel.html#OscatsModel--Ndims" title='The "Ndims" property'>Ndims</a>"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="OscatsModel.html#OscatsModel--Np" title='The "Np" property'>Np</a>"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="OscatsModel.html#OscatsModel--covariates" title='The "covariates" property'>covariates</a>"               <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a>*     : Read / Write / Construct Only
+  "<a class="link" href="OscatsModel.html#OscatsModel--dimType" title='The "dimType" property'>dimType</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="OscatsModel.html#OscatsModel--dims" title='The "dims" property'>dims</a>"                     <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write / Construct Only
+  "<a class="link" href="OscatsModel.html#OscatsModel--paramNames" title='The "paramNames" property'>paramNames</a>"               <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read
+  "<a class="link" href="OscatsModel.html#OscatsModel--space" title='The "space" property'>space</a>"                    <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>*          : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModel.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsModel.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OSCATS-DEFAULT-KEY:CAPS"></a><h3>OSCATS_DEFAULT_KEY</h3>
+<pre class="programlisting">#define OSCATS_DEFAULT_KEY 0
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsResponse"></a><h3>OscatsResponse</h3>
+<pre class="programlisting">typedef guint8 OscatsResponse;
+</pre>
+<p>
+Type representing the response to an item.  Simply an alias for <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OSCATS-MAX-RESPONSE:CAPS"></a><h3>OSCATS_MAX_RESPONSE</h3>
+<pre class="programlisting">#define OSCATS_MAX_RESPONSE G_MAXUINT8
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel-struct"></a><h3>struct OscatsModel</h3>
+<pre class="programlisting">struct OscatsModel {
+  OscatsSpace *space;
+  guint Ndims;			// dimensions of test and this model
+  guint Np, Ncov;		// number of parameters, covariates
+  OscatsDim *dims, dimType;
+  gdouble *params;
+  GQuark *names, *covariates; // parameter and covariate names
+  guint *shortDims;		// shortcut for model implementations
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModelClass"></a><h3>struct OscatsModelClass</h3>
+<pre class="programlisting">struct OscatsModelClass {
+  OscatsResponse (*get_max) (const OscatsModel *model);
+  gdouble (*P) (const OscatsModel *model, OscatsResponse resp, const OscatsPoint *theta, const OscatsCovariates *covariates);
+  gdouble (*distance) (const OscatsModel *model, const OscatsPoint *theta, const OscatsCovariates *covariates);
+  void (*logLik_dtheta) (const OscatsModel *model, OscatsResponse resp,
+                         const OscatsPoint *theta, const OscatsCovariates *covariates,
+                         GGslVector *grad, GGslMatrix *hes, gboolean inf);
+  void (*logLik_dparam) (const OscatsModel *model, OscatsResponse resp,
+                         const OscatsPoint *theta, const OscatsCovariates *covariates,
+                         GGslVector *grad, GGslMatrix *hes);
+};
+</pre>
+<p>
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> implementations <span class="emphasis"><em>must</em></span> overload <em class="parameter"><code>get_max</code></em>
+and <em class="parameter"><code>P</code></em>.  They <span class="emphasis"><em>may</em></span> overload the remaining functions.
+Implementations should make clear in their documentation which optional
+functions they provide.
+</p>
+<p>
+Note: The accessors for virtual functions of <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> check the type
+validity of arguments, so implementations need not do so.  However,
+implementations should still check the substantive valididity of
+arguments (including size of <em class="parameter"><code>grad</code></em> and <em class="parameter"><code>Hes</code></em>), as necessary.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsModelClass.get-max"></a>get_max</code></em> ()</span></p></td>
+<td>get maximum response category supported by model</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsModelClass.P"></a>P</code></em> ()</span></p></td>
+<td>get the probability of a response, given a point in latent space</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsModelClass.distance"></a>distance</code></em> ()</span></p></td>
+<td>get a distance metric between the item model and a given point
+in latent space</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsModelClass.logLik-dtheta"></a>logLik_dtheta</code></em> ()</span></p></td>
+<td>get the derivative of the log-likelihood of the given
+response with respect to continuous dimensions of the
+model's latent subspace</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsModelClass.logLik-dparam"></a>logLik_dparam</code></em> ()</span></p></td>
+<td>get the derivative of the log-likelihood of the given
+response with respect to model parameters</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-new"></a><h3>oscats_model_new ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       oscats_model_new                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> *dims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> ndims</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);</pre>
+<p>
+Creates a new model of type <em class="parameter"><code>type</code></em> in the sub-space of <em class="parameter"><code>space</code></em> defined by
+the <em class="parameter"><code>ndims</code></em> dimensions <em class="parameter"><code>dims</code></em>.  If <em class="parameter"><code>covariates</code></em> is supplied, all of the 
+covariates present in it will be incorporated into the model, for
+model implementations that support covariates.  (Refer to specific model
+implementations for details.)  Note: <em class="parameter"><code>type</code></em> must be a subclass of
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>.
+</p>
+<p>
+This is a convenience wrapper for <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the implemented sub-class of <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> to create</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> in which the model resides</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dims</code></em> :</span></p></td>
+<td>the subspace of <em class="parameter"><code>space</code></em> used by this model. <span class="annotation">[<acronym title="Parameter for input. Default is transfer none."><span class="acronym">in</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=ndims][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ndims</code></em> :</span></p></td>
+<td>the size of the sub-space used by the model</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>optional covariates definition. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the newly-constructed model. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-get-max"></a><h3>oscats_model_get_max ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="returnvalue">OscatsResponse</span></a>      oscats_model_get_max                (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the maximum valid response category for this model</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-P"></a><h3>oscats_model_P ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_model_P                      (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);</pre>
+<p>
+Calculates the probability of response <em class="parameter"><code>resp</code></em>, given latent ability <em class="parameter"><code>theta</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>resp</code></em> :</span></p></td>
+<td>the examinee response value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>the <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> parameter value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>the values for covariates. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the computed probability</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-distance"></a><h3>oscats_model_distance ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_model_distance               (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>);</pre>
+<p>
+Calculates a distance metric between the model and the given latent
+ability.  Metric definition is implementation specific.  Note:
+model implementations are not required to provide <a class="link" href="OscatsModel.html#oscats-model-distance" title="oscats_model_distance ()"><code class="function">oscats_model_distance()</code></a>.
+Refer to specific implementation documentation for details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>the <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> parameter value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>the values of covariates. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the distance metric</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-logLik-dtheta"></a><h3>oscats_model_logLik_dtheta ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_logLik_dtheta          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *grad</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *hes</code></em>);</pre>
+<p>
+Calculates the derivative of the log-likelihood with respect to the 
+latent ability <em class="parameter"><code>theta</code></em>, given the examinee response <em class="parameter"><code>resp</code></em>,
+evaluated at <em class="parameter"><code>theta</code></em>.  If given, the graident is <span class="emphasis"><em>added</em></span>
+to <em class="parameter"><code>grad</code></em>, and the Hessian (second derivatives) to <em class="parameter"><code>hes</code></em>.  The vectors and
+matrix must have dimension <em class="parameter"><code>model-&gt;dims-&gt;size</code></em>.
+</p>
+<p>
+Not all model implementations support <a class="link" href="OscatsModel.html#oscats-model-logLik-dtheta" title="oscats_model_logLik_dtheta ()"><code class="function">oscats_model_logLik_dtheta()</code></a>.
+Generally, only models on continuous latent sub-spaces will provide
+derivatives.  Refer to model implementation documentation for details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>resp</code></em> :</span></p></td>
+<td>the examinee response value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>the value of the latent variables</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>the value of covariates. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grad</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> for returning the gradient. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hes</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> for returning the Hessian. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-logLik-dparam"></a><h3>oscats_model_logLik_dparam ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_logLik_dparam          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *grad</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *hes</code></em>);</pre>
+<p>
+Calculates the derivative of the log-likelihood with respect to the
+parameters, given the examinee response <em class="parameter"><code>resp</code></em>, latent variables <em class="parameter"><code>theta</code></em>,
+and covariates <em class="parameter"><code>covariates</code></em>.  If given, the graident is
+<span class="emphasis"><em>added</em></span> to <em class="parameter"><code>grad</code></em>, and the Hessian (second partial
+derivatives) to <em class="parameter"><code>hes</code></em>.  The gradient and Hessian must have dimension
+<em class="parameter"><code>model-&gt;Np</code></em>, and the latent ability <em class="parameter"><code>theta</code></em> must be compatible with
+<a class="link" href="OscatsModel.html#OscatsModel--space" title='The "space" property'><span class="type">"space"</span></a> for <em class="parameter"><code>model</code></em>.
+</p>
+<p>
+Note: Not all model implementations support <a class="link" href="OscatsModel.html#oscats-model-logLik-dparam" title="oscats_model_logLik_dparam ()"><code class="function">oscats_model_logLik_dparam()</code></a>.
+Refer to model implementation documentation for details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>resp</code></em> :</span></p></td>
+<td>the examinee response value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>the point in latent space</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>the values of covariates. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>grad</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> for returning the gradient. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hes</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> for returning the Hessian. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-fisher-inf"></a><h3>oscats_model_fisher_inf ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_fisher_inf             (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> *covariates</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *I</code></em>);</pre>
+<p>
+Calculates the Fisher Information at <em class="parameter"><code>theta</code></em>, given <em class="parameter"><code>covariates</code></em>:
+I = E_{X|theta}[-d^2/dtheta dtheta' log(P(X))].
+The information is <span class="emphasis"><em>added</em></span> to <em class="parameter"><code>I</code></em>.
+The matrix must have dimension <em class="parameter"><code>model-&gt;space-&gt;num_cont</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> latent point</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>covariates</code></em> :</span></p></td>
+<td>the value of covariates. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>I</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> for returning the Fisher Information</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-get-param-name"></a><h3>oscats_model_get_param_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       oscats_model_get_param_name         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>the parameter index</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name of parameter <em class="parameter"><code>index</code></em> &lt; <a class="link" href="OscatsModel.html#OscatsModel--Np" title='The "Np" property'><span class="type">"Np"</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-has-param-name"></a><h3>oscats_model_has_param_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_model_has_param_name         (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>parameter name to check. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>model</code></em> has a parameter called <em class="parameter"><code>name</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-has-param"></a><h3>oscats_model_has_param ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_model_has_param              (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>parameter name (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>) to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>model</code></em> has a parameter called <em class="parameter"><code>name</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-get-param"></a><h3>oscats_model_get_param ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_model_get_param              (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the parameter name (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the parameter <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-get-param-by-index"></a><h3>oscats_model_get_param_by_index ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_model_get_param_by_index     (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>the parameter index</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the parameter <em class="parameter"><code>index</code></em> &lt; <a class="link" href="OscatsModel.html#OscatsModel--Np" title='The "Np" property'><span class="type">"Np"</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-get-param-by-name"></a><h3>oscats_model_get_param_by_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_model_get_param_by_name      (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+The <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> version <a class="link" href="OscatsModel.html#oscats-model-get-param" title="oscats_model_get_param ()"><code class="function">oscats_model_get_param()</code></a> is faster.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the parameter name. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the parameter called <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-set-param"></a><h3>oscats_model_set_param ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_set_param              (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<p>
+Faster to set by index.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the parameter name (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> to set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-set-param-by-index"></a><h3>oscats_model_set_param_by_index ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_set_param_by_index     (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>the parameter index &lt; <a class="link" href="OscatsModel.html#OscatsModel--Np" title='The "Np" property'><span class="type">"Np"</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value to set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-set-param-by-name"></a><h3>oscats_model_set_param_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_model_set_param_by_name      (<em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+<p>
+The <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> version <a class="link" href="OscatsModel.html#oscats-model-set-param" title="oscats_model_set_param ()"><code class="function">oscats_model_set_param()</code></a> is faster.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the parameter name. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> to set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-has-covariate"></a><h3>oscats_model_has_covariate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_model_has_covariate          (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>covariate name (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>model</code></em> incorporates covariate <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-model-has-covariate-name"></a><h3>oscats_model_has_covariate_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_model_has_covariate_name     (<em class="parameter"><code>const <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>covariate name. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>model</code></em> incorporates covariate <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsModel.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsModel--Ncov"></a><h3>The <code class="literal">"Ncov"</code> property</h3>
+<pre class="programlisting">  "Ncov"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+The number of covariates in the measurement model.  Default is 0.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--Ndims"></a><h3>The <code class="literal">"Ndims"</code> property</h3>
+<pre class="programlisting">  "Ndims"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+The dimension of the IRT model (&lt;= the dimension of the test).
+Determined from <a class="link" href="OscatsModel.html#OscatsModel--dims" title='The "dims" property'><span class="type">"dims"</span></a>.  Default is 1.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--Np"></a><h3>The <code class="literal">"Np"</code> property</h3>
+<pre class="programlisting">  "Np"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+The number of parameters of the measurement model.
+</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--covariates"></a><h3>The <code class="literal">"covariates"</code> property</h3>
+<pre class="programlisting">  "covariates"               <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a>*     : Read / Write / Construct Only</pre>
+<p>
+An <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> object defining the covariates used in this model.
+Note: Models are not required to handle covariates.  Refer to the
+particular model implementation.
+</p>
+<p>
+Note: The <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> object is not actually stored in the
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>.  On property read, a new <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a> object is
+created.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--dimType"></a><h3>The <code class="literal">"dimType"</code> property</h3>
+<pre class="programlisting">  "dimType"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+The dimension type of the model's subspace.  If the model is
+multidimensional with mixed dimension types, <a class="link" href="OscatsModel.html#OscatsModel--dimType" title='The "dimType" property'><span class="type">"dimType"</span></a> is 0.
+Determined from <a class="link" href="OscatsModel.html#OscatsModel--dims" title='The "dims" property'><span class="type">"dims"</span></a>.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--dims"></a><h3>The <code class="literal">"dims"</code> property</h3>
+<pre class="programlisting">  "dims"                     <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write / Construct Only</pre>
+<p>
+An array of <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> indicating the subspace used by this model.
+The default is one dimension, which corresponds to the first dimension of
+the test space (preference to continuous dimensions, then binary,
+then natural-valued).
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--paramNames"></a><h3>The <code class="literal">"paramNames"</code> property</h3>
+<pre class="programlisting">  "paramNames"               <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read</pre>
+<p>
+An array of names for parameters.  The array must have <a class="link" href="OscatsModel.html#OscatsModel--Np" title='The "Np" property'><span class="type">"Np"</span></a>
+elements.  The order of the parameters and default names are defined
+by the particular model implementation.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsModel--space"></a><h3>The <code class="literal">"space"</code> property</h3>
+<pre class="programlisting">  "space"                    <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>*          : Read / Write / Construct Only</pre>
+<p>
+The latent space for the test.  This <span class="emphasis"><em>must</em></span> be
+supplied at construction.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

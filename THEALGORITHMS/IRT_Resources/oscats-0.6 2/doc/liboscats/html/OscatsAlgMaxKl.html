@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgMaxKl</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgMaxFisher.html" title="OscatsAlgMaxFisher">
+<link rel="next" href="OscatsAlgPickRand.html" title="OscatsAlgPickRand">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgMaxFisher.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgPickRand.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgMaxKl.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgMaxKl.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgMaxKl.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgMaxKl.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgMaxKl"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgMaxKl.top_of_page"></a>OscatsAlgMaxKl</span></h2>
+<p>OscatsAlgMaxKl</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgMaxKl.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl-struct" title="struct OscatsAlgMaxKl">OscatsAlgMaxKl</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgMaxKl.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgMaxKl
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgMaxKl.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--Dprior" title='The "Dprior" property'>Dprior</a>"                   <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--Sigma" title='The "Sigma" property'>Sigma</a>"                    <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a>*           : Read / Write / Construct
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--c" title='The "c" property'>c</a>"                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a>               : Read / Write / Construct
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--inf-bounds" title='The "inf-bounds" property'>inf-bounds</a>"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--modelKey" title='The "modelKey" property'>modelKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--mu" title='The "mu" property'>mu</a>"                       <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write / Construct
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--num" title='The "num" property'>num</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--posterior" title='The "posterior" property'>posterior</a>"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--thetaKey" title='The "thetaKey" property'>thetaKey</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgMaxKl.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgMaxKl.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl-struct"></a><h3>struct OscatsAlgMaxKl</h3>
+<pre class="programlisting">struct OscatsAlgMaxKl;</pre>
+<p>
+Item selection algorithm (<a class="link" href="OscatsTest.html#OscatsTest-select" title='The "select" signal'><span class="type">"select"</span></a>).
+Picks the item with greatest Kullback-Leibler index.
+Note: This algorithm may not work correctly if there are
+multiple items with exactly the same optimality metric.
+</p>
+<p>
+Kullback-Leibler Divergence is:
+KL(theta.hat || theta) = E_{X|theta.hat}[log{P(X|theta.hat)/P(X|theta)}]
+</p>
+<p>
+The KL Index is:
+KLI(theta.hat) = Int KL(theta.hat||theta) dtheta
+with integration over continuous dimensions and summation over discrete
+dimensions.
+</p>
+<p>
+Integration is either over the box theta.hat +/- c/sqrt(n) or
+over the ellipsoid (x-theta.hat)' I_n(theta.hat)^-1 (x-theta.hat) &lt;= c,
+where n is the number of items already administered and I_n(theta.hat) is
+the Fisher Information for the previously administered items.
+</p>
+<p>
+Note that for discrete dimensions the sum is over all Prod_i n_i patterns
+(where n_i is the number of response categories for discrete dimension i;
+for K binary dimensions, this would be 2^K patterns).  Consequently, this
+algorithm may be very slow in high dimensional latent spaces.
+</p>
+<p>
+Alternatively, the KL Index may be posteriorly weighted:
+PWKLI(theta.hat) = Int KL(theta.hat||theta) { prod_i P_i(x_i|theta) } g(theta) dtheta
+where g(theta) is the prior for theta (multivariate normal for continuous
+dimensions and an arbitrary discrete distribution for discrete dimensions).
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36246889"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Hua-Hua</span> <span class="surname">Chang</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">Zhiliang</span> <span class="surname">Ying</span></span></span></span>
+   (<span class="pubdate">1996</span>).
+   "<span class="title">A Global Information Appraoch to Computerized Adaptive Testing</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">20</span>,</span>
+   <span class="artpagenums">213-229</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36246367"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Bernard</span> <span class="surname">Veldkamp</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">Wim</span> <span class="surname">van der Linden</span></span></span></span>
+   (<span class="pubdate">2002</span>).
+   "<span class="title">Multidimensional Adaptive Testing with Constraints on Test Content</span>."
+   <span class="biblioset"><span class="title">Psychometrika</span>,
+              <span class="volumenum">67</span>,</span>
+   <span class="artpagenums">575-588</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36184761"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Ying</span> <span class="surname">Cheng</span></span></span>
+   (<span class="pubdate">2009</span>).
+   "<span class="title">When Cognitive Diagnosis Meets Computerized Adaptive Testing: CD-CAT</span>."
+   <span class="biblioset"><span class="title">Psychometrika</span>,
+              <span class="volumenum">74</span>,</span>
+   <span class="artpagenums">619-632</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36188254"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Xueli</span> <span class="surname">Xu</span></span></span>,
+   <span class="author"><span class="personname"><span class="firstname">Hua-Hua</span> <span class="surname">Chang</span></span></span>, and
+   <span class="author"><span class="personname"><span class="firstname">Jeff</span> <span class="surname">Douglas</span></span></span></span>
+   (<span class="pubdate">2003</span>).
+   "<span class="title">A Simulation Study to Compare CAT Strategies for Cognitive Diagnosis</span>."
+   Paper presented at the annual meeting of the National Council on Measurement in Education, Montreal, Canada.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36180197"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">T.M.</span> <span class="surname">Cover</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">J.A.</span> <span class="surname">Thomas</span></span></span></span>
+   (<span class="pubdate">1991</span>).
+   <span class="title">Elements of Information Theory</span>.
+   p <span class="pagenums">18</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36256527"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">T.M.</span> <span class="surname">Cover</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">J.A.</span> <span class="surname">Thomas</span></span></span></span>
+   (<span class="pubdate">1991</span>).
+   <span class="title">Elements of Information Theory</span>.
+   p <span class="pagenums">18</span>.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgMaxKl.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--Dprior"></a><h3>The <code class="literal">"Dprior"</code> property</h3>
+<pre class="programlisting">  "Dprior"                   <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write</pre>
+<p>
+Prior distribution for discrete dimensions as a vector of probabilities
+for all Prod_i n_i patterns, where n_i is the number of categories for
+discrete dimension i.  The values should be ordered so that the lowest
+numbered binary dimension increases fasted, and the ordinal dimensions
+follow binary dimensions.  The probabilities should sum to 1.  Default:
+uniform.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--Sigma"></a><h3>The <code class="literal">"Sigma"</code> property</h3>
+<pre class="programlisting">  "Sigma"                    <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a>*           : Read / Write / Construct</pre>
+<p>
+Prior population covariance matrix for posterior weight for continuous
+dimensions.  (Note: The value is copied.)  Default: identity.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--c"></a><h3>The <code class="literal">"c"</code> property</h3>
+<pre class="programlisting">  "c"                        <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a>               : Read / Write / Construct</pre>
+<p>
+The constant c in integration bounds.
+</p>
+<p>Allowed values: [1e-16,1e+16]</p>
+<p>Default value: 3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--inf-bounds"></a><h3>The <code class="literal">"inf-bounds"</code> property</h3>
+<pre class="programlisting">  "inf-bounds"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>
+If true, integrate continuous dimensions over the confidence ellipsoid.
+Otherwise, integrate over the box theta.hat +/- c/sqrt(n).
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--modelKey"></a><h3>The <code class="literal">"modelKey"</code> property</h3>
+<pre class="programlisting">  "modelKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which model to use for selection.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value or
+empty string indicates the item's default model.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--mu"></a><h3>The <code class="literal">"mu"</code> property</h3>
+<pre class="programlisting">  "mu"                       <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a>*           : Read / Write / Construct</pre>
+<p>
+Prior population mean for posterior weight for continuous dimensions.
+(Note: The value is copied.) Default: 0.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--num"></a><h3>The <code class="literal">"num"</code> property</h3>
+<pre class="programlisting">  "num"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+Number of items from which to choose.  If one, then the exact optimal
+item is selected.  If greater than one, then a random item is chosen
+from among the <a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--num" title='The "num" property'><span class="type">"num"</span></a> optimal items.
+</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--posterior"></a><h3>The <code class="literal">"posterior"</code> property</h3>
+<pre class="programlisting">  "posterior"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>
+If true, use posterior-weighted KL index.  (Note: if true,
+<a class="link" href="OscatsAlgMaxKl.html#OscatsAlgMaxKl--inf-bounds" title='The "inf-bounds" property'><span class="type">"inf-bounds"</span></a> is ignored.)
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgMaxKl--thetaKey"></a><h3>The <code class="literal">"thetaKey"</code> property</h3>
+<pre class="programlisting">  "thetaKey"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>
+The key indicating which latent variable to use for selection.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+value or empty string indicates the examinee's default estimation theta.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

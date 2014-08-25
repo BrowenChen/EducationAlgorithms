@@ -1,0 +1,223 @@
+dnl Process this file with autoconf to produce a configure script
+
+dnl Initialization
+
+AC_PREREQ(2.59)
+
+m4_define(oscats_version, 0.6)
+
+m4_define(glib_required_version, 2.22.0)
+m4_define(gsl_required_version, 1.13)
+m4_define(pygobject_required_version, 2.0.0)
+
+AC_INIT([oscats], [oscats_version], [culbert1@illinois.edu])
+AC_CONFIG_SRCDIR([src/liboscats/oscats.h])
+AC_CONFIG_AUX_DIR([config])
+AC_CONFIG_MACRO_DIR(m4)
+AC_REVISION([$Revision$])
+AM_INIT_AUTOMAKE([1.9 foreign])
+# AC_CONFIG_HEADERS(config.h)
+
+dnl Configure options
+
+#AC_ARG_ENABLE(sim,
+#   AC_HELP_STRING([--disable-sim],
+#                  [Do not build simulation front-end]), ,
+#   [enable_sim=yes] )
+
+if test "$enable_sim" = yes; then
+  MAYBE_SIM=sim
+else
+  MAYBE_SIM=
+fi
+
+AC_ARG_ENABLE(python_bindings,
+   AC_HELP_STRING([--enable-python-bindings],
+                  [Build python bindings]), ,
+   [enable_python_bindings=no] )
+
+AC_ARG_ENABLE(perl_bindings,
+   AC_HELP_STRING([--enable-perl-bindings],
+                  [Build perl bindings]), ,
+   [enable_perl_bindings=no] )
+
+AC_ARG_ENABLE(php_bindings,
+   AC_HELP_STRING([--enable-php-bindings],
+                  [Build php bindings]), ,
+   [enable_php_bindings=no] )
+
+AC_ARG_ENABLE(java_bindings,
+   AC_HELP_STRING([--enable-java-bindings],
+                  [Build java bindings]), ,
+   [enable_java_bindings=no] )
+
+dnl Check for windows
+
+AC_CANONICAL_HOST
+AC_MSG_CHECKING(whether this is Windows)
+case "$host_os" in
+  cygwin* | mingw* | pw32*)
+    IS_WINDOWS=yes
+    AC_MSG_RESULT(yes)
+  ;;
+
+  *)
+    IS_WINDOWS=no
+    AC_MSG_RESULT(no)
+  ;;
+esac
+AM_CONDITIONAL([WINDOWS], [test "x$IS_WINDOWS" = xyes])
+
+dnl Required programs
+
+AC_PROG_CC
+AC_PROG_LIBTOOL
+GTK_DOC_CHECK(1.9)
+
+if test "$enable_python_bindings" = yes; then
+  AM_PATH_PYTHON([2.3], have_python=yes, have_python=no)
+  AM_CHECK_PYTHON_HEADERS( , have_python=no )
+  PKG_CHECK_MODULES(PYGOBJECT, [pygobject-2.0 >= pygobject_required_version],
+                    have_pygobject=yes, have_pygobject=no)
+fi
+
+if test "$enable_perl_bindings" = yes; then
+  AX_WITH_PROG(PERL,perl)
+  AX_PROG_PERL_MODULES(Module::Build, have_build_pl=yes, have_build_pl=no)
+  AX_PROG_PERL_MODULES(Glib, have_glib_pl=yes, have_glib_pl=no)
+fi
+
+if test "$enable_php_bindings" = yes; then
+  AC_MSG_CHECKING(for php)
+  PHP_ARG_WITH(php-config,,
+  [  --with-php-config=PATH  Path to php-config [php-config]], php-config, no)
+  PHP_CONF_BIN=`$PHP_PHP_CONFIG --php-binary`
+  AC_CHECK_PROGS([PHP], [$PHP_CONF_BIN php], [])
+  if test "x$PHP" = x; then
+    have_php=no
+    AC_MSG_RESULT(no)
+  else
+    have_php=yes
+    AC_MSG_RESULT(ok)
+    if test "x$PHP_CFLAGS" = x; then
+      PHP_CFLAGS=`$PHP_PHP_CONFIG --includes`
+    fi
+    if test "x$PHP_EXTENSIONS_DIR" = x; then
+      PHP_EXTENSIONS_DIR=`$PHP_PHP_CONFIG --extension-dir`
+    fi
+  fi
+  if test "x$PHP_PHP_CONFIG" = x; then
+    AC_MSG_WARN([php-config not found. You may need to supply PHP_CFLAGS and PHP_EXTENSIONS_DIR.])
+  fi
+fi
+
+if test "$enable_java_bindings" = yes; then
+  R_JAVA
+else
+  AM_CONDITIONAL([BUILD_JAVA14], [test yes = no])
+fi
+
+dnl Required libraries
+
+AM_PATH_GLIB_2_0(glib_required_version, :,
+  AC_MSG_ERROR(Test for GLIB failed. See the file 'INSTALL' for help.),
+  gobject)
+
+if test "$enable_php_bindings" = yes; then
+  AM_PATH_GTK_2_0(2.0.0, :, :, :)
+fi
+
+AX_PATH_GSL(gsl_required_version, :,
+            AC_MSG_ERROR(could not find gsl))
+
+dnl Bindings requirements
+
+MAYBE_PYBIND=
+if test "$enable_python_bindings" = yes; then
+  if test "$have_pygobject" = yes; then
+    if test "$have_python" = yes; then
+      MAYBE_PYBIND=python
+    else
+      AC_MSG_WARN([Python headers not found.  Python bindings will not be built.])
+    fi
+  else
+    AC_MSG_WARN([PyGObject not found.  Python bindings will not be built.])
+  fi
+fi
+
+MAYBE_PLBIND=
+if test "$enable_perl_bindings" = yes; then
+  if test "x$PERL" = x; then
+    AC_MSG_WARN([Perl not found.  Perl bindings will not be built.])
+  else
+    if test "$have_build_pl" = yes; then
+      if test "$have_glib_pl" = yes; then
+        MAYBE_PLBIND=perl
+      else
+        AC_MSG_WARN([Perl Glib module not found.  Perl bindings will not be built.])
+      fi
+    else
+      AC_MSG_WARN([Perl Module::Build not found.  Perl bindings will not be built.])
+    fi
+  fi
+fi
+
+MAYBE_PHPBIND=
+if test "$enable_php_bindings" = yes; then
+  if test "$have_php" = yes; then
+    AC_MSG_CHECKING(for php-gtk)
+    echo "<?php if (!class_exists('gtk')) { exit(255); } else { exit(0); }?>" \
+         | $PHP -d extension=php_gtk2.dll -d extension=php_gtk2.so 2>/dev/null
+    if test "$?" = 0 ; then
+      AC_MSG_RESULT(ok)
+      MAYBE_PHPBIND=php
+    else
+      AC_MSG_RESULT(no)
+      AC_MSG_WARN([PHP-Gtk not found.  PHP bindings will not be built.])
+    fi
+  else
+    AC_MSG_WARN([PHP not found.  PHP bindings will not be built.])
+  fi
+fi
+
+MAYBE_JAVABIND=
+if test "$enable_java_bindings" = yes; then
+  if test "x$JAVAC" = x || test "x$JAVA" = x; then
+    AC_MSG_WARN([Java not found.  Java bindings will not be built.])
+  else
+    MAYBE_JAVABIND=java
+  fi
+fi
+
+dnl Headers, typedefs/structures, functions
+
+dnl Output
+
+AC_SUBST([PHP])
+AC_SUBST([PHP_CFLAGS])
+AC_SUBST([PHP_EXTENSIONS_DIR])
+#AC_SUBST([MAYBE_SIM])
+AC_SUBST([MAYBE_PYBIND])
+AC_SUBST([MAYBE_PLBIND])
+AC_SUBST([MAYBE_PHPBIND])
+AC_SUBST([MAYBE_JAVABIND])
+AC_CONFIG_FILES([
+  Makefile
+  oscats.pc
+  src/Makefile
+  src/liboscats/Makefile
+  bindings/Makefile
+  bindings/python/Makefile
+  bindings/python/codegen/Makefile
+  bindings/perl/Makefile
+  bindings/perl/Build.PL
+  bindings/perl/oscats.pm
+  bindings/php/Makefile
+  bindings/php/generator/Makefile
+  bindings/java/Makefile
+  doc/Makefile
+  doc/liboscats/Makefile
+  doc/liboscats/version.xml
+  examples/Makefile
+])
+AC_OUTPUT

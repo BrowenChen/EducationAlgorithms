@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSL</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch05.html" title="Utilities">
+<link rel="prev" href="GBitArray.html" title="GBitArray">
+<link rel="next" href="liboscats-Random.html" title="Random">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GBitArray.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="liboscats-Random.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#liboscats-GSL.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#liboscats-GSL.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#liboscats-GSL.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="liboscats-GSL"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="liboscats-GSL.top_of_page"></a>GSL</span></h2>
+<p>GSL — Wrapper for GNU Scientific Library data structures</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="liboscats-GSL.synopsis"></a><h2>Synopsis</h2>
+<a name="GGslVector"></a><a name="GGslMatrix"></a><a name="GGslPermutation"></a><pre class="synopsis">struct              <a class="link" href="liboscats-GSL.html#GGslVector-struct" title="struct GGslVector">GGslVector</a>;
+<a class="link" href="liboscats-GSL.html#GGslVector"><span class="returnvalue">GGslVector</span></a> *        <a class="link" href="liboscats-GSL.html#g-gsl-vector-new" title="g_gsl_vector_new ()">g_gsl_vector_new</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-vector-resize" title="g_gsl_vector_resize ()">g_gsl_vector_resize</a>                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-vector-copy" title="g_gsl_vector_copy ()">g_gsl_vector_copy</a>                   (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-GSL.html#g-gsl-vector-get" title="g_gsl_vector_get ()">g_gsl_vector_get</a>                    (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-vector-set" title="g_gsl_vector_set ()">g_gsl_vector_set</a>                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-vector-set-all" title="g_gsl_vector_set_all ()">g_gsl_vector_set_all</a>                (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> X</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-GSL.html#g-gsl-vector-get-size" title="g_gsl_vector_get_size ()">g_gsl_vector_get_size</a>               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>);
+struct              <a class="link" href="liboscats-GSL.html#GGslMatrix-struct" title="struct GGslMatrix">GGslMatrix</a>;
+<a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="returnvalue">GGslMatrix</span></a> *        <a class="link" href="liboscats-GSL.html#g-gsl-matrix-new" title="g_gsl_matrix_new ()">g_gsl_matrix_new</a>                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> rows</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cols</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-resize" title="g_gsl_matrix_resize ()">g_gsl_matrix_resize</a>                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> rows</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cols</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-copy" title="g_gsl_matrix_copy ()">g_gsl_matrix_copy</a>                   (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="liboscats-GSL.html#g-gsl-matrix-get" title="g_gsl_matrix_get ()">g_gsl_matrix_get</a>                    (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> col</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-set" title="g_gsl_matrix_set ()">g_gsl_matrix_set</a>                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> col</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-set-all" title="g_gsl_matrix_set_all ()">g_gsl_matrix_set_all</a>                (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> X</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-GSL.html#g-gsl-matrix-get-rows" title="g_gsl_matrix_get_rows ()">g_gsl_matrix_get_rows</a>               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="liboscats-GSL.html#g-gsl-matrix-get-cols" title="g_gsl_matrix_get_cols ()">g_gsl_matrix_get_cols</a>               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-solve" title="g_gsl_matrix_solve ()">g_gsl_matrix_solve</a>                  (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *y</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *b</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-matrix-invert" title="g_gsl_matrix_invert ()">g_gsl_matrix_invert</a>                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X_inv</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);
+<span class="returnvalue">double</span>              <a class="link" href="liboscats-GSL.html#g-gsl-matrix-det" title="g_gsl_matrix_det ()">g_gsl_matrix_det</a>                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);
+struct              <a class="link" href="liboscats-GSL.html#GGslPermutation-struct" title="struct GGslPermutation">GGslPermutation</a>;
+<a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="returnvalue">GGslPermutation</span></a> *   <a class="link" href="liboscats-GSL.html#g-gsl-permutation-new" title="g_gsl_permutation_new ()">g_gsl_permutation_new</a>               (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="liboscats-GSL.html#g-gsl-permutation-resize" title="g_gsl_permutation_resize ()">g_gsl_permutation_resize</a>            (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="liboscats-GSL.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GGslVector
+</pre>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GGslMatrix
+</pre>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GGslPermutation
+</pre>
+</div>
+<div class="refsect1">
+<a name="liboscats-GSL.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="liboscats-GSL.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GGslVector-struct"></a><h3>struct GGslVector</h3>
+<pre class="programlisting">struct GGslVector;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-new"></a><h3>g_gsl_vector_new ()</h3>
+<pre class="programlisting"><a class="link" href="liboscats-GSL.html#GGslVector"><span class="returnvalue">GGslVector</span></a> *        g_gsl_vector_new                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-resize"></a><h3>g_gsl_vector_resize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_vector_resize                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-copy"></a><h3>g_gsl_vector_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_vector_copy                   (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *rhs</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-get"></a><h3>g_gsl_vector_get ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             g_gsl_vector_get                    (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-set"></a><h3>g_gsl_vector_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_vector_set                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-set-all"></a><h3>g_gsl_vector_set_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_vector_set_all                (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> X</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-vector-get-size"></a><h3>g_gsl_vector_get_size ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_gsl_vector_get_size               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *v</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GGslMatrix-struct"></a><h3>struct GGslMatrix</h3>
+<pre class="programlisting">struct GGslMatrix;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-new"></a><h3>g_gsl_matrix_new ()</h3>
+<pre class="programlisting"><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="returnvalue">GGslMatrix</span></a> *        g_gsl_matrix_new                    (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> rows</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cols</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-resize"></a><h3>g_gsl_matrix_resize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_resize                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> rows</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cols</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-copy"></a><h3>g_gsl_matrix_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_copy                   (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *rhs</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-get"></a><h3>g_gsl_matrix_get ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             g_gsl_matrix_get                    (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> col</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-set"></a><h3>g_gsl_matrix_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_set                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> col</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-set-all"></a><h3>g_gsl_matrix_set_all ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_set_all                (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> X</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-get-rows"></a><h3>g_gsl_matrix_get_rows ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_gsl_matrix_get_rows               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-get-cols"></a><h3>g_gsl_matrix_get_cols ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_gsl_matrix_get_cols               (<em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *v</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-solve"></a><h3>g_gsl_matrix_solve ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_solve                  (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *y</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> *b</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);</pre>
+<p>
+Computes <em class="parameter"><code>b</code></em> for the equation <em class="parameter"><code>y</code></em> = <em class="parameter"><code>X</code></em> <em class="parameter"><code>b</code></em>.
+Note: <em class="parameter"><code>X</code></em> is overwritten with its LU decomposition.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>X</code></em> :</span></p></td>
+<td>a square <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> of size <em class="parameter"><code>N</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> of length <em class="parameter"><code>N</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslVector"><span class="type">GGslVector</span></a> of length <em class="parameter"><code>N</code></em> to receive the result</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> of length <em class="parameter"><code>N</code></em> for working space</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-invert"></a><h3>g_gsl_matrix_invert ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_matrix_invert                 (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X_inv</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);</pre>
+<p>
+Computes the inverse of <em class="parameter"><code>X</code></em>.
+Note: <em class="parameter"><code>X</code></em> is overwritten with its LU decomposition.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>X</code></em> :</span></p></td>
+<td>a square <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> of size <em class="parameter"><code>N</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>X_inv</code></em> :</span></p></td>
+<td>a square <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> of length <em class="parameter"><code>N</code></em> to receive the result</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> of length <em class="parameter"><code>N</code></em> for working space</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-matrix-det"></a><h3>g_gsl_matrix_det ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>              g_gsl_matrix_det                    (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> *X</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *p</code></em>);</pre>
+<p>
+Computes teh determinant of <em class="parameter"><code>X</code></em>.
+Note that <em class="parameter"><code>X</code></em> is overwritten with its LU decomposition.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>X</code></em> :</span></p></td>
+<td>a square <a class="link" href="liboscats-GSL.html#GGslMatrix"><span class="type">GGslMatrix</span></a> of size <em class="parameter"><code>N</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>p</code></em> :</span></p></td>
+<td>a <a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> of length <em class="parameter"><code>N</code></em> for working space</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the determinant of <em class="parameter"><code>X</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GGslPermutation-struct"></a><h3>struct GGslPermutation</h3>
+<pre class="programlisting">struct GGslPermutation;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-permutation-new"></a><h3>g_gsl_permutation_new ()</h3>
+<pre class="programlisting"><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="returnvalue">GGslPermutation</span></a> *   g_gsl_permutation_new               (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-gsl-permutation-resize"></a><h3>g_gsl_permutation_resize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_gsl_permutation_resize            (<em class="parameter"><code><a class="link" href="liboscats-GSL.html#GGslPermutation"><span class="type">GGslPermutation</span></a> *v</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> N</code></em>);</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

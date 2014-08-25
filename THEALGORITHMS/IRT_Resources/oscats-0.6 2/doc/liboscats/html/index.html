@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>liboscats Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="next" href="pt01.html" title="Part I. Preliminaries">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">liboscats Reference Manual</p></th></tr></table></div>
+<div><p class="releaseinfo">
+      for liboscats 0.6.
+      The latest version of this documentation can be found on-line at
+      <a class="ulink" href="http://%5BSERVER%5D/liboscats/index.html" target="_top">http://[SERVER]/liboscats/</a>.
+    </p></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl>
+<dt><span class="part"><a href="pt01.html">I. Preliminaries</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch01.html">Introduction</a></span></dt>
+<dt><span class="chapter"><a href="ch02.html">Build and Installation Notes</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="ch02.html#id36148401">Dependencies</a></span></dt>
+<dt><span class="section"><a href="ch02s02.html">Building</a></span></dt>
+<dt><span class="section"><a href="ch02s03.html">Windows</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="ch02s03.html#id36160306">Perl Bindings</a></span></dt>
+<dt><span class="section"><a href="ch02s03.html#id36165776">PHP Bindings</a></span></dt>
+<dt><span class="section"><a href="ch02s03.html#id36148763">Java Bindings</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">Language Buindings</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="ch03.html#id36146220">Python</a></span></dt>
+<dt><span class="section"><a href="ch03s02.html">Perl</a></span></dt>
+<dt><span class="section"><a href="ch03s03.html">PHP</a></span></dt>
+<dt><span class="section"><a href="ch03s04.html">Java</a></span></dt>
+<dt><span class="section"><a href="ch03s05.html">Matlab</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch04.html">Hacking OSCATS</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="pt02.html">II. API Reference</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch05.html">Utilities</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GBitArray.html">GBitArray</a></span><span class="refpurpose"> — An array of bit flags</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="liboscats-GSL.html">GSL</a></span><span class="refpurpose"> — Wrapper for GNU Scientific Library data structures</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="liboscats-Random.html">Random</a></span><span class="refpurpose"> — Wrapper for GSL random number generators and
+distribution functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsIntegrate.html">OscatsIntegrate</a></span><span class="refpurpose"> — Multivariate Integration</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch06.html">Core Objects</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="OscatsSpace.html">OscatsSpace</a></span><span class="refpurpose"> — Latent Space Definition</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsPoint.html">OscatsPoint</a></span><span class="refpurpose"> — Point in Latent Space</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAdministrand.html">OscatsAdministrand</a></span><span class="refpurpose"> — Administrand Container Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsItem.html">OscatsItem</a></span><span class="refpurpose"> — Item Container Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsItemBank.html">OscatsItemBank</a></span><span class="refpurpose"> — Item Bank Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsTest.html">OscatsTest</a></span><span class="refpurpose"> — Computerized Adaptive Test Administration</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsExaminee.html">OscatsExaminee</a></span><span class="refpurpose"> — Examinee Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsCovariates.html">OscatsCovariates</a></span><span class="refpurpose"> — Covariates Container Class</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch07.html">Models</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="OscatsModel.html">OscatsModel</a></span><span class="refpurpose"> — Abstract Measurement Model Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelL1p.html">OscatsModelL1p</a></span><span class="refpurpose"> — One-Parameter Logistic (1PL) Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelL2p.html">OscatsModelL2p</a></span><span class="refpurpose"> — Two-Parameter Logistic (2PL) Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelL3p.html">OscatsModelL3p</a></span><span class="refpurpose"> — Three-Parameter Logistic (3PL) Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelNominal.html">OscatsModelNominal</a></span><span class="refpurpose"> — Nominal Response Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelPc.html">OscatsModelPc</a></span><span class="refpurpose"> — Generalized Partial Credit Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelGpc.html">OscatsModelGpc</a></span><span class="refpurpose"> — Generalized Partial Credit Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelGr.html">OscatsModelGr</a></span><span class="refpurpose"> — Homogenous Logistic Graded Response Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelHetlgr.html">OscatsModelHetlgr</a></span><span class="refpurpose"> — Heterogeneous Logistic Graded Response Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelDina.html">OscatsModelDina</a></span><span class="refpurpose"> — Deterministic Inputs Noisy And Gate (DINA) Model</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsModelNida.html">OscatsModelNida</a></span><span class="refpurpose"> — Noisy Input Determistic And Gate (NIDA) Model</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch08.html">Algorithms</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgorithm.html">OscatsAlgorithm</a></span><span class="refpurpose"> — Abstract CAT Algorithm Class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgAstrat.html">OscatsAlgAstrat</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgChooser.html">OscatsAlgChooser</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgClassRates.html">OscatsAlgClassRates</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgClosestDiff.html">OscatsAlgClosestDiff</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgEstimate.html">OscatsAlgEstimate</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgExposureCounter.html">OscatsAlgExposureCounter</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgFixedLength.html">OscatsAlgFixedLength</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgMaxFisher.html">OscatsAlgMaxFisher</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgMaxKl.html">OscatsAlgMaxKl</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgPickRand.html">OscatsAlgPickRand</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgSimulate.html">OscatsAlgSimulate</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="OscatsAlgStratify.html">OscatsAlgStratify</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="pt03.html">III. Extending OSCATS</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="ch09.html">New Algorithms</a></span></dt>
+<dt><span class="chapter"><a href="ch10.html">New IRT Models</a></span></dt>
+<dt><span class="chapter"><a href="ch11.html">New Classification Models</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="pt04.html">IV. Reference</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="object-tree.html">Object Hierarchy</a></span></dt>
+<dt><span class="index"><a href="api-index-full.html">API Index</a></span></dt>
+<dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt>
+</dl></dd>
+</dl></div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

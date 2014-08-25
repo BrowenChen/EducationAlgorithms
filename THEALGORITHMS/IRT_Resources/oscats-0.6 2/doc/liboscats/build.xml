@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<chapter>
+  <title>Build and Installation Notes</title>
+
+<section><title>Dependencies</title>
+<para>OSCATS depends the following packages:
+  <itemizedlist>
+    <listitem><ulink url="http://www.gnu.org/software/gsl/">GNU Scientific Library</ulink> (required)</listitem>
+    <listitem><ulink url="http://www.gtk.org/">Glib 2</ulink>, including GObject (required)</listitem>
+    <listitem><ulink url="http://pkg-config.freedesktop.org/wiki/">pkg-config</ulink>, when using native C (optional)</listitem>
+    <listitem><ulink url="http://www.pygtk.org/">PyGObject</ulink> module, for Python bindings</listitem>
+    <listitem>Perl <ulink url="http://gtk2-perl.sourceforge.net/">Glib</ulink> module, for Perl bindings</listitem>
+    <listitem><ulink url="http://gtk.php.net/">PHP-GTK</ulink> extension, for PHP bindings</listitem>
+  </itemizedlist>
+</para>
+</section>
+
+<section><title>Building</title>
+<para>  After unpacking the OSCATS source distribution, run:
+  <programlisting>./configure
+make
+make install</programlisting>
+The default installation location is <filename>/usr/local</filename>. 
+Alternate locations can be specified with the <option>--prefix</option>
+option to <filename>configure</filename>.  If linking against the OSCATS C
+library in a non-standard location, you may need to set the
+<envar>PKG_CONFIG_PATH</envar> environment variable for
+<filename>pkg-config</filename>.  By default, none of the language bindings
+are included; to build these, use the <option>--enable-*-bindings</option>
+options.</para>
+</section>
+
+<section><title>Windows</title>
+<para>OSCATS binaries for Windows are available online.  If you want to
+build OSCATS from source, it is recommended to use the <ulink
+url="http://www.mingw.org/">MinGW/MSYS</ulink> environment.</para>
+
+  <section><title>Perl Bindings</title>
+<para>To build the Perl Glib module, you may need to supply the Glib
+libraries and location (output from <code>pkg-config --libs gobject-2.0
+gthread-2.0</code>) in the <envar>LDLOADLIBS</envar> variable on the command
+line of <filename>Makefile.PL</filename> in order to link properly.  For
+example:
+  <programlisting>perl Makefile.PL "LDLOADLIBS=\"-Lc:/msys/local/lib -lgobject-2.0 -lgthread-2.0 -glib-2.0 -lintl\""</programlisting>
+On some systems, the OSCATS module will fail to load due to a missing
+"<filename>dll.exp.dll</filename>".  To work around, when building the Glib
+module, after executing <code>perl Makefile.PL</code> but before
+<code>make</code>, edit the <filename>Makefile</filename> replacing all
+instances of <filename>dll.exp</filename> with <filename>Glib</filename>.
+</para>
+
+<!--<para>Edit <filename>Build.PL</filename> after configure to change /usr/local/lib path to e:/msys/local/lib.</para>-->
+  </section>
+
+  <section><title>PHP Bindings</title>
+<para>You will need a copy of the PHP source distribution in order to
+compile the OSCATS PHP bindings.  Set the <envar>PHP_CFLAGS</envar>
+environment variable with the correct path to the source header files, for
+example:
+<programlisting>PHP_CFLAGS="-Ic:/php-5.2.14 -Ic:/php-5.2.14/main -Ic:/php-5.2.14/TSRM -Ic:/php-5.2.14/Zend -Ic:/php-5.2.14/ext -Ic:/php-5.2.14/ext/date/lib"</programlisting>
+You may need to set <envar>PHP_EXTENSIONS_DIR</envar> to PHP's
+<filename>ext</filename> directory.  If <filename>configure</filename>
+complains about PHP not being found, edit the <code>PHP=</code> line in
+<filename>bindings/php/Makefile</filename> to point to your PHP executable
+and execute <code>make</code> from the <filename>bindings/php</filename>
+directory manually.
+</para>
+
+<para>There are a few changes that may need to be made to the PHP header
+files.  In <filename>Zend/zend_config.w32.h</filename> and
+<filename>TSRM/tsrm_config.w32.h</filename>, remove the lines with
+<filename>crtdbg.h</filename>, and in <filename>main/win95nt.h</filename>
+remove the <type>uint</type>, <type>uling</type>, and <type>pid_t</type>
+typedefs.  Moreover, GCC/libtool expect libraries to start with
+<filename>lib</filename>.  So, make copies of
+<filename>php_gtk2.dll</filename> and <filename>php5.dll</filename> named
+<filename>libphp_gtk2.dll</filename> and <filename>libphp5.dll</filename> to
+keep the linker happy.
+</para>
+  </section>
+
+  <section><title>Java Bindings</title>
+<para>
+  You may need to copy the <filename>lib/jvm.lib</filename> file in the JDK
+to <filename>bin/libjvm.a</filename> to satisfy GCC/libtool.
+</para>
+  </section>
+
+</section>
+
+</chapter>

@@ -1,0 +1,274 @@
+;; wrapper class for Random functions
+
+(define-boxed Random
+  (in-module "Oscats")
+  (c-name "OscatsRandom")
+)
+
+(define-function uniform_int
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_uniform_int")
+  (return-type "guint32")
+  (parameters
+  )
+)
+
+(define-function uniform_int_range
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_uniform_int_range")
+  (return-type "gint")
+  (parameters
+    '("gint" "min")
+    '("gint" "max")
+  )
+)
+
+(define-function uniform
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_uniform")
+  (return-type "gdouble")
+  (parameters
+  )
+)
+
+(define-function uniform_range
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_uniform_range")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "min")
+    '("gdouble" "max")
+  )
+)
+
+(define-function normal
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_normal")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "sd")
+  )
+)
+
+(define-function binorm
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_binorm")
+  (return-type "none")
+  (parameters
+    '("gdouble" "sdx")
+    '("gdouble" "sdy")
+    '("gdouble" "rho")
+    '("gdouble*" "X")
+    '("gdouble*" "Y")
+  )
+)
+
+(define-function multinorm_prep
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_multinorm_prep")
+  (return-type "none")
+  (parameters
+    '("const-GGslMatrix*" "sigma")
+    '("GGslMatrix*" "sigma_half")
+  )
+)
+
+(define-function multinorm
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_multinorm")
+  (return-type "none")
+  (parameters
+    '("const-GGslVector*" "mu")
+    '("const-GGslMatrix*" "sigma_half")
+    '("GGslVector*" "x")
+  )
+)
+
+(define-function exp
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_exp")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "mu")
+  )
+)
+
+(define-function gamma
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_gamma")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "a")
+    '("gdouble" "b")
+  )
+)
+
+(define-function beta
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_beta")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "a")
+    '("gdouble" "b")
+  )
+)
+
+(define-function dirichlet
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_dirichlet")
+  (return-type "none")
+  (parameters
+    '("const-GGslVector*" "alpha")
+    '("GGslVector*" "x")
+  )
+)
+
+(define-function poisson
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_poisson")
+  (return-type "guint")
+  (parameters
+    '("gdouble" "mu")
+  )
+)
+
+(define-function binomial
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_binomial")
+  (return-type "guint")
+  (parameters
+    '("guint" "n")
+    '("gdouble" "p")
+  )
+)
+
+(define-function multinomial
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_multinomial")
+  (return-type "none")
+  (parameters
+    '("guint" "n")
+    '("const-GGslVector*" "p")
+    '("GArray*" "x")
+  )
+)
+
+(define-function hypergeometric
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_hypergeometric")
+  (return-type "guint")
+  (parameters
+    '("guint" "n1")
+    '("guint" "n2")
+    '("guint" "N")
+  )
+)
+
+(define-function normal_p
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_normal_p")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "x")
+    '("gdouble" "sd")
+  )
+)
+
+(define-function chisq_p
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_chisq_p")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "x")
+    '("gdouble" "nu")
+  )
+)
+
+(define-function F_p
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_F_p")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "x")
+    '("gdouble" "nu1")
+    '("gdouble" "nu2")
+  )
+)
+
+(define-function t_p
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_t_p")
+  (return-type "gdouble")
+  (parameters
+    '("gdouble" "x")
+    '("gdouble" "nu")
+  )
+)
+
+(define-function sample
+  (of-object "OscatsRandom")
+  (c-name "oscats_rnd_sample")
+  (return-type "none")
+  (parameters
+    '("const-GPtrArray*" "population")
+    '("guint" "num")
+    '("GPtrArray*" "sample")
+    '("gboolean" "replace")
+  )
+)
+
+;; static Administrand methods
+
+(define-function reset_characteristics
+  (of-object "OscatsAdministrand")
+  (c-name "oscats_administrand_reset_characteristics")
+  (return-type "none")
+)
+
+(define-function register_characteristic
+  (of-object "OscatsAdministrand")
+  (c-name "oscats_administrand_register_characteristic")
+  (return-type "none")
+  (parameters
+    '("GQuark" "characteristic")
+  )
+)
+
+(define-function characteristic_from_string
+  (of-object "OscatsAdministrand")
+  (c-name "oscats_administrand_characteristic_from_string")
+  (return-type "GQuark")
+  (parameters
+    '("const-gchar*" "name")
+  )
+)
+
+(define-function characteristic_as_string
+  (of-object "OscatsAdministrand")
+  (c-name "oscats_administrand_characteristic_as_string")
+  (return-type "const-gchar*")
+  (parameters
+    '("GQuark" "characteristic")
+  )
+)
+
+;; static Covariates methods
+
+(define-function from_string
+  (of-object "OscatsCovariates")
+  (c-name "oscats_covariates_from_string")
+  (return-type "GQuark")
+  (parameters
+    '("const-gchar*" "name")
+  )
+)
+
+(define-function as_string
+  (of-object "OscatsCovariates")
+  (c-name "oscats_covariates_as_string")
+  (return-type "const-gchar*")
+  (parameters
+    '("GQuark" "name")
+  )
+)
+

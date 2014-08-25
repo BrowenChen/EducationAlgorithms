@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsItemBank</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsItem.html" title="OscatsItem">
+<link rel="next" href="OscatsTest.html" title="OscatsTest">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsItem.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsTest.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsItemBank.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsItemBank.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsItemBank.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsItemBank.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsItemBank"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsItemBank.top_of_page"></a>OscatsItemBank</span></h2>
+<p>OscatsItemBank — Item Bank Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsItemBank.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsItemBank.html#OscatsItemBank-struct" title="struct OscatsItemBank">OscatsItemBank</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsItemBank.html#oscats-item-bank-add-item" title="oscats_item_bank_add_item ()">oscats_item_bank_add_item</a>           (<em class="parameter"><code><a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsItemBank.html#oscats-item-bank-remove-item" title="oscats_item_bank_remove_item ()">oscats_item_bank_remove_item</a>        (<em class="parameter"><code><a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="OscatsItemBank.html#oscats-item-bank-num-items" title="oscats_item_bank_num_items ()">oscats_item_bank_num_items</a>          (<em class="parameter"><code>const <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>);
+const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="returnvalue">OscatsAdministrand</span></a> *  <a class="link" href="OscatsItemBank.html#oscats-item-bank-get-item" title="oscats_item_bank_get_item ()">oscats_item_bank_get_item</a>   (<em class="parameter"><code>const <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsItemBank.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand">OscatsAdministrand</a>
+         +----OscatsItemBank
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsItemBank.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsItemBank.html#OscatsItemBank--sizeHint" title='The "sizeHint" property'>sizeHint</a>"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsItemBank.description"></a><h2>Description</h2>
+<p>
+Note: Since an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> is also an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>, it can be
+tagged with characteristics and can also serve as an item group for
+multi-stage testing or testlets, with appropriately coded algorithms.
+</p>
+<p>
+<a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> does not implement <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-default-model" title="oscats_administrand_get_default_model ()"><code class="function">oscats_administrand_get_default_model()</code></a>,
+<a class="link" href="OscatsAdministrand.html#oscats-administrand-set-model" title="oscats_administrand_set_model ()"><code class="function">oscats_administrand_set_model()</code></a>, or <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-model" title="oscats_administrand_get_model ()"><code class="function">oscats_administrand_get_model()</code></a>.  For
+<a class="link" href="OscatsAdministrand.html#oscats-administrand-set-default-model" title="oscats_administrand_set_default_model ()"><code class="function">oscats_administrand_set_default_model()</code></a>, <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> will set the
+default model for all items.
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsItemBank.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsItemBank-struct"></a><h3>struct OscatsItemBank</h3>
+<pre class="programlisting">struct OscatsItemBank;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-item-bank-add-item"></a><h3>oscats_item_bank_add_item ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_item_bank_add_item           (<em class="parameter"><code><a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);</pre>
+<p>
+Adds <em class="parameter"><code>item</code></em> to the item bank <em class="parameter"><code>bank</code></em>.  (Increases the <em class="parameter"><code>item</code></em> reference count.)
+Note that items cannot be added if <em class="parameter"><code>bank</code></em> is frozen
+(see <a class="link" href="OscatsAdministrand.html#OscatsAdministrand--frozen" title='The "frozen" property'><span class="type">"frozen"</span></a>).  Note, this function does not check
+whether <em class="parameter"><code>item</code></em> is already in <em class="parameter"><code>bank</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bank</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-item-bank-remove-item"></a><h3>oscats_item_bank_remove_item ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_item_bank_remove_item        (<em class="parameter"><code><a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);</pre>
+<p>
+Removes <em class="parameter"><code>item</code></em> from the item bank <em class="parameter"><code>bank</code></em>.  (Decreases the <em class="parameter"><code>item</code></em> reference
+count.) Note that items cannot be removed if <em class="parameter"><code>bank</code></em> is frozen (see
+<a class="link" href="OscatsAdministrand.html#OscatsAdministrand--frozen" title='The "frozen" property'><span class="type">"frozen"</span></a>).  If <em class="parameter"><code>item</code></em> is not in <em class="parameter"><code>bank</code></em>, the function
+does nothing.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bank</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-item-bank-num-items"></a><h3>oscats_item_bank_num_items ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_item_bank_num_items          (<em class="parameter"><code>const <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bank</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of items in the <em class="parameter"><code>bank</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-item-bank-get-item"></a><h3>oscats_item_bank_get_item ()</h3>
+<pre class="programlisting">const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="returnvalue">OscatsAdministrand</span></a> *  oscats_item_bank_get_item   (<em class="parameter"><code>const <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> *bank</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);</pre>
+<p>
+Must have <em class="parameter"><code>i</code></em> &lt; number of items in the bank.
+(Item's reference count is not increased.)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bank</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>item index (0-based)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the item <em class="parameter"><code>i</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsItemBank.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsItemBank--sizeHint"></a><h3>The <code class="literal">"sizeHint"</code> property</h3>
+<pre class="programlisting">  "sizeHint"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Write / Construct Only</pre>
+<p>
+Hint of how many items will be in the item bank.
+</p>
+<p>Default value: 1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+prefixes
+g_bit_array_	BitArray
+g_gsl_vector_	GslVector
+g_gsl_matrix_	GslMatrix
+g_gsl_permutation_	GslPermutation
+oscats_rnd_	Random
+oscats_examinee_	Examinee
+oscats_covariates_	Covariates
+oscats_space_	Space
+oscats_point_	Point
+oscats_administrand_	Administrand
+oscats_item_bank_	ItemBank
+oscats_item_	Item
+oscats_test_	Test
+oscats_model_	Model
+oscats_algorithm_	Algorithm
+oscats_alg_exposure_counter_	AlgExposureCounter
+oscats_alg_class_rates_	AlgClassRates
+oscats_alg_astrat_	AlgAstrat
+%%
+ignore
+oscats_rnd_binorm
+oscats_rnd_multinomial
+oscats_rnd_sample
+oscats_alg_chooser_set_c_criterion
+oscats_integrate_set_c_function
+oscats_administrand_check_type
+oscats_administrand_check_model
+oscats_model_new
+oscats_alg_class_rates_foreach_pattern
+oscats_covariates_list
+oscats_alg_stratify_stratify
+oscats_alg_astrat_register_model
+%%
+init oscats_administrand_set_model
+	g_object_ref(model);
+%%
+init oscats_administrand_set_model_by_name
+	g_object_ref(model);
+%%
+init oscats_examinee_set_sim_theta
+	g_object_ref(theta);
+%%
+init oscats_examinee_set_est_theta
+	g_object_ref(theta);
+%%
+init oscats_examinee_set_theta
+	g_object_ref(theta);
+%%
+init oscats_examinee_set_theta_by_name
+	g_object_ref(theta);
+%%
+init oscats_item_new
+	g_object_ref(model);

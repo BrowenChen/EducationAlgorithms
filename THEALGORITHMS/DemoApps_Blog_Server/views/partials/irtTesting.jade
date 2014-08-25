@@ -1,0 +1,174 @@
+script(src="/js/chartData.js")
+script(src="/js/algorithms.js")
+script(src="/js/jQueryFunctions.js")
+
+.row
+	.col-lg-10
+
+		#veryTop.content.section-inner
+
+
+			header#top.clearfix.animated.fadeIn._1
+				//- nav#nav.menu-nav-menu-container
+				//-	ul#menu-nav-menu.menu.col-lg-offset-2
+				//-		li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
+				//-			a(href='#overview') Spaced Repitition
+				//-		li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
+				//-			a(href='#theAlg') Math Safari
+				//-		li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
+				//-			a(href='#theory') Technical Details
+
+
+			.posts
+				#post-136.post-136.post.type-post.status-publish.format-standard.hentry.animated.fadeIn._1
+					.post-bubbles
+						a.format-bubble(href='/')
+					.content-inner
+						.post-header(style="padding-bottom:1px;")
+							h2.post-title
+								a(href='', rel='bookmark', title='Home') Item Response Theory
+							br
+							br
+							nav#nav.menu-nav-menu-container(style="padding-top:10px; position:absolute;")
+								ul#menu-nav-menu.menu
+									li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
+										a(href='#overview') Overview
+									li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
+										a(href='#theAlg') The Algorithm
+									li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
+										a(href='#theory') Theory and Mechanics
+						.post-content
+
+							#overview.h2 Overview
+							
+
+							h5 Rasch Model - One Parameter
+							#chart	
+
+
+
+							#loadChart.button.btn.btn-primary(ng-click="loadChart({{difVal}})", style="border-radius: 15px;") Load								
+							input(placeholder="Enter Item Difficulty", style="margin:7px; border-radius:10px;", ng-model="difVal")  
+							
+
+
+
+
+
+							p
+								br
+								| A key primary goal of education is to qualitatively determine a student’s unobservable latent ability, in areas that lack clear definitive metric to measure and compare with. Attributes such as height and weight can be directly measured, whereas areas such as the ability to absorb new information, lateral thinking abilities, or time management are key factors that cannot be easily compared on a standard scale.
+								br
+								br
+								em The idea here is that if a certain ability can be standardized and compared across several learners, that could be a powerful tool in created a deeper and more effective personalized learning experience. 
+								br
+								br
+								|  We can utilize IRT to extract data to be used for recommendation systems in a interconnected graph of separated topics and subjects, providing key insight for where the student should go from here given the details that we extract. 
+
+								a(href="#top") Back to top &uarr;							
+								br
+							
+							#theAlg.h2 The Algorithm
+							br
+
+							p
+								| Basically, there is an item characteristic curve model attached to each question. Based on that item’s difficulty level and given the student ability, it will predict the probability for whether a student will understand or fail that question. The mathematical model behind these calculations are the Rasch (One parameter IRT), and Birnbaum Models (2/3 Parameter IRT). These models work with units called logits, which we can calculate with the log-odds model. In this example, I’ve set the difficulty and ability scale to be from 1 - 100. 
+
+								br
+
+							.row
+							a(href="#top") Back to top &uarr;
+
+						.col-lg-4.col-lg-offset-1
+							
+						.clear
+					.clear
+					.clear
+
+				#post-137.post-137.post.type-post.status-publish.format-standard.hentry.animated.fadeIn._1
+					.post-bubbles
+						a.format-bubble(href='/')
+					.content-inner
+						.post-header
+							h2.post-title
+								a(href='', rel='bookmark', title='Home') IRT Models
+							.post-meta
+								span.post-date
+									a(href='', title='') July 29, 2014
+								span.date-sep  / 
+								span.post-author
+									a(href='http://blog.jchui.me/author/jchui/', title='', rel='author') browenchen
+								span.date-sep  / 
+
+						.post-content
+
+
+
+							#overview
+								h2.strong Rasch Model - One parameter 
+								br
+								p This is a description of the Rasch Model
+								br
+								br
+								.col.col-sm-9
+									img(src="/imgs/brinbaum.png", style="border-radius: 10px;")
+									br 
+									br									
+
+								br
+								
+								br
+								br
+								.row                             	
+								a(href="#top") Back to top &uarr;							
+								br
+
+
+
+
+							#brinbaum.h2 Brinbaum Models
+							p This is the two and three model IRT. 
+								br						
+								em Item Discrimination
+								|  is the concept of how the difficulty of a problem is relative to ability level. This is introduced in the 2 and 3 parameter IRT models. If there is no discrimination, the value of the item difficulty is a constant flat line across all ability levels. If there is a discrimination, this type of problem can be more useful in distinguishing the high-ability students from the low-ability students (think of an exam with an average percentage of 90% versus an exam with an average of 50%. The latter exam will allow smart students a greater room to demonstrate their intellect and differentiate themselves more than the average)
+								br
+
+							br
+								a(href="#top") Back to top &uarr;
+							#theory.h2 Log-odds Model
+							p
+								| Text here 
+								br
+								a(href="#top") Back to top &uarr;	
+						.col-lg-4.col-lg-offset-1
+							
+						.clear
+					.clear
+					.clear			
+
+	.col-lg-2.animated.fadeIn._2
+		
+		br
+		br
+		
+		
+		
+		.widget.widget_recent_entries
+			#nav.widget-content
+				h3.widget-title(style="color:silver; font-size:1.5em; margin-left:15px;") Contents 
+				hr
+				#menu.ul
+					#menu-item-39.li
+						a(href='#post-136') Item Response Theory
+					br
+					#menu-item-30.li
+						a(href='#post-137') Models and Equations
+					br
+					#menu-item-39.li
+						a(href='') 
+
+
+			.clear
+
+
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsModelPc</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch07.html" title="Models">
+<link rel="prev" href="OscatsModelNominal.html" title="OscatsModelNominal">
+<link rel="next" href="OscatsModelGpc.html" title="OscatsModelGpc">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsModelNominal.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsModelGpc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsModelPc.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsModelPc.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsModelPc.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsModelPc.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsModelPc"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsModelPc.top_of_page"></a>OscatsModelPc</span></h2>
+<p>OscatsModelPc — Generalized Partial Credit Model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsModelPc.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsModelPc.html#OscatsModelPc-struct" title="struct OscatsModelPc">OscatsModelPc</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelPc.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsModel.html" title="OscatsModel">OscatsModel</a>
+         +----OscatsModelPc
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelPc.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsModelPc.html#OscatsModelPc--Ncat" title='The "Ncat" property'>Ncat</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelPc.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsModelPc.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsModelPc-struct"></a><h3>struct OscatsModelPc</h3>
+<pre class="programlisting">struct OscatsModelPc;</pre>
+<p>
+The Partial Credit Model is the Rasch case of the Generalized Partial
+Credit Model (<a class="link" href="OscatsModelGpc.html" title="OscatsModelGpc"><span class="type">OscatsModelGpc</span></a>):
+P(X=k|theta) = f_k(theta)/[1+sum_j f_j(theta)],
+where f_j(theta) = sum_i theta_i - b_j + sum_l d_l covariate_l,
+b_j is the scaled option difficulty,
+and f_0(theta) = 0.
+Responses are numbered 0, 1, ..., Ncat-1.
+Note that all options share the same parameters for the covariates.
+No distance metric is currently provided, but see Ali (2011) for possibilities.
+</p>
+<p>
+Parameter names: Diff.k
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36248659"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">R. J.</span> <span class="surname">de Ayala</span></span></span>
+   (<span class="pubdate">2009</span>).
+   <span class="title">The Theory and Practice of Item Response Theory</span>.
+   p <span class="pagenums">166</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36248631"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Henk</span> <span class="surname">Kelderman</span></span></span>
+   (<span class="pubdate">1996</span>).
+   "<span class="title">Multidimensional Rasch Models for Partial-Credit Scoring</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">20</span>,</span>
+   <span class="artpagenums">155-168</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36238836"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">G. N.</span> <span class="surname">Masters</span></span></span>
+   (<span class="pubdate">1982</span>).
+   "<span class="title">A Rasch model for partial credit scoring</span>."
+   <span class="biblioset"><span class="title">Psychometrika</span>,
+              <span class="volumenum">47</span>,</span>
+   <span class="artpagenums">149-174</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36238179"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Usama</span> <span class="surname">Ali</span></span></span>
+   (<span class="pubdate">2011</span>).
+   <span class="title">Item Selection Methods in Polytomous Computerized Adaptive Testing</span>.
+   Dissertation, University of Illinois.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsModelPc.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsModelPc--Ncat"></a><h3>The <code class="literal">"Ncat"</code> property</h3>
+<pre class="programlisting">  "Ncat"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of response categories in the IRT model,
+numered 0, 1, ..., Ncat-1.  The default number of categories is 3,
+which is also the minimum.
+</p>
+<p>Allowed values: &gt;= 3</p>
+<p>Default value: 3</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

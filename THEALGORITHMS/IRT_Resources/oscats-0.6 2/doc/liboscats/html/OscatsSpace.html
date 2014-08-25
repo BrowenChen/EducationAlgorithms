@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsSpace</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="ch06.html" title="Core Objects">
+<link rel="next" href="OscatsPoint.html" title="OscatsPoint">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch06.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsPoint.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsSpace.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsSpace.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsSpace.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsSpace.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsSpace"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsSpace.top_of_page"></a>OscatsSpace</span></h2>
+<p>OscatsSpace — Latent Space Definition</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsSpace.synopsis"></a><h2>Synopsis</h2>
+<a name="OscatsDimType"></a><pre class="synopsis">enum                <a class="link" href="OscatsSpace.html#OscatsDimType">OscatsDimType</a>;
+typedef             <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim">OscatsDim</a>;
+typedef             <a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural">OscatsNatural</a>;
+struct              <a class="link" href="OscatsSpace.html#OscatsSpace-struct" title="struct OscatsSpace">OscatsSpace</a>;
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               <a class="link" href="OscatsSpace.html#oscats-space-get-type" title="oscats_space_get_type ()">oscats_space_get_type</a>               ();
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="returnvalue">guint16</span></a>             <a class="link" href="OscatsSpace.html#oscats-space-size" title="oscats_space_size ()">oscats_space_size</a>                   (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsSpace.html#oscats-space-set-dim-name" title="oscats_space_set_dim_name ()">oscats_space_set_dim_name</a>           (<em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsSpace.html#oscats-space-has-dim" title="oscats_space_has_dim ()">oscats_space_has_dim</a>                (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsSpace.html#oscats-space-has-dim-name" title="oscats_space_has_dim_name ()">oscats_space_has_dim_name</a>           (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="returnvalue">OscatsDim</span></a>           <a class="link" href="OscatsSpace.html#oscats-space-get-dim" title="oscats_space_get_dim ()">oscats_space_get_dim</a>                (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="returnvalue">OscatsDim</span></a>           <a class="link" href="OscatsSpace.html#oscats-space-get-dim-by-name" title="oscats_space_get_dim_by_name ()">oscats_space_get_dim_by_name</a>        (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="OscatsSpace.html#oscats-space-dim-get-name" title="oscats_space_dim_get_name ()">oscats_space_dim_get_name</a>           (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="returnvalue">OscatsNatural</span></a>       <a class="link" href="OscatsSpace.html#oscats-space-dim-get-max" title="oscats_space_dim_get_max ()">oscats_space_dim_get_max</a>            (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsSpace.html#oscats-space-validate" title="oscats_space_validate ()">oscats_space_validate</a>               (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="type">OscatsNatural</span></a> x</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsSpace.html#oscats-space-compatible" title="oscats_space_compatible ()">oscats_space_compatible</a>             (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *rhs</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsSpace.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GFlags
+   +----OscatsDimType
+</pre>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsSpace
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsSpace.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--id" title='The "id" property'>id</a>"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--max" title='The "max" property'>max</a>"                      <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--names" title='The "names" property'>names</a>"                    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--numBin" title='The "numBin" property'>numBin</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--numCont" title='The "numCont" property'>numCont</a>"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+  "<a class="link" href="OscatsSpace.html#OscatsSpace--numNat" title='The "numNat" property'>numNat</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsSpace.description"></a><h2>Description</h2>
+<p>
+A multidimensional latent space consisting of continuos-, binary- (0, 1),
+and natural- (0, 1, 2, ...) valued dimensions.
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsSpace.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsDimType"></a><h3>enum OscatsDimType</h3>
+<pre class="programlisting">typedef enum
+{
+  OSCATS_DIM_CONT = (1 &lt;&lt; 14),
+  OSCATS_DIM_BIN = (2 &lt;&lt; 14),
+  OSCATS_DIM_NAT = (3 &lt;&lt; 14),
+  OSCATS_DIM_TYPE_MASK = (3 &lt;&lt; 14),
+  OSCATS_DIM_MASK = 0x3fff,
+  OSCATS_DIM_MAX = 0x3fff		// == 16383
+} OscatsDimType;
+</pre>
+<p>
+A latent space is composed of three types of dimensions: continuous-valued
+dimensions, binary-valued (0, 1) dimensions, and natural-valued
+(0, 1, 2, ...) dimensions.  An <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> encodes both the type and the
+dimension number.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="OSCATS-DIM-CONT:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_CONT</code></span></p></td>
+<td>a continuous dimension
+</td>
+</tr>
+<tr>
+<td><p><a name="OSCATS-DIM-BIN:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_BIN</code></span></p></td>
+<td>a binary dimension
+</td>
+</tr>
+<tr>
+<td><p><a name="OSCATS-DIM-NAT:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_NAT</code></span></p></td>
+<td>a natural (0, 1, 2, ...) dimension
+</td>
+</tr>
+<tr>
+<td><p><a name="OSCATS-DIM-TYPE-MASK:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_TYPE_MASK</code></span></p></td>
+<td>mask to retrieve dimension type from <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a>
+</td>
+</tr>
+<tr>
+<td><p><a name="OSCATS-DIM-MASK:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_MASK</code></span></p></td>
+<td>mask to retrieve dimension number within type from <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a>
+</td>
+</tr>
+<tr>
+<td><p><a name="OSCATS-DIM-MAX:CAPS"></a><span class="term"><code class="literal">OSCATS_DIM_MAX</code></span></p></td>
+<td>maximum number of dimensions of any given type (16,383)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsDim"></a><h3>OscatsDim</h3>
+<pre class="programlisting">typedef guint16 OscatsDim;
+</pre>
+<p>
+Index for a dimension in a latent space.  Encodes both the type and
+dimension number.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsNatural"></a><h3>OscatsNatural</h3>
+<pre class="programlisting">typedef guint16 OscatsNatural;
+</pre>
+<p>
+A natural value (0, 1, 2, ...).  This is simply an alias for <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a>.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace-struct"></a><h3>struct OscatsSpace</h3>
+<pre class="programlisting">struct OscatsSpace;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-get-type"></a><h3>oscats_space_get_type ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               oscats_space_get_type               ();</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-size"></a><h3>oscats_space_size ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="returnvalue">guint16</span></a>             oscats_space_size                   (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the total number of dimensions</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-set-dim-name"></a><h3>oscats_space_set_dim_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_space_set_dim_name           (<em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Sets the name of <em class="parameter"><code>dim</code></em> to <em class="parameter"><code>name</code></em>.  The <em class="parameter"><code>dim</code></em> must be valid.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>the dimension to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the new name for the dimension. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-has-dim"></a><h3>oscats_space_has_dim ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_space_has_dim                (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> for a potential dimension name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>space</code></em> has a dimension named <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-has-dim-name"></a><h3>oscats_space_has_dim_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_space_has_dim_name           (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>a potential dimension name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>space</code></em> has a dimension named <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-get-dim"></a><h3>oscats_space_get_dim ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="returnvalue">OscatsDim</span></a>           oscats_space_get_dim                (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+The <em class="parameter"><code>space</code></em> must have a dimension named <em class="parameter"><code>name</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> for a potential dimension name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> for the dimension named <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-get-dim-by-name"></a><h3>oscats_space_get_dim_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="returnvalue">OscatsDim</span></a>           oscats_space_get_dim_by_name        (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+The <em class="parameter"><code>space</code></em> must have a dimension named <em class="parameter"><code>name</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>a potential dimension name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> for the dimension named <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-dim-get-name"></a><h3>oscats_space_dim_get_name ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       oscats_space_dim_get_name           (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be a valid dimension for <em class="parameter"><code>space</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> indicating the dimension</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name for <em class="parameter"><code>dim</code></em> in <em class="parameter"><code>space</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-dim-get-max"></a><h3>oscats_space_dim_get_max ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="returnvalue">OscatsNatural</span></a>       oscats_space_dim_get_max            (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>);</pre>
+<p>
+The <em class="parameter"><code>dim</code></em> must be a valid <span class="emphasis"><em>natural</em></span> dimension for <em class="parameter"><code>space</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dim</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> indicating the dimension</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the maximum value for natural dimension <em class="parameter"><code>dim</code></em> in <em class="parameter"><code>space</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-validate"></a><h3>oscats_space_validate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_space_validate               (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> dim</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsNatural" title="OscatsNatural"><span class="type">OscatsNatural</span></a> x</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-space-compatible"></a><h3>oscats_space_compatible ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_space_compatible             (<em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *rhs</code></em>);</pre>
+<p>
+Tests whether two spaces have the same geometry---that is, the same
+number of each type of dimension.  For natural-valued dimensions, both
+spaces must also have the same range for each dimension.  Note: This does
+not compare dimension names.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> have the same geometry</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsSpace.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsSpace--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+A string identifier for the space.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace--max"></a><h3>The <code class="literal">"max"</code> property</h3>
+<pre class="programlisting">  "max"                      <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write</pre>
+<p>
+The maximum for each natural dimension.  May be 1, though binary
+dimensions should probably use <a class="link" href="OscatsSpace.html#OSCATS-DIM-BIN:CAPS"><code class="literal">OSCATS_DIM_BIN</code></a> instead.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace--names"></a><h3>The <code class="literal">"names"</code> property</h3>
+<pre class="programlisting">  "names"                    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Value-arrays.html#GValueArray"><span class="type">GValueArray</span></a>*          : Read / Write</pre>
+<p>
+Dimension names. Names are ordered continuous dimensions first, followed
+by binary dimensions, followed by natural dimensions.  Default names
+are Cont.1, Cont.2, ..., Bin.1, Bin.2, ..., Nat.1, Nat.2, ....
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace--numBin"></a><h3>The <code class="literal">"numBin"</code> property</h3>
+<pre class="programlisting">  "numBin"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of binary dimensions in the space.
+</p>
+<p>Allowed values: &lt;= 16383</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace--numCont"></a><h3>The <code class="literal">"numCont"</code> property</h3>
+<pre class="programlisting">  "numCont"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of continuous dimensions in the space.
+</p>
+<p>Allowed values: &lt;= 16383</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsSpace--numNat"></a><h3>The <code class="literal">"numNat"</code> property</h3>
+<pre class="programlisting">  "numNat"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of natural (0, 1, 2, ...) dimensions in the space.
+</p>
+<p>Allowed values: &lt;= 16383</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

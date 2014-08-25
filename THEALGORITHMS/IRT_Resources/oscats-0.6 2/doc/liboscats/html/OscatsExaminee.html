@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsExaminee</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsTest.html" title="OscatsTest">
+<link rel="next" href="OscatsCovariates.html" title="OscatsCovariates">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsTest.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsCovariates.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsExaminee.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsExaminee.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsExaminee.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsExaminee.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsExaminee"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsExaminee.top_of_page"></a>OscatsExaminee</span></h2>
+<p>OscatsExaminee — Examinee Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsExaminee.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsExaminee.html#OscatsExaminee-struct" title="struct OscatsExaminee">OscatsExaminee</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-sim-key" title="oscats_examinee_set_sim_key ()">oscats_examinee_set_sim_key</a>         (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="OscatsExaminee.html#oscats-examinee-get-sim-key" title="oscats_examinee_get_sim_key ()">oscats_examinee_get_sim_key</a>         (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-est-key" title="oscats_examinee_set_est_key ()">oscats_examinee_set_est_key</a>         (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="OscatsExaminee.html#oscats-examinee-get-est-key" title="oscats_examinee_get_est_key ()">oscats_examinee_get_est_key</a>         (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-sim-theta" title="oscats_examinee_set_sim_theta ()">oscats_examinee_set_sim_theta</a>       (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-get-sim-theta" title="oscats_examinee_get_sim_theta ()">oscats_examinee_get_sim_theta</a>       (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-est-theta" title="oscats_examinee_set_est_theta ()">oscats_examinee_set_est_theta</a>       (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-get-est-theta" title="oscats_examinee_get_est_theta ()">oscats_examinee_get_est_theta</a>       (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-theta" title="oscats_examinee_set_theta ()">oscats_examinee_set_theta</a>           (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-set-theta-by-name" title="oscats_examinee_set_theta_by_name ()">oscats_examinee_set_theta_by_name</a>   (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-get-theta" title="oscats_examinee_get_theta ()">oscats_examinee_get_theta</a>           (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-get-theta-by-name" title="oscats_examinee_get_theta_by_name ()">oscats_examinee_get_theta_by_name</a>   (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-init-sim-theta" title="oscats_examinee_init_sim_theta ()">oscats_examinee_init_sim_theta</a>      (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-init-est-theta" title="oscats_examinee_init_est_theta ()">oscats_examinee_init_est_theta</a>      (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       <a class="link" href="OscatsExaminee.html#oscats-examinee-init-theta" title="oscats_examinee_init_theta ()">oscats_examinee_init_theta</a>          (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-prep" title="oscats_examinee_prep ()">oscats_examinee_prep</a>                (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> length_hint</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsExaminee.html#oscats-examinee-add-item" title="oscats_examinee_add_item ()">oscats_examinee_add_item</a>            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="OscatsExaminee.html#oscats-examinee-num-items" title="oscats_examinee_num_items ()">oscats_examinee_num_items</a>           (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);
+<a class="link" href="OscatsItem.html" title="OscatsItem"><span class="returnvalue">OscatsItem</span></a> *        <a class="link" href="OscatsExaminee.html#oscats-examinee-get-item" title="oscats_examinee_get_item ()">oscats_examinee_get_item</a>            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);
+<a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="returnvalue">OscatsResponse</span></a>      <a class="link" href="OscatsExaminee.html#oscats-examinee-get-resp" title="oscats_examinee_get_resp ()">oscats_examinee_get_resp</a>            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsExaminee.html#oscats-examinee-logLik" title="oscats_examinee_logLik ()">oscats_examinee_logLik</a>              (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> modelKey</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsExaminee.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsExaminee
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsExaminee.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsExaminee.html#OscatsExaminee--covariates" title='The "covariates" property'>covariates</a>"               <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a>*     : Read / Write
+  "<a class="link" href="OscatsExaminee.html#OscatsExaminee--id" title='The "id" property'>id</a>"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsExaminee.description"></a><h2>Description</h2>
+<p>
+An <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> represents a single examinee taking a single test.
+That is, a given <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> may be administered only one test at a
+time.
+</p>
+<p>
+The examinee may be associated with several points in latent space. 
+(Generally, all points will be from the same latent space, but complex
+simulations may involve a collection of algorithms that operate in
+several different spaces simulatneously.) Each point in latent space is
+associated with a name or key.
+</p>
+<p>
+Each examinee has two special keys: one used as the default for
+simulation and one used as the default for estimation/item selection.  If
+these keys are not specified explicitly, they are taken as "simDefault"
+and "estDefault", respectively.  Simulation, estimation, and item
+selection algorithms are not required to use the default keys.  Refer to
+the documentation for particular algorithms for details on which keys are
+used.
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsExaminee.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsExaminee-struct"></a><h3>struct OscatsExaminee</h3>
+<pre class="programlisting">struct OscatsExaminee;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-sim-key"></a><h3>oscats_examinee_set_sim_key ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_sim_key         (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+<em class="parameter"><code>name</code></em> may be 0 to refer to "simDefault".
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name of the point for simulation</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-sim-key"></a><h3>oscats_examinee_get_sim_key ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              oscats_examinee_get_sim_key         (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the key for the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> used by default for simulation</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-est-key"></a><h3>oscats_examinee_set_est_key ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_est_key         (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+<em class="parameter"><code>name</code></em> may be 0 to refer to "estDefault".
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name of the point for estimation/item selection</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-est-key"></a><h3>oscats_examinee_get_est_key ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              oscats_examinee_get_est_key         (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the key for the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> used by default for estimation
+and item selection</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-sim-theta"></a><h3>oscats_examinee_set_sim_theta ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_sim_theta       (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);</pre>
+<p>
+Sets <em class="parameter"><code>theta</code></em> as the point referred to by the simulation key for <em class="parameter"><code>e</code></em>.
+Note that <em class="parameter"><code>e</code></em> takes ownership of <em class="parameter"><code>theta</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to use for simulation. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-sim-theta"></a><h3>oscats_examinee_get_sim_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_get_sim_theta       (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> indicated to be used by
+default for simulation, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no point has been assigned. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-est-theta"></a><h3>oscats_examinee_set_est_theta ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_est_theta       (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);</pre>
+<p>
+Set <em class="parameter"><code>theta</code></em> as the point referred to by the estimation key for <em class="parameter"><code>e</code></em>.
+Note that <em class="parameter"><code>e</code></em> takes ownership of <em class="parameter"><code>theta</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to be used for estimation. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-est-theta"></a><h3>oscats_examinee_get_est_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_get_est_theta       (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> indicated to be used by
+default for estimation and item selection, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no point has been
+assigned. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-theta"></a><h3>oscats_examinee_set_theta ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_theta           (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-set-theta-by-name"></a><h3>oscats_examinee_set_theta_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_set_theta_by_name   (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-theta"></a><h3>oscats_examinee_get_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_get_theta           (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+Note, <em class="parameter"><code>name</code></em> may <span class="emphasis"><em>not</em></span> be 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the key for the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> for <em class="parameter"><code>e</code></em> named <em class="parameter"><code>name</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-theta-by-name"></a><h3>oscats_examinee_get_theta_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_get_theta_by_name   (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Convenience wrapper for <a class="link" href="OscatsExaminee.html#oscats-examinee-get-theta" title="oscats_examinee_get_theta ()"><code class="function">oscats_examinee_get_theta()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> to fetch</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> for <em class="parameter"><code>e</code></em> named <em class="parameter"><code>name</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-init-sim-theta"></a><h3>oscats_examinee_init_sim_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_init_sim_theta      (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<p>
+Generate a new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> from <em class="parameter"><code>space</code></em> for <em class="parameter"><code>e</code></em> to use in simulation.
+The point is stored under the current simulation key.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>the latent space from which to generate the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-init-est-theta"></a><h3>oscats_examinee_init_est_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_init_est_theta      (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<p>
+Generate a new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> from <em class="parameter"><code>space</code></em> for <em class="parameter"><code>e</code></em> to use in estimation and
+item selection.  The point is stored under the current estimation key.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>the latent space from which to generate the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-init-theta"></a><h3>oscats_examinee_init_theta ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="returnvalue">OscatsPoint</span></a> *       oscats_examinee_init_theta          (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<p>
+Generate a new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> from <em class="parameter"><code>space</code></em> for <em class="parameter"><code>e</code></em> under the key <em class="parameter"><code>name</code></em>.
+Any previous <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> under <em class="parameter"><code>name</code></em> in <em class="parameter"><code>e</code></em> is replaced.
+Note: <em class="parameter"><code>name</code></em> may <span class="emphasis"><em>not</em></span> be 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name for the new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>the latent space from which to generate the <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-prep"></a><h3>oscats_examinee_prep ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_prep                (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> length_hint</code></em>);</pre>
+<p>
+Prepares the examinee for the CAT by reseting the item/resp arrays.
+If the arrays do not already exist, they are preallocated to hold
+<em class="parameter"><code>length_hint</code></em> elements (recommended), the expected length of the test.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length_hint</code></em> :</span></p></td>
+<td>guess for test length</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-add-item"></a><h3>oscats_examinee_add_item ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_examinee_add_item            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="type">OscatsResponse</span></a> resp</code></em>);</pre>
+<p>
+Adds the (<em class="parameter"><code>item</code></em>, <em class="parameter"><code>resp</code></em>) pair to the list of items this examinee has been
+administered.  The reference count for <em class="parameter"><code>item</code></em> is increased.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> this examinee has taken. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>resp</code></em> :</span></p></td>
+<td>the examinee's response to the item</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-num-items"></a><h3>oscats_examinee_num_items ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_examinee_num_items           (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of items this examinee has been administered</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-item"></a><h3>oscats_examinee_get_item ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsItem.html" title="OscatsItem"><span class="returnvalue">OscatsItem</span></a> *        oscats_examinee_get_item            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>the item number</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="OscatsItem.html" title="OscatsItem"><span class="type">OscatsItem</span></a> <em class="parameter"><code>i</code></em> for examinee <em class="parameter"><code>e</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-get-resp"></a><h3>oscats_examinee_get_resp ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsModel.html#OscatsResponse" title="OscatsResponse"><span class="returnvalue">OscatsResponse</span></a>      oscats_examinee_get_resp            (<em class="parameter"><code><a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>the item number</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the response to item <em class="parameter"><code>i</code></em> for examineee <em class="parameter"><code>e</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-examinee-logLik"></a><h3>oscats_examinee_logLik ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_examinee_logLik              (<em class="parameter"><code>const <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a> *e</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *theta</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> modelKey</code></em>);</pre>
+<p>
+Computes the log-likelihood of the responses from <em class="parameter"><code>e</code></em>, given latent ability
+<em class="parameter"><code>theta</code></em>. The default model is used if <em class="parameter"><code>model</code></em> == 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>e</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsExaminee.html" title="OscatsExaminee"><span class="type">OscatsExaminee</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>theta</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>modelKey</code></em> :</span></p></td>
+<td>the model name to use</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the log-likelihood</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsExaminee.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsExaminee--covariates"></a><h3>The <code class="literal">"covariates"</code> property</h3>
+<pre class="programlisting">  "covariates"               <a class="link" href="OscatsCovariates.html" title="OscatsCovariates"><span class="type">OscatsCovariates</span></a>*     : Read / Write</pre>
+<p>
+A set of covariates for the examinee.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsExaminee--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+A string identifier for the examinee.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Object Hierarchy</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="pt04.html" title="Part IV. Reference">
+<link rel="prev" href="pt04.html" title="Part IV. Reference">
+<link rel="next" href="api-index-full.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="pt04.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="pt04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="object-tree"></a>Object Hierarchy</h2></div></div></div>
+<pre class="screen">
+    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+        <a class="link" href="GBitArray.html" title="GBitArray">GBitArray</a>
+        <a class="link" href="liboscats-GSL.html#GGslMatrix">GGslMatrix</a>
+        <a class="link" href="liboscats-GSL.html#GGslPermutation">GGslPermutation</a>
+        <a class="link" href="liboscats-GSL.html#GGslVector">GGslVector</a>
+        <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand">OscatsAdministrand</a>
+            <a class="link" href="OscatsItemBank.html" title="OscatsItemBank">OscatsItemBank</a>
+            <a class="link" href="OscatsItem.html" title="OscatsItem">OscatsItem</a>
+        <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+            <a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+                <a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat">OscatsAlgAstrat</a>
+                <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates">OscatsAlgClassRates</a>
+                <a class="link" href="OscatsAlgClosestDiff.html" title="OscatsAlgClosestDiff">OscatsAlgClosestDiff</a>
+                <a class="link" href="OscatsAlgEstimate.html" title="OscatsAlgEstimate">OscatsAlgEstimate</a>
+                <a class="link" href="OscatsAlgExposureCounter.html" title="OscatsAlgExposureCounter">OscatsAlgExposureCounter</a>
+                <a class="link" href="OscatsAlgFixedLength.html" title="OscatsAlgFixedLength">OscatsAlgFixedLength</a>
+                <a class="link" href="OscatsAlgMaxFisher.html" title="OscatsAlgMaxFisher">OscatsAlgMaxFisher</a>
+                <a class="link" href="OscatsAlgMaxKl.html" title="OscatsAlgMaxKl">OscatsAlgMaxKl</a>
+                <a class="link" href="OscatsAlgPickRand.html" title="OscatsAlgPickRand">OscatsAlgPickRand</a>
+                <a class="link" href="OscatsAlgSimulate.html" title="OscatsAlgSimulate">OscatsAlgSimulate</a>
+        <a class="link" href="OscatsAlgChooser.html" title="OscatsAlgChooser">OscatsAlgChooser</a>
+        <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify">OscatsAlgStratify</a>
+        <a class="link" href="OscatsCovariates.html" title="OscatsCovariates">OscatsCovariates</a>
+        <a class="link" href="OscatsExaminee.html" title="OscatsExaminee">OscatsExaminee</a>
+        <a class="link" href="OscatsIntegrate.html" title="OscatsIntegrate">OscatsIntegrate</a>
+        <a class="link" href="OscatsModel.html" title="OscatsModel">OscatsModel</a>
+            <a class="link" href="OscatsModelDina.html" title="OscatsModelDina">OscatsModelDina</a>
+            <a class="link" href="OscatsModelGpc.html" title="OscatsModelGpc">OscatsModelGpc</a>
+            <a class="link" href="OscatsModelGr.html" title="OscatsModelGr">OscatsModelGr</a>
+            <a class="link" href="OscatsModelHetlgr.html" title="OscatsModelHetlgr">OscatsModelHetlgr</a>
+            <a class="link" href="OscatsModelL1p.html" title="OscatsModelL1p">OscatsModelL1p</a>
+            <a class="link" href="OscatsModelL2p.html" title="OscatsModelL2p">OscatsModelL2p</a>
+            <a class="link" href="OscatsModelL3p.html" title="OscatsModelL3p">OscatsModelL3p</a>
+            <a class="link" href="OscatsModelNida.html" title="OscatsModelNida">OscatsModelNida</a>
+            <a class="link" href="OscatsModelNominal.html" title="OscatsModelNominal">OscatsModelNominal</a>
+            <a class="link" href="OscatsModelPc.html" title="OscatsModelPc">OscatsModelPc</a>
+        <a class="link" href="OscatsPoint.html" title="OscatsPoint">OscatsPoint</a>
+        <a class="link" href="OscatsSpace.html" title="OscatsSpace">OscatsSpace</a>
+        <a class="link" href="OscatsTest.html" title="OscatsTest">OscatsTest</a>
+    GFlags
+        <a class="link" href="OscatsSpace.html#OscatsDimType">OscatsDimType</a>
+</pre>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

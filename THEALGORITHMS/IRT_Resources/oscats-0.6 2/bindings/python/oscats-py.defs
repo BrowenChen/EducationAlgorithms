@@ -1,0 +1,21 @@
+;; -*- scheme -*-
+; object definitions ...
+(define-object PyAlgorithm
+  (in-module "Oscats")
+  (parent "OscatsAlgorithm")
+  (c-name "OscatsPyAlgorithm")
+  (gtype-id "OSCATS_TYPE_PY_ALGORITHM")
+)
+
+;; Enumerations and flags ...
+
+
+;; From pyalgorithm.h
+
+(define-function oscats_py_algorithm_get_type
+  (c-name "oscats_py_algorithm_get_type")
+  (return-type "GType")
+  (parameters
+  )
+)
+

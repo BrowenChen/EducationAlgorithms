@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgClassRates</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgChooser.html" title="OscatsAlgChooser">
+<link rel="next" href="OscatsAlgClosestDiff.html" title="OscatsAlgClosestDiff">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgChooser.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgClosestDiff.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgClassRates.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgClassRates.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgClassRates.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgClassRates.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgClassRates"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgClassRates.top_of_page"></a>OscatsAlgClassRates</span></h2>
+<p>OscatsAlgClassRates</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgClassRates.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates-struct" title="struct OscatsAlgClassRates">OscatsAlgClassRates</a>;
+<span class="returnvalue">void</span>                (<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRatesForeachPatternFunc" title="OscatsAlgClassRatesForeachPatternFunc ()">*OscatsAlgClassRatesForeachPatternFunc</a>)
+                                                        (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *pattern</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> correct</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-num-examinees" title="oscats_alg_class_rates_num_examinees ()">oscats_alg_class_rates_num_examinees</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-get-pattern-rate" title="oscats_alg_class_rates_get_pattern_rate ()">oscats_alg_class_rates_get_pattern_rate</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-get-attribute-rate" title="oscats_alg_class_rates_get_attribute_rate ()">oscats_alg_class_rates_get_attribute_rate</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-get-misclassify-freq" title="oscats_alg_class_rates_get_misclassify_freq ()">oscats_alg_class_rates_get_misclassify_freq</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-num-examinees-by-pattern" title="oscats_alg_class_rates_num_examinees_by_pattern ()">oscats_alg_class_rates_num_examinees_by_pattern</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *attr</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-get-rate-by-pattern" title="oscats_alg_class_rates_get_rate_by_pattern ()">oscats_alg_class_rates_get_rate_by_pattern</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *attr</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgClassRates.html#oscats-alg-class-rates-foreach-pattern" title="oscats_alg_class_rates_foreach_pattern ()">oscats_alg_class_rates_foreach_pattern</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRatesForeachPatternFunc" title="OscatsAlgClassRatesForeachPatternFunc ()"><span class="type">OscatsAlgClassRatesForeachPatternFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClassRates.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm">OscatsAlgorithm</a>
+               +----OscatsAlgClassRates
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClassRates.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern" title='The "by-pattern" property'>by-pattern</a>"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--estKey" title='The "estKey" property'>estKey</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--simKey" title='The "simKey" property'>simKey</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClassRates.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClassRates.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgClassRates-struct"></a><h3>struct OscatsAlgClassRates</h3>
+<pre class="programlisting">struct OscatsAlgClassRates;</pre>
+<p>
+Statistics algorithm (<a class="link" href="OscatsTest.html#OscatsTest-finalize" title='The "finalize" signal'><span class="type">"finalize"</span></a>).
+Tracks the correct classification rates:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>Correct classification by attribute: r_k = N^-1 sum_i I_{alpha.hat_ik = alpha_ik}.</p></li>
+<li class="listitem"><p>Overall correct pattern classification: r = N^-1 sum_i I_{alpha.hat_i = alpha_i}.</p></li>
+<li class="listitem"><p>Correct classification by pattern (if <a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern" title='The "by-pattern" property'><span class="type">"by-pattern"</span></a>): r_alpha = sum_i I_{alpha.hat_i = alpha_i} / sum_i I_{alpha_i = alpha}.</p></li>
+<li class="listitem"><p>Frequency of misclassifications: f_j = N^-1 sum_i I_{j = sum_k abs(alpha.hat_ik - alpha_ik)}.</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+If the test space includes non-binary dimensions, they are silently ignored.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgClassRatesForeachPatternFunc"></a><h3>OscatsAlgClassRatesForeachPatternFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*OscatsAlgClassRatesForeachPatternFunc)
+                                                        (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *pattern</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> correct</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-num-examinees"></a><h3>oscats_alg_class_rates_num_examinees ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_alg_class_rates_num_examinees
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of examinees tested</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-get-pattern-rate"></a><h3>oscats_alg_class_rates_get_pattern_rate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_alg_class_rates_get_pattern_rate
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>);</pre>
+<p>
+The overall pattern classification success rate is:
+r = N^-1 sum_i I_{alpha.hat_i = alpha_i}.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the overall pattern classification success rate</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-get-attribute-rate"></a><h3>oscats_alg_class_rates_get_attribute_rate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_alg_class_rates_get_attribute_rate
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> i</code></em>);</pre>
+<p>
+The attribute classification success rate is:
+r_k = N^-1 sum_i I_{alpha.hat_ik = alpha_ik}.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>i</code></em> :</span></p></td>
+<td>the index of the attribute for which to query the rate</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the classification success rate for attribute <em class="parameter"><code>i</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-get-misclassify-freq"></a><h3>oscats_alg_class_rates_get_misclassify_freq ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_alg_class_rates_get_misclassify_freq
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>);</pre>
+<p>
+The frequency of having <em class="parameter"><code>num</code></em> misclassified attributes is:
+f_j = N^-1 sum_i I_{j = sum_k abs(alpha.hat_ik - alpha_ik)}.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>num</code></em> :</span></p></td>
+<td>the number of misclassified attributes</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the rate of misclassifying <em class="parameter"><code>num</code></em> attributes</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-num-examinees-by-pattern"></a><h3>oscats_alg_class_rates_num_examinees_by_pattern ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               oscats_alg_class_rates_num_examinees_by_pattern
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *attr</code></em>);</pre>
+<p>
+Rates for individual patterns are tabulated only if
+<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern" title='The "by-pattern" property'><span class="type">"by-pattern"</span></a> is set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> at registration.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attr</code></em> :</span></p></td>
+<td>the attribute pattern to query</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of examinees with true attribute pattern <em class="parameter"><code>attr</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-get-rate-by-pattern"></a><h3>oscats_alg_class_rates_get_rate_by_pattern ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             oscats_alg_class_rates_get_rate_by_pattern
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsPoint.html" title="OscatsPoint"><span class="type">OscatsPoint</span></a> *attr</code></em>);</pre>
+<p>
+The correct classification rate for a given pattern is:
+r_alpha = sum_i I_{alpha.hat_i = alpha_i} / sum_i I_{alpha_i = alpha}.
+</p>
+<p>
+Rates for individual patterns are tabulated only if
+<a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern" title='The "by-pattern" property'><span class="type">"by-pattern"</span></a> is set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> at registration.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attr</code></em> :</span></p></td>
+<td>the attribute pattern to query</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of examinees with true attribute pattern <em class="parameter"><code>attr</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-class-rates-foreach-pattern"></a><h3>oscats_alg_class_rates_foreach_pattern ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_class_rates_foreach_pattern
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRatesForeachPatternFunc" title="OscatsAlgClassRatesForeachPatternFunc ()"><span class="type">OscatsAlgClassRatesForeachPatternFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+If <a class="link" href="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern" title='The "by-pattern" property'><span class="type">"by-pattern"</span></a> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for <em class="parameter"><code>alg_data</code></em>, calls <em class="parameter"><code>func</code></em> on
+each pattern observed in <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> serialized order.  The <em class="parameter"><code>func</code></em> takes
+four parameters: a pointer to the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> pattern, the number of times
+the pattern was observed, the number of times the pattern was correctly
+classified, and <em class="parameter"><code>user_data</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates"><span class="type">OscatsAlgClassRates</span></a> data object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>a function to call for each pattern</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data to pass to the function</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgClassRates.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgClassRates--by-pattern"></a><h3>The <code class="literal">"by-pattern"</code> property</h3>
+<pre class="programlisting">  "by-pattern"               <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>
+Track misclassification rate for each classification pattern observed.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgClassRates--estKey"></a><h3>The <code class="literal">"estKey"</code> property</h3>
+<pre class="programlisting">  "estKey"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+Which latent point holds the estimated classification.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value or
+empty string indicates the examinee's estimation default.
+</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgClassRates--simKey"></a><h3>The <code class="literal">"simKey"</code> property</h3>
+<pre class="programlisting">  "simKey"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+Which latent point to consider the "correct" or "true" value.  A <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+value or empty string indicate the examinee's simulation default.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

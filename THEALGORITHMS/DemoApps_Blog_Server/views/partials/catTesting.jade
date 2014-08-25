@@ -1,0 +1,124 @@
+script(src="/js/chartData.js")
+script(src="/js/algorithms.js")
+script(src="/js/jQueryFunctions.js")
+
+.row
+	.col-lg-10
+
+		#veryTop.content.section-inner
+
+
+			header#top.clearfix.animated.fadeIn._1
+
+			.posts
+				#post-136.post-136.post.type-post.status-publish.format-standard.hentry.animated.fadeIn._1
+					.post-bubbles
+						a.format-bubble(href='/')
+					.content-inner
+						.post-header(style="padding-bottom:1px;")
+							h2.post-title
+								a(href='', rel='bookmark', title='Home') Computerized Adaptive Testing
+							br
+							br
+							nav#nav.menu-nav-menu-container(style="padding-top:10px; position:absolute;")
+								ul#menu-nav-menu.menu
+									li#menu-item-39.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-39
+										a(href='#overview') Overview
+									li#menu-item-497.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-497
+										a(href='#theAlg') The Algorithm
+									li#menu-item-128.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-128
+										a(href='#theory') Theory and Mechanics
+						.post-content
+							#catApp.div.animated.fadeIn._3
+								button.btn.btn-primary(style="border-radius: 15px; position:absolute; left:42%;", ng-click='newCandidate()') Start Testing
+								br							
+								br
+								.row
+									.col-sm-6.col-sm-offset-3
+										section.well(style="border-radius:15px;")
+											i Question: {{question}}
+											brAng
+											form#todo-form(ng-submit='getUserPrompt()')
+												input#new-todo(placeholder='1 = True, 0 = False', ng-model='ansData.text', autofocus='')
+											br
+											footer
+												span#todo-count.badge(style="padding:5px; opacity: .7;") {{testLength}} Items Remaining
+
+								.row
+									.col-sm-6(style="max-height:200px;")
+										#chartGauge
+									.col-sm-6(style="max-height:200px;")
+										#difGauge
+								.row
+									.col-sm-6
+										p Ability
+									.col-sm-6
+										p Difficulty
+										
+							#overview.h2 Overview
+
+							p Alright, now we have a method of determining the optimal sequencing of knowledge ordering. The new question is what is the optimal point for a student 
+								em to start learning
+							br
+
+							p Adaptive testing focuses on minimizing the time for diagnostic pre-testing, and attempts to accurately predict a unknown student’s level of ability given no prior knowledge on the student. From that starting point, we are able to then utilized Spaced Repitition to gather more details on the user and improve our personalized learning model over time.	
+							br 
+							a(href="#top") Back to top &uarr;
+		
+							#theAlg.h3 The Theory
+							br
+							br
+							p
+								| Say that the developer of a math educational app creates a test bank of 100 multiple choices questions for the game. Each question is then assigned a difficulty level, predesignated by the developer, and we choose a small subset of questions to pre-test the user. 
+
+								br
+								br
+							p We include item difficulty units, and child ability units to begin testing. The algorithm then adjusts the estimated child ability and slightly adjusts the item difficulty units based on the response of the test and finds the optimal ability level for a student when his pass/rate deviance falls below a target threshold. Here is an image of CAT in action:
+							br 
+
+							p The analogy is very similar to lifting weights: You go the gym and dunno where to start out. You pick a random weight and test out a few reps. You adjust accordingly until you hit a set number that you deem satisfying and at your level. CAT algorithm is essentially the same idea. 
+							br
+							a(href="#top") Back to top &uarr;
+							#theory.h3 The Algorithm
+							br
+							br
+							img(src="/imgs/catAlg.png", style="border-radius:10px;")
+								br
+								br
+							br
+							br
+
+							.row                             								
+							a(href="#top") Back to top &uarr;	
+							
+						.col-lg-4.col-lg-offset-1
+							
+						.clear
+					.clear
+					.clear
+		
+
+	.col-lg-2.animated.fadeIn._2
+		
+		br
+		br
+		
+		
+		
+		.widget.widget_recent_entries
+			#nav.widget-content
+				h3.widget-title(style="color:silver; font-size:1.5em; margin-left:15px;") Contents 
+				hr
+				#menu.ul
+					#menu-item-39.li
+						a(href='#post-136') Computerized Adaptive Testing
+					br
+
+					#menu-item-39.li
+						a(href='') 
+
+
+			.clear
+
+
+

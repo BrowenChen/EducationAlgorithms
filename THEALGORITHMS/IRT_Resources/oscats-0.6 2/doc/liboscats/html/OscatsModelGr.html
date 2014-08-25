@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsModelGr</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch07.html" title="Models">
+<link rel="prev" href="OscatsModelGpc.html" title="OscatsModelGpc">
+<link rel="next" href="OscatsModelHetlgr.html" title="OscatsModelHetlgr">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsModelGpc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsModelHetlgr.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsModelGr.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsModelGr.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsModelGr.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsModelGr.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsModelGr"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsModelGr.top_of_page"></a>OscatsModelGr</span></h2>
+<p>OscatsModelGr — Homogenous Logistic Graded Response Model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsModelGr.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsModelGr.html#OscatsModelGr-struct" title="struct OscatsModelGr">OscatsModelGr</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelGr.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsModel.html" title="OscatsModel">OscatsModel</a>
+         +----OscatsModelGr
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelGr.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsModelGr.html#OscatsModelGr--Ncat" title='The "Ncat" property'>Ncat</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelGr.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsModelGr.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsModelGr-struct"></a><h3>struct OscatsModelGr</h3>
+<pre class="programlisting">struct OscatsModelGr;</pre>
+<p>
+The Homogenous Logistic Graded Response IRT model (commonly called simply
+the Graded Response Model):
+P(X=k|theta) = P*_k(theta) - P*_{k+1}(theta),
+P*_k(theta) = 1/1+exp[-(sum_i a_i theta_i - b_k + sum_j d_j covariate_j)]
+where P*_k(theta) = P(X&gt;=k|theta) is the probability of scoring at least k,
+P*_0(theta) = 1, P*_{Ncat} = 0,
+a_i is the discrimination on dimension i,
+and b_k is the scaled response boundary location.
+Responses are numbered 0, 1, ..., Ncat-1.
+Note that all respose options share the same parameters for the covariates.
+No distance metric is currently provided, but see Ali (2011) for possibilities.
+</p>
+<p>
+Parameter names: Diff.k, Discr.DimName
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36233872"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">R. J.</span> <span class="surname">de Ayala</span></span></span>
+   (<span class="pubdate">2009</span>).
+   <span class="title">The Theory and Practice of Item Response Theory</span>.
+   p <span class="pagenums">217-222</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36204081"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">F.</span> <span class="surname">Samejima</span></span></span>
+   (<span class="pubdate">1976</span>).
+   "<span class="title">The graded response model of latent trait theory and tailored testing</span>."
+   <span class="biblioset"><span class="title">Proceedings of the First Conference on Computerized Adaptive Testing</span></span>,
+   <span class="artpagenums">5-15</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36204067"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">F.</span> <span class="surname">Samejima</span></span></span>
+   (<span class="pubdate">1969</span>).
+   "<span class="title">Estimation of latent ability using a response pattern of graded scores</span>."
+   <span class="biblioset"><span class="title">Psychometrika Monograph Supplement</span>,
+              <span class="volumenum">17</span></span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36242002"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Usama</span> <span class="surname">Ali</span></span></span>
+   (<span class="pubdate">2011</span>).
+   <span class="title">Item Selection Methods in Polytomous Computerized Adaptive Testing</span>.
+   Dissertation, University of Illinois.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsModelGr.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsModelGr--Ncat"></a><h3>The <code class="literal">"Ncat"</code> property</h3>
+<pre class="programlisting">  "Ncat"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p>
+The number of response categories in the IRT model,
+numered 0, 1, ..., Ncat-1.  The default number of categories is 3,
+which is also the minimum.
+</p>
+<p>Allowed values: &gt;= 3</p>
+<p>Default value: 3</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

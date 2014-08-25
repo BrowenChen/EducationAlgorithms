@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAdministrand</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch06.html" title="Core Objects">
+<link rel="prev" href="OscatsPoint.html" title="OscatsPoint">
+<link rel="next" href="OscatsItem.html" title="OscatsItem">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsPoint.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsItem.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAdministrand.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAdministrand.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAdministrand.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAdministrand.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAdministrand"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAdministrand.top_of_page"></a>OscatsAdministrand</span></h2>
+<p>OscatsAdministrand — Administrand Container Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAdministrand.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAdministrand.html#OscatsAdministrand-struct" title="struct OscatsAdministrand">OscatsAdministrand</a>;
+struct              <a class="link" href="OscatsAdministrand.html#OscatsAdministrandClass" title="struct OscatsAdministrandClass">OscatsAdministrandClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-freeze" title="oscats_administrand_freeze ()">oscats_administrand_freeze</a>          (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-unfreeze" title="oscats_administrand_unfreeze ()">oscats_administrand_unfreeze</a>        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-reset-characteristics" title="oscats_administrand_reset_characteristics ()">oscats_administrand_reset_characteristics</a>
+                                                        ();
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-register-characteristic" title="oscats_administrand_register_characteristic ()">oscats_administrand_register_characteristic</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="OscatsAdministrand.html#oscats-administrand-characteristic-from-string" title="oscats_administrand_characteristic_from_string ()">oscats_administrand_characteristic_from_string</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="OscatsAdministrand.html#oscats-administrand-characteristic-as-string" title="oscats_administrand_characteristic_as_string ()">oscats_administrand_characteristic_as_string</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-set-characteristic" title="oscats_administrand_set_characteristic ()">oscats_administrand_set_characteristic</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-clear-characteristic" title="oscats_administrand_clear_characteristic ()">oscats_administrand_clear_characteristic</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-clear-characteristics" title="oscats_administrand_clear_characteristics ()">oscats_administrand_clear_characteristics</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsAdministrand.html#oscats-administrand-has-characteristic" title="oscats_administrand_has_characteristic ()">oscats_administrand_has_characteristic</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-characteristics-iter-reset" title="oscats_administrand_characteristics_iter_reset ()">oscats_administrand_characteristics_iter_reset</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="OscatsAdministrand.html#oscats-administrand-characteristics-iter-next" title="oscats_administrand_characteristics_iter_next ()">oscats_administrand_characteristics_iter_next</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsAdministrand.html#oscats-administrand-check-type" title="oscats_administrand_check_type ()">oscats_administrand_check_type</a>      (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsAdministrand.html#oscats-administrand-check-model" title="oscats_administrand_check_model ()">oscats_administrand_check_model</a>     (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsAdministrand.html#oscats-administrand-check-dim-type" title="oscats_administrand_check_dim_type ()">oscats_administrand_check_dim_type</a>  (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> type</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="OscatsAdministrand.html#oscats-administrand-check-space" title="oscats_administrand_check_space ()">oscats_administrand_check_space</a>     (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-set-default-model" title="oscats_administrand_set_default_model ()">oscats_administrand_set_default_model</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-default-model" title="oscats_administrand_get_default_model ()">oscats_administrand_get_default_model</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-set-model" title="oscats_administrand_set_model ()">oscats_administrand_set_model</a>       (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAdministrand.html#oscats-administrand-set-model-by-name" title="oscats_administrand_set_model_by_name ()">oscats_administrand_set_model_by_name</a>
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-model" title="oscats_administrand_get_model ()">oscats_administrand_get_model</a>       (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);
+<a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-model-by-name" title="oscats_administrand_get_model_by_name ()">oscats_administrand_get_model_by_name</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAdministrand.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsAdministrand
+         +----<a class="link" href="OscatsItemBank.html" title="OscatsItemBank">OscatsItemBank</a>
+         +----<a class="link" href="OscatsItem.html" title="OscatsItem">OscatsItem</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAdministrand.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAdministrand.html#OscatsAdministrand--frozen" title='The "frozen" property'>frozen</a>"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="OscatsAdministrand.html#OscatsAdministrand--id" title='The "id" property'>id</a>"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAdministrand.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsAdministrand.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAdministrand-struct"></a><h3>struct OscatsAdministrand</h3>
+<pre class="programlisting">struct OscatsAdministrand;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAdministrandClass"></a><h3>struct OscatsAdministrandClass</h3>
+<pre class="programlisting">struct OscatsAdministrandClass {
+  void (*freeze) (OscatsAdministrand *item);
+  void (*unfreeze) (OscatsAdministrand *item);
+  gboolean (*check_type) (const OscatsAdministrand *item, GType type);
+  gboolean (*check_model) (const OscatsAdministrand *item, GQuark model, GType type);
+  gboolean (*check_dim_type) (const OscatsAdministrand *item, GQuark model, OscatsDim type);
+  gboolean (*check_space) (const OscatsAdministrand *item, GQuark model, const OscatsSpace *space);
+  void (*set_default_model) (OscatsAdministrand *item, GQuark name);
+  GQuark (*get_default_model) (const OscatsAdministrand *item);
+  void (*set_model) (OscatsAdministrand *item, GQuark name, OscatsModel *model);
+  OscatsModel * (*get_model) (const OscatsAdministrand *item, GQuark name);
+};
+</pre>
+<p>
+Note: Implementations of <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> may not provide all functions.
+Refer to implementation documentation for details.  If a function is not
+provided, the default fails silently (returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).
+</p>
+<p>
+The accessor functions will check type conformity of arguments, so 
+implementation functions need not do so.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.freeze"></a>freeze</code></em> ()</span></p></td>
+<td>Mark all sub-administrands as frozen</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.unfreeze"></a>unfreeze</code></em> ()</span></p></td>
+<td>Unmark all sub-administrands as frozen</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.check-type"></a>check_type</code></em> ()</span></p></td>
+<td>Check that all of the administrand's sub-administrands conform to <em class="parameter"><code>type</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.check-model"></a>check_model</code></em> ()</span></p></td>
+<td>Check that administrand has a model named <em class="parameter"><code>name</code></em> of sub-classed from type <em class="parameter"><code>model</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.check-dim-type"></a>check_dim_type</code></em> ()</span></p></td>
+<td>Check that administrand's sub-space is of <em class="parameter"><code>type</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.check-space"></a>check_space</code></em> ()</span></p></td>
+<td>Check that the space in which administrand's <em class="parameter"><code>model</code></em> is compatible with <em class="parameter"><code>space</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.set-default-model"></a>set_default_model</code></em> ()</span></p></td>
+<td>Set the default model name for administrand</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.get-default-model"></a>get_default_model</code></em> ()</span></p></td>
+<td>Get the current default model name for administrand</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.set-model"></a>set_model</code></em> ()</span></p></td>
+<td>Set a model for the administrand</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code><a name="OscatsAdministrandClass.get-model"></a>get_model</code></em> ()</span></p></td>
+<td>Fetch the named model from administrand</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-freeze"></a><h3>oscats_administrand_freeze ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_freeze          (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);</pre>
+<p>
+When an administrand is added to a test (directly or indirectly), changes
+to its list of models (including which model is set as the default) are
+no longer permitted.  When an <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a> is added to an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a>,
+the test calls <a class="link" href="OscatsAdministrand.html#oscats-administrand-freeze" title="oscats_administrand_freeze ()"><code class="function">oscats_administrand_freeze()</code></a>, and all implementations of
+<a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> <span class="emphasis"><em>must</em></span> provide
+<a class="link" href="OscatsAdministrand.html#OscatsAdministrandClass.freeze"><span class="type">OscatsAdministrandClass.freeze</span></a> to call <a class="link" href="OscatsAdministrand.html#oscats-administrand-freeze" title="oscats_administrand_freeze ()"><code class="function">oscats_administrand_freeze()</code></a>
+on all sub-administrands.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-unfreeze"></a><h3>oscats_administrand_unfreeze ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_unfreeze        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);</pre>
+<p>
+When an <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> is disposed, it calls <a class="link" href="OscatsAdministrand.html#oscats-administrand-unfreeze" title="oscats_administrand_unfreeze ()"><code class="function">oscats_administrand_unfreeze()</code></a>
+to indicate that its administrands are no longer required not to allow
+changes to their models.  If an administrand is added to multiple tests,
+all of the tests must be disposed before changes are again permitted.
+Implementations of <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> with sub-administrands
+<span class="emphasis"><em>should</em></span> provide <a class="link" href="OscatsAdministrand.html#OscatsAdministrandClass.unfreeze"><span class="type">OscatsAdministrandClass.unfreeze</span></a> to
+call <a class="link" href="OscatsAdministrand.html#oscats-administrand-unfreeze" title="oscats_administrand_unfreeze ()"><code class="function">oscats_administrand_unfreeze()</code></a> on all sub-administrands.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-reset-characteristics"></a><h3>oscats_administrand_reset_characteristics ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_reset_characteristics
+                                                        ();</pre>
+<p>
+Removes all characteristics from the internal characteristics table.
+(Useful for more compact memory management if you shift from
+one large set of characteristics to another in the same program.)
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-register-characteristic"></a><h3>oscats_administrand_register_characteristic ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_register_characteristic
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);</pre>
+<p>
+Adds <em class="parameter"><code>characteristic</code></em> to the internal characteristics table.  It is more
+efficient to register all characteristics before creating administrands
+than to add new characteristics after administrands already exist.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>characteristic</code></em> :</span></p></td>
+<td>the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic to register</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-characteristic-from-string"></a><h3>oscats_administrand_characteristic_from_string ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              oscats_administrand_characteristic_from_string
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+A wrapper of <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#g-quark-from-string"><code class="function">g_quark_from_string()</code></a> for language bindings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the string name of the characteristic</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the characteristic as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-characteristic-as-string"></a><h3>oscats_administrand_characteristic_as_string ()</h3>
+<pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       oscats_administrand_characteristic_as_string
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);</pre>
+<p>
+A wrapper of <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#g-quark-to-string"><code class="function">g_quark_to_string()</code></a> for language bindings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>characteristic</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the string form of <em class="parameter"><code>characteristic</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-set-characteristic"></a><h3>oscats_administrand_set_characteristic ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_set_characteristic
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);</pre>
+<p>
+Indicate that <em class="parameter"><code>administrand</code></em> has <em class="parameter"><code>characteristic</code></em>.  (This will register
+the characteristic if it has not been already.)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>characteristic</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-clear-characteristic"></a><h3>oscats_administrand_clear_characteristic ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_clear_characteristic
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);</pre>
+<p>
+Indicate that <em class="parameter"><code>administrand</code></em> does not have <em class="parameter"><code>characteristic</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>characteristic</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-clear-characteristics"></a><h3>oscats_administrand_clear_characteristics ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_clear_characteristics
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);</pre>
+<p>
+Clear all characteristics for <em class="parameter"><code>administrand</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-has-characteristic"></a><h3>oscats_administrand_has_characteristic ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_administrand_has_characteristic
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>characteristic</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>administrand</code></em> has <em class="parameter"><code>characteristic</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-characteristics-iter-reset"></a><h3>oscats_administrand_characteristics_iter_reset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_characteristics_iter_reset
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);</pre>
+<p>
+Reset the characteristics iterator for <em class="parameter"><code>administrand</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-characteristics-iter-next"></a><h3>oscats_administrand_characteristics_iter_next ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              oscats_administrand_characteristics_iter_next
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *administrand</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>administrand</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the next <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> characteristic that <em class="parameter"><code>administrand</code></em> has, or 0 if <em class="parameter"><code>administrand</code></em>
+has no more characteristics</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-check-type"></a><h3>oscats_administrand_check_type ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_administrand_check_type      (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>a sub-class of <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if all sub-administrands in <em class="parameter"><code>item</code></em> are inherited from <em class="parameter"><code>type</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-check-model"></a><h3>oscats_administrand_check_model ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_administrand_check_model     (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+<p>
+Checks whether the administrand (or all sub-administrands) have a model
+<em class="parameter"><code>model</code></em> and if <em class="parameter"><code>model</code></em> inherits from <em class="parameter"><code>type</code></em>.  Use <em class="parameter"><code>model</code></em> = 0 to check the
+default model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> identifier for a model name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>a sub-class of <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>item</code></em> has <em class="parameter"><code>model</code></em> and <em class="parameter"><code>model</code></em> inherits from <em class="parameter"><code>type</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-check-dim-type"></a><h3>oscats_administrand_check_dim_type ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_administrand_check_dim_type  (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsSpace.html#OscatsDim" title="OscatsDim"><span class="type">OscatsDim</span></a> type</code></em>);</pre>
+<p>
+Checks whether the administrand (or all sub-administrands) have a model
+<em class="parameter"><code>model</code></em> and if the subspace for <em class="parameter"><code>model</code></em> is of <em class="parameter"><code>type</code></em>.  Use <em class="parameter"><code>model</code></em> = 0 to
+check the default model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> identifier for a model name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>a dimension type (see <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>item</code></em> has <em class="parameter"><code>model</code></em> and the subspace of <em class="parameter"><code>model</code></em> is <em class="parameter"><code>type</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-check-space"></a><h3>oscats_administrand_check_space ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            oscats_administrand_check_space     (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> model</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a> *space</code></em>);</pre>
+<p>
+Checks whether the administrand (or all sub-administrands) have a model
+<em class="parameter"><code>model</code></em> and if the space for <em class="parameter"><code>model</code></em> is compatible with <em class="parameter"><code>space</code></em>.  Use <em class="parameter"><code>model</code></em>
+= 0 to check the default model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> identifier for a model name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>space</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsSpace.html" title="OscatsSpace"><span class="type">OscatsSpace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>item</code></em> has <em class="parameter"><code>model</code></em> and the space of <em class="parameter"><code>model</code></em> is compatible
+with <em class="parameter"><code>space</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-set-default-model"></a><h3>oscats_administrand_set_default_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_set_default_model
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+Set the model <em class="parameter"><code>name</code></em> as the default for <em class="parameter"><code>item</code></em>.  Note, an administrand's
+models may not be changed if it is frozen.  See
+<a class="link" href="OscatsAdministrand.html#OscatsAdministrand--frozen" title='The "frozen" property'><span class="type">"frozen"</span></a> and <a class="link" href="OscatsAdministrand.html#oscats-administrand-freeze" title="oscats_administrand_freeze ()"><code class="function">oscats_administrand_freeze()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of a model (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-get-default-model"></a><h3>oscats_administrand_get_default_model ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              oscats_administrand_get_default_model
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>);</pre>
+<p>
+Get which model name is set as the default for this administrand. 
+Generally, an administrand's default model will be "default" by default,
+but this may be implementation-specific.
+</p>
+<p>
+This function returns the key for the default model.  To actually
+retrieve the <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> itself, use <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-model" title="oscats_administrand_get_model ()"><code class="function">oscats_administrand_get_model()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the model name for the default model (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-set-model"></a><h3>oscats_administrand_set_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_set_model       (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);</pre>
+<p>
+Set the model <em class="parameter"><code>model</code></em> as <em class="parameter"><code>name</code></em> for <em class="parameter"><code>item</code></em>.  If <em class="parameter"><code>item</code></em> already has a model
+<em class="parameter"><code>name</code></em>, it is replaced with <em class="parameter"><code>model</code></em>.  Note, <em class="parameter"><code>item</code></em> takes ownership of <em class="parameter"><code>model</code></em>.
+</p>
+<p>
+The <em class="parameter"><code>name</code></em> may be 0 to indicate the default model.
+</p>
+<p>
+Note, an administrand's models may not be changed if it is frozen.  See
+<a class="link" href="OscatsAdministrand.html#OscatsAdministrand--frozen" title='The "frozen" property'><span class="type">"frozen"</span></a> and <a class="link" href="OscatsAdministrand.html#oscats-administrand-freeze" title="oscats_administrand_freeze ()"><code class="function">oscats_administrand_freeze()</code></a>.
+</p>
+<p>
+Generally, model access is fastest for the first models added, so models
+should be set in order of decreasing expected access frequency. 
+Accessing the default model (by supplying the <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> 0) is fastest,
+though.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the model (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> to set. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-set-model-by-name"></a><h3>oscats_administrand_set_model_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_administrand_set_model_by_name
+                                                        (<em class="parameter"><code><a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> *model</code></em>);</pre>
+<p>
+Convenience wrapper for <a class="link" href="OscatsAdministrand.html#oscats-administrand-set-model" title="oscats_administrand_set_model ()"><code class="function">oscats_administrand_set_model()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the model</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsModel.html" title="OscatsModel"><span class="type">OscatsModel</span></a> to set. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-get-model"></a><h3>oscats_administrand_get_model ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       oscats_administrand_get_model       (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> name</code></em>);</pre>
+<p>
+Get the model <em class="parameter"><code>model</code></em> as <em class="parameter"><code>name</code></em> for <em class="parameter"><code>item</code></em>.  The <em class="parameter"><code>name</code></em> may be 0 to indicate
+the default model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the model (as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the model <em class="parameter"><code>name</code></em> for <em class="parameter"><code>item</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>item</code></em>
+does not have a model <em class="parameter"><code>name</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-administrand-get-model-by-name"></a><h3>oscats_administrand_get_model_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsModel.html" title="OscatsModel"><span class="returnvalue">OscatsModel</span></a> *       oscats_administrand_get_model_by_name
+                                                        (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Convenience wrapper for <a class="link" href="OscatsAdministrand.html#oscats-administrand-get-model" title="oscats_administrand_get_model ()"><code class="function">oscats_administrand_get_model()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the model</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the model <em class="parameter"><code>name</code></em> for <em class="parameter"><code>item</code></em>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>item</code></em>
+does not have a model <em class="parameter"><code>name</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAdministrand.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAdministrand--frozen"></a><h3>The <code class="literal">"frozen"</code> property</h3>
+<pre class="programlisting">  "frozen"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<p>
+Indicates whether changes to the administrand's models are permitted.
+Once an administrand is added (directly or indirectly) to a test,
+changes to its list of models are no longer permitted.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAdministrand--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+A string identifier for the administrand.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

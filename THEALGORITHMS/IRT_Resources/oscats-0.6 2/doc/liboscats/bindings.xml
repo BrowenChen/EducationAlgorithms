@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<chapter>
+  <title>Language Buindings</title>
+
+<para>OSCATS is written in object-oriented C using the Glib GObject
+framework.  The choice of C and GObject was strategic, perhaps more than
+practical: Compiled C code is fast, and there are automatic bindings
+generators for GObject-based libraries for a variety of different languages
+due to the popularity of GTK.  Many CAT programmers may not be familiar with
+C or may prefer higher-level langauges (there is certainly something to be
+said for automatic garbage collection!), so OSCATS comes with bindings to
+several popular languages.  Since the semantics and most of the names are
+the same across languages, the C API serves as the definitive reference for
+OSCATS.  This chapter discusses the particular naming convention for each
+language, along with any other language-specific peculiarities.  For further
+information, see the example programs provided with OSCATS, which produce
+in parallel the same simulations in each language.</para>
+
+<section><title>Python</title>
+
+<para>The <varname>gobject</varname> module <emphasis>must</emphasis> be
+imported before the <varname>oscats</varname> module in order to resolve
+dynamic linking dependencies.  Since Python has automatic garbage
+collection, it isn't necessary to free objects explicitly.</para>
+
+<para>Python class names have been stripped of the package name. 
+So, <link linkend="GGslVector-struct"><structname>GGslVector</structname></link>
+becomes <structname>oscats.GslVector</structname> and
+<link linkend="OscatsTest-struct"><structname>OscatsTest</structname></link>
+becomes <structname>oscats.Test</structname>.  Python method names have been
+stripped of the package and class name.  So,
+<code><link linkend="g-gsl-vector-get">g_gsl_vector_get</link>(obj, i)</code>
+becomes <code>obj.get(i)</code> and
+<code><link linkend="oscats-test-administer">oscats_test_administer</link>(tst, ex)</code>
+becomes <code>tst.administer(ex)</code>.  Functions that are not object
+methods retain their full C names, for example
+<code>oscats.oscats_rnd_normal(1)</code>.
+</para>
+
+<para>Objects with an explicit construction method,
+<function>oscats_*_new(...)</function>, can be created with the usual Python
+symantics.  For example,
+<programlisting>v = oscats.GslVector(10)</programlisting>
+Objects without a <function>*_new()</function> function or that require
+construction properties can be created with the generic
+<function>gobject.new()</function> function.  Construction properties are
+supplied as keyword arguments.  For example,
+<programlisting>model = gobject.new(oscats.ContModelL1p)
+tst = gobject.new(oscats.Test, id=name, itembank=bank)</programlisting>
+</para>
+
+</section>
+
+<section><title>Perl</title>
+
+<para>Perl class names have been stripped of the C package name. 
+So, <link linkend="GGslVector-struct"><structname>GGslVector</structname></link>
+becomes <structname>oscats::GslVector</structname> and
+<link linkend="OscatsTest-struct"><structname>OscatsTest</structname></link>
+becomes <structname>oscats::Test</structname>.  Perl method names have been
+stripped of the package and class name.  So,
+<code><link linkend="g-gsl-vector-get">g_gsl_vector_get</link>(obj, i)</code>
+becomes <code>$obj-&gt;get($i)</code> and
+<code><link linkend="oscats-test-administer">oscats_test_administer</link>(tst, ex)</code>
+becomes <code>$tst-&gt;administer($ex)</code>.  Functions that are not object
+methods have been placed in Perl modules corresponding to ther C package
+names, so <code><link linkend="oscats-rnd-normal">oscats_rnd_normal</link>(1)</code>
+becomes <code>oscats::Random::normal(1)</code>.
+</para>
+
+<para>Objects are created with the usual Perl semantics.  Classes with an
+explicit construction method, <function>oscats_*_new(...)</function>, can be
+created with positional arguments; otherwise, construction properties are
+supplied as name-value pairs.  For example,
+<programlisting>$v = new oscats::GslVector(10);
+$model = new oscats::ContModelL1p();
+$test = new oscats::Test("id" =&gt; $name, "itembank" =&gt; $bank);</programlisting>
+Since Perl has automatic garbage collection, it isn't necessary to free
+objects explicitly.</para>
+
+</section>
+
+<section><title>PHP</title>
+
+<para>The <varname>php_gtk2</varname> extension <emphasis>must</emphasis> be
+loaded before the <varname>php_oscats</varname> extension in order to resolve
+dynamic linking dependencies.  This may be done in
+<filename>php.ini</filename> or dynamically with something like:
+<programlisting>if (!class_exists('gtk'))
+  dl('php_gtk2.so');
+if (!class_exists('Oscats'))
+  dl('php_oscats.so');
+</programlisting></para>
+
+<para>PHP class names are identical to C class names. PHP method names have
+been stripped of the package and class name.  So,
+<code><link linkend="g-gsl-vector-get">g_gsl_vector_get</link>(obj, i)</code>
+becomes <code>$obj-&gt;get($i)</code> and
+<code><link linkend="oscats-test-administer">oscats_test_administer</link>(tst, ex)</code>
+becomes <code>$tst-&gt;administer($ex)</code>.  Functions that are not object
+methods have been stripped of the <structname>oscats_</structname> prefix,
+for example <code>Oscats::rnd_normal(1)</code>.
+</para>
+
+<para>Objects with an explicit construction method,
+<function>oscats_*_new(...)</function>, or that do not require constuction
+properties can be created with the usual PHP symantics.  For example,
+<programlisting>$v = new GGslVector(10);
+$model = new OscatsContModelL1p();</programlisting>
+For objects that require construction properties, the object name must be
+specified in the first argument as a string and the properties as an array
+of key-value pairs in the second argument (this is a bit cumbersome, but is
+how the PHP Gtk bindings were written).  For example,
+<programlisting>$tst = new OscatsTest('OscatsTest', array("id" =&gt; $name, "itembank" =&gt; $bank));</programlisting>
+Since PHP has automatic garbage collection, it isn't necessary to free
+objects explicitly. </para>
+
+</section>
+
+<section><title>Java</title>
+
+<para>Java class names have been stripped of the C package name. So,
+<link linkend="GGslVector-struct"><structname>GGslVector</structname></link>
+becomes <structname>oscats.GslVector</structname> and
+<link linkend="OscatsTest-struct"><structname>OscatsTest</structname></link>
+becomes <structname>oscats.Test</structname>.  Java method names have been
+stripped of the package and class name and are converted to camel case.  So,
+<code><link linkend="g-gsl-vector-get">g_gsl_vector_get</link>(obj, i)</code>
+becomes <code>obj.get(i)</code>,
+<code><link linkend="oscats-test-administer">oscats_test_administer</link>(tst, ex)</code>
+becomes <code>tst.administer(ex)</code>, and
+<code><link linkend="oscats-examinee-set-true-theta">oscats_examinee_set_true_theta(ex, t)</link></code>
+becomes <code>ex.setTrueTheta(t)</code>.  Functions that are not object
+methods have been placed in Java packages corresponding to ther C package
+names, so <code><link linkend="oscats-rnd-normal">oscats_rnd_normal</link>(1)</code>
+becomes <code>oscats.Random.normal(1)</code>.
+</para>
+
+<para>Objects are created with the usual Java semantics.  Classes with an
+explicit construction method, <function>oscats_*_new(...)</function>, can be
+created with a special static method. Construction properties are not
+currently supported as such, but are instead handled through multiple
+constructor signatures.  There are also several other methods with
+additional signatures, particularly when it is possible to fetch information
+in several different ways (for example, 
+<link linkend="oscats-cont-model-get-param"><function>oscats_cont_model_get_param</function></link>,
+<link linkend="oscats-cont-model-get-param-by-index"><function>oscats_cont_model_get_param_by_index</function></link>, and
+<link linkend="oscats-cont-model-get-param-by-name"><function>oscats_cont_model_get_param_by_name</function></link>.
+For reference, all methods with multiple signatures are listed below. Since
+Java has automatic garbage collection, it isn't necessary to free objects
+explicitly.</para>
+
+<programlisting>
+public final class Administrand extends Object
+    public Administrand()
+    public Administrand(String id)
+    public void setModel(String name, Model model)
+    public void setModel(Model model)  // set default model
+    public Model getModel(String name)
+    public Model getModel()  // get default model
+public final class AlgAstrat extends Algorithm
+    public static AlgAstrat createAlgAstrat(int Nstrata, int NperStratum, int num)
+    public static AlgAstrat createAlgAstrat(int Nstrata, int NperStratum)
+    public static AlgAstrat createAlgAstratWithBlocking(int Nstrata, int Nblocks, int NperStratum, int num)
+    public static AlgAstrat createAlgAstratWithBlocking(int Nstrata, int Nblocks, int NperStratum)
+    public static AlgAstrat createAlgAstrat(int[] NperStratum, int num)
+    public static AlgAstrat createAlgAstrat(int[] NperStratum)
+    public static AlgAstrat createAlgAstratWithBlocking(int[] NperStratum, int Nblocks, int num)
+    public static AlgAstrat createAlgAstratWithBlocking(int[] NperStratum, int Nblocks)
+public final class AlgClosestDiff extends Algorithm
+    public static AlgClosestDiff createAlgClosestDiff(int num)
+public final class AlgEstimate extends Algorithm
+    public AlgEstimate()
+    public AlgEstimate(int Nposterior)
+    public AlgEstimate(GslVector mu, GslMatrix sigma)
+    public AlgEstimate(int Nposterior, GslVector mu, GslMatrix sigma)
+public final class AlgFixedLength extends Algorithm
+    public static AlgFixedLength createAlgFixedLength(int len)
+public final class AlgMaxFisher extends Algorithm
+    public AlgMaxFisher()
+    public static AlgMaxFisher createAlgMaxFisher(int num)
+    public static AlgMaxFisher createAlgMaxFisher(boolean Aopt, int num)
+public final class AlgMaxKl extends Algorithm
+    public AlgMaxKl()
+    public static AlgMaxKl createAlgMaxKl(int num)
+public final class BitArray extends Object
+    public static final BitArray createBitArray(int bitLength)
+public final class Covariates extends Object
+    public void set(int name, double value)
+    public void set(String name, double value)
+    public double get(int name)
+    public double get(String name)
+public final class Examinee extends Object
+    public Examinee()
+    public Examinee(String id)
+    public Examinee(Covariates covariates)
+    public Examinee(String id, Covariates covariates)
+    public void setSimKey(String name)
+    public String getSimKey()
+    public void setEstKey(String name)
+    public String getEstKey()
+    public void setTheta(String name, Point theta)
+    public Point getTheta(String name)
+    public void initTheta(String name, Space space)
+public final class GslMatrix extends Object
+    public static GslMatrix createGslMatrix(int rows, int cols)
+public final class GslPermutation extends Object
+    public static GslPermutation createGslPermutation(int n)
+public final class GslVector extends Object
+    public static GslVector createGslVector(int n)
+public final class Integrate extends Object
+    public void setTol(double tol)
+public final class Item extends Object
+    public Item(String id, Model model)
+    public Item(Model model)
+public final class ItemBank extends Object
+    public ItemBank(String id, int sizeHint)
+    public ItemBank(String id)
+    public ItemBank(int sizeHint)
+    public ItemBank()
+public abstract class Model extends Object
+    public boolean hasParam(int param) // param is a Quark
+    public double getParam(int param) // param is a Quark
+    public double getParam(String name)
+    public void setParam(int param, double x) // param is a Quark
+    public void setParam(String name, double x)
+    public boolean hasCovariate(int name) // name is a Quark
+    public boolean hasCovariate(String name)
+    // Constructors are defiend for Model subclasses, as appropriate, e.g.:
+    public Model(Space space)
+    public Model(Space space, int Ncat)
+    public Model(Space space, char[] dims)
+    public Model(Space space, char[] dims, int Ncat)
+    public Model(Space space, char[] dims, Covariates covariates)
+    public Model(Space space, char[] dims, int Ncat, Covariates covariates)
+public final class Random
+    public static final int uniformInt()
+    public static final int uniformIntRange(int min, int max)
+    public static final int uniformInt(int min, int max)
+    public static final double uniform()
+    public static final double uniformRange(double min, double max)
+    public static final double uniform(double min, double max)
+public final class Test extends Object
+    public Test(ItemBank bank)
+    public Test(ItemBank bank, int length_hint)
+    public Test(String id, ItemBank bank)
+    public Test(String id, ItemBank bank, int length_hint)
+    public Test(ItemBank bank, int itermax_items, int itermax_select)
+    public Test(ItemBank bank, int length_hint, int itermax_items, int itermax_select)
+    public Test(String id, ItemBank bank, int itermax_items, int itermax_select)
+    public Test(String id, ItemBank bank, int length_hint, int itermax_items, int itermax_select)
+</programlisting>
+
+</section>
+
+<section><title>Matlab</title>
+
+<para> Direct Matlab bindings for OSCATS do not currently exist, but are
+planned for version 1.0.  OSCATS can be accessed from Matlab via the Java
+bindings using Matlab's Java interface.  The <filename>glib.jar</filename>
+and <filename>oscats.jar</filename> archives must be on Matlab's Java path
+(see <function>javaaddpath</function>), and the path to the
+<filename>libglibjni</filename> and <filename>liboscatsjni</filename>
+libraries must be in Matlab's
+<filename>toolbox/local/librarypath.txt</filename>.  Then, java functions
+and methods can be called as if they were Matlab functions.
+</para>
+
+</section>
+
+</chapter>

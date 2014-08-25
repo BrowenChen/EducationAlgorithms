@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="liboscats Reference Manual" link="index.html" author="" name="liboscats" version="2" language="c">
+  <chapters>
+    <sub name="Preliminaries" link="pt01.html">
+      <sub name="Introduction" link="ch01.html"/>
+      <sub name="Build and Installation Notes" link="ch02.html">
+        <sub name="Dependencies" link="ch02.html#id36148401"/>
+        <sub name="Building" link="ch02s02.html"/>
+        <sub name="Windows" link="ch02s03.html">
+          <sub name="Perl Bindings" link="ch02s03.html#id36160306"/>
+          <sub name="PHP Bindings" link="ch02s03.html#id36165776"/>
+          <sub name="Java Bindings" link="ch02s03.html#id36148763"/>
+        </sub>
+      </sub>
+      <sub name="Language Buindings" link="ch03.html">
+        <sub name="Python" link="ch03.html#id36146220"/>
+        <sub name="Perl" link="ch03s02.html"/>
+        <sub name="PHP" link="ch03s03.html"/>
+        <sub name="Java" link="ch03s04.html"/>
+        <sub name="Matlab" link="ch03s05.html"/>
+      </sub>
+      <sub name="Hacking OSCATS" link="ch04.html"/>
+    </sub>
+    <sub name="API Reference" link="pt02.html">
+      <sub name="Utilities" link="ch05.html">
+        <sub name="GBitArray" link="GBitArray.html"/>
+        <sub name="GSL" link="liboscats-GSL.html"/>
+        <sub name="Random" link="liboscats-Random.html"/>
+        <sub name="OscatsIntegrate" link="OscatsIntegrate.html"/>
+      </sub>
+      <sub name="Core Objects" link="ch06.html">
+        <sub name="OscatsSpace" link="OscatsSpace.html"/>
+        <sub name="OscatsPoint" link="OscatsPoint.html"/>
+        <sub name="OscatsAdministrand" link="OscatsAdministrand.html"/>
+        <sub name="OscatsItem" link="OscatsItem.html"/>
+        <sub name="OscatsItemBank" link="OscatsItemBank.html"/>
+        <sub name="OscatsTest" link="OscatsTest.html"/>
+        <sub name="OscatsExaminee" link="OscatsExaminee.html"/>
+        <sub name="OscatsCovariates" link="OscatsCovariates.html"/>
+      </sub>
+      <sub name="Models" link="ch07.html">
+        <sub name="OscatsModel" link="OscatsModel.html"/>
+        <sub name="OscatsModelL1p" link="OscatsModelL1p.html"/>
+        <sub name="OscatsModelL2p" link="OscatsModelL2p.html"/>
+        <sub name="OscatsModelL3p" link="OscatsModelL3p.html"/>
+        <sub name="OscatsModelNominal" link="OscatsModelNominal.html"/>
+        <sub name="OscatsModelPc" link="OscatsModelPc.html"/>
+        <sub name="OscatsModelGpc" link="OscatsModelGpc.html"/>
+        <sub name="OscatsModelGr" link="OscatsModelGr.html"/>
+        <sub name="OscatsModelHetlgr" link="OscatsModelHetlgr.html"/>
+        <sub name="OscatsModelDina" link="OscatsModelDina.html"/>
+        <sub name="OscatsModelNida" link="OscatsModelNida.html"/>
+      </sub>
+      <sub name="Algorithms" link="ch08.html">
+        <sub name="OscatsAlgorithm" link="OscatsAlgorithm.html"/>
+        <sub name="OscatsAlgAstrat" link="OscatsAlgAstrat.html"/>
+        <sub name="OscatsAlgChooser" link="OscatsAlgChooser.html"/>
+        <sub name="OscatsAlgClassRates" link="OscatsAlgClassRates.html"/>
+        <sub name="OscatsAlgClosestDiff" link="OscatsAlgClosestDiff.html"/>
+        <sub name="OscatsAlgEstimate" link="OscatsAlgEstimate.html"/>
+        <sub name="OscatsAlgExposureCounter" link="OscatsAlgExposureCounter.html"/>
+        <sub name="OscatsAlgFixedLength" link="OscatsAlgFixedLength.html"/>
+        <sub name="OscatsAlgMaxFisher" link="OscatsAlgMaxFisher.html"/>
+        <sub name="OscatsAlgMaxKl" link="OscatsAlgMaxKl.html"/>
+        <sub name="OscatsAlgPickRand" link="OscatsAlgPickRand.html"/>
+        <sub name="OscatsAlgSimulate" link="OscatsAlgSimulate.html"/>
+        <sub name="OscatsAlgStratify" link="OscatsAlgStratify.html"/>
+      </sub>
+    </sub>
+    <sub name="Extending OSCATS" link="pt03.html">
+      <sub name="New Algorithms" link="ch09.html"/>
+      <sub name="New IRT Models" link="ch10.html"/>
+      <sub name="New Classification Models" link="ch11.html"/>
+    </sub>
+    <sub name="Reference" link="pt04.html">
+      <sub name="Object Hierarchy" link="object-tree.html"/>
+      <sub name="API Index" link="api-index-full.html"/>
+      <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="struct GBitArray" link="GBitArray.html#GBitArray-struct"/>
+    <keyword type="function" name="g_bit_array_new ()" link="GBitArray.html#g-bit-array-new"/>
+    <keyword type="function" name="g_bit_array_resize ()" link="GBitArray.html#g-bit-array-resize"/>
+    <keyword type="function" name="g_bit_array_extend ()" link="GBitArray.html#g-bit-array-extend"/>
+    <keyword type="function" name="g_bit_array_copy ()" link="GBitArray.html#g-bit-array-copy"/>
+    <keyword type="function" name="g_bit_array_get_len ()" link="GBitArray.html#g-bit-array-get-len"/>
+    <keyword type="function" name="g_bit_array_get_num_set ()" link="GBitArray.html#g-bit-array-get-num-set"/>
+    <keyword type="function" name="g_bit_array_get_bit ()" link="GBitArray.html#g-bit-array-get-bit"/>
+    <keyword type="function" name="g_bit_array_set_bit ()" link="GBitArray.html#g-bit-array-set-bit"/>
+    <keyword type="function" name="g_bit_array_clear_bit ()" link="GBitArray.html#g-bit-array-clear-bit"/>
+    <keyword type="function" name="g_bit_array_flip_bit ()" link="GBitArray.html#g-bit-array-flip-bit"/>
+    <keyword type="function" name="g_bit_array_set_bit_val ()" link="GBitArray.html#g-bit-array-set-bit-val"/>
+    <keyword type="function" name="g_bit_array_set_range ()" link="GBitArray.html#g-bit-array-set-range"/>
+    <keyword type="function" name="g_bit_array_reset ()" link="GBitArray.html#g-bit-array-reset"/>
+    <keyword type="function" name="g_bit_array_equal ()" link="GBitArray.html#g-bit-array-equal"/>
+    <keyword type="function" name="g_bit_array_serial_compare ()" link="GBitArray.html#g-bit-array-serial-compare"/>
+    <keyword type="function" name="g_bit_array_iter_reset ()" link="GBitArray.html#g-bit-array-iter-reset"/>
+    <keyword type="function" name="g_bit_array_iter_next ()" link="GBitArray.html#g-bit-array-iter-next"/>
+    <keyword type="struct" name="struct GGslVector" link="liboscats-GSL.html#GGslVector-struct"/>
+    <keyword type="function" name="g_gsl_vector_new ()" link="liboscats-GSL.html#g-gsl-vector-new"/>
+    <keyword type="function" name="g_gsl_vector_resize ()" link="liboscats-GSL.html#g-gsl-vector-resize"/>
+    <keyword type="function" name="g_gsl_vector_copy ()" link="liboscats-GSL.html#g-gsl-vector-copy"/>
+    <keyword type="function" name="g_gsl_vector_get ()" link="liboscats-GSL.html#g-gsl-vector-get"/>
+    <keyword type="function" name="g_gsl_vector_set ()" link="liboscats-GSL.html#g-gsl-vector-set"/>
+    <keyword type="function" name="g_gsl_vector_set_all ()" link="liboscats-GSL.html#g-gsl-vector-set-all"/>
+    <keyword type="function" name="g_gsl_vector_get_size ()" link="liboscats-GSL.html#g-gsl-vector-get-size"/>
+    <keyword type="struct" name="struct GGslMatrix" link="liboscats-GSL.html#GGslMatrix-struct"/>
+    <keyword type="function" name="g_gsl_matrix_new ()" link="liboscats-GSL.html#g-gsl-matrix-new"/>
+    <keyword type="function" name="g_gsl_matrix_resize ()" link="liboscats-GSL.html#g-gsl-matrix-resize"/>
+    <keyword type="function" name="g_gsl_matrix_copy ()" link="liboscats-GSL.html#g-gsl-matrix-copy"/>
+    <keyword type="function" name="g_gsl_matrix_get ()" link="liboscats-GSL.html#g-gsl-matrix-get"/>
+    <keyword type="function" name="g_gsl_matrix_set ()" link="liboscats-GSL.html#g-gsl-matrix-set"/>
+    <keyword type="function" name="g_gsl_matrix_set_all ()" link="liboscats-GSL.html#g-gsl-matrix-set-all"/>
+    <keyword type="function" name="g_gsl_matrix_get_rows ()" link="liboscats-GSL.html#g-gsl-matrix-get-rows"/>
+    <keyword type="function" name="g_gsl_matrix_get_cols ()" link="liboscats-GSL.html#g-gsl-matrix-get-cols"/>
+    <keyword type="function" name="g_gsl_matrix_solve ()" link="liboscats-GSL.html#g-gsl-matrix-solve"/>
+    <keyword type="function" name="g_gsl_matrix_invert ()" link="liboscats-GSL.html#g-gsl-matrix-invert"/>
+    <keyword type="function" name="g_gsl_matrix_det ()" link="liboscats-GSL.html#g-gsl-matrix-det"/>
+    <keyword type="struct" name="struct GGslPermutation" link="liboscats-GSL.html#GGslPermutation-struct"/>
+    <keyword type="function" name="g_gsl_permutation_new ()" link="liboscats-GSL.html#g-gsl-permutation-new"/>
+    <keyword type="function" name="g_gsl_permutation_resize ()" link="liboscats-GSL.html#g-gsl-permutation-resize"/>
+    <keyword type="function" name="oscats_rnd_uniform_int ()" link="liboscats-Random.html#oscats-rnd-uniform-int"/>
+    <keyword type="function" name="oscats_rnd_uniform_int_range ()" link="liboscats-Random.html#oscats-rnd-uniform-int-range"/>
+    <keyword type="function" name="oscats_rnd_uniform ()" link="liboscats-Random.html#oscats-rnd-uniform"/>
+    <keyword type="function" name="oscats_rnd_uniform_range ()" link="liboscats-Random.html#oscats-rnd-uniform-range"/>
+    <keyword type="function" name="oscats_rnd_normal ()" link="liboscats-Random.html#oscats-rnd-normal"/>
+    <keyword type="function" name="oscats_rnd_binorm ()" link="liboscats-Random.html#oscats-rnd-binorm"/>
+    <keyword type="function" name="oscats_rnd_multinorm_prep ()" link="liboscats-Random.html#oscats-rnd-multinorm-prep"/>
+    <keyword type="function" name="oscats_rnd_multinorm ()" link="liboscats-Random.html#oscats-rnd-multinorm"/>
+    <keyword type="function" name="oscats_rnd_exp ()" link="liboscats-Random.html#oscats-rnd-exp"/>
+    <keyword type="function" name="oscats_rnd_gamma ()" link="liboscats-Random.html#oscats-rnd-gamma"/>
+    <keyword type="function" name="oscats_rnd_beta ()" link="liboscats-Random.html#oscats-rnd-beta"/>
+    <keyword type="function" name="oscats_rnd_dirichlet ()" link="liboscats-Random.html#oscats-rnd-dirichlet"/>
+    <keyword type="function" name="oscats_rnd_poisson ()" link="liboscats-Random.html#oscats-rnd-poisson"/>
+    <keyword type="function" name="oscats_rnd_binomial ()" link="liboscats-Random.html#oscats-rnd-binomial"/>
+    <keyword type="function" name="oscats_rnd_multinomial ()" link="liboscats-Random.html#oscats-rnd-multinomial"/>
+    <keyword type="function" name="oscats_rnd_hypergeometric ()" link="liboscats-Random.html#oscats-rnd-hypergeometric"/>
+    <keyword type="function" name="oscats_rnd_normal_p ()" link="liboscats-Random.html#oscats-rnd-normal-p"/>
+    <keyword type="function" name="oscats_rnd_chisq_p ()" link="liboscats-Random.html#oscats-rnd-chisq-p"/>
+    <keyword type="function" name="oscats_rnd_F_p ()" link="liboscats-Random.html#oscats-rnd-F-p"/>
+    <keyword type="function" name="oscats_rnd_t_p ()" link="liboscats-Random.html#oscats-rnd-t-p"/>
+    <keyword type="function" name="oscats_rnd_sample ()" link="liboscats-Random.html#oscats-rnd-sample"/>
+    <keyword type="function" name="OscatsIntegrateFunction ()" link="OscatsIntegrate.html#OscatsIntegrateFunction"/>
+    <keyword type="struct" name="struct OscatsIntegrate" link="OscatsIntegrate.html#OscatsIntegrate-struct"/>
+    <keyword type="function" name="oscats_integrate_set_tol ()" link="OscatsIntegrate.html#oscats-integrate-set-tol"/>
+    <keyword type="function" name="oscats_integrate_set_c_function ()" link="OscatsIntegrate.html#oscats-integrate-set-c-function"/>
+    <keyword type="function" name="oscats_integrate_cube ()" link="OscatsIntegrate.html#oscats-integrate-cube"/>
+    <keyword type="function" name="oscats_integrate_box ()" link="OscatsIntegrate.html#oscats-integrate-box"/>
+    <keyword type="function" name="oscats_integrate_ellipse ()" link="OscatsIntegrate.html#oscats-integrate-ellipse"/>
+    <keyword type="function" name="oscats_integrate_space ()" link="OscatsIntegrate.html#oscats-integrate-space"/>
+    <keyword type="function" name="oscats_integrate_link_point ()" link="OscatsIntegrate.html#oscats-integrate-link-point"/>
+    <keyword type="enum" name="enum OscatsDimType" link="OscatsSpace.html#OscatsDimType"/>
+    <keyword type="typedef" name="OscatsDim" link="OscatsSpace.html#OscatsDim"/>
+    <keyword type="typedef" name="OscatsNatural" link="OscatsSpace.html#OscatsNatural"/>
+    <keyword type="struct" name="struct OscatsSpace" link="OscatsSpace.html#OscatsSpace-struct"/>
+    <keyword type="function" name="oscats_space_get_type ()" link="OscatsSpace.html#oscats-space-get-type"/>
+    <keyword type="function" name="oscats_space_size ()" link="OscatsSpace.html#oscats-space-size"/>
+    <keyword type="function" name="oscats_space_set_dim_name ()" link="OscatsSpace.html#oscats-space-set-dim-name"/>
+    <keyword type="function" name="oscats_space_has_dim ()" link="OscatsSpace.html#oscats-space-has-dim"/>
+    <keyword type="function" name="oscats_space_has_dim_name ()" link="OscatsSpace.html#oscats-space-has-dim-name"/>
+    <keyword type="function" name="oscats_space_get_dim ()" link="OscatsSpace.html#oscats-space-get-dim"/>
+    <keyword type="function" name="oscats_space_get_dim_by_name ()" link="OscatsSpace.html#oscats-space-get-dim-by-name"/>
+    <keyword type="function" name="oscats_space_dim_get_name ()" link="OscatsSpace.html#oscats-space-dim-get-name"/>
+    <keyword type="function" name="oscats_space_dim_get_max ()" link="OscatsSpace.html#oscats-space-dim-get-max"/>
+    <keyword type="function" name="oscats_space_validate ()" link="OscatsSpace.html#oscats-space-validate"/>
+    <keyword type="function" name="oscats_space_compatible ()" link="OscatsSpace.html#oscats-space-compatible"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="OscatsSpace.html#OscatsSpace--id"/>
+    <keyword type="property" name="The &quot;max&quot; property" link="OscatsSpace.html#OscatsSpace--max"/>
+    <keyword type="property" name="The &quot;names&quot; property" link="OscatsSpace.html#OscatsSpace--names"/>
+    <keyword type="property" name="The &quot;numBin&quot; property" link="OscatsSpace.html#OscatsSpace--numBin"/>
+    <keyword type="property" name="The &quot;numCont&quot; property" link="OscatsSpace.html#OscatsSpace--numCont"/>
+    <keyword type="property" name="The &quot;numNat&quot; property" link="OscatsSpace.html#OscatsSpace--numNat"/>
+    <keyword type="macro" name="OSCATS_EPS" link="OscatsPoint.html#OSCATS-EPS:CAPS"/>
+    <keyword type="struct" name="struct OscatsPoint" link="OscatsPoint.html#OscatsPoint-struct"/>
+    <keyword type="function" name="oscats_point_new_from_space ()" link="OscatsPoint.html#oscats-point-new-from-space"/>
+    <keyword type="function" name="oscats_point_same_space ()" link="OscatsPoint.html#oscats-point-same-space"/>
+    <keyword type="function" name="oscats_point_space_compatible ()" link="OscatsPoint.html#oscats-point-space-compatible"/>
+    <keyword type="function" name="oscats_point_equal ()" link="OscatsPoint.html#oscats-point-equal"/>
+    <keyword type="function" name="oscats_point_copy ()" link="OscatsPoint.html#oscats-point-copy"/>
+    <keyword type="function" name="oscats_point_get_double ()" link="OscatsPoint.html#oscats-point-get-double"/>
+    <keyword type="function" name="oscats_point_get_cont ()" link="OscatsPoint.html#oscats-point-get-cont"/>
+    <keyword type="function" name="oscats_point_get_bin ()" link="OscatsPoint.html#oscats-point-get-bin"/>
+    <keyword type="function" name="oscats_point_get_nat ()" link="OscatsPoint.html#oscats-point-get-nat"/>
+    <keyword type="function" name="oscats_point_set_cont ()" link="OscatsPoint.html#oscats-point-set-cont"/>
+    <keyword type="function" name="oscats_point_set_bin ()" link="OscatsPoint.html#oscats-point-set-bin"/>
+    <keyword type="function" name="oscats_point_set_nat ()" link="OscatsPoint.html#oscats-point-set-nat"/>
+    <keyword type="function" name="oscats_point_cont_as_vector ()" link="OscatsPoint.html#oscats-point-cont-as-vector"/>
+    <keyword type="property" name="The &quot;space&quot; property" link="OscatsPoint.html#OscatsPoint--space"/>
+    <keyword type="struct" name="struct OscatsAdministrand" link="OscatsAdministrand.html#OscatsAdministrand-struct"/>
+    <keyword type="struct" name="struct OscatsAdministrandClass" link="OscatsAdministrand.html#OscatsAdministrandClass"/>
+    <keyword type="function" name="oscats_administrand_freeze ()" link="OscatsAdministrand.html#oscats-administrand-freeze"/>
+    <keyword type="function" name="oscats_administrand_unfreeze ()" link="OscatsAdministrand.html#oscats-administrand-unfreeze"/>
+    <keyword type="function" name="oscats_administrand_reset_characteristics ()" link="OscatsAdministrand.html#oscats-administrand-reset-characteristics"/>
+    <keyword type="function" name="oscats_administrand_register_characteristic ()" link="OscatsAdministrand.html#oscats-administrand-register-characteristic"/>
+    <keyword type="function" name="oscats_administrand_characteristic_from_string ()" link="OscatsAdministrand.html#oscats-administrand-characteristic-from-string"/>
+    <keyword type="function" name="oscats_administrand_characteristic_as_string ()" link="OscatsAdministrand.html#oscats-administrand-characteristic-as-string"/>
+    <keyword type="function" name="oscats_administrand_set_characteristic ()" link="OscatsAdministrand.html#oscats-administrand-set-characteristic"/>
+    <keyword type="function" name="oscats_administrand_clear_characteristic ()" link="OscatsAdministrand.html#oscats-administrand-clear-characteristic"/>
+    <keyword type="function" name="oscats_administrand_clear_characteristics ()" link="OscatsAdministrand.html#oscats-administrand-clear-characteristics"/>
+    <keyword type="function" name="oscats_administrand_has_characteristic ()" link="OscatsAdministrand.html#oscats-administrand-has-characteristic"/>
+    <keyword type="function" name="oscats_administrand_characteristics_iter_reset ()" link="OscatsAdministrand.html#oscats-administrand-characteristics-iter-reset"/>
+    <keyword type="function" name="oscats_administrand_characteristics_iter_next ()" link="OscatsAdministrand.html#oscats-administrand-characteristics-iter-next"/>
+    <keyword type="function" name="oscats_administrand_check_type ()" link="OscatsAdministrand.html#oscats-administrand-check-type"/>
+    <keyword type="function" name="oscats_administrand_check_model ()" link="OscatsAdministrand.html#oscats-administrand-check-model"/>
+    <keyword type="function" name="oscats_administrand_check_dim_type ()" link="OscatsAdministrand.html#oscats-administrand-check-dim-type"/>
+    <keyword type="function" name="oscats_administrand_check_space ()" link="OscatsAdministrand.html#oscats-administrand-check-space"/>
+    <keyword type="function" name="oscats_administrand_set_default_model ()" link="OscatsAdministrand.html#oscats-administrand-set-default-model"/>
+    <keyword type="function" name="oscats_administrand_get_default_model ()" link="OscatsAdministrand.html#oscats-administrand-get-default-model"/>
+    <keyword type="function" name="oscats_administrand_set_model ()" link="OscatsAdministrand.html#oscats-administrand-set-model"/>
+    <keyword type="function" name="oscats_administrand_set_model_by_name ()" link="OscatsAdministrand.html#oscats-administrand-set-model-by-name"/>
+    <keyword type="function" name="oscats_administrand_get_model ()" link="OscatsAdministrand.html#oscats-administrand-get-model"/>
+    <keyword type="function" name="oscats_administrand_get_model_by_name ()" link="OscatsAdministrand.html#oscats-administrand-get-model-by-name"/>
+    <keyword type="property" name="The &quot;frozen&quot; property" link="OscatsAdministrand.html#OscatsAdministrand--frozen"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="OscatsAdministrand.html#OscatsAdministrand--id"/>
+    <keyword type="struct" name="struct OscatsItem" link="OscatsItem.html#OscatsItem-struct"/>
+    <keyword type="function" name="oscats_item_new ()" link="OscatsItem.html#oscats-item-new"/>
+    <keyword type="struct" name="struct OscatsItemBank" link="OscatsItemBank.html#OscatsItemBank-struct"/>
+    <keyword type="function" name="oscats_item_bank_add_item ()" link="OscatsItemBank.html#oscats-item-bank-add-item"/>
+    <keyword type="function" name="oscats_item_bank_remove_item ()" link="OscatsItemBank.html#oscats-item-bank-remove-item"/>
+    <keyword type="function" name="oscats_item_bank_num_items ()" link="OscatsItemBank.html#oscats-item-bank-num-items"/>
+    <keyword type="function" name="oscats_item_bank_get_item ()" link="OscatsItemBank.html#oscats-item-bank-get-item"/>
+    <keyword type="property" name="The &quot;sizeHint&quot; property" link="OscatsItemBank.html#OscatsItemBank--sizeHint"/>
+    <keyword type="struct" name="struct OscatsTest" link="OscatsTest.html#OscatsTest-struct"/>
+    <keyword type="struct" name="struct OscatsTestClass" link="OscatsTest.html#OscatsTestClass"/>
+    <keyword type="function" name="oscats_test_administer ()" link="OscatsTest.html#oscats-test-administer"/>
+    <keyword type="function" name="oscats_test_set_hint ()" link="OscatsTest.html#oscats-test-set-hint"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="OscatsTest.html#OscatsTest--id"/>
+    <keyword type="property" name="The &quot;itembank&quot; property" link="OscatsTest.html#OscatsTest--itembank"/>
+    <keyword type="property" name="The &quot;itermax-items&quot; property" link="OscatsTest.html#OscatsTest--itermax-items"/>
+    <keyword type="property" name="The &quot;itermax-select&quot; property" link="OscatsTest.html#OscatsTest--itermax-select"/>
+    <keyword type="property" name="The &quot;length-hint&quot; property" link="OscatsTest.html#OscatsTest--length-hint"/>
+    <keyword type="signal" name="The &quot;administer&quot; signal" link="OscatsTest.html#OscatsTest-administer"/>
+    <keyword type="signal" name="The &quot;administered&quot; signal" link="OscatsTest.html#OscatsTest-administered"/>
+    <keyword type="signal" name="The &quot;approve&quot; signal" link="OscatsTest.html#OscatsTest-approve"/>
+    <keyword type="signal" name="The &quot;filter&quot; signal" link="OscatsTest.html#OscatsTest-filter"/>
+    <keyword type="signal" name="The &quot;finalize&quot; signal" link="OscatsTest.html#OscatsTest-finalize"/>
+    <keyword type="signal" name="The &quot;initialize&quot; signal" link="OscatsTest.html#OscatsTest-initialize"/>
+    <keyword type="signal" name="The &quot;select&quot; signal" link="OscatsTest.html#OscatsTest-select"/>
+    <keyword type="signal" name="The &quot;stopcrit&quot; signal" link="OscatsTest.html#OscatsTest-stopcrit"/>
+    <keyword type="struct" name="struct OscatsExaminee" link="OscatsExaminee.html#OscatsExaminee-struct"/>
+    <keyword type="function" name="oscats_examinee_set_sim_key ()" link="OscatsExaminee.html#oscats-examinee-set-sim-key"/>
+    <keyword type="function" name="oscats_examinee_get_sim_key ()" link="OscatsExaminee.html#oscats-examinee-get-sim-key"/>
+    <keyword type="function" name="oscats_examinee_set_est_key ()" link="OscatsExaminee.html#oscats-examinee-set-est-key"/>
+    <keyword type="function" name="oscats_examinee_get_est_key ()" link="OscatsExaminee.html#oscats-examinee-get-est-key"/>
+    <keyword type="function" name="oscats_examinee_set_sim_theta ()" link="OscatsExaminee.html#oscats-examinee-set-sim-theta"/>
+    <keyword type="function" name="oscats_examinee_get_sim_theta ()" link="OscatsExaminee.html#oscats-examinee-get-sim-theta"/>
+    <keyword type="function" name="oscats_examinee_set_est_theta ()" link="OscatsExaminee.html#oscats-examinee-set-est-theta"/>
+    <keyword type="function" name="oscats_examinee_get_est_theta ()" link="OscatsExaminee.html#oscats-examinee-get-est-theta"/>
+    <keyword type="function" name="oscats_examinee_set_theta ()" link="OscatsExaminee.html#oscats-examinee-set-theta"/>
+    <keyword type="function" name="oscats_examinee_set_theta_by_name ()" link="OscatsExaminee.html#oscats-examinee-set-theta-by-name"/>
+    <keyword type="function" name="oscats_examinee_get_theta ()" link="OscatsExaminee.html#oscats-examinee-get-theta"/>
+    <keyword type="function" name="oscats_examinee_get_theta_by_name ()" link="OscatsExaminee.html#oscats-examinee-get-theta-by-name"/>
+    <keyword type="function" name="oscats_examinee_init_sim_theta ()" link="OscatsExaminee.html#oscats-examinee-init-sim-theta"/>
+    <keyword type="function" name="oscats_examinee_init_est_theta ()" link="OscatsExaminee.html#oscats-examinee-init-est-theta"/>
+    <keyword type="function" name="oscats_examinee_init_theta ()" link="OscatsExaminee.html#oscats-examinee-init-theta"/>
+    <keyword type="function" name="oscats_examinee_prep ()" link="OscatsExaminee.html#oscats-examinee-prep"/>
+    <keyword type="function" name="oscats_examinee_add_item ()" link="OscatsExaminee.html#oscats-examinee-add-item"/>
+    <keyword type="function" name="oscats_examinee_num_items ()" link="OscatsExaminee.html#oscats-examinee-num-items"/>
+    <keyword type="function" name="oscats_examinee_get_item ()" link="OscatsExaminee.html#oscats-examinee-get-item"/>
+    <keyword type="function" name="oscats_examinee_get_resp ()" link="OscatsExaminee.html#oscats-examinee-get-resp"/>
+    <keyword type="function" name="oscats_examinee_logLik ()" link="OscatsExaminee.html#oscats-examinee-logLik"/>
+    <keyword type="property" name="The &quot;covariates&quot; property" link="OscatsExaminee.html#OscatsExaminee--covariates"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="OscatsExaminee.html#OscatsExaminee--id"/>
+    <keyword type="struct" name="struct OscatsCovariates" link="OscatsCovariates.html#OscatsCovariates-struct"/>
+    <keyword type="function" name="oscats_covariates_from_string ()" link="OscatsCovariates.html#oscats-covariates-from-string"/>
+    <keyword type="function" name="oscats_covariates_as_string ()" link="OscatsCovariates.html#oscats-covariates-as-string"/>
+    <keyword type="function" name="oscats_covariates_num ()" link="OscatsCovariates.html#oscats-covariates-num"/>
+    <keyword type="function" name="oscats_covariates_list ()" link="OscatsCovariates.html#oscats-covariates-list"/>
+    <keyword type="function" name="oscats_covariates_set ()" link="OscatsCovariates.html#oscats-covariates-set"/>
+    <keyword type="function" name="oscats_covariates_set_by_name ()" link="OscatsCovariates.html#oscats-covariates-set-by-name"/>
+    <keyword type="function" name="oscats_covariates_get ()" link="OscatsCovariates.html#oscats-covariates-get"/>
+    <keyword type="function" name="oscats_covariates_get_by_name ()" link="OscatsCovariates.html#oscats-covariates-get-by-name"/>
+    <keyword type="macro" name="OSCATS_DEFAULT_KEY" link="OscatsModel.html#OSCATS-DEFAULT-KEY:CAPS"/>
+    <keyword type="typedef" name="OscatsResponse" link="OscatsModel.html#OscatsResponse"/>
+    <keyword type="macro" name="OSCATS_MAX_RESPONSE" link="OscatsModel.html#OSCATS-MAX-RESPONSE:CAPS"/>
+    <keyword type="struct" name="struct OscatsModel" link="OscatsModel.html#OscatsModel-struct"/>
+    <keyword type="struct" name="struct OscatsModelClass" link="OscatsModel.html#OscatsModelClass"/>
+    <keyword type="function" name="oscats_model_new ()" link="OscatsModel.html#oscats-model-new"/>
+    <keyword type="function" name="oscats_model_get_max ()" link="OscatsModel.html#oscats-model-get-max"/>
+    <keyword type="function" name="oscats_model_P ()" link="OscatsModel.html#oscats-model-P"/>
+    <keyword type="function" name="oscats_model_distance ()" link="OscatsModel.html#oscats-model-distance"/>
+    <keyword type="function" name="oscats_model_logLik_dtheta ()" link="OscatsModel.html#oscats-model-logLik-dtheta"/>
+    <keyword type="function" name="oscats_model_logLik_dparam ()" link="OscatsModel.html#oscats-model-logLik-dparam"/>
+    <keyword type="function" name="oscats_model_fisher_inf ()" link="OscatsModel.html#oscats-model-fisher-inf"/>
+    <keyword type="function" name="oscats_model_get_param_name ()" link="OscatsModel.html#oscats-model-get-param-name"/>
+    <keyword type="function" name="oscats_model_has_param_name ()" link="OscatsModel.html#oscats-model-has-param-name"/>
+    <keyword type="function" name="oscats_model_has_param ()" link="OscatsModel.html#oscats-model-has-param"/>
+    <keyword type="function" name="oscats_model_get_param ()" link="OscatsModel.html#oscats-model-get-param"/>
+    <keyword type="function" name="oscats_model_get_param_by_index ()" link="OscatsModel.html#oscats-model-get-param-by-index"/>
+    <keyword type="function" name="oscats_model_get_param_by_name ()" link="OscatsModel.html#oscats-model-get-param-by-name"/>
+    <keyword type="function" name="oscats_model_set_param ()" link="OscatsModel.html#oscats-model-set-param"/>
+    <keyword type="function" name="oscats_model_set_param_by_index ()" link="OscatsModel.html#oscats-model-set-param-by-index"/>
+    <keyword type="function" name="oscats_model_set_param_by_name ()" link="OscatsModel.html#oscats-model-set-param-by-name"/>
+    <keyword type="function" name="oscats_model_has_covariate ()" link="OscatsModel.html#oscats-model-has-covariate"/>
+    <keyword type="function" name="oscats_model_has_covariate_name ()" link="OscatsModel.html#oscats-model-has-covariate-name"/>
+    <keyword type="property" name="The &quot;Ncov&quot; property" link="OscatsModel.html#OscatsModel--Ncov"/>
+    <keyword type="property" name="The &quot;Ndims&quot; property" link="OscatsModel.html#OscatsModel--Ndims"/>
+    <keyword type="property" name="The &quot;Np&quot; property" link="OscatsModel.html#OscatsModel--Np"/>
+    <keyword type="property" name="The &quot;covariates&quot; property" link="OscatsModel.html#OscatsModel--covariates"/>
+    <keyword type="property" name="The &quot;dimType&quot; property" link="OscatsModel.html#OscatsModel--dimType"/>
+    <keyword type="property" name="The &quot;dims&quot; property" link="OscatsModel.html#OscatsModel--dims"/>
+    <keyword type="property" name="The &quot;paramNames&quot; property" link="OscatsModel.html#OscatsModel--paramNames"/>
+    <keyword type="property" name="The &quot;space&quot; property" link="OscatsModel.html#OscatsModel--space"/>
+    <keyword type="struct" name="struct OscatsModelL1p" link="OscatsModelL1p.html#OscatsModelL1p-struct"/>
+    <keyword type="struct" name="struct OscatsModelL2p" link="OscatsModelL2p.html#OscatsModelL2p-struct"/>
+    <keyword type="struct" name="struct OscatsModelL3p" link="OscatsModelL3p.html#OscatsModelL3p-struct"/>
+    <keyword type="struct" name="struct OscatsModelNominal" link="OscatsModelNominal.html#OscatsModelNominal-struct"/>
+    <keyword type="property" name="The &quot;Ncat&quot; property" link="OscatsModelNominal.html#OscatsModelNominal--Ncat"/>
+    <keyword type="struct" name="struct OscatsModelPc" link="OscatsModelPc.html#OscatsModelPc-struct"/>
+    <keyword type="property" name="The &quot;Ncat&quot; property" link="OscatsModelPc.html#OscatsModelPc--Ncat"/>
+    <keyword type="struct" name="struct OscatsModelGpc" link="OscatsModelGpc.html#OscatsModelGpc-struct"/>
+    <keyword type="property" name="The &quot;Ncat&quot; property" link="OscatsModelGpc.html#OscatsModelGpc--Ncat"/>
+    <keyword type="struct" name="struct OscatsModelGr" link="OscatsModelGr.html#OscatsModelGr-struct"/>
+    <keyword type="property" name="The &quot;Ncat&quot; property" link="OscatsModelGr.html#OscatsModelGr--Ncat"/>
+    <keyword type="struct" name="struct OscatsModelHetlgr" link="OscatsModelHetlgr.html#OscatsModelHetlgr-struct"/>
+    <keyword type="property" name="The &quot;Ncat&quot; property" link="OscatsModelHetlgr.html#OscatsModelHetlgr--Ncat"/>
+    <keyword type="struct" name="struct OscatsModelDina" link="OscatsModelDina.html#OscatsModelDina-struct"/>
+    <keyword type="struct" name="struct OscatsModelNida" link="OscatsModelNida.html#OscatsModelNida-struct"/>
+    <keyword type="struct" name="struct OscatsAlgorithm" link="OscatsAlgorithm.html#OscatsAlgorithm-struct"/>
+    <keyword type="struct" name="struct OscatsAlgorithmClass" link="OscatsAlgorithm.html#OscatsAlgorithmClass"/>
+    <keyword type="function" name="oscats_algorithm_register ()" link="OscatsAlgorithm.html#oscats-algorithm-register"/>
+    <keyword type="function" name="oscats_algorithm_closure_finalize ()" link="OscatsAlgorithm.html#oscats-algorithm-closure-finalize"/>
+    <keyword type="macro" name="oscats_err_ret_if_fail()" link="OscatsAlgorithm.html#oscats-err-ret-if-fail"/>
+    <keyword type="macro" name="oscats_err_ret_val_if_fail()" link="OscatsAlgorithm.html#oscats-err-ret-val-if-fail"/>
+    <keyword type="struct" name="struct OscatsAlgAstrat" link="OscatsAlgAstrat.html#OscatsAlgAstrat-struct"/>
+    <keyword type="function" name="OscatsAlgAstratCriterion ()" link="OscatsAlgAstrat.html#OscatsAlgAstratCriterion"/>
+    <keyword type="function" name="OscatsAlgAstratNotify ()" link="OscatsAlgAstrat.html#OscatsAlgAstratNotify"/>
+    <keyword type="function" name="oscats_alg_astrat_register_model ()" link="OscatsAlgAstrat.html#oscats-alg-astrat-register-model"/>
+    <keyword type="function" name="oscats_alg_astrat_restratify ()" link="OscatsAlgAstrat.html#oscats-alg-astrat-restratify"/>
+    <keyword type="property" name="The &quot;Nblocks&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--Nblocks"/>
+    <keyword type="property" name="The &quot;Ncur&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--Ncur"/>
+    <keyword type="property" name="The &quot;Nequal&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--Nequal"/>
+    <keyword type="property" name="The &quot;Nitems&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--Nitems"/>
+    <keyword type="property" name="The &quot;Nstrata&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--Nstrata"/>
+    <keyword type="property" name="The &quot;equal&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--equal"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--modelKey"/>
+    <keyword type="property" name="The &quot;stratum&quot; property" link="OscatsAlgAstrat.html#OscatsAlgAstrat--stratum"/>
+    <keyword type="signal" name="The &quot;stratum&quot; signal" link="OscatsAlgAstrat.html#OscatsAlgAstrat-stratum"/>
+    <keyword type="function" name="OscatsAlgChooserCriterion ()" link="OscatsAlgChooser.html#OscatsAlgChooserCriterion"/>
+    <keyword type="struct" name="struct OscatsAlgChooser" link="OscatsAlgChooser.html#OscatsAlgChooser-struct"/>
+    <keyword type="function" name="oscats_alg_chooser_set_c_criterion ()" link="OscatsAlgChooser.html#oscats-alg-chooser-set-c-criterion"/>
+    <keyword type="function" name="oscats_alg_chooser_choose ()" link="OscatsAlgChooser.html#oscats-alg-chooser-choose"/>
+    <keyword type="property" name="The &quot;itembank&quot; property" link="OscatsAlgChooser.html#OscatsAlgChooser--itembank"/>
+    <keyword type="property" name="The &quot;num&quot; property" link="OscatsAlgChooser.html#OscatsAlgChooser--num"/>
+    <keyword type="struct" name="struct OscatsAlgClassRates" link="OscatsAlgClassRates.html#OscatsAlgClassRates-struct"/>
+    <keyword type="function" name="OscatsAlgClassRatesForeachPatternFunc ()" link="OscatsAlgClassRates.html#OscatsAlgClassRatesForeachPatternFunc"/>
+    <keyword type="function" name="oscats_alg_class_rates_num_examinees ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-num-examinees"/>
+    <keyword type="function" name="oscats_alg_class_rates_get_pattern_rate ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-get-pattern-rate"/>
+    <keyword type="function" name="oscats_alg_class_rates_get_attribute_rate ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-get-attribute-rate"/>
+    <keyword type="function" name="oscats_alg_class_rates_get_misclassify_freq ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-get-misclassify-freq"/>
+    <keyword type="function" name="oscats_alg_class_rates_num_examinees_by_pattern ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-num-examinees-by-pattern"/>
+    <keyword type="function" name="oscats_alg_class_rates_get_rate_by_pattern ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-get-rate-by-pattern"/>
+    <keyword type="function" name="oscats_alg_class_rates_foreach_pattern ()" link="OscatsAlgClassRates.html#oscats-alg-class-rates-foreach-pattern"/>
+    <keyword type="property" name="The &quot;by-pattern&quot; property" link="OscatsAlgClassRates.html#OscatsAlgClassRates--by-pattern"/>
+    <keyword type="property" name="The &quot;estKey&quot; property" link="OscatsAlgClassRates.html#OscatsAlgClassRates--estKey"/>
+    <keyword type="property" name="The &quot;simKey&quot; property" link="OscatsAlgClassRates.html#OscatsAlgClassRates--simKey"/>
+    <keyword type="struct" name="struct OscatsAlgClosestDiff" link="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff-struct"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--modelKey"/>
+    <keyword type="property" name="The &quot;num&quot; property" link="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--num"/>
+    <keyword type="property" name="The &quot;thetaKey&quot; property" link="OscatsAlgClosestDiff.html#OscatsAlgClosestDiff--thetaKey"/>
+    <keyword type="struct" name="struct OscatsAlgEstimate" link="OscatsAlgEstimate.html#OscatsAlgEstimate-struct"/>
+    <keyword type="property" name="The &quot;Dprior&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--Dprior"/>
+    <keyword type="property" name="The &quot;Nposterior&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--Nposterior"/>
+    <keyword type="property" name="The &quot;Sigma&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--Sigma"/>
+    <keyword type="property" name="The &quot;independent&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--independent"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--modelKey"/>
+    <keyword type="property" name="The &quot;mu&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--mu"/>
+    <keyword type="property" name="The &quot;posterior&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--posterior"/>
+    <keyword type="property" name="The &quot;thetaKey&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--thetaKey"/>
+    <keyword type="property" name="The &quot;tol&quot; property" link="OscatsAlgEstimate.html#OscatsAlgEstimate--tol"/>
+    <keyword type="struct" name="struct OscatsAlgExposureCounter" link="OscatsAlgExposureCounter.html#OscatsAlgExposureCounter-struct"/>
+    <keyword type="function" name="oscats_alg_exposure_counter_num_examinees ()" link="OscatsAlgExposureCounter.html#oscats-alg-exposure-counter-num-examinees"/>
+    <keyword type="function" name="oscats_alg_exposure_counter_get_rate ()" link="OscatsAlgExposureCounter.html#oscats-alg-exposure-counter-get-rate"/>
+    <keyword type="struct" name="struct OscatsAlgFixedLength" link="OscatsAlgFixedLength.html#OscatsAlgFixedLength-struct"/>
+    <keyword type="property" name="The &quot;len&quot; property" link="OscatsAlgFixedLength.html#OscatsAlgFixedLength--len"/>
+    <keyword type="struct" name="struct OscatsAlgMaxFisher" link="OscatsAlgMaxFisher.html#OscatsAlgMaxFisher-struct"/>
+    <keyword type="function" name="oscats_alg_max_fisher_resize ()" link="OscatsAlgMaxFisher.html#oscats-alg-max-fisher-resize"/>
+    <keyword type="property" name="The &quot;A-opt&quot; property" link="OscatsAlgMaxFisher.html#OscatsAlgMaxFisher--A-opt"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgMaxFisher.html#OscatsAlgMaxFisher--modelKey"/>
+    <keyword type="property" name="The &quot;num&quot; property" link="OscatsAlgMaxFisher.html#OscatsAlgMaxFisher--num"/>
+    <keyword type="property" name="The &quot;thetaKey&quot; property" link="OscatsAlgMaxFisher.html#OscatsAlgMaxFisher--thetaKey"/>
+    <keyword type="struct" name="struct OscatsAlgMaxKl" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl-struct"/>
+    <keyword type="property" name="The &quot;Dprior&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--Dprior"/>
+    <keyword type="property" name="The &quot;Sigma&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--Sigma"/>
+    <keyword type="property" name="The &quot;c&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--c"/>
+    <keyword type="property" name="The &quot;inf-bounds&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--inf-bounds"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--modelKey"/>
+    <keyword type="property" name="The &quot;mu&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--mu"/>
+    <keyword type="property" name="The &quot;num&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--num"/>
+    <keyword type="property" name="The &quot;posterior&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--posterior"/>
+    <keyword type="property" name="The &quot;thetaKey&quot; property" link="OscatsAlgMaxKl.html#OscatsAlgMaxKl--thetaKey"/>
+    <keyword type="struct" name="struct OscatsAlgPickRand" link="OscatsAlgPickRand.html#OscatsAlgPickRand-struct"/>
+    <keyword type="struct" name="struct OscatsAlgSimulate" link="OscatsAlgSimulate.html#OscatsAlgSimulate-struct"/>
+    <keyword type="property" name="The &quot;auto-record&quot; property" link="OscatsAlgSimulate.html#OscatsAlgSimulate--auto-record"/>
+    <keyword type="property" name="The &quot;modelKey&quot; property" link="OscatsAlgSimulate.html#OscatsAlgSimulate--modelKey"/>
+    <keyword type="property" name="The &quot;thetaKey&quot; property" link="OscatsAlgSimulate.html#OscatsAlgSimulate--thetaKey"/>
+    <keyword type="function" name="OscatsAlgStratifyCriterion ()" link="OscatsAlgStratify.html#OscatsAlgStratifyCriterion"/>
+    <keyword type="struct" name="struct OscatsAlgStratify" link="OscatsAlgStratify.html#OscatsAlgStratify-struct"/>
+    <keyword type="function" name="oscats_alg_stratify_stratify ()" link="OscatsAlgStratify.html#oscats-alg-stratify-stratify"/>
+    <keyword type="function" name="oscats_alg_stratify_get_stratum ()" link="OscatsAlgStratify.html#oscats-alg-stratify-get-stratum"/>
+    <keyword type="function" name="oscats_alg_stratify_reset ()" link="OscatsAlgStratify.html#oscats-alg-stratify-reset"/>
+    <keyword type="function" name="oscats_alg_stratify_next ()" link="OscatsAlgStratify.html#oscats-alg-stratify-next"/>
+    <keyword type="property" name="The &quot;itembank&quot; property" link="OscatsAlgStratify.html#OscatsAlgStratify--itembank"/>
+    <keyword type="property" name="The &quot;num&quot; property" link="OscatsAlgStratify.html#OscatsAlgStratify--num"/>
+    <keyword type="constant" name="OSCATS_DIM_CONT" link="OscatsSpace.html#OSCATS-DIM-CONT:CAPS"/>
+    <keyword type="constant" name="OSCATS_DIM_BIN" link="OscatsSpace.html#OSCATS-DIM-BIN:CAPS"/>
+    <keyword type="constant" name="OSCATS_DIM_NAT" link="OscatsSpace.html#OSCATS-DIM-NAT:CAPS"/>
+    <keyword type="constant" name="OSCATS_DIM_TYPE_MASK" link="OscatsSpace.html#OSCATS-DIM-TYPE-MASK:CAPS"/>
+    <keyword type="constant" name="OSCATS_DIM_MASK" link="OscatsSpace.html#OSCATS-DIM-MASK:CAPS"/>
+    <keyword type="constant" name="OSCATS_DIM_MAX" link="OscatsSpace.html#OSCATS-DIM-MAX:CAPS"/>
+  </functions>
+</book>

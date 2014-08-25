@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsModelDina</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch07.html" title="Models">
+<link rel="prev" href="OscatsModelHetlgr.html" title="OscatsModelHetlgr">
+<link rel="next" href="OscatsModelNida.html" title="OscatsModelNida">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsModelHetlgr.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsModelNida.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsModelDina.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsModelDina.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsModelDina.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsModelDina"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsModelDina.top_of_page"></a>OscatsModelDina</span></h2>
+<p>OscatsModelDina — Deterministic Inputs Noisy And Gate (DINA) Model</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsModelDina.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsModelDina.html#OscatsModelDina-struct" title="struct OscatsModelDina">OscatsModelDina</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelDina.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="OscatsModel.html" title="OscatsModel">OscatsModel</a>
+         +----OscatsModelDina
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsModelDina.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsModelDina.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsModelDina-struct"></a><h3>struct OscatsModelDina</h3>
+<pre class="programlisting">struct OscatsModelDina;</pre>
+<p>
+Deterministic Inputs Noisy And Gate (DINA) Classification model:
+P(X=1|alpha) = (1-s)^(prod_i alpha_i) g^(1-prod_i alpha_i)
+where s is the slipping parameter and g is the guessing parameter.
+</p>
+<p>
+Parameter names: Guess, Slip.
+</p>
+<p>
+Note: This model does not support covariates, <a class="link" href="OscatsModel.html#oscats-model-distance" title="oscats_model_distance ()"><code class="function">oscats_model_distance()</code></a>, or
+<a class="link" href="OscatsModel.html#oscats-model-logLik-dtheta" title="oscats_model_logLik_dtheta ()"><code class="function">oscats_model_logLik_dtheta()</code></a>.
+</p>
+<p>
+References:
+</p>
+<div class="bibliolist">
+<div class="bibliomixed">
+<a name="id36234237"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Jimmy</span> <span class="surname">de la Torre</span></span></span>
+   (<span class="pubdate">2008</span>).
+   "<span class="title">DINA Model and Parameter Estimation: A Didactic</span>."
+   <span class="biblioset"><span class="title">Journal of Educational and Behavioral Statistics</span>,
+              <span class="volumenum">34</span>,</span>
+   <span class="artpagenums">115-130</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36222915"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">Brian</span> <span class="surname">Junker</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">Klaas</span> <span class="surname">Sijtsma</span></span></span></span>
+   (<span class="pubdate">2001</span>).
+   "<span class="title">Cognitive Assessment Models with Few Assumptions, and Connections with Nonparametric Item Response Theory</span>."
+   <span class="biblioset"><span class="title">Applied Psychological Measurement</span>,
+              <span class="volumenum">25</span>,</span>
+   <span class="artpagenums">258-272</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36222553"></a><p class="bibliomixed">
+   <span class="author"><span class="personname"><span class="firstname">Edward</span> <span class="surname">Haertel</span></span></span>
+   (<span class="pubdate">1989</span>).
+   "<span class="title">Using Restricted Latent Class Models to Map the Skill Structure of Achievement Items</span>."
+   <span class="biblioset"><span class="title">Journal of Educational Measurement</span>,
+              <span class="volumenum">26</span>,</span>
+   <span class="artpagenums">301-321</span>.
+ </p>
+</div>
+<div class="bibliomixed">
+<a name="id36185948"></a><p class="bibliomixed">
+   <span class="authorgroup"><span class="author"><span class="personname"><span class="firstname">George</span> <span class="surname">Macready</span></span></span> and
+   <span class="author"><span class="personname"><span class="firstname">C. Mitchell</span> <span class="surname">Dayton</span></span></span></span>
+   (<span class="pubdate">1977</span>).
+   "<span class="title">The Use of Probabilistic Modes in the Assessment of Mastery</span>."
+   <span class="biblioset"><span class="title">Journal of Educational Statistics</span>,
+              <span class="volumenum">2</span>,</span>
+   <span class="artpagenums">99-120</span>.
+ </p>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

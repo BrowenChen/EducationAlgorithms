@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GBitArray</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch05.html" title="Utilities">
+<link rel="prev" href="ch05.html" title="Utilities">
+<link rel="next" href="liboscats-GSL.html" title="GSL">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch05.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="liboscats-GSL.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GBitArray.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GBitArray.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GBitArray.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GBitArray"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GBitArray.top_of_page"></a>GBitArray</span></h2>
+<p>GBitArray — An array of bit flags</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GBitArray.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="GBitArray.html#GBitArray-struct" title="struct GBitArray">GBitArray</a>;
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-new" title="g_bit_array_new ()">g_bit_array_new</a>                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> bit_length</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-resize" title="g_bit_array_resize ()">g_bit_array_resize</a>                  (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> bit_length</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-extend" title="g_bit_array_extend ()">g_bit_array_extend</a>                  (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GBitArray.html#g-bit-array-copy" title="g_bit_array_copy ()">g_bit_array_copy</a>                    (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="GBitArray.html#g-bit-array-get-len" title="g_bit_array_get_len ()">g_bit_array_get_len</a>                 (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="GBitArray.html#g-bit-array-get-num-set" title="g_bit_array_get_num_set ()">g_bit_array_get_num_set</a>             (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GBitArray.html#g-bit-array-get-bit" title="g_bit_array_get_bit ()">g_bit_array_get_bit</a>                 (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-set-bit" title="g_bit_array_set_bit ()">g_bit_array_set_bit</a>                 (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-clear-bit" title="g_bit_array_clear_bit ()">g_bit_array_clear_bit</a>               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GBitArray.html#g-bit-array-flip-bit" title="g_bit_array_flip_bit ()">g_bit_array_flip_bit</a>                (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-set-bit-val" title="g_bit_array_set_bit_val ()">g_bit_array_set_bit_val</a>             (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-set-range" title="g_bit_array_set_range ()">g_bit_array_set_range</a>               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> stop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="GBitArray.html#g-bit-array-reset" title="g_bit_array_reset ()">g_bit_array_reset</a>                   (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GBitArray.html#g-bit-array-equal" title="g_bit_array_equal ()">g_bit_array_equal</a>                   (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *rhs</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GBitArray.html#g-bit-array-serial-compare" title="g_bit_array_serial_compare ()">g_bit_array_serial_compare</a>          (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *a</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *b</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GBitArray.html#g-bit-array-iter-reset" title="g_bit_array_iter_reset ()">g_bit_array_iter_reset</a>              (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GBitArray.html#g-bit-array-iter-next" title="g_bit_array_iter_next ()">g_bit_array_iter_next</a>               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GBitArray.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GBitArray
+</pre>
+</div>
+<div class="refsect1">
+<a name="GBitArray.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GBitArray.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GBitArray-struct"></a><h3>struct GBitArray</h3>
+<pre class="programlisting">struct GBitArray;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-new"></a><h3>g_bit_array_new ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_new                     (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> bit_length</code></em>);</pre>
+<p>
+Returns a new <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> with the given length.
+Note that the bit states are undefined.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bit_length</code></em> :</span></p></td>
+<td>the number of bits</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-resize"></a><h3>g_bit_array_resize ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_resize                  (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> bit_length</code></em>);</pre>
+<p>
+Resizes the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> to the specified length.
+All bits are cleared after this operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bit_length</code></em> :</span></p></td>
+<td>The non-negative number of bits</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the resized <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-extend"></a><h3>g_bit_array_extend ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_extend                  (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> num</code></em>);</pre>
+<p>
+Extends <em class="parameter"><code>array</code></em> by <em class="parameter"><code>num</code></em> bits.  Unlike <a class="link" href="GBitArray.html#g-bit-array-resize" title="g_bit_array_resize ()"><code class="function">g_bit_array_resize()</code></a>, maintains
+the existing bits.  New bits are cleared.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>num</code></em> :</span></p></td>
+<td>number of bits to add</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the extended <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-copy"></a><h3>g_bit_array_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_bit_array_copy                    (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *rhs</code></em>);</pre>
+<p>
+Resizes <em class="parameter"><code>lhs</code></em> as necessary.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> to be overwritten</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> to be copied</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-get-len"></a><h3>g_bit_array_get_len ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_bit_array_get_len                 (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);</pre>
+<p>
+Returns the bit length of the array.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the length of the array in bits</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-get-num-set"></a><h3>g_bit_array_get_num_set ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_bit_array_get_num_set             (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of bits that are set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-get-bit"></a><h3>g_bit_array_get_bit ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_bit_array_get_bit                 (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);</pre>
+<p>
+Returns whether or not the bit indexed by <em class="parameter"><code>pos</code></em> is set.
+The index must satisfy 0 &lt;= <em class="parameter"><code>pos</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the index of the bit to query</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>gboolean status</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-set-bit"></a><h3>g_bit_array_set_bit ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_set_bit                 (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);</pre>
+<p>
+Sets the bit indexed by <em class="parameter"><code>pos</code></em> to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+The index must satisfy 0 &lt;= <em class="parameter"><code>pos</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the index of the bit to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-clear-bit"></a><h3>g_bit_array_clear_bit ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_clear_bit               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);</pre>
+<p>
+Sets the bit indexed by <em class="parameter"><code>pos</code></em> to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+The index must satisfy 0 &lt;= <em class="parameter"><code>pos</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the index of the bit to clear</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-flip-bit"></a><h3>g_bit_array_flip_bit ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_bit_array_flip_bit                (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>);</pre>
+<p>
+Negates the bit indexed by <em class="parameter"><code>pos</code></em>.
+The index must satisfy 0 &lt;= <em class="parameter"><code>pos</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the index of the bit to flip</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new value of the bit</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-set-bit-val"></a><h3>g_bit_array_set_bit_val ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_set_bit_val             (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> pos</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);</pre>
+<p>
+Sets the bit indexed by <em class="parameter"><code>pos</code></em> to <em class="parameter"><code>val</code></em>.
+The index must satisfy 0 &lt;= <em class="parameter"><code>pos</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the index of the bit to clear</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>a boolean value</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-set-range"></a><h3>g_bit_array_set_range ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_set_range               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> start</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> stop</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);</pre>
+<p>
+Sets all of the bits between <em class="parameter"><code>start</code></em> and <em class="parameter"><code>stop</code></em> (inclusive) to <em class="parameter"><code>val</code></em>.
+The indeces must satisfy 0 &lt;= <em class="parameter"><code>start</code></em> &lt;= <em class="parameter"><code>stop</code></em> &lt; length.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>the index of the first bit to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stop</code></em> :</span></p></td>
+<td>the index of the last bit to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>a boolean value</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-reset"></a><h3>g_bit_array_reset ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         g_bit_array_reset                   (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> val</code></em>);</pre>
+<p>
+Sets all of the bits in the array to <em class="parameter"><code>val</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>a boolean value</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-equal"></a><h3>g_bit_array_equal ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_bit_array_equal                   (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *lhs</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *rhs</code></em>);</pre>
+<p>
+If <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> are not the same length, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>lhs</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rhs</code></em> :</span></p></td>
+<td>another <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>lhs</code></em> and <em class="parameter"><code>rhs</code></em> have the same value</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-serial-compare"></a><h3>g_bit_array_serial_compare ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                g_bit_array_serial_compare          (<em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *a</code></em>,
+                                                         <em class="parameter"><code>const <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *b</code></em>);</pre>
+<p>
+Compares a serialization of <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em>.  The serialization interprets
+the bit array as a base-2 integer.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>0 if <em class="parameter"><code>a</code></em> == <em class="parameter"><code>b</code></em>, -1 if <em class="parameter"><code>a</code></em> &lt; <em class="parameter"><code>b</code></em>, and 1 if <em class="parameter"><code>a</code></em> &gt; <em class="parameter"><code>b</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-iter-reset"></a><h3>g_bit_array_iter_reset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                g_bit_array_iter_reset              (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);</pre>
+<p>
+Restarts the iterator at the beginning.  The next call to
+<a class="link" href="GBitArray.html#g-bit-array-iter-next" title="g_bit_array_iter_next ()"><code class="function">g_bit_array_iter_next()</code></a> will return the index of the first true bit.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="g-bit-array-iter-next"></a><h3>g_bit_array_iter_next ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                g_bit_array_iter_next               (<em class="parameter"><code><a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a> *array</code></em>);</pre>
+<p>
+Returns the index of the next <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> bit.
+Returns -1 when the end of the array has been reached.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
+<td>a <a class="link" href="GBitArray.html" title="GBitArray"><span class="type">GBitArray</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the bit index, or -1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

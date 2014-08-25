@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html >
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>d3 x3dom demo</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="http://x3dom.org/x3dom/example/x3dom.js"></script>
+  </head>
+  <body>
+    <script>
+      function randomData() {
+        return d3.range(6).map( function() { return Math.random()*20; } )
+      };
+
+      x3d = d3.select("body")
+                    .append("x3d")
+                    .attr( "height", "400px" )
+                    .attr( "width", "400px" )
+                    ;
+      var scene = x3d.append("scene");
+      scene.append("viewpoint")
+           .attr( "centerOfRotation", "3.75 0 10")
+           .attr( "position", "13.742265188709691 -27.453522975182366 16.816062840792625" )
+           .attr( "orientation", "0.962043810961999 0.1696342804961945 0.21376603254551874 1.379433089729343" )
+           ;
+
+      function refresh( data ) {
+        shapes = scene.selectAll("transform").data( data );
+        shapesEnter = shapes
+             .enter()
+             .append( "transform" )
+             .append( "shape" )
+             ;
+        // Enter and update
+        shapes.transition()
+              .attr("translation", function(d,i) { return i*1.5 + " 0.0 " + d/2.0; } )
+              .attr("scale", function(d) { return "1.0 1.0 " + d; } )
+              ;
+
+        shapesEnter
+            .append("appearance")
+              .append("material")
+              .attr("diffuseColor", "steelblue" );
+
+        shapesEnter.append( "box" )
+          .attr( "size", "1.0 1.0 1.0" );
+      }
+
+      refresh( randomData() )
+      setInterval(
+        function(){
+          refresh( randomData() );
+        },
+        2500);
+
+    </script>
+  </body>
+</html>

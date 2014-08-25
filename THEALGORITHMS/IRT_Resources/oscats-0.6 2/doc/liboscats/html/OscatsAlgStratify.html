@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgStratify</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="OscatsAlgSimulate.html" title="OscatsAlgSimulate">
+<link rel="next" href="pt03.html" title="Part III. Extending OSCATS">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="OscatsAlgSimulate.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="pt03.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgStratify.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgStratify.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgStratify.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#OscatsAlgStratify.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgStratify"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgStratify.top_of_page"></a>OscatsAlgStratify</span></h2>
+<p>OscatsAlgStratify</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgStratify.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (<a class="link" href="OscatsAlgStratify.html#OscatsAlgStratifyCriterion" title="OscatsAlgStratifyCriterion ()">*OscatsAlgStratifyCriterion</a>)       (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);
+struct              <a class="link" href="OscatsAlgStratify.html#OscatsAlgStratify-struct" title="struct OscatsAlgStratify">OscatsAlgStratify</a>;
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgStratify.html#oscats-alg-stratify-stratify" title="oscats_alg_stratify_stratify ()">oscats_alg_stratify_stratify</a>        (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_strata</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgStratify.html#OscatsAlgStratifyCriterion" title="OscatsAlgStratifyCriterion ()"><span class="type">OscatsAlgStratifyCriterion</span></a> f</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> f_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_blocks</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgStratify.html#OscatsAlgStratifyCriterion" title="OscatsAlgStratifyCriterion ()"><span class="type">OscatsAlgStratifyCriterion</span></a> block</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> b_data</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="OscatsAlgStratify.html#oscats-alg-stratify-get-stratum" title="oscats_alg_stratify_get_stratum ()">oscats_alg_stratify_get_stratum</a>     (<em class="parameter"><code>const <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> stratum</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgStratify.html#oscats-alg-stratify-reset" title="oscats_alg_stratify_reset ()">oscats_alg_stratify_reset</a>           (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>);
+<a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         <a class="link" href="OscatsAlgStratify.html#oscats-alg-stratify-next" title="oscats_alg_stratify_next ()">oscats_alg_stratify_next</a>            (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgStratify.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----OscatsAlgStratify
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgStratify.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="OscatsAlgStratify.html#OscatsAlgStratify--itembank" title='The "itembank" property'>itembank</a>"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write / Construct Only
+  "<a class="link" href="OscatsAlgStratify.html#OscatsAlgStratify--num" title='The "num" property'>num</a>"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgStratify.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgStratify.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgStratifyCriterion"></a><h3>OscatsAlgStratifyCriterion ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>             (*OscatsAlgStratifyCriterion)       (<em class="parameter"><code>const <a class="link" href="OscatsAdministrand.html" title="OscatsAdministrand"><span class="type">OscatsAdministrand</span></a> *item</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgStratify-struct"></a><h3>struct OscatsAlgStratify</h3>
+<pre class="programlisting">struct OscatsAlgStratify;</pre>
+<p>
+Support algorithm (for item selection):
+Stratify items based on some criterion.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-stratify-stratify"></a><h3>oscats_alg_stratify_stratify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_stratify_stratify        (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_strata</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgStratify.html#OscatsAlgStratifyCriterion" title="OscatsAlgStratifyCriterion ()"><span class="type">OscatsAlgStratifyCriterion</span></a> f</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> f_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_blocks</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsAlgStratify.html#OscatsAlgStratifyCriterion" title="OscatsAlgStratifyCriterion ()"><span class="type">OscatsAlgStratifyCriterion</span></a> block</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> b_data</code></em>);</pre>
+<p>
+Stratify the <a class="link" href="OscatsAlgStratify.html#OscatsAlgStratify--itembank" title='The "itembank" property'><span class="type">"itembank"</span></a> of <em class="parameter"><code>stratify</code></em> using the criterion
+<em class="parameter"><code>f</code></em> within blocks specified by <em class="parameter"><code>block</code></em>.  The bank can be restratified by
+calling this function multiple times.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stratify</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_strata</code></em> :</span></p></td>
+<td>the number of strata</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f</code></em> :</span></p></td>
+<td>the criterion function by which to stratify</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>f_data</code></em> :</span></p></td>
+<td>user data to supply to <em class="parameter"><code>f</code></em>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_blocks</code></em> :</span></p></td>
+<td>the number of blocks</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>block</code></em> :</span></p></td>
+<td>the criterion function by which to block. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b_data</code></em> :</span></p></td>
+<td>user data to supply to <em class="parameter"><code>block</code></em>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-stratify-get-stratum"></a><h3>oscats_alg_stratify_get_stratum ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         oscats_alg_stratify_get_stratum     (<em class="parameter"><code>const <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> stratum</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stratify</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stratum</code></em> :</span></p></td>
+<td>the stratum to fetch (0-based index)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the stratum <em class="parameter"><code>stratum</code></em> of <em class="parameter"><code>stratify</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-stratify-reset"></a><h3>oscats_alg_stratify_reset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_alg_stratify_reset           (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>);</pre>
+<p>
+Reset the internal stratum iterator.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>stratify</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> object</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-alg-stratify-next"></a><h3>oscats_alg_stratify_next ()</h3>
+<pre class="programlisting"><a class="link" href="GBitArray.html" title="GBitArray"><span class="returnvalue">GBitArray</span></a> *         oscats_alg_stratify_next            (<em class="parameter"><code><a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> *stratify</code></em>);</pre>
+<p>
+Returns the next stratum using the internal stratum iterator and
+increments the iterator.  Returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there are no more strata.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stratify</code></em> :</span></p></td>
+<td>an <a class="link" href="OscatsAlgStratify.html" title="OscatsAlgStratify"><span class="type">OscatsAlgStratify</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the next stratum. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgStratify.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgStratify--itembank"></a><h3>The <code class="literal">"itembank"</code> property</h3>
+<pre class="programlisting">  "itembank"                 <a class="link" href="OscatsItemBank.html" title="OscatsItemBank"><span class="type">OscatsItemBank</span></a>*       : Read / Write / Construct Only</pre>
+<p>
+The item bank to stratify.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgStratify--num"></a><h3>The <code class="literal">"num"</code> property</h3>
+<pre class="programlisting">  "num"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+Number of strata.
+</p>
+<p>Default value: 1</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

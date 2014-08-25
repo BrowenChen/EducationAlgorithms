@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+  <!ENTITY version SYSTEM "version.xml">
+]>
+<book id="index">
+  <bookinfo>
+    <title>liboscats Reference Manual</title>
+    <releaseinfo>
+      for liboscats &version;.
+      The latest version of this documentation can be found on-line at
+      <ulink role="online-location" url="http://[SERVER]/liboscats/index.html">http://[SERVER]/liboscats/</ulink>.
+    </releaseinfo>
+  </bookinfo>
+
+  <part>
+    <title>Preliminaries</title>
+    <xi:include href="intro.xml"/>
+    <xi:include href="build.xml"/>
+    <xi:include href="bindings.xml"/>
+    <xi:include href="hacking.xml"/>
+  </part>
+  <part>
+    <title>API Reference</title>
+    <chapter>
+      <title>Utilities</title>
+      <xi:include href="xml/bitarray.xml"/>
+      <xi:include href="xml/gsl.xml"/>
+      <xi:include href="xml/random.xml"/>
+      <xi:include href="xml/integrate.xml"/>
+    </chapter>
+    <chapter>
+      <title>Core Objects</title>
+      <xi:include href="xml/space.xml"/>
+      <xi:include href="xml/point.xml"/>
+      <xi:include href="xml/administrand.xml"/>
+      <xi:include href="xml/item.xml"/>
+      <xi:include href="xml/itembank.xml"/>
+      <xi:include href="xml/test.xml"/>
+      <xi:include href="xml/examinee.xml"/>
+      <xi:include href="xml/covariates.xml"/>
+    </chapter>
+    <chapter>
+      <title>Models</title>
+      <xi:include href="xml/model.xml"/>
+      <xi:include href="xml/l1p.xml"/>
+      <xi:include href="xml/l2p.xml"/>
+      <xi:include href="xml/l3p.xml"/>
+      <xi:include href="xml/nominal.xml"/>
+      <xi:include href="xml/pc.xml"/>
+      <xi:include href="xml/gpc.xml"/>
+      <xi:include href="xml/gr.xml"/>
+      <xi:include href="xml/hlgr.xml"/>
+      <xi:include href="xml/dina.xml"/>
+      <xi:include href="xml/nida.xml"/>
+    </chapter>
+    <chapter>
+      <title>Algorithms</title>
+      <xi:include href="xml/algorithm.xml"/>
+      <xi:include href="xml/astrat.xml"/>
+      <xi:include href="xml/chooser.xml"/>
+      <xi:include href="xml/class_rates.xml"/>
+      <xi:include href="xml/closest_diff.xml"/>
+      <xi:include href="xml/estimate.xml"/>
+      <xi:include href="xml/exposure_counter.xml"/>
+      <xi:include href="xml/fixed_length.xml"/>
+      <xi:include href="xml/max_fisher.xml"/>
+      <xi:include href="xml/max_kl.xml"/>
+      <xi:include href="xml/pick_rand.xml"/>
+      <xi:include href="xml/simulate.xml"/>
+      <xi:include href="xml/stratify.xml"/>
+    </chapter>
+  </part>
+
+  <part>
+    <title>Extending OSCATS</title>
+    <chapter>
+        <title>New Algorithms</title>
+        <para>FIXME: Complete this.</para>
+    </chapter>
+    <chapter>
+        <title>New IRT Models</title>
+        <para>FIXME: Complete this.</para>
+    </chapter>
+    <chapter>
+        <title>New Classification Models</title>
+        <para>FIXME: Complete this.</para>
+    </chapter>
+  </part>
+
+  <part>
+    <title>Reference</title>
+    <chapter id="object-tree">
+      <title>Object Hierarchy</title>
+       <xi:include href="xml/tree_index.sgml"/>
+    </chapter>
+    <index id="api-index-full">
+      <title>API Index</title>
+      <xi:include href="xml/api-index-full.xml"><xi:fallback /></xi:include>
+    </index>
+  <xi:include href="xml/annotation-glossary.xml"><xi:fallback /></xi:include>
+  </part>
+</book>

@@ -1,0 +1,267 @@
+%%
+headers
+#include <oscats.h>
+#include "gen_oscats.h"
+#define ginitiallyunowned_ce gobject_ce
+
+static int phpg_value_array_from_zval(zval *value, GValue *gvalue TSRMLS_DC)
+{
+	zval **elem;
+	HashTable *ht;
+	HashPosition iter;
+	GValueArray *array;
+	GValue gelem = { 0, };
+
+	phpg_return_val_if_fail(gvalue != NULL, FAILURE);
+
+	ht = Z_ARRVAL_P(value);
+	array = g_value_array_new(zend_hash_num_elements(ht));
+	for (zend_hash_internal_pointer_reset_ex(ht, &iter);
+	     zend_hash_get_current_data_ex(ht, (void**)&elem, &iter) == SUCCESS;
+	     zend_hash_move_forward_ex(ht, &iter))
+	{
+		switch (Z_TYPE_PP(elem))
+		{
+			case IS_NULL:
+				g_value_init(&gelem, G_TYPE_POINTER);
+				g_value_set_pointer(&gelem, NULL);
+				break;
+				
+			case IS_BOOL:
+				g_value_init(&gelem, G_TYPE_BOOLEAN);
+				g_value_set_boolean(&gelem, Z_LVAL_PP(elem));
+				break;
+				
+			case IS_LONG:
+			{
+				long v = Z_LVAL_PP(elem);
+				if (v < 0)
+				{
+					g_value_init(&gelem, G_TYPE_INT);
+					g_value_set_int(&gelem, v);
+				} else {
+					g_value_init(&gelem, G_TYPE_UINT);
+					g_value_set_uint(&gelem, v);
+				}
+			}
+				break;
+				
+			case IS_DOUBLE:
+				g_value_init(&gelem, G_TYPE_DOUBLE);
+				g_value_set_double(&gelem, Z_DVAL_PP(elem));
+				break;
+				
+			case IS_STRING:
+				g_value_init(&gelem, G_TYPE_STRING);
+				phpg_gvalue_from_zval(&gelem, elem, FALSE);
+				break;
+				
+			case IS_OBJECT:
+				g_value_init(&gelem, G_OBJECT_GET_TYPE(PHPG_GOBJECT(*elem)));
+				phpg_gvalue_from_zval(&gelem, elem, FALSE);
+				break;
+				
+			case IS_RESOURCE:
+			case IS_ARRAY:
+			default:
+				g_warning("Unknown element %d for value array.", array->n_values);
+		}
+		
+	 	g_value_array_append(array, &gelem);
+	 	g_value_unset(&gelem);
+	}
+	
+	g_value_take_boxed(gvalue, array);
+	return SUCCESS;
+}
+
+static int phpg_value_array_to_zval(const GValue *gvalue, zval **value TSRMLS_DC)
+{
+	// This case should already be covered
+	g_return_val_if_reached(FAILURE);
+/*
+                int i;
+                zval *item;
+                int value_count;
+
+                GValueArray *array = (GValueArray *) g_value_get_boxed(gval);
+                MAKE_ZVAL_IF_NULL(*value);
+                array_init(*value);
+                value_count = array->n_values;
+
+                for (i = 0; i < value_count; i++) {
+                    MAKE_STD_ZVAL(item);
+                    phpg_gvalue_to_zval(array->values + i, &item, copy_boxed, TRUE TSRMLS_CC);
+                    add_next_index_zval(*value, item);
+                }
+*/
+}
+
+%%
+post-registration OscatsSpace
+   phpg_gboxed_register_custom(G_TYPE_VALUE_ARRAY,
+                                phpg_value_array_from_zval,
+                                phpg_value_array_to_zval);
+%%
+ignore-glob
+    *_get_type
+%%
+ignore oscats_model_new
+%%
+override oscats_algorithm_register
+
+static PHP_METHOD(OscatsAlgorithm, register)
+{
+        zval *test;
+        OscatsAlgorithm* php_retval;
+
+    NOT_STATIC_METHOD();
+
+        if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "O", &test, oscatstest_ce))
+                return;
+
+    /*
+     * The PHP-GTK system won't sink arbitrary floating references for us.
+     * So, we have to add an extra ref for the wrapper here.
+     * Reference problems might happen if a system doesn't have PHP both
+     * create and register an algorithm...
+     */
+    g_object_ref(OSCATS_ALGORITHM(PHPG_GOBJECT(this_ptr)));
+    php_retval = oscats_algorithm_register(OSCATS_ALGORITHM(PHPG_GOBJECT(this_ptr)), OSCATS_TEST(PHPG_GOBJECT(test)));
+    phpg_gobject_new(&return_value, (GObject *)php_retval TSRMLS_CC);
+}
+
+%%
+override oscats_administrand_set_model
+
+static PHP_METHOD(OscatsAdministrand, set_model)
+{
+	long name;
+	zval *model;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "iO", &name, &model, oscatsmodel_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(model));
+    oscats_administrand_set_model(OSCATS_ADMINISTRAND(PHPG_GOBJECT(this_ptr)), (GQuark)name, OSCATS_MODEL(PHPG_GOBJECT(model)));
+
+}
+
+%%
+override oscats_administrand_set_model_by_name
+
+static PHP_METHOD(OscatsAdministrand, set_model_by_name)
+{
+	char *name;
+	zend_bool free_name = FALSE;
+	zval *model;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "uO", &name, &free_name, &model, oscatsmodel_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(model));
+    oscats_administrand_set_model_by_name(OSCATS_ADMINISTRAND(PHPG_GOBJECT(this_ptr)), name, OSCATS_MODEL(PHPG_GOBJECT(model)));
+    if (free_name) g_free(name);
+
+}
+
+%%
+override oscats_examinee_set_sim_theta
+
+static PHP_METHOD(OscatsExaminee, set_sim_theta)
+{
+	zval *theta;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "O", &theta, oscatspoint_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(theta));
+    oscats_examinee_set_sim_theta(OSCATS_EXAMINEE(PHPG_GOBJECT(this_ptr)), OSCATS_POINT(PHPG_GOBJECT(theta)));
+
+}
+
+%%
+override oscats_examinee_set_est_theta
+
+static PHP_METHOD(OscatsExaminee, set_est_theta)
+{
+	zval *theta;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "O", &theta, oscatspoint_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(theta));
+    oscats_examinee_set_est_theta(OSCATS_EXAMINEE(PHPG_GOBJECT(this_ptr)), OSCATS_POINT(PHPG_GOBJECT(theta)));
+
+}
+
+%%
+override oscats_examinee_set_theta
+
+static PHP_METHOD(OscatsExaminee, set_theta)
+{
+	long name;
+	zval *theta;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "iO", &name, &theta, oscatspoint_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(theta));
+    oscats_examinee_set_theta(OSCATS_EXAMINEE(PHPG_GOBJECT(this_ptr)), (GQuark)name, OSCATS_POINT(PHPG_GOBJECT(theta)));
+
+}
+
+%%
+override oscats_examinee_set_theta_by_name
+
+static PHP_METHOD(OscatsExaminee, set_theta_by_name)
+{
+	char *name;
+	zend_bool free_name = FALSE;
+	zval *theta;
+
+    NOT_STATIC_METHOD();
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "uO", &name, &free_name, &theta, oscatspoint_ce))
+		return;
+
+    g_object_ref(PHPG_GOBJECT(theta));
+    oscats_examinee_set_theta_by_name(OSCATS_EXAMINEE(PHPG_GOBJECT(this_ptr)), name, OSCATS_POINT(PHPG_GOBJECT(theta)));
+    if (free_name) g_free(name);
+
+}
+
+%%
+override oscats_item_new
+
+static PHP_METHOD(OscatsItem, __construct)
+{
+	long name;
+	zval *model;
+	GObject *wrapped_obj;
+
+	if (!php_gtk_parse_args(ZEND_NUM_ARGS(), "iO", &name, &model, oscatsmodel_ce)) {
+        PHPG_THROW_CONSTRUCT_EXCEPTION(OscatsItem);
+	}
+
+	g_object_ref(PHPG_GOBJECT(model));
+	wrapped_obj = (GObject *) oscats_item_new((GQuark)name, OSCATS_MODEL(PHPG_GOBJECT(model)));
+
+	if (!wrapped_obj) {
+        PHPG_THROW_CONSTRUCT_EXCEPTION(OscatsItem);
+	}
+
+    phpg_gobject_set_wrapper(this_ptr, wrapped_obj TSRMLS_CC);
+}
+
+%%

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<chapter>
+  <title>Introduction</title>
+
+<para>Welcome to the Open Source Computerized Adaptive Testing System! 
+OSCATS aims to be a fully featured engine for writing computerized adaptive
+testing (CAT) simulations and can be used as a back-end for operational CAT. 
+OSCATS supports both the Item Response Theory (IRT) and cognitively
+diagnosis/latent classification psychometric frameworks, including
+algorithms for dual-purpose measurement.  The core CAT administration
+routine includes eight points for algorithmic customization, and OSCATS
+comes ready to be extended with new psychometric models, item selection
+algorithms, and statistical calculations.</para>
+
+<para>An OSCATS test is formed by supplying an item bank and a set of
+algorithms for item selection, item administration or simulation, and
+statistical calculations, such as estimating an examinee's latent ability or
+class and tracking item exposure.  These algorithms are
+<link linkend="OscatsAlgorithm"><structname>OscatsAlgorithm</structname></link>
+objects that attach callback functions to one or more of eight signals
+emitted by the
+<link linkend="OscatsTest"><structname>OscatsTest</structname></link>
+test administration loop.  Items in the bank have a psychometric model in
+either the IRT or latent classification framework (or both).  These models
+are objects subclassed from the abstract
+<link linkend="OscatsContModel"><structname>OscatsContModel</structname></link>
+or <link linkend="OscatsDiscrModel"><structname>OscatsDiscrModel</structname></link>
+class.  Using new models or algorithms in OSCATS is as simple as writing a
+new subclass with the desired functionality.</para>
+
+<para>To get started with OSCATS, it's best to read the documentation for
+the test administration loop in <link linkend="oscats-test-administer"><function>oscats_test_administer()</function></link>
+and the <link linkend="OscatsTest.signals"><structname>OscatsTest</structname> signals</link>.
+Then, take a look at a few of the example programs provided with
+OSCATS.  For the specific syntax and semantics of each object, refer to the
+complete API documentation.</para>
+
+<para>If you have questions about OSCATS, please do not hesitate to ask them
+on the OSCATS mailing list.  And, if you find OSCATS useful in developing
+your CAT or conducting CAT research, let us know: We would love to include a
+reference to your work on the OSCATS website.</para>
+
+</chapter>

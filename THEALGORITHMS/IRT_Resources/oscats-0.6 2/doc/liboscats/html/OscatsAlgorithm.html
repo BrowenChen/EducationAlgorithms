@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OscatsAlgorithm</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="liboscats Reference Manual">
+<link rel="up" href="ch08.html" title="Algorithms">
+<link rel="prev" href="ch08.html" title="Algorithms">
+<link rel="next" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch08.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">liboscats Reference Manual</th>
+<td><a accesskey="n" href="OscatsAlgAstrat.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#OscatsAlgorithm.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#OscatsAlgorithm.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#OscatsAlgorithm.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="OscatsAlgorithm"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="OscatsAlgorithm.top_of_page"></a>OscatsAlgorithm</span></h2>
+<p>OscatsAlgorithm — Abstract CAT Algorithm Class</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="OscatsAlgorithm.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="OscatsAlgorithm.html#OscatsAlgorithm-struct" title="struct OscatsAlgorithm">OscatsAlgorithm</a>;
+struct              <a class="link" href="OscatsAlgorithm.html#OscatsAlgorithmClass" title="struct OscatsAlgorithmClass">OscatsAlgorithmClass</a>;
+<a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm"><span class="returnvalue">OscatsAlgorithm</span></a> *   <a class="link" href="OscatsAlgorithm.html#oscats-algorithm-register" title="oscats_algorithm_register ()">oscats_algorithm_register</a>           (<em class="parameter"><code><a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm"><span class="type">OscatsAlgorithm</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="OscatsAlgorithm.html#oscats-algorithm-closure-finalize" title="oscats_algorithm_closure_finalize ()">oscats_algorithm_closure_finalize</a>   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *closure</code></em>);
+#define             <a class="link" href="OscatsAlgorithm.html#oscats-err-ret-if-fail" title="oscats_err_ret_if_fail()">oscats_err_ret_if_fail</a>              (expr,
+                                                         err,
+                                                         msg)
+#define             <a class="link" href="OscatsAlgorithm.html#oscats-err-ret-val-if-fail" title="oscats_err_ret_val_if_fail()">oscats_err_ret_val_if_fail</a>          (expr,
+                                                         val,
+                                                         err,
+                                                         msg)
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgorithm.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+         +----OscatsAlgorithm
+               +----<a class="link" href="OscatsAlgAstrat.html" title="OscatsAlgAstrat">OscatsAlgAstrat</a>
+               +----<a class="link" href="OscatsAlgClassRates.html" title="OscatsAlgClassRates">OscatsAlgClassRates</a>
+               +----<a class="link" href="OscatsAlgClosestDiff.html" title="OscatsAlgClosestDiff">OscatsAlgClosestDiff</a>
+               +----<a class="link" href="OscatsAlgEstimate.html" title="OscatsAlgEstimate">OscatsAlgEstimate</a>
+               +----<a class="link" href="OscatsAlgExposureCounter.html" title="OscatsAlgExposureCounter">OscatsAlgExposureCounter</a>
+               +----<a class="link" href="OscatsAlgFixedLength.html" title="OscatsAlgFixedLength">OscatsAlgFixedLength</a>
+               +----<a class="link" href="OscatsAlgMaxFisher.html" title="OscatsAlgMaxFisher">OscatsAlgMaxFisher</a>
+               +----<a class="link" href="OscatsAlgMaxKl.html" title="OscatsAlgMaxKl">OscatsAlgMaxKl</a>
+               +----<a class="link" href="OscatsAlgPickRand.html" title="OscatsAlgPickRand">OscatsAlgPickRand</a>
+               +----<a class="link" href="OscatsAlgSimulate.html" title="OscatsAlgSimulate">OscatsAlgSimulate</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgorithm.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="OscatsAlgorithm.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="OscatsAlgorithm-struct"></a><h3>struct OscatsAlgorithm</h3>
+<pre class="programlisting">struct OscatsAlgorithm;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="OscatsAlgorithmClass"></a><h3>struct OscatsAlgorithmClass</h3>
+<pre class="programlisting">struct OscatsAlgorithmClass {
+  GInitiallyUnownedClass parent_class;
+  void (*reg) (OscatsAlgorithm *alg_data, OscatsTest *test);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-algorithm-register"></a><h3>oscats_algorithm_register ()</h3>
+<pre class="programlisting"><a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm"><span class="returnvalue">OscatsAlgorithm</span></a> *   oscats_algorithm_register           (<em class="parameter"><code><a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm"><span class="type">OscatsAlgorithm</span></a> *alg_data</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> *test</code></em>);</pre>
+<p>
+Registers the algorithm <em class="parameter"><code>alg_data</code></em> for use in <em class="parameter"><code>test</code></em>.  This will sink the
+floating reference to <em class="parameter"><code>alg_data</code></em>.  (Callers who want to keep a pointer to
+<em class="parameter"><code>alg_data</code></em> should call <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-ref-sink"><code class="function">g_object_ref_sink()</code></a> themselves.)  In general, an
+algorithm object is registered to only one test.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsAlgorithm.html" title="OscatsAlgorithm"><span class="type">OscatsAlgorithm</span></a> descendant to register. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>test</code></em> :</span></p></td>
+<td>the <a class="link" href="OscatsTest.html" title="OscatsTest"><span class="type">OscatsTest</span></a> on which to register the algorithm</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<em class="parameter"><code>alg_data</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-algorithm-closure-finalize"></a><h3>oscats_algorithm_closure_finalize ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                oscats_algorithm_closure_finalize   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> alg_data</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *closure</code></em>);</pre>
+<p>
+Calls g_object_unref(alg_data).  Should not be invoked directly, but
+is supplied as the destroy_notifier at signal connection.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alg_data</code></em> :</span></p></td>
+<td>data to free</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>signal handler</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-err-ret-if-fail"></a><h3>oscats_err_ret_if_fail()</h3>
+<pre class="programlisting">#define oscats_err_ret_if_fail(expr, err, msg) G_STMT_START{ (void)0; }G_STMT_END
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="oscats-err-ret-val-if-fail"></a><h3>oscats_err_ret_val_if_fail()</h3>
+<pre class="programlisting">#define oscats_err_ret_val_if_fail(expr, val, err, msg) G_STMT_START{ (void)0; }G_STMT_END
+</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>
