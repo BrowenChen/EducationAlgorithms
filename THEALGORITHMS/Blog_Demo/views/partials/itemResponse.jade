@@ -1,0 +1,68 @@
+br
+br
+br
+#IRTWrap
+	#irt-wrapper.container.centered(style="opacity:.80;")
+		.row
+			#srJumbo.container.col-md-10.col-md-offset-1.jumbotron.centered(style="background-color:#2b434f;")
+				#containerHeader.text-left
+					h1 
+						span(style="color: white;") IRT
+						span.label.label-info  {{title}}.me		
+						hr    
+
+				#containerBody.text-left
+
+						.row 
+							.col-md-4
+								button.btn.btn-primary(ng-click='') Calculate Proficiency
+
+							.col-md-8
+								form
+									span(style="color:white;") Percentage
+									span.badge 89{{}}%
+						.row
+		
+									
+
+
+.container.mt
+	.row
+
+		.col-lg-5.col-lg-offset-1
+			.spacing
+			h4 Item Response Theory
+			p
+				br
+				| The next algorithm in this sequence of educational learning algorithms is the IRT. 
+				em The idea here is to aggregate a continuous model for estimating the probabilistic outcome of each response based on a student user. 
+				|  We can utilize IRT to extract data to be used for recommendation systems in a interconnected graph of separated topics and subjects, providing key insight for where the student should go from here given the details that we extract. The key here is that it tests proficiency/ability, and is used for a deeper personalized learning experience. 
+
+			h4 The Algorithm
+			p
+				| Basically, there is an item characteristic curve graph. Given the student ability, it will predict the probability for whether a student will understand or fail that question. There can be multiple item characteristics to be represented in the graph, but we will stick to the one parameter model for simplicity. 
+				br
+				br
+				em Item Discrimination
+				|  is the concept of how the difficulty of a problem is relative to ability level. If there is no discrimination, the value of the item difficulty is a constant flat line across all ability levels. If there is a discrimination, this type of problem can be more useful in distinguishing the high-ability students from the low-ability students (think of an exam with an average percentage of 90% versus an exam with an average of 50%. The latter exam will allow smart students a greater room to demonstrate their intellect and differentiate themselves more than the average)
+				br
+
+		.col-lg-4.col-lg-offset-1
+			.spacing
+			h4 Project Details
+			.hline
+			p
+				b Name:
+				| Predict.me
+			p
+				b Author:
+				| Owen Chen
+			p
+				b Categories:
+				| Learning Algorithms, Spaced Repitition
+			p
+				b Tagged:
+				| Flat, UI, Education
+			p
+				b Website:
+				a(href='https://github.com/BrowenChen/EducationAlgorithms/blob/master/itemResponse.js')  https://github.com/BrowenChen/EducationAlgorithms/blob/master/itemResponse.js

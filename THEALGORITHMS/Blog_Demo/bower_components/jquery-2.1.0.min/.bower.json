@@ -1,0 +1,13 @@
+{
+  "name": "jquery-2.1.0.min",
+  "_cacheHeaders": {
+    "Last-Modified": "Sun, 02 Feb 2014 00:30:12 GMT",
+    "Content-Length": "83615",
+    "Content-Type": "application/x-javascript; charset=utf-8"
+  },
+  "main": "index.js",
+  "_source": "http://code.jquery.com/jquery-2.1.0.min.js",
+  "_target": "*",
+  "_originalSource": "http://code.jquery.com/jquery-2.1.0.min.js",
+  "_direct": true
+}
