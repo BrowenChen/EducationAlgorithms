@@ -1,4 +1,4 @@
-Overview
+Overview - 
 
 
 Here at Zzish, we strive to fundamentally change the process of traditional learning. We attempt to maximize one’s learning potential in the most efficient way possible. We approach learning with a comprehensive holistic strategy that integrates principles of psychological and cognitive approaches to human memory, and we integrate that knowledge with the current advancing state of technology that is available to us in the hopes of creating a platform that can truly change the way people learn.
@@ -13,7 +13,7 @@ Spaced Repitition is based on this fact to reinforce the knowledge in an optimal
 What this means is that instead of trying to cram a ton of information with equal exposure and weight into your head, you focus on your weak links at the right time to optimize the learning process. Think of the process of trying to learn 150 different concepts for an exam. In order to cover all 150 concepts with an equal level of mastery, we would need a strategic way to target the weak links and de-emphasize the ones we already know well. The adage “failure is the best teacher” rings loud and clear here. In order to see true progress and rapid growth, you must struggle and step out of a comfort zone. The SR algorithm applies this concept as a generalized template for one method of making the most out of your limited time. This is just one of the few algorithms that goes into the Adaptive Module, with the hopes of providing this platform and knowledge to all edTech developers to rid the inefficiencies of traditional learning. 
 
 
-Mechanisms of the Algorithm
+Mechanisms of the Algorithm - 
 
 
 In brief, I will describe the breakdown of the SuperMemo SM-2 spaced repetition algorithm. (We plan to develop ours to the current SM-10+ algorithm)
